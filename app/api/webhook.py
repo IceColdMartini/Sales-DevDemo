@@ -26,7 +26,7 @@ async def handle_message(message: Message):
         "sender": "facebook_profile_id",
         "product_interested": "product_name_or_null",
         "response_text": "ai_generated_response", 
-        "isReady": false_or_true
+        "is_ready": false_or_true
     }
     """
     try:
@@ -40,9 +40,9 @@ async def handle_message(message: Message):
             )
         
         # Process the message
-        response = conversation_service.process_message(message)
+        response = await conversation_service.process_message(message)
         
-        logger.info(f"Successfully processed message for sender: {message.sender}, isReady: {response['isReady']}")
+        logger.info(f"Successfully processed message for sender: {message.sender}, is_ready: {response['is_ready']}")
         
         return response
         

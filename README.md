@@ -92,7 +92,7 @@ Receives customer messages from Routing Agent and returns AI-generated responses
   "sender": "facebook_profile_id",
   "product_interested": "Product Name",
   "response_text": "AI-generated response",
-  "isReady": false
+  "is_ready": false
 }
 ```
 
@@ -100,7 +100,7 @@ Receives customer messages from Routing Agent and returns AI-generated responses
 - `sender`: Customer's unique profile ID
 - `product_interested`: Name of the product customer is most interested in (null if none)
 - `response_text`: AI-generated response to send back to customer
-- `isReady`: Boolean indicating if customer is ready to purchase (triggers handover to onboarding)
+- `is_ready`: Boolean indicating if customer is ready to purchase (triggers handover to onboarding)
 
 ### Additional Endpoints
 
@@ -229,7 +229,7 @@ curl -X POST "http://localhost:8000/api/webhook" \
   "sender": "test_user_123",
   "product_interested": "Wild Stone Code Platinum Perfume",
   "response_text": "I'd be happy to help you find the perfect fragrance! Based on what you're looking for, I recommend our Wild Stone Code Platinum Perfume. It's a premium long-lasting perfume with masculine woody notes, perfect for special occasions. It's currently on sale for ₹450 (was ₹485) and has excellent reviews from our customers. Would you like to know more about its fragrance profile?",
-  "isReady": false
+  "is_ready": false
 }
 ```
 
@@ -239,11 +239,11 @@ The Sales Agent is designed to work seamlessly with a Routing Agent that handles
 - Facebook Messenger webhook integration
 - Customer message routing
 - Frontend display of responses
-- Handover to onboarding agent when `isReady: true`
+- Handover to onboarding agent when `is_ready: true`
 
 ### Handover Logic
-- When `isReady: false`: Continue sending customer messages to Sales Agent
-- When `isReady: true`: Stop sending to Sales Agent, route to onboarding system
+- When `is_ready: false`: Continue sending customer messages to Sales Agent
+- When `is_ready: true`: Stop sending to Sales Agent, route to onboarding system
 
 ## Performance Considerations
 

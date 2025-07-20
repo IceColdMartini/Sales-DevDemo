@@ -40,6 +40,6 @@ It returns a JSON response like this:
   "sender": "user_id",
   "product_interested": "Wild Stone Code Platinum Perfume",
   "response_text": "That's a great choice! The Wild Stone Code Platinum is a fantastic perfume.",
-  "isReady": false
+  "is_ready": false
 }
 ```

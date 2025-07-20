@@ -33,7 +33,7 @@ Content-Type: application/json
   "sender": "facebook_profile_id",
   "product_interested": "Product Name or null",
   "response_text": "AI-generated response to send to customer",
-  "isReady": false
+  "is_ready": false
 }
 ```
 
@@ -44,7 +44,7 @@ Content-Type: application/json
 | `sender` | string | The same Facebook profile ID you sent |
 | `product_interested` | string/null | Name of product customer is most interested in |
 | `response_text` | string | AI response to display to the customer |
-| `isReady` | boolean | **CRITICAL**: When `true`, stop sending to Sales Agent and hand over to onboarding |
+| `is_ready` | boolean | **CRITICAL**: When `true`, stop sending to Sales Agent and hand over to onboarding |
 
 ## Integration Logic
 
@@ -54,8 +54,8 @@ Customer Message → Routing Agent → Sales Agent → AI Response → Routing A
 ```
 
 ### 2. Handover Logic
-- **When `isReady: false`**: Continue sending customer messages to Sales Agent
-- **When `isReady: true`**: STOP sending to Sales Agent, route to onboarding system
+- **When `is_ready: false`**: Continue sending customer messages to Sales Agent
+- **When `is_ready: true`**: STOP sending to Sales Agent, route to onboarding system
 
 ### 3. Sample Integration Code
 
@@ -80,7 +80,7 @@ def send_to_sales_agent(facebook_profile_id, page_id, customer_message):
         send_to_customer(facebook_profile_id, data["response_text"])
         
         # Check if ready for purchase
-        if data["isReady"]:
+        if data["is_ready"]:
             # Hand over to onboarding agent
             hand_over_to_onboarding(facebook_profile_id, data["product_interested"])
         
@@ -108,7 +108,7 @@ async function sendToSalesAgent(facebookProfileId, pageId, customerMessage) {
         await sendToCustomer(facebookProfileId, data.response_text);
         
         // Check handover condition
-        if (data.isReady) {
+        if (data.is_ready) {
             // Route to onboarding system
             await handOverToOnboarding(facebookProfileId, data.product_interested);
         }
@@ -177,20 +177,20 @@ async function sendToSalesAgent(facebookProfileId, pageId, customerMessage) {
   "sender": "24869641652625416",
   "product_interested": "Wild Stone Code Platinum Perfume",
   "response_text": "Great choice! This premium perfume...",
-  "isReady": false
+  "is_ready": false
 }
 ```
 
 ### Usage
 1. **Display `response_text`** to customer via Facebook Messenger
 2. **Track `product_interested`** for analytics
-3. **Monitor `isReady`** for handover logic
+3. **Monitor `is_ready`** for handover logic
 
 ## Critical Implementation Notes
 
 ### 1. Handover Logic
 ```python
-if response_data["isReady"] == True:
+if response_data["is_ready"] == True:
     # STOP sending messages to Sales Agent
     # Route to onboarding system instead
     onboarding_agent.handle(customer_id, product_interested)
@@ -229,7 +229,7 @@ curl -X POST "http://localhost:8000/api/webhook" \
   "sender": "test_user_123",
   "product_interested": "Wild Stone Code Platinum Perfume",
   "response_text": "I'd love to help you find the perfect fragrance! Based on what you're looking for, I recommend our Wild Stone Code Platinum Perfume...",
-  "isReady": false
+  "is_ready": false
 }
 ```
 
@@ -249,4 +249,4 @@ For any integration issues:
 
 ---
 
-**IMPORTANT**: Always check the `isReady` field in the response. When it's `true`, the customer is ready to purchase and should be handed over to the onboarding system immediately.
+**IMPORTANT**: Always check the `is_ready` field in the response. When it's `true`, the customer is ready to purchase and should be handed over to the onboarding system immediately.

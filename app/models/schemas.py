@@ -33,4 +33,4 @@ class ApiResponse(BaseModel):
     sender: str
     product_interested: Optional[str] = None
     response_text: str
-    isReady: bool
+    is_ready: bool

@@ -74,7 +74,7 @@ def test_webhook_purchase_intent():
         print(f"📝 Response: {json.dumps(response.json(), indent=2)}")
         
         response_data = response.json()
-        if response_data.get('isReady'):
+        if response_data.get('is_ready'):
             print("🎉 Customer is ready to purchase! Handover triggered.")
         else:
             print("⏳ Customer not ready yet, continuing conversation.")

@@ -4,9 +4,13 @@ from app.db.postgres_handler import postgres_handler
 from app.services.ai_service import ai_service
 from app.models.schemas import Message
 from typing import List, Dict
+import logging
 
 class ConversationService:
-    def process_message(self, message: Message):
+    def __init__(self):
+        self.logger = logging.getLogger(__name__)
+    
+    async def process_message(self, message: Message):
         # 1. Get conversation history (limit to last 10 conversations)
         conversation_data = mongo_handler.get_conversation(message.sender)
         full_conversation = conversation_data['conversation'] if conversation_data else []
@@ -17,15 +21,24 @@ class ConversationService:
         # Check if this is first interaction
         is_first_interaction = len(full_conversation) == 0
 
-        # 2. Get product context for keyword extraction
+                # 2. Extract keywords using enhanced LLM with business context
+        self.logger.info(f"Extracting keywords from: {message.text}")
+        keywords = await ai_service.extract_keywords_with_llm(message.text)
+        self.logger.info(f"Extracted keywords: {keywords}")
+
+        # 3. Get all products (can be optimized with pagination for millions of products)
         all_products = postgres_handler.get_all_products()
-        product_context = self._build_product_context(all_products)
-
-        # 3. Extract keywords from user message
-        keywords = ai_service.get_keywords(message.text, product_context)
-
-        # 4. Find relevant products based on similarity scoring
-        relevant_products = self._find_relevant_products(keywords, all_products)
+        
+        # 4. Find relevant products using LLM-based similarity matching
+        self.logger.info(f"Matching {len(keywords)} keywords against {len(all_products)} products")
+        relevant_products_with_scores = ai_service.find_matching_products_with_llm(keywords, all_products)
+        
+        # Extract just the products for response generation
+        relevant_products = [product for product, score in relevant_products_with_scores]
+        
+        # Log matching results
+        for product, score in relevant_products_with_scores:
+            self.logger.info(f"Matched: {product['name']} (Score: {score:.1f}%)")
         
         # 5. Build product information for AI
         product_info = self._build_product_info(relevant_products)
@@ -53,11 +66,13 @@ class ConversationService:
             "sender": message.sender,
             "product_interested": product_interested,
             "response_text": response_text,
-            "isReady": is_ready,
+            "is_ready": is_ready,
         }
 
     def _build_product_context(self, products: List[Dict]) -> str:
-        """Build general product context for keyword extraction"""
+        """Build general product context for keyword extraction - LEGACY METHOD"""
+        # This method is kept for backward compatibility
+        # New implementation uses LLM-based business context in ai_service
         context_parts = []
         for product in products:
             tags = product.get('product_tag', product.get('tags', []))
@@ -65,7 +80,9 @@ class ConversationService:
         return "\n".join(context_parts)
 
     def _find_relevant_products(self, keywords: List[str], all_products: List[Dict]) -> List[Dict]:
-        """Find products with similarity score >= 70%"""
+        """Find products with similarity score >= 70% - LEGACY METHOD"""
+        # This method is kept for backward compatibility
+        # New implementation uses ai_service.find_matching_products_with_llm
         relevant_products = []
         
         for product in all_products:
