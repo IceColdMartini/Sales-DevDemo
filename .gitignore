@@ -208,3 +208,4 @@ __marimo__/
 
 # Test files with hardcoded credentials
 test_openai.py
+test_api.py
