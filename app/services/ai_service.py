@@ -300,7 +300,7 @@ class AIService:
         return self.extract_keywords_with_llm(text)
 
     def calculate_similarity_score(self, keywords: List[str], product_tags: List[str]) -> float:
-        """Calculate similarity score between keywords and product tags"""
+        """Calculate enhanced similarity score between keywords and product tags"""
         if not keywords or not product_tags:
             return 0.0
         
@@ -308,21 +308,38 @@ class AIService:
         keywords_lower = [k.lower() for k in keywords]
         tags_lower = [t.lower() for t in product_tags]
         
-        # Calculate exact matches
-        exact_matches = len(set(keywords_lower) & set(tags_lower))
+        score = 0.0
+        matches_found = 0
         
-        # Calculate partial matches (keywords contained in tags or vice versa)
-        partial_matches = 0
         for keyword in keywords_lower:
+            best_match = 0.0
             for tag in tags_lower:
-                if keyword in tag or tag in keyword:
-                    partial_matches += 0.5
+                if keyword == tag:
+                    # Exact match gets full points
+                    best_match = 1.0
                     break
+                elif keyword in tag:
+                    # Keyword contained in tag gets high points
+                    best_match = max(best_match, 0.8)
+                elif tag in keyword:
+                    # Tag contained in keyword gets good points
+                    best_match = max(best_match, 0.7)
+                elif any(part in tag for part in keyword.split() if len(part) > 2):
+                    # Partial word matches get moderate points
+                    best_match = max(best_match, 0.6)
+            
+            if best_match > 0:
+                score += best_match
+                matches_found += 1
         
-        total_score = exact_matches + partial_matches
-        max_possible = max(len(keywords_lower), len(tags_lower))
+        # Normalize by number of keywords but reward multiple matches
+        if matches_found > 0:
+            base_score = score / len(keywords_lower)
+            # Bonus for multiple matches
+            match_bonus = min(matches_found / len(keywords_lower), 0.3)
+            return min(base_score + match_bonus, 1.0)
         
-        return min(total_score / max_possible, 1.0) if max_possible > 0 else 0.0
+        return 0.0
 
     def check_readiness_to_buy(self, conversation_history: str, user_message: str) -> bool:
         """DEPRECATED: This method is replaced by the comprehensive sales funnel system"""
