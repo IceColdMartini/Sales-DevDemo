@@ -30,17 +30,22 @@ class ConversationService:
         all_products = postgres_handler.get_all_products()
         
         # 4. Find relevant products using LLM-based similarity matching
-        self.logger.info(f"Matching {len(keywords)} keywords against {len(all_products)} products")
-        relevant_products_with_scores = ai_service.find_matching_products_with_llm(keywords, all_products)
+        # Only try to match products if we have relevant keywords
+        relevant_products_with_scores = []
+        if keywords:  # Only proceed if keywords were found
+            self.logger.info(f"Matching {len(keywords)} keywords against {len(all_products)} products")
+            relevant_products_with_scores = ai_service.find_matching_products_with_llm(keywords, all_products)
+            
+            # Log matching results
+            for product, score in relevant_products_with_scores:
+                self.logger.info(f"Matched: {product['name']} (Score: {score:.1f}%)")
+        else:
+            self.logger.info("No relevant keywords extracted - conversation may be off-topic")
         
         # Extract just the products for response generation
         relevant_products = [product for product, score in relevant_products_with_scores]
         
-        # Log matching results
-        for product, score in relevant_products_with_scores:
-            self.logger.info(f"Matched: {product['name']} (Score: {score:.1f}%)")
-        
-        # 5. Build product information for AI
+        # 5. Build product information for AI (may be empty for off-topic conversations)
         product_info = self._build_product_info(relevant_products)
 
         # 6. Generate response
@@ -102,7 +107,18 @@ class ConversationService:
     def _build_product_info(self, products: List[Dict]) -> str:
         """Build detailed product information for AI response generation"""
         if not products:
-            return "We have a variety of quality products available. Let me know what you're interested in and I'll help you find the perfect match!"
+            return """We have a comprehensive collection of premium beauty and personal care products including:
+            
+            - Premium Beauty Soaps & Body Care (moisturizing bars, luxury fragrances, traditional ingredients)
+            - Professional Hair Care Solutions (anti-hair fall shampoos, organic treatments, strengthening formulas)
+            - Nourishing Hair Oils & Styling Products (coconut oils, ayurvedic amla preparations, herbal treatments)
+            - Captivating Fragrances & Perfumes (body sprays, premium woody perfumes, traditional attars)
+            - Advanced Skincare Solutions (fairness creams, gentle herbal face washes, ayurvedic treatments)
+            - Specialized Grooming Essentials (antibacterial protection, natural extracts)
+            
+            Featured brands include Lux, Dove, Pantene, Head & Shoulders, Garnier, AXE, Fogg, Wild Stone, and local favorites like Keya Seth and Tibbet.
+            
+            What specific beauty or personal care needs can I help you with today?"""
         
         product_details = []
         for product in products:
