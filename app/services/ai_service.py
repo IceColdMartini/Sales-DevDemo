@@ -202,8 +202,10 @@ class AIService:
                 - "acne", "pimples", "blemishes" are similar
                 - "fairness", "brightening", "whitening" are related
                 
-                Return ONLY a JSON list with product IDs and scores for products scoring 65+.
-                Format: [{"id": "product_id", "score": 85}, ...]"""
+                CRITICAL: Return ONLY a valid JSON array with product IDs and scores for products scoring 65+.
+                No explanations, no markdown, no extra text - ONLY the JSON array.
+                Format: [{"id": "product_id", "score": 85}, {"id": "product_id2", "score": 90}]
+                If no products score 65+, return: []"""
             },
             {
                 "role": "user",
@@ -213,8 +215,8 @@ class AIService:
                 BEAUTY PRODUCTS TO ANALYZE:
                 {products_text}
                 
-                Analyze each product and return JSON with product IDs and similarity scores (65-100).
-                Focus on beauty and personal care relevance to customer needs.
+                Return ONLY a JSON array with product IDs and similarity scores (65-100).
+                Example response: [{{"id": "product_id", "score": 85}}]
                 """
             }
         ]
@@ -229,8 +231,21 @@ class AIService:
             
             response_text = response.choices[0].message.content.strip()
             
-            # Parse JSON response
-            matches_data = json.loads(response_text)
+            # Try to extract JSON from the response if it contains extra text
+            try:
+                # Look for JSON array pattern
+                import re
+                json_match = re.search(r'\[.*\]', response_text, re.DOTALL)
+                if json_match:
+                    json_str = json_match.group(0)
+                    matches_data = json.loads(json_str)
+                else:
+                    # If no array found, try parsing the whole response
+                    matches_data = json.loads(response_text)
+            except json.JSONDecodeError:
+                # If JSON parsing still fails, try to clean the response
+                cleaned_response = response_text.replace('\n', '').replace('```json', '').replace('```', '').strip()
+                matches_data = json.loads(cleaned_response)
             
             # Convert to required format
             matches = []

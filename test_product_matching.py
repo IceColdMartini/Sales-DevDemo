@@ -11,7 +11,26 @@ import asyncio
 from app.services.ai_service import AIService
 from app.services.conversation_service import ConversationService
 from app.db.postgres_handler import postgres_handler
+from app.db.mongo_handler import mongo_handler
 from app.models.schemas import Message
+
+def mock_conversation_methods():
+    """Mock MongoDB conversation methods for testing when MongoDB is not available"""
+    original_get_conversation = mongo_handler.get_conversation
+    original_save_conversation = mongo_handler.save_conversation
+    
+    def mock_get_conversation(sender_id):
+        print(f"   🔍 Mock: Getting conversation for {sender_id} (returning empty)")
+        return None
+    
+    def mock_save_conversation(sender_id, conversation):
+        print(f"   💾 Mock: Saving conversation for {sender_id} ({len(conversation)} messages)")
+        return True
+    
+    mongo_handler.get_conversation = mock_get_conversation
+    mongo_handler.save_conversation = mock_save_conversation
+    
+    return original_get_conversation, original_save_conversation
 
 async def test_product_matching():
     """Test the complete product matching workflow"""
@@ -23,8 +42,22 @@ async def test_product_matching():
     ai_service = AIService()
     conversation_service = ConversationService()
     
-    # Connect to database
+    # Connect to databases
+    print("🔌 Connecting to databases...")
     postgres_handler.connect()
+    
+    # Try to connect to MongoDB (optional for testing)
+    mongodb_available = False
+    original_methods = None
+    try:
+        mongo_handler.connect()
+        mongodb_available = True
+        print("✅ MongoDB connected successfully")
+    except Exception as e:
+        print(f"⚠️ MongoDB connection failed: {e}")
+        print("📝 Using mock conversation methods for testing")
+        mongodb_available = False
+        original_methods = mock_conversation_methods()
     
     # Test messages
     test_messages = [
@@ -71,11 +104,18 @@ async def test_product_matching():
             print(f"   Response: {response['response_text'][:100]}...")
         except Exception as e:
             print(f"   ❌ Error: {e}")
+            if "conversations" in str(e):
+                print("   ℹ️  This error is related to conversation storage (should be handled by mock)")
         
         print("\n" + "="*60)
     
-    # Disconnect from database
+    # Disconnect from databases
     postgres_handler.disconnect()
+    if mongodb_available:
+        mongo_handler.disconnect()
+    elif original_methods:
+        # Restore original methods
+        mongo_handler.get_conversation, mongo_handler.save_conversation = original_methods
     
     print("\n✅ Product matching tests completed!")
 
