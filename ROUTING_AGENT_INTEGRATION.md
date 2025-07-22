@@ -32,6 +32,7 @@ Content-Type: application/json
 {
   "sender": "facebook_profile_id",
   "product_interested": "Product Name or null",
+  "interested_product_ids": ["product_id_1", "product_id_2"] or [],
   "response_text": "AI-generated response to send to customer",
   "is_ready": false
 }
@@ -42,7 +43,8 @@ Content-Type: application/json
 | Field | Type | Description |
 |-------|------|-------------|
 | `sender` | string | The same Facebook profile ID you sent |
-| `product_interested` | string/null | Name of product customer is most interested in |
+| `product_interested` | string/null | Name of product(s) customer is most interested in |
+| `interested_product_ids` | array | Array of product IDs for interested products (empty if none) |
 | `response_text` | string | AI response to display to the customer |
 | `is_ready` | boolean | **CRITICAL**: When `true`, stop sending to Sales Agent and hand over to onboarding |
 
@@ -76,11 +78,23 @@ def send_to_sales_agent(facebook_profile_id, page_id, customer_message):
     if response.status_code == 200:
         data = response.json()
         
+        # Extract all relevant information
+        sender_id = data["sender"]
+        product_names = data["product_interested"]  # Product names for display
+        product_ids = data["interested_product_ids"]  # Product IDs for processing
+        ai_response = data["response_text"]
+        is_ready = data["is_ready"]
+        
         # Send AI response back to customer
-        send_to_customer(facebook_profile_id, data["response_text"])
+        send_to_customer(facebook_profile_id, ai_response)
         
         # Check if ready for purchase
-        if data["is_ready"]:
+        if is_ready:
+            # Customer is ready - hand over to onboarding with product IDs
+            route_to_onboarding(sender_id, product_ids)
+            return "HANDOVER_COMPLETE"
+        else:
+            return "CONTINUE_CONVERSATION"
             # Hand over to onboarding agent
             hand_over_to_onboarding(facebook_profile_id, data["product_interested"])
         

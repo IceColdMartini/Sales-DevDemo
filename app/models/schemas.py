@@ -32,5 +32,6 @@ class Conversation(BaseModel):
 class ApiResponse(BaseModel):
     sender: str
     product_interested: Optional[str] = None
+    interested_product_ids: Optional[List[str]] = []  # Product IDs for Routing Agent
     response_text: str
     is_ready: bool
