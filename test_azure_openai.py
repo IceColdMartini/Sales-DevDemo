@@ -3,7 +3,11 @@
 Test Azure OpenAI connection with the provided credentials
 """
 import os
+from dotenv import load_dotenv
 from openai import AzureOpenAI
+
+# Load environment variables from .env file
+load_dotenv()
 
 def test_azure_openai():
     try:
