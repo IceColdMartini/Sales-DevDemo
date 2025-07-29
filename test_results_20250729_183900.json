@@ -1,0 +1,830 @@
+{
+  "test_results": [
+    {
+      "test_name": "Response Quality - Hair fragrance inquiry",
+      "passed": true,
+      "details": "Quality: 3/3 (Acknowledges: True, Redirects: True, Natural: True)",
+      "timestamp": "2025-07-29T18:32:00.314189"
+    },
+    {
+      "test_name": "Initial is_ready Status - Hair fragrance inquiry",
+      "passed": true,
+      "details": "is_ready=False (should be False)",
+      "timestamp": "2025-07-29T18:32:00.314251"
+    },
+    {
+      "test_name": "Response Quality - Skincare problem statement",
+      "passed": true,
+      "details": "Quality: 3/3 (Acknowledges: True, Redirects: True, Natural: True)",
+      "timestamp": "2025-07-29T18:32:12.687093"
+    },
+    {
+      "test_name": "Initial is_ready Status - Skincare problem statement",
+      "passed": true,
+      "details": "is_ready=False (should be False)",
+      "timestamp": "2025-07-29T18:32:12.687138"
+    },
+    {
+      "test_name": "Response Quality - Off-topic conversation",
+      "passed": false,
+      "details": "Quality: 1/3 (Acknowledges: False, Redirects: True, Natural: False)",
+      "timestamp": "2025-07-29T18:32:22.361677"
+    },
+    {
+      "test_name": "Initial is_ready Status - Off-topic conversation",
+      "passed": true,
+      "details": "is_ready=False (should be False)",
+      "timestamp": "2025-07-29T18:32:22.361732"
+    },
+    {
+      "test_name": "Response Quality - Gift inquiry",
+      "passed": true,
+      "details": "Quality: 3/3 (Acknowledges: True, Redirects: True, Natural: True)",
+      "timestamp": "2025-07-29T18:32:33.778731"
+    },
+    {
+      "test_name": "Initial is_ready Status - Gift inquiry",
+      "passed": true,
+      "details": "is_ready=False (should be False)",
+      "timestamp": "2025-07-29T18:32:33.778773"
+    },
+    {
+      "test_name": "Response Quality - Gender-specific product inquiry",
+      "passed": true,
+      "details": "Quality: 3/3 (Acknowledges: True, Redirects: True, Natural: True)",
+      "timestamp": "2025-07-29T18:32:46.460919"
+    },
+    {
+      "test_name": "Initial is_ready Status - Gender-specific product inquiry",
+      "passed": true,
+      "details": "is_ready=False (should be False)",
+      "timestamp": "2025-07-29T18:32:46.460962"
+    },
+    {
+      "test_name": "General Perfume Inquiry Detection",
+      "passed": true,
+      "details": "Detected: Wild Stone Code Platinum Perfume",
+      "timestamp": "2025-07-29T18:32:58.917953"
+    },
+    {
+      "test_name": "Specific Product Detection (Wild Stone)",
+      "passed": true,
+      "details": "Detected product: Multiple products: Wild Stone Code Platinum Perfume, AXE Dark Temptation Deodorant, Fogg Scent Xpressio Body Spray",
+      "timestamp": "2025-07-29T18:33:09.960799"
+    },
+    {
+      "test_name": "Product ID Extraction",
+      "passed": true,
+      "details": "Product IDs: ['b9f4f5cd-92de-4ab0-8c8e-745682c82b37', '16699403-4a24-4c8c-83f6-5d1a6b426212', '43b95ad4-0fc0-4c04-ae77-7671696ca66a']",
+      "timestamp": "2025-07-29T18:33:09.960830"
+    },
+    {
+      "test_name": "Multiple Product Tracking",
+      "passed": true,
+      "details": "Products: Multiple products: Wild Stone Code Platinum Perfume, AXE Dark Temptation Deodorant, Fogg Scent Xpressio Body Spray, Himalaya Purifying Neem Face Wash, IDs: 4",
+      "timestamp": "2025-07-29T18:33:21.089613"
+    },
+    {
+      "test_name": "Step 1 - Ready Status",
+      "passed": true,
+      "details": "is_ready=False, expected=False",
+      "timestamp": "2025-07-29T18:33:30.406233"
+    },
+    {
+      "test_name": "Step 2 - Ready Status",
+      "passed": true,
+      "details": "is_ready=False, expected=False",
+      "timestamp": "2025-07-29T18:33:43.877670"
+    },
+    {
+      "test_name": "Step 3 - Ready Status",
+      "passed": true,
+      "details": "is_ready=False, expected=False",
+      "timestamp": "2025-07-29T18:33:54.982395"
+    },
+    {
+      "test_name": "Step 4 - Ready Status",
+      "passed": true,
+      "details": "is_ready=False, expected=False",
+      "timestamp": "2025-07-29T18:34:05.688388"
+    },
+    {
+      "test_name": "Step 5 - Ready Status",
+      "passed": true,
+      "details": "is_ready=False, expected=False",
+      "timestamp": "2025-07-29T18:34:15.816785"
+    },
+    {
+      "test_name": "Overall Conversation Continuity",
+      "passed": true,
+      "details": "Maintains context and proper is_ready progression",
+      "timestamp": "2025-07-29T18:34:17.821906"
+    },
+    {
+      "test_name": "Includes Product Names in Confirmation",
+      "passed": true,
+      "details": "Product names mentioned: True",
+      "timestamp": "2025-07-29T18:35:10.041577"
+    },
+    {
+      "test_name": "Includes Price Information",
+      "passed": true,
+      "details": "Price information included: True",
+      "timestamp": "2025-07-29T18:35:10.041671"
+    },
+    {
+      "test_name": "Purchase Confirmation Language",
+      "passed": true,
+      "details": "Uses confirmation language: True",
+      "timestamp": "2025-07-29T18:35:10.041688"
+    },
+    {
+      "test_name": "is_ready Status After Confirmation",
+      "passed": true,
+      "details": "is_ready=True (should be True)",
+      "timestamp": "2025-07-29T18:35:10.041696"
+    },
+    {
+      "test_name": "is_ready False Test 1",
+      "passed": true,
+      "details": "Message: 'I'm looking for perfume' -> is_ready=False",
+      "timestamp": "2025-07-29T18:35:20.709170"
+    },
+    {
+      "test_name": "is_ready False Test 2",
+      "passed": true,
+      "details": "Message: 'Tell me about Wild Stone' -> is_ready=False",
+      "timestamp": "2025-07-29T18:35:30.517532"
+    },
+    {
+      "test_name": "is_ready False Test 3",
+      "passed": true,
+      "details": "Message: 'How much does it cost?' -> is_ready=False",
+      "timestamp": "2025-07-29T18:35:40.480940"
+    },
+    {
+      "test_name": "is_ready False Test 4",
+      "passed": true,
+      "details": "Message: 'That sounds good' -> is_ready=False",
+      "timestamp": "2025-07-29T18:35:50.596245"
+    },
+    {
+      "test_name": "is_ready False Test 5",
+      "passed": true,
+      "details": "Message: 'I'm interested in this product' -> is_ready=False",
+      "timestamp": "2025-07-29T18:35:59.728512"
+    },
+    {
+      "test_name": "is_ready False Test 6",
+      "passed": true,
+      "details": "Message: 'It seems perfect for me' -> is_ready=False",
+      "timestamp": "2025-07-29T18:36:09.218526"
+    },
+    {
+      "test_name": "is_ready False Test 7",
+      "passed": true,
+      "details": "Message: 'I like this one' -> is_ready=False",
+      "timestamp": "2025-07-29T18:36:18.538646"
+    },
+    {
+      "test_name": "is_ready True Test 1",
+      "passed": true,
+      "details": "Message: 'Yes, I want to buy the Wild Stone perfume' -> is_ready=True",
+      "timestamp": "2025-07-29T18:36:30.219951"
+    },
+    {
+      "test_name": "is_ready True Test 2",
+      "passed": true,
+      "details": "Message: 'I'll take it' -> is_ready=True",
+      "timestamp": "2025-07-29T18:36:39.154538"
+    },
+    {
+      "test_name": "is_ready True Test 3",
+      "passed": true,
+      "details": "Message: 'I want to purchase this product' -> is_ready=True",
+      "timestamp": "2025-07-29T18:36:48.106441"
+    },
+    {
+      "test_name": "Multiple Product Detection - Perfume",
+      "passed": true,
+      "details": "Perfume detected in: Multiple products: Wild Stone Code Platinum Perfume, Himalaya Purifying Neem Face Wash, Keya Seth Neem Basil Face Wash, Fogg Scent Xpressio Body Spray",
+      "timestamp": "2025-07-29T18:36:59.226847"
+    },
+    {
+      "test_name": "Multiple Product Detection - Face Wash",
+      "passed": true,
+      "details": "Face wash detected in: Multiple products: Wild Stone Code Platinum Perfume, Himalaya Purifying Neem Face Wash, Keya Seth Neem Basil Face Wash, Fogg Scent Xpressio Body Spray",
+      "timestamp": "2025-07-29T18:36:59.226867"
+    },
+    {
+      "test_name": "Multiple Product IDs",
+      "passed": true,
+      "details": "Product IDs count: 4",
+      "timestamp": "2025-07-29T18:36:59.226880"
+    },
+    {
+      "test_name": "Three Product Categories Tracking",
+      "passed": true,
+      "details": "All three tracked: True",
+      "timestamp": "2025-07-29T18:37:12.399992"
+    },
+    {
+      "test_name": "Product Removal - Shampoo Removed",
+      "passed": true,
+      "details": "Shampoo removed: True",
+      "timestamp": "2025-07-29T18:37:33.534262"
+    },
+    {
+      "test_name": "Product Retention - Perfume Remains",
+      "passed": true,
+      "details": "Perfume remains: True",
+      "timestamp": "2025-07-29T18:37:33.534284"
+    },
+    {
+      "test_name": "Product Retention - Face Wash Remains",
+      "passed": true,
+      "details": "Face wash remains: True",
+      "timestamp": "2025-07-29T18:37:33.534293"
+    },
+    {
+      "test_name": "Product Replacement Understanding",
+      "passed": true,
+      "details": "Understands sensitive skin request: True",
+      "timestamp": "2025-07-29T18:37:45.763007"
+    },
+    {
+      "test_name": "Complete Flow Step 1",
+      "passed": true,
+      "details": "is_ready=False, expected=False",
+      "timestamp": "2025-07-29T18:37:55.586972"
+    },
+    {
+      "test_name": "Complete Flow Step 2",
+      "passed": true,
+      "details": "is_ready=False, expected=False",
+      "timestamp": "2025-07-29T18:38:06.750452"
+    },
+    {
+      "test_name": "Complete Flow Step 3",
+      "passed": true,
+      "details": "is_ready=False, expected=False",
+      "timestamp": "2025-07-29T18:38:16.308408"
+    },
+    {
+      "test_name": "Complete Flow Step 4",
+      "passed": true,
+      "details": "is_ready=False, expected=False",
+      "timestamp": "2025-07-29T18:38:27.565356"
+    },
+    {
+      "test_name": "Complete Flow Step 5",
+      "passed": true,
+      "details": "is_ready=False, expected=False",
+      "timestamp": "2025-07-29T18:38:39.456348"
+    },
+    {
+      "test_name": "Complete Flow Step 6",
+      "passed": true,
+      "details": "is_ready=False, expected=False",
+      "timestamp": "2025-07-29T18:38:49.021481"
+    },
+    {
+      "test_name": "Complete Flow Step 7",
+      "passed": false,
+      "details": "is_ready=False, expected=True",
+      "timestamp": "2025-07-29T18:38:59.025378"
+    },
+    {
+      "test_name": "Complete Flow Success",
+      "passed": false,
+      "details": "All is_ready flags correct: False",
+      "timestamp": "2025-07-29T18:39:00.529195"
+    },
+    {
+      "test_name": "Conversation Quality",
+      "passed": true,
+      "details": "Average quality score: 0.95",
+      "timestamp": "2025-07-29T18:39:00.529245"
+    }
+  ],
+  "conversation_logs": [
+    {
+      "sender_id": "test_1_scenario_1",
+      "user_message": "Hi there! I'm looking for something to make my hair smell amazing",
+      "agent_response": "Hello! If you're looking to make your hair smell amazing, I highly recommend our **Wild Stone Code Platinum Perfume**. It costs just \u09f3450, and it's a premium, long-lasting fragrance with masculine woody notes. This perfume is perfect for special occasions or whenever you want to leave a sophisticated scent impression.\n\nWhat makes it worth the price is its high-quality formulation, featuring a blend of bergamot, apple, geranium, sage, marine notes, sandalwood, cedarwood, and musk, all designed to give you a refined and lasting aroma. Plus, it has received a 4.5 out of 5 rating from 189 satisfied customers, which speaks to its popularity and effectiveness.\n\nSince it\u2019s currently on sale from \u09f3485 to just \u09f3450, it offers great value for a luxury fragrance. If you want a signature scent that truly stands out, this is an excellent choice. Would you like to add it to your cart or explore other options?",
+      "product_interested": "Wild Stone Code Platinum Perfume",
+      "interested_product_ids": [
+        "b9f4f5cd-92de-4ab0-8c8e-745682c82b37"
+      ],
+      "is_ready": false,
+      "timestamp": "2025-07-29T18:32:00.313780"
+    },
+    {
+      "sender_id": "test_1_scenario_2",
+      "user_message": "My skin is really dry lately, especially in winter",
+      "agent_response": "It sounds like you're looking for a gentle, effective solution to combat dry skin during the winter. I recommend our **Dove Beauty Bar Moisturizing Soap**, which costs \u09f358.00 today\u2014it's on sale from the original price of \u09f365.00. \n\nThis beauty bar is specially formulated with 1/4 moisturizing cream, making it ideal for sensitive and dry skin. It provides deep nourishment while gently cleansing, helping to restore your skin's natural softness and hydration. With a high customer rating of 4.60 out of 5 based on 198 reviews, it's a trusted choice for many who want effective skincare that cares for their skin.\n\nGiven its moisturizing properties and dermatologist recommendation, this soap offers excellent value for maintaining healthy, hydrated skin during the harsh winter months. Would you like to add this to your routine or explore other options?",
+      "product_interested": "Dove Beauty Bar Moisturizing Soap",
+      "interested_product_ids": [
+        "55d26d11-22c2-4632-8d4b-10d8ced93269"
+      ],
+      "is_ready": false,
+      "timestamp": "2025-07-29T18:32:12.686708"
+    },
+    {
+      "sender_id": "test_1_scenario_3",
+      "user_message": "What's the weather like today?",
+      "agent_response": "Oh, the weather! That can really change how our skin feels and how we want to take care of ourselves, right? Sunny days make me want to keep my skin protected and fresh, while rainy weather calls for some extra nourishing skincare. Speaking of feeling good and taking care of yourself, do you have any personal care routines or products you enjoy using on days like today?",
+      "product_interested": null,
+      "interested_product_ids": [],
+      "is_ready": false,
+      "timestamp": "2025-07-29T18:32:22.361260"
+    },
+    {
+      "sender_id": "test_1_scenario_4",
+      "user_message": "I need a gift for my girlfriend's birthday",
+      "agent_response": "That sounds like a wonderful idea! For a birthday gift, our premium perfumes and fragrances are always a popular choice. For example, our luxurious woody perfumes cost \u09f32,500, and our elegant Arabic attars with rose and oud are priced at \u09f31,800. These fragrances are crafted with pure perfume concentrates, ensuring a long-lasting and memorable scent that your girlfriend will love.\n\nIf she prefers skincare, our nourishing fairness creams with multivitamins are available for \u09f31,200, offering both beauty and care. For hair care lovers, our organic bio-certified shampoos and hair oils start at \u09f3900, providing natural nourishment and shine.\n\nAll these products are carefully selected to combine quality, authenticity, and value, making them perfect for a special gift. Do you have a specific preference or budget in mind? I can help you choose the ideal gift within your range!",
+      "product_interested": "Multiple products: AXE Dark Temptation Deodorant, Bajaj Almond Drops Hair Oil",
+      "interested_product_ids": [],
+      "is_ready": false,
+      "timestamp": "2025-07-29T18:32:33.778333"
+    },
+    {
+      "sender_id": "test_1_scenario_5",
+      "user_message": "Do you have anything for men's grooming?",
+      "agent_response": "Absolutely! For men's grooming, I highly recommend our **Rasasi Attar Al Mohabbah**. This is a traditional Arabic attar with a luxurious blend of rose and oud notes, perfect for a sophisticated and long-lasting fragrance. \n\nThe best part is, it is currently on SALE for only **\u09f3590**, reduced from the original price of **\u09f3650**. This concentrated perfume oil is alcohol-free, making it gentle on the skin and ideal for everyday use. With a rating of 4.60 out of 5 based on 234 reviews, it\u2019s a trusted choice among many grooming enthusiasts.\n\nThis product offers excellent value because a little goes a long way\u2014its concentrated formula ensures lasting aroma, making it a worthwhile investment in your grooming routine. If you're seeking a premium, traditional scent that combines regional wisdom with luxury, this is an excellent choice.\n\nWould you like to know more about this or explore other grooming products?",
+      "product_interested": "Rasasi Attar Al Mohabbah",
+      "interested_product_ids": [
+        "190d0a92-0aba-41ce-87db-96287bede2fe"
+      ],
+      "is_ready": false,
+      "timestamp": "2025-07-29T18:32:46.460539"
+    },
+    {
+      "sender_id": "test_2_product_navigation",
+      "user_message": "I'm looking for a good perfume",
+      "agent_response": "Absolutely! For a good perfume, I recommend the **Wild Stone Code Platinum Perfume**. This is a premium, long-lasting fragrance with masculine woody notes, perfect for special occasions. It costs \u09f3450, which is a great deal since it\u2019s currently on SALE from the original price of \u09f3485. \n\nThis perfume offers sophisticated scent notes like bergamot apple, geranium sage, marine elements, sandalwood, cedarwood, and musk, making it an excellent choice for those seeking a luxurious and enduring fragrance. With a high customer rating of 4.50 out of 5 based on 189 reviews, it\u2019s a popular and trusted option.\n\nGiven its quality, longevity, and the special occasion vibe, this perfume provides excellent value for its price. If you\u2019re looking for something elegant and durable, this is a fantastic choice. Would you like to explore more options or proceed with this one?",
+      "product_interested": "Wild Stone Code Platinum Perfume",
+      "interested_product_ids": [
+        "b9f4f5cd-92de-4ab0-8c8e-745682c82b37"
+      ],
+      "is_ready": false,
+      "timestamp": "2025-07-29T18:32:58.917705"
+    },
+    {
+      "sender_id": "test_2_product_navigation",
+      "user_message": "Tell me about Wild Stone perfume",
+      "agent_response": "Certainly! Since you're interested in Wild Stone perfume, I recommend the following options that suit your preference for masculine, sophisticated fragrances:\n\n1. **Wild Stone Code Platinum Perfume - \u09f3450**  \n   This is a premium, long-lasting perfume with masculine woody notes, perfect for special occasions. Its sophisticated blend of bergamot apple, geranium sage, marine notes, sandalwood, cedarwood, and musk makes it ideal for someone looking for a refined and elegant scent. It\u2019s currently on sale from \u20b9485, offering great value for its high-quality fragrance and long-lasting performance.\n\n2. **Fogg Scent Xpressio Body Spray - \u09f3225**  \n   If you're looking for a fresh, long-lasting body spray with a vibrant scent, this is an excellent choice. It\u2019s made with pure perfume concentrate and guarantees 800 sprays, making it a cost-effective option for daily use. Its citrus bergamot and lavender geranium notes provide a refreshing, energetic aroma.\n\n3. **AXE Dark Temptation Deodorant - \u09f3285**  \n   For a seductive, chocolate-scented fragrance with 48-hour protection, this deodorant is popular among young men. Its irresistible scent and dual-action technology make it a",
+      "product_interested": "Multiple products: Wild Stone Code Platinum Perfume, AXE Dark Temptation Deodorant, Fogg Scent Xpressio Body Spray",
+      "interested_product_ids": [
+        "b9f4f5cd-92de-4ab0-8c8e-745682c82b37",
+        "16699403-4a24-4c8c-83f6-5d1a6b426212",
+        "43b95ad4-0fc0-4c04-ae77-7671696ca66a"
+      ],
+      "is_ready": false,
+      "timestamp": "2025-07-29T18:33:09.960505"
+    },
+    {
+      "sender_id": "test_2_product_navigation",
+      "user_message": "I also need a face wash, something with neem",
+      "agent_response": "Absolutely! For your need for a face wash with neem, I recommend the **Himalaya Purifying Neem Face Wash**. It costs \u09f3135.00, and it's highly valued by customers for its herbal, natural ingredients that effectively remove impurities and prevent pimples, thanks to the antibacterial properties of neem and turmeric. This makes it an excellent choice for healthy, clear skin, especially if you're looking for something gentle yet effective.\n\nIf you're interested in fragrances as well, I also have some premium options like the **Wild Stone Code Platinum Perfume** for \u09f3450.00, which offers a sophisticated masculine woody scent perfect for special occasions. Or, for a refreshing body spray, the **Fogg Scent Xpressio** is just \u09f3225.00 and provides long-lasting freshness with a pure perfume concentrate.\n\nWould you like to go for the herbal neem face wash, or are you interested in exploring fragrances too? Both products provide great value and quality, tailored to your personal care needs!",
+      "product_interested": "Multiple products: Wild Stone Code Platinum Perfume, AXE Dark Temptation Deodorant, Fogg Scent Xpressio Body Spray, Himalaya Purifying Neem Face Wash",
+      "interested_product_ids": [
+        "b9f4f5cd-92de-4ab0-8c8e-745682c82b37",
+        "16699403-4a24-4c8c-83f6-5d1a6b426212",
+        "43b95ad4-0fc0-4c04-ae77-7671696ca66a",
+        "ec00e983-e85f-4202-a732-a3c61955091c"
+      ],
+      "is_ready": false,
+      "timestamp": "2025-07-29T18:33:21.089265"
+    },
+    {
+      "sender_id": "test_3_continuity",
+      "user_message": "I need a good perfume for everyday use",
+      "agent_response": "Certainly! For everyday use, I recommend the **Wild Stone Code Platinum Perfume**. This premium perfume costs \u09f3450, which is a fantastic deal since it's currently on SALE from the original price of \u09f3485. \n\nThis fragrance features masculine woody notes like sandalwood, cedarwood, and musk, combined with fresh hints of bergamot apple, geranium, sage, and marine accords. It's designed to be long-lasting and sophisticated, making it perfect for daily wear as well as special occasions. With a high rating of 4.50 out of 5 from 189 satisfied customers, it\u2019s a popular choice for those who value quality and a refreshing scent every day.\n\nWould you like to explore this option further or see other fragrances?",
+      "product_interested": "Wild Stone Code Platinum Perfume",
+      "interested_product_ids": [
+        "b9f4f5cd-92de-4ab0-8c8e-745682c82b37"
+      ],
+      "is_ready": false,
+      "timestamp": "2025-07-29T18:33:30.405756"
+    },
+    {
+      "sender_id": "test_3_continuity",
+      "user_message": "Something that lasts long and smells fresh",
+      "agent_response": "Thank you for sharing your preferences! Based on your desire for a product that lasts long and smells fresh, I recommend our **Wild Stone Code Platinum Perfume**. It costs \u09f3450 and is a premium, long-lasting fragrance with masculine woody notes that are perfect for making a sophisticated impression. It\u2019s specially formulated to stay fresh for hours, ensuring you feel confident throughout the day or night.\n\nIf you\u2019re looking for more options with lasting power and fresh scents, we also have the **Fogg Scent Xpressio Body Spray** priced at \u09f3225. It offers a long-lasting, fresh fragrance with no gas, guaranteeing around 800 sprays, so it\u2019s a great value for everyday use.\n\nFor a classic, traditional touch, the **Rasasi Attar Al Mohabbah** is a concentrated perfume oil at \u09f3590, with rose and oud notes, providing a rich, long-lasting aroma that\u2019s alcohol-free and popular in Bangladesh.\n\nAll these options are excellent for longevity and freshness, and I can help you choose the best one based on your style and occasion. Would you like to explore any of these further or need a product within a specific budget?",
+      "product_interested": "Multiple products: Wild Stone Code Platinum Perfume, AXE Dark Temptation Deodorant, Fogg Scent Xpressio Body Spray, Head & Shoulders Anti-Dandruff Shampoo, Rasasi Attar Al Mohabbah, Herbal Essences Bio Coconut Milk Shampoo",
+      "interested_product_ids": [
+        "b9f4f5cd-92de-4ab0-8c8e-745682c82b37",
+        "16699403-4a24-4c8c-83f6-5d1a6b426212",
+        "43b95ad4-0fc0-4c04-ae77-7671696ca66a",
+        "eea137cc-8256-4c8a-bd43-6b4e32f4a727",
+        "190d0a92-0aba-41ce-87db-96287bede2fe",
+        "4ba24ba6-92f2-4393-872a-a1b810fad9aa"
+      ],
+      "is_ready": false,
+      "timestamp": "2025-07-29T18:33:43.876939"
+    },
+    {
+      "sender_id": "test_3_continuity",
+      "user_message": "Wild Stone sounds good, tell me more about it",
+      "agent_response": "Thank you for your interest in Wild Stone. Let me tell you more about the **Wild Stone Code Platinum Perfume**. \n\nThis is a **premium, long-lasting perfume** designed for a masculine, sophisticated scent. It features **woody notes** that create a strong, enduring fragrance perfect for special occasions or everyday confidence. The perfume combines top notes of **bergamot and apple**, with mid-notes of **geranium, sage, and marine**, balanced by base notes of **sandalwood, cedarwood, and musk**. \n\nThe price is **\u20b9450**, which is a special offer from the original \u20b9485, so you\u2019re getting a great deal on a high-quality, renowned fragrance. With a **rating of 4.50 out of 5** from 189 reviews, it\u2019s well-loved by customers for its lasting scent and premium feel.\n\nThis perfume is an excellent investment in your grooming routine, offering both sophistication and confidence that lasts through your day or evening. Plus, it\u2019s well stocked with 85 units available, so you can get it quickly.\n\nWould you like to explore this further or see other fragrance options?",
+      "product_interested": "Multiple products: Wild Stone Code Platinum Perfume, AXE Dark Temptation Deodorant, Fogg Scent Xpressio Body Spray, Head & Shoulders Anti-Dandruff Shampoo, Rasasi Attar Al Mohabbah, Herbal Essences Bio Coconut Milk Shampoo",
+      "interested_product_ids": [
+        "b9f4f5cd-92de-4ab0-8c8e-745682c82b37",
+        "16699403-4a24-4c8c-83f6-5d1a6b426212",
+        "43b95ad4-0fc0-4c04-ae77-7671696ca66a",
+        "eea137cc-8256-4c8a-bd43-6b4e32f4a727",
+        "190d0a92-0aba-41ce-87db-96287bede2fe",
+        "4ba24ba6-92f2-4393-872a-a1b810fad9aa"
+      ],
+      "is_ready": false,
+      "timestamp": "2025-07-29T18:33:54.982140"
+    },
+    {
+      "sender_id": "test_3_continuity",
+      "user_message": "What's the price?",
+      "agent_response": "Certainly! Here's a quick overview of some popular products and their prices:\n\n- **Wild Stone Code Platinum Perfume** costs \u09f3450.00, on sale from \u09f3485.00. This premium long-lasting fragrance features masculine woody notes, perfect for special occasions. Its sophisticated scent and high customer ratings of 4.5/5 make it a valuable choice for those seeking quality and elegance.\n\n- **AXE Dark Temptation Deodorant** is priced at \u09f3285.00. It offers an irresistible chocolate fragrance with 48-hour protection, a favorite among young men. Its dual action technology ensures odor control and long-lasting freshness.\n\n- **Fogg Scent Xpressio Body Spray** costs \u09f3225.00, discounted from \u09f3245.00. With no gas and 800 sprays guaranteed, it provides a long-lasting, fresh citrus and floral fragrance, making it a great value for daily use.\n\n- **Head & Shoulders Anti-Dandruff Shampoo** is available for \u09f3320.00. Clinically proven to remove dandruff and prevent recurrence, this dermatologist-recommended shampoo ensures scalp health and confidence.\n\n- **Rasasi Attar Al Mohabbah** is priced at \u09f3590.00, discounted from \u09f3650.00. This traditional Arabic attar with rose and oud notes is alcohol-free and concentrated, offering a luxurious,",
+      "product_interested": "Multiple products: Wild Stone Code Platinum Perfume, AXE Dark Temptation Deodorant, Fogg Scent Xpressio Body Spray, Head & Shoulders Anti-Dandruff Shampoo, Rasasi Attar Al Mohabbah, Herbal Essences Bio Coconut Milk Shampoo",
+      "interested_product_ids": [
+        "b9f4f5cd-92de-4ab0-8c8e-745682c82b37",
+        "16699403-4a24-4c8c-83f6-5d1a6b426212",
+        "43b95ad4-0fc0-4c04-ae77-7671696ca66a",
+        "eea137cc-8256-4c8a-bd43-6b4e32f4a727",
+        "190d0a92-0aba-41ce-87db-96287bede2fe",
+        "4ba24ba6-92f2-4393-872a-a1b810fad9aa"
+      ],
+      "is_ready": false,
+      "timestamp": "2025-07-29T18:34:05.687998"
+    },
+    {
+      "sender_id": "test_3_continuity",
+      "user_message": "That seems reasonable, I'm interested",
+      "agent_response": "That's fantastic to hear! You're interested in the **Wild Stone Code Platinum Perfume**, a premium long-lasting fragrance with masculine woody notes, perfect for special occasions. \n\nThe current price is **\u20b9450.00**, reduced from **\u20b9485.00** \u2014 it's on sale! We have plenty in stock, so you can get this sophisticated scent easily.\n\nWould you like to proceed with purchasing the Wild Stone Code Platinum Perfume for \u20b9450? Or shall I help you place an order for this?",
+      "product_interested": "Multiple products: Wild Stone Code Platinum Perfume, AXE Dark Temptation Deodorant, Fogg Scent Xpressio Body Spray, Head & Shoulders Anti-Dandruff Shampoo, Rasasi Attar Al Mohabbah, Herbal Essences Bio Coconut Milk Shampoo",
+      "interested_product_ids": [
+        "b9f4f5cd-92de-4ab0-8c8e-745682c82b37",
+        "16699403-4a24-4c8c-83f6-5d1a6b426212",
+        "43b95ad4-0fc0-4c04-ae77-7671696ca66a",
+        "eea137cc-8256-4c8a-bd43-6b4e32f4a727",
+        "190d0a92-0aba-41ce-87db-96287bede2fe",
+        "4ba24ba6-92f2-4393-872a-a1b810fad9aa"
+      ],
+      "is_ready": false,
+      "timestamp": "2025-07-29T18:34:15.816387"
+    },
+    {
+      "sender_id": "test_4_confirmation",
+      "user_message": "I need a perfume and face wash",
+      "agent_response": "Certainly! Based on your interest in a perfume and face wash, I recommend the following products:\n\n1. **Wild Stone Code Platinum Perfume - \u09f3450**  \nThis is a premium, long-lasting perfume with masculine woody notes. Its sophisticated fragrance is perfect for special occasions or daily use if you prefer a strong, masculine scent. It has great reviews and is currently on sale, making it an excellent value for a high-quality perfume.\n\n2. **Himalaya Purifying Neem Face Wash - \u09f3135**  \nThis herbal face wash effectively removes impurities and helps prevent pimples naturally with neem and turmeric. It's ideal if you're looking for a gentle, herbal cleanser that keeps your skin clear and fresh, especially suited for oily or acne-prone skin.\n\n3. **Keya Seth Neem Basil Face Wash - \u09f3165**  \nMade locally in Bangladesh, this herbal face wash controls oil and acne with neem and basil extracts. It\u2019s a great natural option for skin purification and is slightly more affordable on sale, offering good value if you prefer supporting local brands.\n\nWould you like more details on any of these products or assistance choosing the best fit for your needs?",
+      "product_interested": "Multiple products: Wild Stone Code Platinum Perfume, Himalaya Purifying Neem Face Wash, Keya Seth Neem Basil Face Wash, Fogg Scent Xpressio Body Spray",
+      "interested_product_ids": [
+        "b9f4f5cd-92de-4ab0-8c8e-745682c82b37",
+        "ec00e983-e85f-4202-a732-a3c61955091c",
+        "34b038b2-49c0-43fb-90d6-4ad9953f27c6",
+        "43b95ad4-0fc0-4c04-ae77-7671696ca66a"
+      ],
+      "is_ready": false,
+      "timestamp": "2025-07-29T18:34:27.823333"
+    },
+    {
+      "sender_id": "test_4_confirmation",
+      "user_message": "Tell me about Wild Stone perfume and Himalaya neem face wash",
+      "agent_response": "Certainly! Here's a detailed overview of the products you're interested in:\n\n**Wild Stone Code Platinum Perfume**  \nThis is a premium, long-lasting perfume designed for a masculine, sophisticated aroma. It features woody notes with hints of bergamot, apple, geranium, sage, marine, sandalwood, cedarwood, and musk, making it perfect for special occasions or daily elegance.  \nThe best part is, it's currently on sale for **\u20b9450.00** (originally \u20b9485.00), so you save \u20b935! With a rating of 4.50 out of 5 from 189 reviews, many users appreciate its lasting fragrance and premium quality. It\u2019s a well-stocked item, so availability is not an issue.  \nThis perfume offers excellent value for its quality and long-lasting scent, making it a worthwhile investment for a refined fragrance experience.\n\n**Himalaya Purifying Neem Face Wash**  \nThis herbal face wash is enriched with neem and turmeric, known for their antibacterial and skin-purifying properties. It effectively removes impurities and helps prevent pimples naturally, making it ideal for daily skincare and acne-prone skin.  \nIt costs **\u20b9135.00**, and with nearly 400 reviews rating it 4.30 out of 5, it\u2019s a trusted choice for herbal skincare. Its affordability combined with natural ingredients makes it a great addition to your grooming routine",
+      "product_interested": "Multiple products: Wild Stone Code Platinum Perfume, Himalaya Purifying Neem Face Wash, Keya Seth Neem Basil Face Wash, Fogg Scent Xpressio Body Spray",
+      "interested_product_ids": [
+        "b9f4f5cd-92de-4ab0-8c8e-745682c82b37",
+        "ec00e983-e85f-4202-a732-a3c61955091c",
+        "34b038b2-49c0-43fb-90d6-4ad9953f27c6",
+        "43b95ad4-0fc0-4c04-ae77-7671696ca66a"
+      ],
+      "is_ready": false,
+      "timestamp": "2025-07-29T18:34:39.421430"
+    },
+    {
+      "sender_id": "test_4_confirmation",
+      "user_message": "How much do they cost?",
+      "agent_response": "Certainly! Here are the prices and details for each product:\n\n1. **Wild Stone Code Platinum Perfume**  \n   - Price: \u09f3450 (on SALE from \u09f3485)  \n   - This is a premium, long-lasting perfume with masculine woody notes, perfect for special occasions. Its sophisticated fragrance combines bergamot, apple, geranium, sage, marine, sandalwood, cedarwood, and musk, offering a luxurious scent that lasts throughout the day. An excellent choice for those who want a refined and impactful aroma at a great value.\n\n2. **Himalaya Purifying Neem Face Wash**  \n   - Price: \u09f3135  \n   - An herbal face wash enriched with neem and turmeric. It effectively removes impurities, prevents pimples, and supports natural skin health. Known for its antibacterial and Ayurvedic benefits, it\u2019s a trusted choice for daily cleansing, especially for oily or acne-prone skin.\n\n3. **Keya Seth Neem Basil Face Wash**  \n   - Price: \u09f3165 (on SALE from \u09f3180)  \n   - Made in Bangladesh, this herbal face wash combines neem and basil extracts to control acne and purify skin naturally. It\u2019s ideal for those seeking a natural, regional skincare option with oil control and deep cleansing benefits.\n\n4. **Fogg Scent Xpressio Body Spray**  \n   - Price: \u09f3225 (",
+      "product_interested": "Multiple products: Wild Stone Code Platinum Perfume, Himalaya Purifying Neem Face Wash, Keya Seth Neem Basil Face Wash, Fogg Scent Xpressio Body Spray",
+      "interested_product_ids": [
+        "b9f4f5cd-92de-4ab0-8c8e-745682c82b37",
+        "ec00e983-e85f-4202-a732-a3c61955091c",
+        "34b038b2-49c0-43fb-90d6-4ad9953f27c6",
+        "43b95ad4-0fc0-4c04-ae77-7671696ca66a"
+      ],
+      "is_ready": false,
+      "timestamp": "2025-07-29T18:34:50.214140"
+    },
+    {
+      "sender_id": "test_4_confirmation",
+      "user_message": "I think I want to buy them",
+      "agent_response": "That's fantastic! You're clearly interested in some great options. To confirm, you're looking to purchase the **Wild Stone Code Platinum Perfume** at \u09f3450, the **Himalaya Purifying Neem Face Wash** at \u09f3135, and the **Fogg Scent Xpressio Body Spray** at \u09f3225, right? \n\nHere's a quick summary of your choices:\n- **Wild Stone Code Platinum Perfume** \u2013 \u09f3450\n- **Himalaya Purifying Neem Face Wash** \u2013 \u09f3135\n- **Fogg Scent Xpressio Body Spray** \u2013 \u09f3225\n\nThe total for all three would be \u09f3810. \n\nWould you like to go ahead and buy these? Shall I help you place an order for this?",
+      "product_interested": "Multiple products: Wild Stone Code Platinum Perfume, Himalaya Purifying Neem Face Wash, Keya Seth Neem Basil Face Wash, Fogg Scent Xpressio Body Spray",
+      "interested_product_ids": [
+        "b9f4f5cd-92de-4ab0-8c8e-745682c82b37",
+        "ec00e983-e85f-4202-a732-a3c61955091c",
+        "34b038b2-49c0-43fb-90d6-4ad9953f27c6",
+        "43b95ad4-0fc0-4c04-ae77-7671696ca66a"
+      ],
+      "is_ready": false,
+      "timestamp": "2025-07-29T18:35:00.466658"
+    },
+    {
+      "sender_id": "test_4_confirmation",
+      "user_message": "Yes, I want to buy both products",
+      "agent_response": "That's fantastic news! I'm thrilled you've decided to go ahead with these wonderful products. To confirm, you would like to purchase the **Wild Stone Code Platinum Perfume** and the **Himalaya Purifying Neem Face Wash**, correct? \n\nThe total amount for your order is \u20b9585.00. \n\nNext, I will connect you with our dedicated purchase team who will assist you with the final steps and payment process. \n\nThank you so much for choosing us for your beauty and grooming needs. We're delighted to serve you and look forward to your continued satisfaction.",
+      "product_interested": "Multiple products: Wild Stone Code Platinum Perfume, Himalaya Purifying Neem Face Wash, Keya Seth Neem Basil Face Wash, Fogg Scent Xpressio Body Spray",
+      "interested_product_ids": [
+        "b9f4f5cd-92de-4ab0-8c8e-745682c82b37",
+        "ec00e983-e85f-4202-a732-a3c61955091c",
+        "34b038b2-49c0-43fb-90d6-4ad9953f27c6",
+        "43b95ad4-0fc0-4c04-ae77-7671696ca66a"
+      ],
+      "is_ready": true,
+      "timestamp": "2025-07-29T18:35:10.041289"
+    },
+    {
+      "sender_id": "test_5_is_ready",
+      "user_message": "I'm looking for perfume",
+      "agent_response": "Absolutely! If you're looking for a perfume, I have two excellent options that combine quality and value.\n\nFirst, there's the **Rasasi Attar Al Mohabbah**, a traditional Arabic attar with beautiful rose and oud notes. This perfume oil is alcohol-free and concentrated, offering a rich, authentic fragrance that is popular in Bangladesh. It costs **\u20b9590**, which is a special sale price from the original \u20b9650. With a rating of 4.60 out of 5 from 234 reviews, many customers love its luxurious scent and long-lasting quality. It's in stock with 45 units available, so you can enjoy a premium fragrance at a great price.\n\nSecond, we have the **Wild Stone Code Platinum Perfume**, a modern, masculine fragrance with woody notes. It's designed for long-lasting wear and perfect for special occasions. This perfume is priced at **\u20b9450**, reduced from \u20b9485, making it an excellent value for a sophisticated scent. It has a solid rating of 4.50 from 189 reviews and is well stocked with 85 units available.\n\nBoth options offer high quality and great value\u2014whether you prefer a traditional, oriental aroma or a contemporary woody scent. Would you like to explore either of these perfumes further or need help deciding which suits your style?",
+      "product_interested": "Multiple products: Rasasi Attar Al Mohabbah, Wild Stone Code Platinum Perfume",
+      "interested_product_ids": [
+        "190d0a92-0aba-41ce-87db-96287bede2fe",
+        "b9f4f5cd-92de-4ab0-8c8e-745682c82b37"
+      ],
+      "is_ready": false,
+      "timestamp": "2025-07-29T18:35:20.708891"
+    },
+    {
+      "sender_id": "test_5_is_ready",
+      "user_message": "Tell me about Wild Stone",
+      "agent_response": "Certainly! Let me tell you about Wild Stone Code Platinum Perfume. \n\nThis is a **premium long-lasting perfume** priced at **\u20b9450.00**, now on sale from its original price of \u20b9485.00. It features **masculine woody notes** and is perfect for **special occasions**. With a **rating of 4.50 out of 5** based on 189 reviews, it\u2019s a popular choice among customers who appreciate a sophisticated, enduring fragrance. The perfume includes delightful notes like **bergamot apple, geranium, sage, marine, sandalwood, cedarwood, and musk**, making it a well-rounded and luxurious scent.\n\nThe **value** here is in its **lasting power** and **premium quality**, providing a refined fragrance that elevates your presence for important events. Plus, it\u2019s well-stocked with 85 units available, so you can get it quickly.\n\nIf you\u2019re looking for a **masculine, elegant perfume** that offers great quality at a reasonable price, this is an excellent choice. Would you like to explore this further or see other options?",
+      "product_interested": "Multiple products: Rasasi Attar Al Mohabbah, Wild Stone Code Platinum Perfume",
+      "interested_product_ids": [
+        "190d0a92-0aba-41ce-87db-96287bede2fe",
+        "b9f4f5cd-92de-4ab0-8c8e-745682c82b37"
+      ],
+      "is_ready": false,
+      "timestamp": "2025-07-29T18:35:30.517299"
+    },
+    {
+      "sender_id": "test_5_is_ready",
+      "user_message": "How much does it cost?",
+      "agent_response": "Certainly! Here are the details for both products:\n\n1. **Rasasi Attar Al Mohabbah**  \nThis traditional Arabic attar costs \u09f3590.00, which is a special sale price from the original \u09f3650.00. It features a luxurious rose and oud scent, is alcohol-free, and concentrated for long-lasting fragrance. With a high customer rating of 4.60 out of 5 based on 234 reviews, it offers excellent value for those seeking an authentic, premium perfume oil that\u2019s popular in Bangladesh.\n\n2. **Wild Stone Code Platinum Perfume**  \nThis sophisticated, masculine perfume is available for \u09f3450.00, discounted from the original \u09f3485.00. It boasts long-lasting woody notes, perfect for special occasions, and has a strong customer rating of 4.50 out of 5 from 189 reviews. It\u2019s a great choice if you\u2019re looking for a premium, stylish fragrance at an attractive price.\n\nBoth products are on sale, offering you high-quality fragrances at a more affordable price. If you have a specific budget or need help choosing, I can guide you further!",
+      "product_interested": "Multiple products: Rasasi Attar Al Mohabbah, Wild Stone Code Platinum Perfume",
+      "interested_product_ids": [
+        "190d0a92-0aba-41ce-87db-96287bede2fe",
+        "b9f4f5cd-92de-4ab0-8c8e-745682c82b37"
+      ],
+      "is_ready": false,
+      "timestamp": "2025-07-29T18:35:40.480809"
+    },
+    {
+      "sender_id": "test_5_is_ready",
+      "user_message": "That sounds good",
+      "agent_response": "I'm glad you found the options appealing! Let me tell you more about these two fantastic fragrances.\n\nFirst, we have **Rasasi Attar Al Mohabbah**, a traditional Arabic attar with a beautiful blend of rose and oud notes. It costs \u09f3590, which is a great deal considering it's originally priced at \u09f3650 \u2014 it's currently on sale! This alcohol-free, concentrated perfume oil is very popular in Bangladesh for its rich, authentic aroma and long-lasting nature. Its premium ingredients and traditional craftsmanship make it a luxurious choice for those who appreciate regional wisdom and authentic fragrances.\n\nAlternatively, there's the **Wild Stone Code Platinum Perfume**, priced at \u09f3450, down from \u09f3485 \u2014 also on sale! This is a sophisticated, masculine woody fragrance designed for long-lasting wear, perfect for special occasions. It offers a premium scent experience with notes like bergamot, apple, geranium, sage, marine, sandalwood, cedarwood, and musk, providing a refined and confident aroma.\n\nBoth products are highly rated\u2014Rasasi Attar Al Mohabbah has a 4.60/5 rating from 234 reviews, and Wild Stone Code Platinum has a 4.50/5 from 189 reviews\u2014showing their popularity and quality.\n\nIf you're looking for a traditional, luxurious scent, the Rasasi Attar offers a rich, authentic experience at a slightly",
+      "product_interested": "Multiple products: Rasasi Attar Al Mohabbah, Wild Stone Code Platinum Perfume",
+      "interested_product_ids": [
+        "190d0a92-0aba-41ce-87db-96287bede2fe",
+        "b9f4f5cd-92de-4ab0-8c8e-745682c82b37"
+      ],
+      "is_ready": false,
+      "timestamp": "2025-07-29T18:35:50.595483"
+    },
+    {
+      "sender_id": "test_5_is_ready",
+      "user_message": "I'm interested in this product",
+      "agent_response": "That\u2019s fantastic! I see you\u2019re interested in both the Rasasi Attar Al Mohabbah and the Wild Stone Code Platinum Perfume\u2014they\u2019re both excellent choices with great reviews. \n\nHere\u2019s a quick summary:\n- **Rasasi Attar Al Mohabbah**: Traditional Arabic attar with rose and oud notes, alcohol-free, on sale for \u09f3590 (originally \u09f3650).\n- **Wild Stone Code Platinum Perfume**: Long-lasting masculine woody fragrance, on sale for \u09f3450 (originally \u09f3485).\n\nWould you like to proceed with purchasing these products? Shall I help you place an order for both, or do you prefer to buy just one?",
+      "product_interested": "Multiple products: Rasasi Attar Al Mohabbah, Wild Stone Code Platinum Perfume",
+      "interested_product_ids": [
+        "190d0a92-0aba-41ce-87db-96287bede2fe",
+        "b9f4f5cd-92de-4ab0-8c8e-745682c82b37"
+      ],
+      "is_ready": false,
+      "timestamp": "2025-07-29T18:35:59.728190"
+    },
+    {
+      "sender_id": "test_5_is_ready",
+      "user_message": "It seems perfect for me",
+      "agent_response": "That\u2019s fantastic to hear! Both of these products are truly excellent choices. Just to confirm, are you interested in the **Rasasi Attar Al Mohabbah** for \u20b9590, or the **Wild Stone Code Platinum Perfume** for \u20b9450? \n\nHere\u2019s a quick summary:\n- Rasasi Attar Al Mohabbah: \u20b9590 (originally \u20b9650) \u2013 alcohol-free, rose and oud notes, concentrated perfume oil\n- Wild Stone Code Platinum: \u20b9450 (originally \u20b9485) \u2013 masculine woody fragrance, long-lasting, perfect for special occasions\n\nWould you like to proceed with purchasing **Rasasi Attar Al Mohabbah** or **Wild Stone Code Platinum**? Or shall I help you place an order for either of these?",
+      "product_interested": "Multiple products: Rasasi Attar Al Mohabbah, Wild Stone Code Platinum Perfume",
+      "interested_product_ids": [
+        "190d0a92-0aba-41ce-87db-96287bede2fe",
+        "b9f4f5cd-92de-4ab0-8c8e-745682c82b37"
+      ],
+      "is_ready": false,
+      "timestamp": "2025-07-29T18:36:09.218308"
+    },
+    {
+      "sender_id": "test_5_is_ready",
+      "user_message": "I like this one",
+      "agent_response": "That's fantastic! I'm thrilled to hear you're interested in the Rasasi Attar Al Mohabbah. It's a beautiful traditional Arabic attar with rose and oud notes, alcohol-free, and on sale for just \u20b9590.00 (originally \u20b9650.00). It has a wonderful rating of 4.60 out of 5 from many happy customers.\n\nWould you like to proceed with purchasing the Rasasi Attar Al Mohabbah for \u20b9590.00? Or, if you're also considering the Wild Stone Code Platinum Perfume, I can help you with that too.\n\nPlease let me know how you'd like to proceed!",
+      "product_interested": "Multiple products: Rasasi Attar Al Mohabbah, Wild Stone Code Platinum Perfume",
+      "interested_product_ids": [
+        "190d0a92-0aba-41ce-87db-96287bede2fe",
+        "b9f4f5cd-92de-4ab0-8c8e-745682c82b37"
+      ],
+      "is_ready": false,
+      "timestamp": "2025-07-29T18:36:18.538547"
+    },
+    {
+      "sender_id": "test_5_is_ready",
+      "user_message": "Yes, I want to buy the Wild Stone perfume",
+      "agent_response": "That's fantastic news! I'm thrilled you've chosen the Wild Stone Code Platinum Perfume\u2014it's a wonderful selection for a masculine, long-lasting fragrance. \n\nTo confirm, you'll be purchasing the Wild Stone Code Platinum Perfume at \u20b9450.00, on sale from the original price of \u20b9485.00. \n\nI'll now connect you with our purchase team who will assist you with the final steps to complete your order. \n\nThank you so much for choosing us for your beauty and grooming needs. We truly appreciate your trust and look forward to serving you!",
+      "product_interested": "Multiple products: Rasasi Attar Al Mohabbah, Wild Stone Code Platinum Perfume",
+      "interested_product_ids": [
+        "190d0a92-0aba-41ce-87db-96287bede2fe",
+        "b9f4f5cd-92de-4ab0-8c8e-745682c82b37"
+      ],
+      "is_ready": true,
+      "timestamp": "2025-07-29T18:36:30.219626"
+    },
+    {
+      "sender_id": "test_5_is_ready",
+      "user_message": "I'll take it",
+      "agent_response": "That's fantastic! I'm thrilled you've chosen the Wild Stone Code Platinum Perfume\u2014it's a superb choice for a long-lasting, sophisticated fragrance. \n\nJust to confirm, you'll be purchasing the **Wild Stone Code Platinum Perfume** at \u20b9450.00, on sale from the original price of \u20b9485.00. \n\nI'll now connect you with our dedicated purchase team who will assist you with the final steps to complete your order. \n\nThank you so much for choosing us for your personal care needs. We truly appreciate your trust and look forward to serving you. Have a wonderful day!",
+      "product_interested": "Multiple products: Rasasi Attar Al Mohabbah, Wild Stone Code Platinum Perfume",
+      "interested_product_ids": [
+        "190d0a92-0aba-41ce-87db-96287bede2fe",
+        "b9f4f5cd-92de-4ab0-8c8e-745682c82b37"
+      ],
+      "is_ready": true,
+      "timestamp": "2025-07-29T18:36:39.154424"
+    },
+    {
+      "sender_id": "test_5_is_ready",
+      "user_message": "I want to purchase this product",
+      "agent_response": "I'm absolutely thrilled to hear that you've decided to purchase! The Wild Stone Code Platinum Perfume is a fantastic choice\u2014it's known for its long-lasting, masculine woody notes perfect for special occasions. \n\nJust to confirm, you'd like to go ahead with the Wild Stone Code Platinum Perfume at \u20b9450.00, correct? \n\nThe total price for this premium fragrance is \u20b9450.00. \n\nNext, I will connect you directly with our purchase team, who will assist you with the final steps to complete your order smoothly. \n\nThank you so much for choosing us for your personal care and grooming needs. We truly appreciate your trust and look forward to serving you!",
+      "product_interested": "Multiple products: Rasasi Attar Al Mohabbah, Wild Stone Code Platinum Perfume",
+      "interested_product_ids": [
+        "190d0a92-0aba-41ce-87db-96287bede2fe",
+        "b9f4f5cd-92de-4ab0-8c8e-745682c82b37"
+      ],
+      "is_ready": true,
+      "timestamp": "2025-07-29T18:36:48.106240"
+    },
+    {
+      "sender_id": "test_6_multiple",
+      "user_message": "I want Wild Stone perfume and Himalaya neem face wash",
+      "agent_response": "Certainly! Based on your interest in Wild Stone perfume and Himalaya neem face wash, I recommend the following products:\n\n1. **Wild Stone Code Platinum Perfume** - \u09f3450  \nThis is a premium, long-lasting perfume with masculine woody notes, perfect for everyday use or special occasions. Its sophisticated fragrance featuring bergamot, apple, geranium, sage, marine, sandalwood, cedarwood, and musk makes it a great choice for those who want a strong, masculine scent. It's on sale now from \u09f3485 to just \u09f3450, offering excellent value for a high-quality perfume.\n\n2. **Himalaya Purifying Neem Face Wash** - \u09f3135  \nThis herbal face wash combines neem and turmeric to remove impurities and prevent pimples naturally. It's ideal if you're looking for an effective, ayurvedic solution to keep your skin clear and fresh. With over 398 reviews and high ratings, it's a trusted choice at a very affordable price.\n\n3. **Keya Seth Neem Basil Face Wash** - \u09f3165  \nIf you prefer a locally made herbal face wash, this is a great alternative. It controls acne, purifies skin naturally, and contains neem and basil extracts. Made in Bangladesh, it\u2019s slightly",
+      "product_interested": "Multiple products: Wild Stone Code Platinum Perfume, Himalaya Purifying Neem Face Wash, Keya Seth Neem Basil Face Wash, Fogg Scent Xpressio Body Spray",
+      "interested_product_ids": [
+        "b9f4f5cd-92de-4ab0-8c8e-745682c82b37",
+        "ec00e983-e85f-4202-a732-a3c61955091c",
+        "34b038b2-49c0-43fb-90d6-4ad9953f27c6",
+        "43b95ad4-0fc0-4c04-ae77-7671696ca66a"
+      ],
+      "is_ready": false,
+      "timestamp": "2025-07-29T18:36:59.226571"
+    },
+    {
+      "sender_id": "test_6_multiple",
+      "user_message": "I also need a good shampoo for hair fall",
+      "agent_response": "Certainly! For your concern about hair fall, I recommend these excellent options:\n\n1. **Dabur Amla Hair Oil - \u09f3115**  \n   This traditional ayurvedic oil is enriched with amla extracts that help prevent premature graying and strengthen hair from the roots. It\u2019s perfect for reducing hair fall naturally and promoting healthy growth. Its affordable price and proven quality make it a great choice for daily use.\n\n2. **Bajaj Almond Drops Hair Oil - \u09f3145**  \n   A lightweight, non-sticky almond oil enriched with vitamin E. It nourishes your hair deeply without making it greasy, helping to prevent breakage and hair fall. Ideal if you prefer a nourishing oil that\u2019s gentle yet effective.\n\n3. **Parachute Coconut Hair Oil - \u09f3150**  \n   A classic and trusted coconut oil that strengthens hair roots and encourages healthy growth. Its pure, traditional formula is excellent for reducing hair fall and maintaining overall hair health.\n\nAll these oils are widely loved for their natural ingredients and effectiveness. Do any of these interest you most, or would you like more details on a specific product?",
+      "product_interested": "Multiple products: Wild Stone Code Platinum Perfume, Himalaya Purifying Neem Face Wash, Keya Seth Neem Basil Face Wash, Fogg Scent Xpressio Body Spray, Bajaj Almond Drops Hair Oil, Dabur Amla Hair Oil, Keya Seth Joba Hair Oil, Parachute Coconut Hair Oil",
+      "interested_product_ids": [
+        "b9f4f5cd-92de-4ab0-8c8e-745682c82b37",
+        "ec00e983-e85f-4202-a732-a3c61955091c",
+        "34b038b2-49c0-43fb-90d6-4ad9953f27c6",
+        "43b95ad4-0fc0-4c04-ae77-7671696ca66a",
+        "15a4e12e-fd88-4a9c-864c-ea2c4dbe22b2",
+        "b5d6314d-b67d-4b6e-bd07-daee294f8588",
+        "ea4f53c6-6c24-4869-ac9a-af3510a6f7fb",
+        "78cda270-cd24-45c8-b8d0-6e09ab3b54e9"
+      ],
+      "is_ready": false,
+      "timestamp": "2025-07-29T18:37:12.399741"
+    },
+    {
+      "sender_id": "test_7_removal",
+      "user_message": "I want Wild Stone perfume, Himalaya face wash, and Head & Shoulders shampoo",
+      "agent_response": "Certainly! Based on your interest, I recommend these top-quality products that match your needs perfectly:\n\n1. **Wild Stone Code Platinum Perfume** - \u09f3450  \nThis premium long-lasting perfume features masculine woody notes and a sophisticated fragrance, ideal for special occasions or daily use. Its high-quality ingredients and popular scent make it a great choice for a confident, refined aroma.\n\n2. **Himalaya Purifying Neem Face Wash** - \u09f3135  \nThis herbal face wash combines neem and turmeric to gently remove impurities, control oil, and prevent pimples naturally. Perfect for maintaining clear, healthy skin with the benefits of traditional herbal ingredients.\n\n3. **Head & Shoulders Anti-Dandruff Shampoo** - \u09f3320  \nA clinically proven anti-dandruff shampoo with zinc pyrithione that effectively removes dandruff and prevents its recurrence. It's gentle yet powerful, ideal for maintaining a healthy scalp and clean hair.\n\nAll these products are well-reviewed, available in stock, and offer excellent value for their quality and benefits. Would you like more details on any of these, or do you have a favorite among them?",
+      "product_interested": "Multiple products: Wild Stone Code Platinum Perfume, Himalaya Purifying Neem Face Wash, Keya Seth Neem Basil Face Wash, Garnier Fructis Strengthening Shampoo, Head & Shoulders Anti-Dandruff Shampoo, Fogg Scent Xpressio Body Spray",
+      "interested_product_ids": [
+        "b9f4f5cd-92de-4ab0-8c8e-745682c82b37",
+        "ec00e983-e85f-4202-a732-a3c61955091c",
+        "34b038b2-49c0-43fb-90d6-4ad9953f27c6",
+        "0de4bc53-c849-45b5-b7f2-58e8e3de8fb3",
+        "eea137cc-8256-4c8a-bd43-6b4e32f4a727",
+        "43b95ad4-0fc0-4c04-ae77-7671696ca66a"
+      ],
+      "is_ready": false,
+      "timestamp": "2025-07-29T18:37:23.023812"
+    },
+    {
+      "sender_id": "test_7_removal",
+      "user_message": "Actually, I don't need the shampoo anymore",
+      "agent_response": "That's fantastic! The **Wild Stone Code Platinum Perfume** is a great choice\u2014it's a premium, long-lasting fragrance with masculine woody notes, perfect for special occasions. \n\nThe current price is \u20b9450.00, discounted from \u20b9485.00, and we have plenty in stock. \n\nWould you like to go ahead and buy this perfume for \u20b9450? Or is there anything else you'd like to add? \n\nShall I help you place an order for this?",
+      "product_interested": "Multiple products: Wild Stone Code Platinum Perfume, Himalaya Purifying Neem Face Wash, Keya Seth Neem Basil Face Wash, Fogg Scent Xpressio Body Spray",
+      "interested_product_ids": [
+        "b9f4f5cd-92de-4ab0-8c8e-745682c82b37",
+        "ec00e983-e85f-4202-a732-a3c61955091c",
+        "34b038b2-49c0-43fb-90d6-4ad9953f27c6",
+        "43b95ad4-0fc0-4c04-ae77-7671696ca66a"
+      ],
+      "is_ready": false,
+      "timestamp": "2025-07-29T18:37:33.534043"
+    },
+    {
+      "sender_id": "test_7_removal",
+      "user_message": "Can I change the face wash to something for sensitive skin instead?",
+      "agent_response": "Certainly! If you're looking for a face wash suitable for sensitive skin, I recommend the **Dove Beauty Bar Moisturizing Soap**. It costs \u09f358, and it's specially formulated with 1/4 moisturizing cream to gently cleanse while nourishing sensitive skin. It\u2019s highly rated at 4.60/5.0 with nearly 200 reviews, which shows strong customer satisfaction. Plus, it\u2019s affordable and widely available, making it a great value for daily skincare.\n\nAlternatively, if you prefer herbal and natural options, the **Himalaya Purifying Neem Face Wash** is priced at \u09f3135. It uses herbal ingredients like neem and turmeric to remove impurities and prevent pimples naturally, ideal for sensitive or acne-prone skin.\n\nThe **Keya Seth Neem Basil Face Wash** costs \u09f3165 and combines neem with basil extracts for natural acne control and skin purification, made locally in Bangladesh. It\u2019s slightly more premium but still affordable.\n\nAll these options are designed to be gentle and effective for sensitive skin, with the Dove bar being the most budget-friendly and dermatologist recommended.\n\nWould you like to explore these options further or need help choosing the best one for your skin?",
+      "product_interested": "Multiple products: Wild Stone Code Platinum Perfume, Himalaya Purifying Neem Face Wash, Keya Seth Neem Basil Face Wash, Fogg Scent Xpressio Body Spray, Dove Beauty Bar Moisturizing Soap",
+      "interested_product_ids": [
+        "b9f4f5cd-92de-4ab0-8c8e-745682c82b37",
+        "ec00e983-e85f-4202-a732-a3c61955091c",
+        "34b038b2-49c0-43fb-90d6-4ad9953f27c6",
+        "43b95ad4-0fc0-4c04-ae77-7671696ca66a",
+        "55d26d11-22c2-4632-8d4b-10d8ced93269"
+      ],
+      "is_ready": false,
+      "timestamp": "2025-07-29T18:37:45.762749"
+    },
+    {
+      "sender_id": "test_8_complete_flow",
+      "user_message": "Hi, I'm looking for beauty products",
+      "agent_response": "Hello! Thank you for reaching out. We have a wide range of beauty products to suit various needs. Let me give you an overview of some popular categories along with their prices and unique benefits:\n\n**Premium Perfumes and Fragrances:**  \n- Our signature body sprays with pure perfume concentrates cost \u09f3850 each. They offer long-lasting fragrance and a luxurious feel.  \n- Traditional Arabic attars with rose and oud are priced at \u09f31,200, providing authentic, exotic scents that elevate your presence.\n\n**Skincare and Beauty Soaps:**  \n- Moisturizing beauty soaps infused with natural ingredients like French rose or almond oil are priced at \u09f3450 each. They gently cleanse while nourishing your skin.  \n- Herbal face washes with neem and turmeric are available for \u09f3350, offering a herbal, gentle cleanse that promotes healthy skin.\n\n**Hair Care Products:**  \n- Anti-hair fall shampoos with strengthening vitamins are priced at \u09f3650, designed to reduce hair fall and improve scalp health.  \n- Nourishing hair oils, such as pure coconut or herbal hibiscus formulations, cost \u09f3700 and provide deep nourishment and shine.\n\n**Personal Care Items:**  \n- Deodorants and body sprays are priced at \u09f3400, offering fresh, long-lasting protection.  \n- Herbal and traditional formulations are also available for \u09f3500, combining regional wisdom with effective protection.",
+      "product_interested": null,
+      "interested_product_ids": [],
+      "is_ready": false,
+      "timestamp": "2025-07-29T18:37:55.586163"
+    },
+    {
+      "sender_id": "test_8_complete_flow",
+      "user_message": "I need a perfume that lasts all day",
+      "agent_response": "Absolutely! For a perfume that lasts all day with a sophisticated masculine woody scent, I recommend our **Wild Stone Code Platinum Perfume**. \n\nThis premium fragrance costs **\u09f3450**, and it\u2019s currently on a special sale from the original price of **\u09f3485**. It has received a high rating of **4.50 out of 5**, based on 189 customer reviews, which speaks to its popularity and effectiveness. \n\nWhat makes this perfume worth the price is its long-lasting formulation, designed to keep you fresh and confident throughout the day. The blend of bergamot apple, geranium sage marine, sandalwood, cedarwood, and musk creates a robust, masculine aroma perfect for both daily wear and special occasions.\n\nSince it\u2019s well stocked with 85 units available, you won\u2019t have to wait. If you\u2019re looking for a reliable, high-quality fragrance that offers great value and longevity, this perfume is an excellent choice. Would you like to hear about other options or proceed with this one?",
+      "product_interested": "Wild Stone Code Platinum Perfume",
+      "interested_product_ids": [
+        "b9f4f5cd-92de-4ab0-8c8e-745682c82b37"
+      ],
+      "is_ready": false,
+      "timestamp": "2025-07-29T18:38:06.750270"
+    },
+    {
+      "sender_id": "test_8_complete_flow",
+      "user_message": "Wild Stone sounds good, what's the price?",
+      "agent_response": "Absolutely! The **Wild Stone Code Platinum Perfume** is available at a special price of \u09f3450.00, down from the original price of \u09f3485.00\u2014it's currently on SALE! This fragrance offers a premium, long-lasting experience with masculine woody notes, making it perfect for special occasions or everyday confidence.\n\nThis perfume is highly rated with a 4.50 out of 5.0 from 189 satisfied customers, reflecting its popularity and quality. Its sophisticated scent blends bergamot apple, geranium sage, marine notes, sandalwood, cedarwood, and musk, delivering a refined and masculine aroma that truly stands out.\n\nGiven its quality, long-lasting performance, and attractive price, it offers excellent value for anyone looking for a premium fragrance. Would you like to explore more about this perfume or see other options within your preferred style?",
+      "product_interested": "Wild Stone Code Platinum Perfume",
+      "interested_product_ids": [
+        "b9f4f5cd-92de-4ab0-8c8e-745682c82b37"
+      ],
+      "is_ready": false,
+      "timestamp": "2025-07-29T18:38:16.307907"
+    },
+    {
+      "sender_id": "test_8_complete_flow",
+      "user_message": "I also need a face wash for oily skin",
+      "agent_response": "Certainly! For your need of a face wash suitable for oily skin, I recommend two excellent options:\n\n1. **Himalaya Purifying Neem Face Wash** \u2014 This herbal face wash costs \u09f3135. It\u2019s highly rated with 4.30 out of 5 stars from 398 reviews. It\u2019s specially formulated with neem and turmeric, known for their natural antibacterial and impurity-removing properties. It helps prevent pimples and keeps oily skin fresh and clean, making it an excellent choice for daily use and maintaining healthy skin. Its herbal, ayurvedic formulation offers great value at an affordable price.\n\n2. **Wild Stone Code Platinum Perfume** \u2014 While this is a premium fragrance priced at \u09f3450, it\u2019s not a face wash. But if you're interested in a sophisticated, masculine woody scent for special occasions, this perfume is a fantastic choice. It\u2019s on sale from \u09f3485, so you save \u09f335, and it has a premium, long-lasting scent with a 4.50-star rating from 189 customers.\n\nIf your primary focus is a face wash for oily skin, the **Himalaya Purifying Neem Face Wash** at \u09f3135 offers excellent value and proven effectiveness. It\u2019s affordable, natural, and specially designed to combat oily skin and impurities. Would you like to proceed with this, or are you interested in exploring other skincare options",
+      "product_interested": "Multiple products: Wild Stone Code Platinum Perfume, Himalaya Purifying Neem Face Wash",
+      "interested_product_ids": [
+        "b9f4f5cd-92de-4ab0-8c8e-745682c82b37",
+        "ec00e983-e85f-4202-a732-a3c61955091c"
+      ],
+      "is_ready": false,
+      "timestamp": "2025-07-29T18:38:27.564964"
+    },
+    {
+      "sender_id": "test_8_complete_flow",
+      "user_message": "Show me what you have for face wash",
+      "agent_response": "Certainly! For face washes, we have some excellent options that combine effectiveness with natural ingredients and great value.\n\nFirst, our **Himalaya Purifying Neem Face Wash** costs \u09f3135. This herbal face wash is enriched with neem and turmeric, making it perfect for removing impurities and preventing pimples naturally. It\u2019s highly rated with a 4.3 out of 5 from 398 satisfied customers, and it\u2019s well stocked with 144 units. This product offers a gentle yet effective herbal cleansing experience, ideal for maintaining clear, healthy skin daily at an affordable price.\n\nAlternatively, if you\u2019re interested in a premium fragrance option, we also have the **Wild Stone Code Platinum Perfume** for \u09f3450. It\u2019s a long-lasting, masculine woody perfume, perfect for special occasions, with a sophisticated scent that lasts.\n\nBoth products are priced to match their quality\u2014herbal skincare at an accessible \u09f3135, and luxurious fragrance at \u09f3450, ensuring you get great value whether you\u2019re looking for daily skincare or a special scent.\n\nWould you like to explore more options or need help choosing the best face wash for your skin type?",
+      "product_interested": "Multiple products: Wild Stone Code Platinum Perfume, Himalaya Purifying Neem Face Wash, Dabur Amla Hair Oil",
+      "interested_product_ids": [
+        "b9f4f5cd-92de-4ab0-8c8e-745682c82b37",
+        "ec00e983-e85f-4202-a732-a3c61955091c",
+        "b5d6314d-b67d-4b6e-bd07-daee294f8588"
+      ],
+      "is_ready": false,
+      "timestamp": "2025-07-29T18:38:39.455982"
+    },
+    {
+      "sender_id": "test_8_complete_flow",
+      "user_message": "Perfect, I want both the perfume and face wash",
+      "agent_response": "That's fantastic! You're interested in both the **Wild Stone Code Platinum Perfume** and the **Himalaya Purifying Neem Face Wash** \u2014 excellent choices for your grooming and skincare routine.\n\nHere's a quick summary of your selected products:\n- **Wild Stone Code Platinum Perfume**: \u09f3450.00 (on sale from \u09f3485)\n- **Himalaya Purifying Neem Face Wash**: \u09f3135.00\n\nThe total for both is **\u09f3585.00**.\n\nWould you like to proceed with purchasing these? If you're ready, I can help you place the order right now \u2014 just let me know!",
+      "product_interested": "Multiple products: Wild Stone Code Platinum Perfume, Himalaya Purifying Neem Face Wash, Dabur Amla Hair Oil, Keya Seth Neem Basil Face Wash, Fogg Scent Xpressio Body Spray",
+      "interested_product_ids": [
+        "b9f4f5cd-92de-4ab0-8c8e-745682c82b37",
+        "ec00e983-e85f-4202-a732-a3c61955091c",
+        "b5d6314d-b67d-4b6e-bd07-daee294f8588",
+        "34b038b2-49c0-43fb-90d6-4ad9953f27c6",
+        "43b95ad4-0fc0-4c04-ae77-7671696ca66a"
+      ],
+      "is_ready": false,
+      "timestamp": "2025-07-29T18:38:49.021179"
+    },
+    {
+      "sender_id": "test_8_complete_flow",
+      "user_message": "Yes, confirm my order for both products",
+      "agent_response": "That's fantastic! You're interested in the **Wild Stone Code Platinum Perfume** and the **Himalaya Purifying Neem Face Wash** \u2014 great choices for a sophisticated fragrance and effective skincare.\n\nHere's a quick summary:\n- **Wild Stone Code Platinum Perfume**: \u09f3450.00 (on sale from \u09f3485)\n- **Himalaya Purifying Neem Face Wash**: \u09f3135.00\n\nThe total for both is **\u09f3585.00**.\n\nWould you like to proceed with purchasing these two products? If yes, I can help you place the order right now!",
+      "product_interested": "Multiple products: Wild Stone Code Platinum Perfume, Himalaya Purifying Neem Face Wash, Dabur Amla Hair Oil, Keya Seth Neem Basil Face Wash, Fogg Scent Xpressio Body Spray",
+      "interested_product_ids": [
+        "b9f4f5cd-92de-4ab0-8c8e-745682c82b37",
+        "ec00e983-e85f-4202-a732-a3c61955091c",
+        "b5d6314d-b67d-4b6e-bd07-daee294f8588",
+        "34b038b2-49c0-43fb-90d6-4ad9953f27c6",
+        "43b95ad4-0fc0-4c04-ae77-7671696ca66a"
+      ],
+      "is_ready": false,
+      "timestamp": "2025-07-29T18:38:59.025068"
+    }
+  ],
+  "timestamp": "20250729_183900"
+}

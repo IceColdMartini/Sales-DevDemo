@@ -135,11 +135,22 @@ class AIService:
     def find_matching_products_with_llm(self, keywords: List[str], all_products: List[Dict]) -> List[Tuple[Dict, float]]:
         """
         Use LLM to find product matches by comparing keywords with product tags
-        This approach scales to millions of products
+        Enhanced to handle multiple product categories in a single request
         """
         if not keywords or not all_products:
             return []
         
+        # Detect if this is a multi-category request
+        product_categories = ['perfume', 'face wash', 'shampoo', 'soap', 'hair oil', 'deodorant', 'cream', 'moisturizer']
+        mentioned_categories = [cat for cat in product_categories if any(cat in ' '.join(keywords).lower() for cat in [cat])]
+        
+        print(f"🔍 MULTI-CATEGORY DETECTION: Found {len(mentioned_categories)} categories: {mentioned_categories}")
+        
+        # If multiple categories are mentioned, find products for each category
+        if len(mentioned_categories) > 1:
+            return self._find_products_for_multiple_categories(keywords, all_products, mentioned_categories)
+        
+        # Original single-category logic
         # Prepare product data for LLM analysis
         product_data_for_llm = []
         for product in all_products:
@@ -173,6 +184,62 @@ class AIService:
         all_matches.sort(key=lambda x: x[1], reverse=True)
         return all_matches[:5]  # Return top 5 matches
 
+    def _find_products_for_multiple_categories(self, keywords: List[str], all_products: List[Dict], categories: List[str]) -> List[Tuple[Dict, float]]:
+        """Find products for multiple categories mentioned in a single request"""
+        all_matches = []
+        
+        # For each category, find the best matching products
+        for category in categories:
+            print(f"🔍 Finding products for category: {category}")
+            
+            # Create category-specific keywords
+            category_keywords = [kw for kw in keywords if category.lower() in kw.lower() or kw.lower() in category.lower()]
+            if not category_keywords:
+                category_keywords = [category]  # Use category name as keyword
+            
+            # Find products that match this specific category
+            category_products = []
+            for product in all_products:
+                if not product.get('is_active', True):
+                    continue
+                
+                product_name = product['name'].lower()
+                product_tags = product.get('product_tag', [])
+                product_tags_str = ' '.join(product_tags).lower()
+                
+                # Check if product matches this category
+                category_match = (
+                    category.lower() in product_name or
+                    category.lower() in product_tags_str or
+                    any(tag.lower().startswith(category.lower()) for tag in product_tags)
+                )
+                
+                if category_match:
+                    # Calculate a simple match score for this category
+                    score = 85.0  # Base score for category match
+                    
+                    # Bonus for exact category match in name
+                    if category.lower() in product_name:
+                        score += 10.0
+                    
+                    # Bonus for multiple keyword matches
+                    keyword_matches = sum(1 for kw in category_keywords if kw.lower() in product_tags_str)
+                    score += min(keyword_matches * 2, 10)  # Max 10 bonus points
+                    
+                    category_products.append((product, min(score, 100.0)))
+            
+            # Sort category products by score and take top 2 for each category
+            category_products.sort(key=lambda x: x[1], reverse=True)
+            all_matches.extend(category_products[:2])  # Top 2 products per category
+            
+            print(f"   Found {len(category_products)} products for {category}, added top {min(len(category_products), 2)}")
+        
+        # Sort all matches by score and return
+        all_matches.sort(key=lambda x: x[1], reverse=True)
+        print(f"🎯 MULTI-CATEGORY RESULT: {len(all_matches)} products across {len(categories)} categories")
+        
+        return all_matches
+
     def _process_product_batch_with_llm(self, keywords: List[str], product_batch: List[Dict], all_products: List[Dict]) -> List[Tuple[Dict, float]]:
         """Process a batch of products with LLM for similarity matching"""
         
@@ -188,12 +255,23 @@ class AIService:
                 "content": """You are an expert product matching specialist for a beauty and personal care e-commerce platform. 
                 Analyze customer keywords against product tags to find the most relevant beauty products.
                 
+                CRITICAL CATEGORY MATCHING RULES:
+                - If customer asks for "face wash", prioritize products with "face wash" in tags/name
+                - If customer asks for "perfume", prioritize products with "perfume" in tags/name  
+                - If customer asks for "shampoo", prioritize products with "shampoo" in tags/name
+                - Exact category matches should score 90+ even if other factors are average
+                
                 Score each product based on how well the customer keywords match the product tags:
-                - 95-100: Perfect match (multiple exact keyword-tag matches + high relevance)
-                - 85-94: Excellent match (several exact matches + semantic similarity like "scent"="perfume")
+                - 95-100: Perfect match (exact product category + multiple relevant matches)
+                - 85-94: Excellent match (exact category match OR several exact keyword matches)
                 - 75-84: Good match (related concepts in same category like "moisturizing"="nourishing")
                 - 65-74: Fair match (loosely related, same general category)
                 - Below 65: Poor match (unrelated to customer needs)
+                
+                CATEGORY PRIORITY EXAMPLES:
+                - Customer wants "face wash" → "Himalaya Face Wash" (95+) beats "Dove Soap" (70)
+                - Customer wants "perfume" → "Wild Stone Perfume" (95+) beats "Body Spray" (75)
+                - Customer wants "shampoo" → "Head & Shoulders Shampoo" (95+) beats "Hair Oil" (70)
                 
                 Consider semantic similarity in beauty context:
                 - "scent", "fragrance", "perfume", "cologne" are all related
@@ -476,39 +554,50 @@ class AIService:
                 }
 
                 EXPLICIT PURCHASE CONFIRMATION DETECTION:
-                Look for these EXACT phrases that indicate purchase confirmation:
-                - "Yes, I want to buy [product]"
-                - "I'll take [product]" 
-                - "I want to purchase [product]"
-                - "I'll buy [product]"
-                - "I want both [products]"
-                - "I'll take both [products]"
-                - "Yes, I want to buy both"
-                - "I want to order [product]"
-                - "How do I buy [product]"
-                - "Let me buy [product]"
-                - "I'll purchase [product]"
-                - "I want to get [product]"
-                - "I'll take the [product]"
-                - "I want the [product]"
+                Look for these EXACT phrases that indicate purchase confirmation AFTER price exposure:
+                - "Yes, I want to buy [product]" (confirmation after discussion)
+                - "I'll take [product]" (definitive decision)
+                - "Yes, I'll buy [product]" (confirmed decision)
+                - "I'll purchase [product]" (confirmed decision)
+                - "I'll take both [products]" (confirmed decision)
+                - "Yes, I want to buy both" (confirmed decision)
+                - "Let's do it" or "Let's proceed" (after price discussion)
+                - "How do I buy [product]" (ready to proceed)
+                - "I'll take the [product]" (definitive decision)
                 
-                CRITICAL: Any phrase containing "I'll take", "I want to buy", "I'll buy", "I want both", "I'll purchase" followed by a product name = PURCHASE_CONFIRMATION stage with is_ready_to_buy=true
+                INITIAL PURCHASE INTENT (NOT confirmation - should trigger price discussion):
+                - "I want to buy [product]" (initial intent, needs price info)
+                - "I want to purchase [product]" (initial intent, needs price info)
+                - "I want to order [product]" (initial intent, needs price info)
+                - "I need to buy [product]" (initial intent, needs price info)
+                
+                CRITICAL: "I want to buy X" on first mention = PURCHASE_INTENT stage (is_ready=FALSE)
+                CRITICAL: "Yes, I want to buy X" after price discussion = PURCHASE_CONFIRMATION (is_ready=TRUE)
                 
                 NOT PURCHASE CONFIRMATION (should be FALSE):
                 - "This sounds good" (interest only)
                 - "I like this" (interest only)  
                 - "Seems perfect" (interest only)
+                - "I'm interested" (interest only)
+                - "Perfect, I want both" (interest but no explicit buy/take/purchase)
+                - "That seems reasonable, I'm interested" (interest only)
                 - "Tell me more" (inquiry only)
                 - "What's the price" (price question only)
                 
-                MANDATORY BUSINESS RULE: If customer uses explicit purchase language like "I'll take the [product]" = ALWAYS set is_ready_to_buy=true and current_stage=PURCHASE_CONFIRMATION
+                CRITICAL DISTINCTION: 
+                - "I want both products" = INTEREST (no purchase action)
+                - "I'll take both products" = PURCHASE CONFIRMATION (explicit action)
+                - "Perfect, I want them" = INTEREST (no purchase action)
+                - "Yes, I'll buy them" = PURCHASE CONFIRMATION (explicit action)
+                
+                MANDATORY BUSINESS RULE: Initial purchase expressions need price discussion first
                 
                 ABSOLUTE RULE: is_ready_to_buy=true ONLY when:
                 1. Customer has seen prices (prices_shown_in_conversation=true)
-                2. Customer explicitly confirms purchase with words like "buy", "take", "purchase", "order" (explicit_purchase_words=true)
+                2. Customer confirms purchase AFTER price exposure with "Yes", "I'll", or definitive language
                 3. Current stage is PURCHASE_CONFIRMATION
                 
-                NEVER set is_ready_to_buy=true for expressions of interest, liking products, or asking questions without explicit purchase confirmation after price exposure."""
+                NEVER set is_ready_to_buy=true for initial purchase expressions without price exposure first."""
             },
             {
                 "role": "user", 
@@ -561,10 +650,50 @@ class AIService:
                     
                     print(f"🔍 BUSINESS RULE CHECK: Prices Shown={prices_shown}, Saw Prices={customer_saw_prices}, Explicit={explicit_purchase}")
                     
-                    # ENHANCED EXPLICIT PURCHASE DETECTION: Check if message contains explicit purchase language
+                    # ENHANCED EXPLICIT PURCHASE DETECTION: Only truly explicit confirmations
+                    # "I want to buy" is INTENT, not CONFIRMATION - customer needs to see prices first
                     explicit_purchase_detected = any(phrase in user_message.lower() for phrase in [
-                        "i'll take", "i want to buy", "i'll buy", "i want both", "i'll purchase", "i want to purchase"
+                        "i'll take it", "i'll buy it", "i'll purchase it", "yes, i'll buy", 
+                        "yes, i want to buy", "yes, buy", "i'll take the", "i'll take both",
+                        "confirm purchase", "complete order", "let's do it", "proceed with purchase"
                     ])
+                    
+                    # CONTEXT-SPECIFIC PURCHASE CONFIRMATIONS: When referring to specific discussed products
+                    context_specific_confirmations = any(phrase in user_message.lower() for phrase in [
+                        "i want to purchase this", "i want to buy this", "i'll purchase this",
+                        "i want to purchase that", "i want to buy that", "i'll buy that"
+                    ])
+                    
+                    # If context-specific confirmation detected, treat as explicit purchase
+                    if context_specific_confirmations:
+                        explicit_purchase_detected = True
+                        print(f"🔍 CONTEXT-SPECIFIC CONFIRMATION: '{user_message}' refers to discussed product")
+                    
+                    # INITIAL PURCHASE INTENT (not confirmation) - should trigger price discussion
+                    initial_purchase_intent = any(phrase in user_message.lower() for phrase in [
+                        "i want to buy", "i want to purchase", "i want to order", "i need to buy"
+                    ]) and not any(confirm_word in user_message.lower() for confirm_word in ["yes", "i'll", "let's", "this", "that"])
+                    
+                    # If it's just initial intent, don't mark as ready - they need to see prices first
+                    if initial_purchase_intent and not explicit_purchase_detected:
+                        explicit_purchase_detected = False
+                        print(f"🔍 INITIAL PURCHASE INTENT DETECTED: Customer wants to buy but needs price exposure first")
+                    
+                    # EXCLUDE phrases that are just interest, not purchase - STRICTER RULES
+                    interest_only_phrases = [
+                        "i'm interested", "seems perfect", "that sounds good", "i like this",
+                        "looks good", "perfect", "great", "excellent", "wonderful",
+                        "i want both", "i want them", "i like both", "perfect, i want"
+                    ]
+                    
+                    # If it's just interest language, don't treat as purchase
+                    for interest_phrase in interest_only_phrases:
+                        if interest_phrase in user_message.lower():
+                            # Only allow if it ALSO contains explicit purchase verbs
+                            if not any(buy_verb in user_message.lower() for buy_verb in ["buy", "purchase", "order", "take it", "i'll"]):
+                                explicit_purchase_detected = False
+                                print(f"🔍 INTEREST DETECTED: '{interest_phrase}' found, no purchase verbs -> not purchase")
+                                break
                     
                     print(f"🔍 EXPLICIT PURCHASE DETECTED: {explicit_purchase_detected}")
                     
@@ -576,6 +705,14 @@ class AIService:
                         analysis["customer_saw_prices"] = True  # Assume prices were discussed
                         analysis["prices_shown_in_conversation"] = True
                         print(f"🎯 OVERRIDE: Detected explicit purchase - setting ready=True")
+                    
+                    # NEW: If no explicit purchase detected, force to non-purchase stage
+                    elif not explicit_purchase_detected:
+                        if analysis["current_stage"] == "PURCHASE_CONFIRMATION":
+                            analysis["current_stage"] = "PURCHASE_INTENT"  # Downgrade to intent
+                        analysis["is_ready_to_buy"] = False
+                        analysis["explicit_purchase_words"] = False
+                        print(f"🎯 OVERRIDE: No explicit purchase language - setting ready=False")
                     
                     # Override is_ready if mandatory conditions not met
                     elif analysis.get("is_ready_to_buy"):
@@ -1813,3 +1950,148 @@ class AIService:
 
 # Create the service instance
 ai_service = AIService()
+
+# Enhanced methods for better conversation handling
+def generate_enhanced_response(self, conversation_history: str, product_info: str, 
+                             user_message: str, current_product_context: Dict,
+                             sales_analysis: Dict, is_first_interaction: bool = False) -> Tuple[str, bool]:
+    """Enhanced response generation with better product context handling"""
+    
+    # Enhanced conversation context analysis
+    enhanced_context = self.analyze_conversation_context(conversation_history, user_message)
+    enhanced_context.update(current_product_context)
+    enhanced_context.update(sales_analysis)
+    
+    # Handle product removal scenario
+    if current_product_context.get('removed_products'):
+        return self._handle_product_removal_response(
+            user_message, product_info, current_product_context, sales_analysis
+        )
+    
+    # Check for explicit purchase confirmation
+    purchase_confirmations = [
+        'yes, i want to buy', 'yes, i\'ll take', 'i want to purchase',
+        'i\'ll buy it', 'yes, buy', 'confirm purchase', 'proceed with purchase'
+    ]
+    
+    is_explicit_confirmation = any(
+        confirm in user_message.lower() for confirm in purchase_confirmations
+    )
+    
+    # Enhanced readiness detection
+    enhanced_is_ready = (
+        is_explicit_confirmation and
+        current_product_context.get('price_discussed', False) and
+        (current_product_context.get('mentioned_products') or sales_analysis.get('interested_products'))
+    )
+    
+    if enhanced_is_ready:
+        return self._generate_enhanced_purchase_ready_response(
+            user_message, product_info, current_product_context, sales_analysis
+        )
+    
+    # Handle different conversation stages with enhanced context
+    if is_first_interaction:
+        return self._generate_welcome_response(user_message, product_info, enhanced_context)
+    
+    conversation_type = enhanced_context.get('conversation_type', 'product_focused')
+    
+    if conversation_type == 'conversation_summary':
+        return self._generate_enhanced_conversation_summary_response(
+            conversation_history, product_info, enhanced_context, current_product_context
+        )
+    elif conversation_type == 'off_topic':
+        return self._generate_off_topic_response(user_message, conversation_history, product_info, enhanced_context)
+    elif conversation_type == 'general_chat':
+        return self._generate_general_chat_response(user_message, conversation_history, product_info, enhanced_context)
+    else:
+        return self._generate_enhanced_product_focused_response(
+            user_message, conversation_history, product_info, enhanced_context, current_product_context
+        )
+
+def _handle_product_removal_response(self, user_message: str, product_info: str, 
+                                   current_product_context: Dict, sales_analysis: Dict) -> Tuple[str, bool]:
+    """Handle responses when customer removes products from selection"""
+    
+    removed_products = current_product_context.get('removed_products', [])
+    remaining_products = current_product_context.get('mentioned_products', []).copy()
+    
+    # Remove the unwanted products
+    for removed_product in removed_products:
+        remaining_products = [p for p in remaining_products if removed_product.lower() not in p.lower()]
+    
+    if not remaining_products:
+        # All products removed - restart product discovery
+        return self._generate_product_restart_response(user_message, product_info)
+    
+    # Some products remain
+    messages = [
+        {
+            "role": "system",
+            "content": f"""
+            {self.business_context}
+            
+            The customer has removed some products from their selection. Current context:
+            - Removed products: {', '.join(removed_products)}
+            - Remaining interested products: {', '.join(remaining_products)}
+            
+            Available products:
+            {product_info}
+            
+            RESPONSE GUIDELINES:
+            - Acknowledge the product removal politely
+            - Focus on the remaining products they're interested in
+            - Ask if they want to proceed with the remaining products
+            - Keep response positive and helpful
+            - DO NOT mark as ready to buy yet - wait for explicit confirmation
+            """
+        },
+        {
+            "role": "user",
+            "content": user_message
+        }
+    ]
+    
+    return self._make_api_call(messages, temperature=0.7, max_tokens=200, is_ready=False)
+
+def _generate_enhanced_purchase_ready_response(self, user_message: str, product_info: str,
+                                             current_product_context: Dict, sales_analysis: Dict) -> Tuple[str, bool]:
+    """Enhanced purchase ready response with product context"""
+    
+    interested_products = (current_product_context.get('mentioned_products', []) or 
+                         sales_analysis.get('interested_products', []))
+    
+    messages = [
+        {
+            "role": "system",
+            "content": f"""
+            {self.business_context}
+            
+            EXCELLENT! The customer has explicitly confirmed their purchase. 
+            
+            Products they want to buy: {', '.join(interested_products)}
+            
+            Available product details:
+            {product_info}
+            
+            RESPONSE GUIDELINES:
+            - Express genuine excitement about their purchase
+            - Confirm the specific products they're buying with names and prices
+            - Thank them warmly for choosing us
+            - Mention handover to purchase/routing team
+            - Keep response professional but enthusiastic
+            - This is a PURCHASE CONFIRMATION - mark as ready for handover
+            """
+        },
+        {
+            "role": "user",
+            "content": user_message
+        }
+    ]
+    
+    return self._make_api_call(messages, temperature=0.6, max_tokens=200, is_ready=True)
+
+# Add enhanced methods to AIService class
+AIService.generate_enhanced_response = generate_enhanced_response
+AIService._handle_product_removal_response = _handle_product_removal_response
+AIService._generate_enhanced_purchase_ready_response = _generate_enhanced_purchase_ready_response

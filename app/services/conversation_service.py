@@ -9,6 +9,8 @@ import logging
 class ConversationService:
     def __init__(self):
         self.logger = logging.getLogger(__name__)
+        # Add conversation state tracking for multiple products
+        self.conversation_states = {}  # sender_id -> {"products": [product_objects], "stage": "stage_name"}
     
     async def process_message(self, message: Message):
         # 1. Get conversation history (limit to last 10 conversations)
@@ -21,7 +23,12 @@ class ConversationService:
         # Check if this is first interaction
         is_first_interaction = len(full_conversation) == 0
 
-                # 2. Extract keywords using enhanced LLM with business context
+        # 1.5. NEW: Check for product removal intent and handle it
+        removal_keywords = self._detect_product_removal_intent(message.text)
+        if removal_keywords:
+            self._remove_products_from_state(message.sender, removal_keywords)
+
+        # 2. Extract keywords using enhanced LLM with business context
         self.logger.info(f"Extracting keywords from: {message.text}")
         keywords = await ai_service.extract_keywords_with_llm(message.text)
         self.logger.info(f"Extracted keywords: {keywords}")
@@ -57,6 +64,10 @@ class ConversationService:
         # Extract just the products for response generation
         relevant_products = [product for product, score in relevant_products_with_scores]
         
+        # 5.5. NEW: Update conversation state with newly found products
+        if relevant_products:
+            self._update_conversation_state(message.sender, relevant_products, sales_analysis.get('current_stage'))
+        
         # 6. NEW: Apply price range filtering if customer mentioned budget constraints
         price_range = sales_analysis.get('price_range_mentioned')
         if price_range and relevant_products:
@@ -64,8 +75,18 @@ class ConversationService:
             relevant_products = ai_service.filter_products_by_price_range(relevant_products, price_range)
             self.logger.info(f"After price filtering: {len(relevant_products)} products remain")
         
-        # 7. Build product information for AI (may be empty for off-topic conversations)
-        product_info = self._build_product_info(relevant_products)
+        # 6.5. NEW: Get all products from conversation state for comprehensive tracking
+        conversation_state = self._get_conversation_state(message.sender)
+        all_interested_products = conversation_state['products']
+        
+        # Combine current relevant products with stored state products (remove duplicates)
+        combined_products = list(all_interested_products)  # Start with state products
+        for product in relevant_products:
+            if not any(p['id'] == product['id'] for p in combined_products):
+                combined_products.append(product)
+        
+        # 7. Build product information for AI using all tracked products
+        product_info = self._build_product_info(combined_products)
 
         # 8. Generate response using enhanced sales funnel
         response_text, is_ready = ai_service.generate_response(
@@ -82,11 +103,11 @@ class ConversationService:
         ]
         mongo_handler.save_conversation(message.sender, updated_conversation)
 
-        # 10. Determine most interested product(s) - enhanced for multiple products and purchase confirmation
-        product_interested = self._determine_interested_product_enhanced(relevant_products, keywords, sales_analysis, is_ready)
+        # 10. NEW: Determine most interested product(s) using conversation state
+        product_interested = self._determine_interested_product_with_state(message.sender, sales_analysis, is_ready)
         
-        # 11. Extract product IDs for interested products (for Routing Agent)
-        interested_product_ids = self._extract_product_ids(relevant_products, sales_analysis, product_interested)
+        # 11. NEW: Extract product IDs from conversation state for better tracking
+        interested_product_ids = self._extract_product_ids_from_state(message.sender)
 
         return {
             "sender": message.sender,
@@ -201,6 +222,63 @@ class ConversationService:
         
         return "\n\n".join(product_details)
 
+    def _get_conversation_state(self, sender_id: str) -> Dict:
+        """Get conversation state for a user"""
+        if sender_id not in self.conversation_states:
+            self.conversation_states[sender_id] = {"products": [], "stage": "INITIAL_INTEREST"}
+        return self.conversation_states[sender_id]
+    
+    def _update_conversation_state(self, sender_id: str, new_products: List[Dict], stage: str = None):
+        """Update conversation state with new products"""
+        state = self._get_conversation_state(sender_id)
+        
+        # Add new products, avoiding duplicates
+        for product in new_products:
+            if not any(p['id'] == product['id'] for p in state['products']):
+                state['products'].append(product)
+        
+        if stage:
+            state['stage'] = stage
+        
+        self.logger.info(f"Updated conversation state for {sender_id}: {len(state['products'])} products, stage: {state.get('stage')}")
+    
+    def _remove_products_from_state(self, sender_id: str, products_to_remove: List[str]):
+        """Remove products from conversation state based on keywords"""
+        state = self._get_conversation_state(sender_id)
+        
+        original_count = len(state['products'])
+        
+        # Remove products that match removal keywords
+        state['products'] = [
+            p for p in state['products']
+            if not any(remove_keyword.lower() in p['name'].lower() 
+                      for remove_keyword in products_to_remove)
+        ]
+        
+        removed_count = original_count - len(state['products'])
+        if removed_count > 0:
+            self.logger.info(f"Removed {removed_count} products from state for {sender_id}")
+    
+    def _detect_product_removal_intent(self, message: str) -> List[str]:
+        """Detect if user wants to remove certain products"""
+        message_lower = message.lower()
+        removal_phrases = ["don't need", "don't want", "remove", "cancel", "not interested in", "skip"]
+        
+        if not any(phrase in message_lower for phrase in removal_phrases):
+            return []
+        
+        # Extract product types/names that user wants to remove
+        removal_keywords = []
+        
+        # Common product categories
+        product_categories = ["shampoo", "perfume", "face wash", "soap", "oil", "cream", "deodorant"]
+        
+        for category in product_categories:
+            if category in message_lower and any(phrase in message_lower for phrase in removal_phrases):
+                removal_keywords.append(category)
+        
+        return removal_keywords
+
     def _format_conversation_history(self, conversation: List[Dict]) -> str:
         """Format conversation history for AI context"""
         if not conversation:
@@ -290,6 +368,43 @@ class ConversationService:
                     break
         
         return interested_product_ids
+
+    def _determine_interested_product_with_state(self, sender_id: str, sales_analysis: Dict, is_ready: bool = False) -> str:
+        """Determine interested products using conversation state"""
+        state = self._get_conversation_state(sender_id)
+        
+        # PRIORITY 1: If ready to buy, show products from state
+        if is_ready and state['products']:
+            if len(state['products']) == 1:
+                return state['products'][0]['name']
+            else:
+                names = [p['name'] for p in state['products']]
+                return f"Multiple products: {', '.join(names)}"
+        
+        # PRIORITY 2: Get products from sales analysis
+        interested_products_from_analysis = sales_analysis.get('interested_products', [])
+        
+        # PRIORITY 3: If we have products in state, return them
+        if state['products']:
+            if len(state['products']) == 1:
+                return state['products'][0]['name']
+            else:
+                names = [p['name'] for p in state['products']]
+                return f"Multiple products: {', '.join(names)}"
+        
+        # PRIORITY 4: Fallback to analysis products
+        if interested_products_from_analysis:
+            if len(interested_products_from_analysis) == 1:
+                return interested_products_from_analysis[0]
+            else:
+                return f"Multiple products: {', '.join(interested_products_from_analysis)}"
+        
+        return None
+    
+    def _extract_product_ids_from_state(self, sender_id: str) -> List[str]:
+        """Extract product IDs from conversation state"""
+        state = self._get_conversation_state(sender_id)
+        return [product['id'] for product in state['products']]
 
     def _determine_interested_product(self, relevant_products: List[Dict], keywords: List[str]) -> str:
         """Enhanced method to determine which product(s) the customer is most interested in"""

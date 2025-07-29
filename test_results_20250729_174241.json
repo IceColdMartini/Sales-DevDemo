@@ -1,0 +1,817 @@
+{
+  "test_results": [
+    {
+      "test_name": "Response Quality - Hair fragrance inquiry",
+      "passed": true,
+      "details": "Quality: 2/3 (Acknowledges: True, Redirects: True, Natural: False)",
+      "timestamp": "2025-07-29T17:30:31.441884"
+    },
+    {
+      "test_name": "Initial is_ready Status - Hair fragrance inquiry",
+      "passed": true,
+      "details": "is_ready=False (should be False)",
+      "timestamp": "2025-07-29T17:30:31.441913"
+    },
+    {
+      "test_name": "Response Quality - Skincare problem statement",
+      "passed": true,
+      "details": "Quality: 3/3 (Acknowledges: True, Redirects: True, Natural: True)",
+      "timestamp": "2025-07-29T17:30:55.526760"
+    },
+    {
+      "test_name": "Initial is_ready Status - Skincare problem statement",
+      "passed": true,
+      "details": "is_ready=False (should be False)",
+      "timestamp": "2025-07-29T17:30:55.526779"
+    },
+    {
+      "test_name": "Response Quality - Off-topic conversation",
+      "passed": true,
+      "details": "Quality: 2/3 (Acknowledges: True, Redirects: True, Natural: False)",
+      "timestamp": "2025-07-29T17:31:11.442733"
+    },
+    {
+      "test_name": "Initial is_ready Status - Off-topic conversation",
+      "passed": true,
+      "details": "is_ready=False (should be False)",
+      "timestamp": "2025-07-29T17:31:11.442757"
+    },
+    {
+      "test_name": "Response Quality - Gift inquiry",
+      "passed": true,
+      "details": "Quality: 2/3 (Acknowledges: True, Redirects: True, Natural: False)",
+      "timestamp": "2025-07-29T17:31:27.266636"
+    },
+    {
+      "test_name": "Initial is_ready Status - Gift inquiry",
+      "passed": true,
+      "details": "is_ready=False (should be False)",
+      "timestamp": "2025-07-29T17:31:27.266660"
+    },
+    {
+      "test_name": "Response Quality - Gender-specific product inquiry",
+      "passed": true,
+      "details": "Quality: 3/3 (Acknowledges: True, Redirects: True, Natural: True)",
+      "timestamp": "2025-07-29T17:31:49.804477"
+    },
+    {
+      "test_name": "Initial is_ready Status - Gender-specific product inquiry",
+      "passed": true,
+      "details": "is_ready=False (should be False)",
+      "timestamp": "2025-07-29T17:31:49.804495"
+    },
+    {
+      "test_name": "General Perfume Inquiry Detection",
+      "passed": true,
+      "details": "Detected: AXE Dark Temptation Deodorant",
+      "timestamp": "2025-07-29T17:32:08.172746"
+    },
+    {
+      "test_name": "Specific Product Detection (Wild Stone)",
+      "passed": true,
+      "details": "Detected product: Multiple products: AXE Dark Temptation Deodorant, Wild Stone Code Platinum Perfume",
+      "timestamp": "2025-07-29T17:32:28.120245"
+    },
+    {
+      "test_name": "Product ID Extraction",
+      "passed": true,
+      "details": "Product IDs: ['16699403-4a24-4c8c-83f6-5d1a6b426212', 'b9f4f5cd-92de-4ab0-8c8e-745682c82b37']",
+      "timestamp": "2025-07-29T17:32:28.120263"
+    },
+    {
+      "test_name": "Multiple Product Tracking",
+      "passed": true,
+      "details": "Products: Multiple products: AXE Dark Temptation Deodorant, Wild Stone Code Platinum Perfume, Himalaya Purifying Neem Face Wash, IDs: 3",
+      "timestamp": "2025-07-29T17:32:45.262784"
+    },
+    {
+      "test_name": "Step 1 - Ready Status",
+      "passed": true,
+      "details": "is_ready=False, expected=False",
+      "timestamp": "2025-07-29T17:33:03.569397"
+    },
+    {
+      "test_name": "Step 2 - Ready Status",
+      "passed": true,
+      "details": "is_ready=False, expected=False",
+      "timestamp": "2025-07-29T17:33:26.177940"
+    },
+    {
+      "test_name": "Step 3 - Ready Status",
+      "passed": true,
+      "details": "is_ready=False, expected=False",
+      "timestamp": "2025-07-29T17:33:45.578071"
+    },
+    {
+      "test_name": "Step 4 - Ready Status",
+      "passed": true,
+      "details": "is_ready=False, expected=False",
+      "timestamp": "2025-07-29T17:34:06.235134"
+    },
+    {
+      "test_name": "Step 5 - Ready Status",
+      "passed": true,
+      "details": "is_ready=False, expected=False",
+      "timestamp": "2025-07-29T17:34:23.541065"
+    },
+    {
+      "test_name": "Overall Conversation Continuity",
+      "passed": true,
+      "details": "Maintains context and proper is_ready progression",
+      "timestamp": "2025-07-29T17:34:25.542197"
+    },
+    {
+      "test_name": "Includes Product Names in Confirmation",
+      "passed": true,
+      "details": "Product names mentioned: True",
+      "timestamp": "2025-07-29T17:35:57.736182"
+    },
+    {
+      "test_name": "Includes Price Information",
+      "passed": true,
+      "details": "Price information included: True",
+      "timestamp": "2025-07-29T17:35:57.736249"
+    },
+    {
+      "test_name": "Purchase Confirmation Language",
+      "passed": true,
+      "details": "Uses confirmation language: True",
+      "timestamp": "2025-07-29T17:35:57.736256"
+    },
+    {
+      "test_name": "is_ready Status After Confirmation",
+      "passed": true,
+      "details": "is_ready=True (should be True)",
+      "timestamp": "2025-07-29T17:35:57.736265"
+    },
+    {
+      "test_name": "is_ready False Test 1",
+      "passed": true,
+      "details": "Message: 'I'm looking for perfume' -> is_ready=False",
+      "timestamp": "2025-07-29T17:36:14.290499"
+    },
+    {
+      "test_name": "is_ready False Test 2",
+      "passed": true,
+      "details": "Message: 'Tell me about Wild Stone' -> is_ready=False",
+      "timestamp": "2025-07-29T17:36:32.098662"
+    },
+    {
+      "test_name": "is_ready False Test 3",
+      "passed": true,
+      "details": "Message: 'How much does it cost?' -> is_ready=False",
+      "timestamp": "2025-07-29T17:36:49.388873"
+    },
+    {
+      "test_name": "is_ready False Test 4",
+      "passed": true,
+      "details": "Message: 'That sounds good' -> is_ready=False",
+      "timestamp": "2025-07-29T17:37:07.848273"
+    },
+    {
+      "test_name": "is_ready False Test 5",
+      "passed": true,
+      "details": "Message: 'I'm interested in this product' -> is_ready=False",
+      "timestamp": "2025-07-29T17:37:25.550982"
+    },
+    {
+      "test_name": "is_ready False Test 6",
+      "passed": true,
+      "details": "Message: 'It seems perfect for me' -> is_ready=False",
+      "timestamp": "2025-07-29T17:37:41.331473"
+    },
+    {
+      "test_name": "is_ready False Test 7",
+      "passed": true,
+      "details": "Message: 'I like this one' -> is_ready=False",
+      "timestamp": "2025-07-29T17:37:56.275082"
+    },
+    {
+      "test_name": "is_ready True Test 1",
+      "passed": true,
+      "details": "Message: 'Yes, I want to buy the Wild Stone perfume' -> is_ready=True",
+      "timestamp": "2025-07-29T17:38:14.560390"
+    },
+    {
+      "test_name": "is_ready True Test 2",
+      "passed": true,
+      "details": "Message: 'I'll take it' -> is_ready=True",
+      "timestamp": "2025-07-29T17:38:29.592528"
+    },
+    {
+      "test_name": "is_ready True Test 3",
+      "passed": true,
+      "details": "Message: 'I want to purchase this product' -> is_ready=True",
+      "timestamp": "2025-07-29T17:38:43.919650"
+    },
+    {
+      "test_name": "Multiple Product Detection - Perfume",
+      "passed": true,
+      "details": "Perfume detected in: Wild Stone Code Platinum Perfume",
+      "timestamp": "2025-07-29T17:39:03.093406"
+    },
+    {
+      "test_name": "Multiple Product Detection - Face Wash",
+      "passed": false,
+      "details": "Face wash detected in: Wild Stone Code Platinum Perfume",
+      "timestamp": "2025-07-29T17:39:03.093431"
+    },
+    {
+      "test_name": "Multiple Product IDs",
+      "passed": true,
+      "details": "Product IDs count: 1",
+      "timestamp": "2025-07-29T17:39:03.093452"
+    },
+    {
+      "test_name": "Three Product Categories Tracking",
+      "passed": true,
+      "details": "All three tracked: True",
+      "timestamp": "2025-07-29T17:39:27.048256"
+    },
+    {
+      "test_name": "Product Removal - Shampoo Removed",
+      "passed": true,
+      "details": "Shampoo removed: True",
+      "timestamp": "2025-07-29T17:40:02.704499"
+    },
+    {
+      "test_name": "Product Retention - Perfume Remains",
+      "passed": true,
+      "details": "Perfume remains: True",
+      "timestamp": "2025-07-29T17:40:02.704518"
+    },
+    {
+      "test_name": "Product Retention - Face Wash Remains",
+      "passed": false,
+      "details": "Face wash remains: False",
+      "timestamp": "2025-07-29T17:40:02.704523"
+    },
+    {
+      "test_name": "Product Replacement Understanding",
+      "passed": true,
+      "details": "Understands sensitive skin request: True",
+      "timestamp": "2025-07-29T17:40:20.275789"
+    },
+    {
+      "test_name": "Complete Flow Step 1",
+      "passed": true,
+      "details": "is_ready=False, expected=False",
+      "timestamp": "2025-07-29T17:40:37.451989"
+    },
+    {
+      "test_name": "Complete Flow Step 2",
+      "passed": true,
+      "details": "is_ready=False, expected=False",
+      "timestamp": "2025-07-29T17:41:01.383242"
+    },
+    {
+      "test_name": "Complete Flow Step 3",
+      "passed": true,
+      "details": "is_ready=False, expected=False",
+      "timestamp": "2025-07-29T17:41:20.358742"
+    },
+    {
+      "test_name": "Complete Flow Step 4",
+      "passed": true,
+      "details": "is_ready=False, expected=False",
+      "timestamp": "2025-07-29T17:41:42.834541"
+    },
+    {
+      "test_name": "Complete Flow Step 5",
+      "passed": true,
+      "details": "is_ready=False, expected=False",
+      "timestamp": "2025-07-29T17:42:04.260859"
+    },
+    {
+      "test_name": "Complete Flow Step 6",
+      "passed": true,
+      "details": "is_ready=False, expected=False",
+      "timestamp": "2025-07-29T17:42:24.283440"
+    },
+    {
+      "test_name": "Complete Flow Step 7",
+      "passed": false,
+      "details": "is_ready=False, expected=True",
+      "timestamp": "2025-07-29T17:42:40.110402"
+    },
+    {
+      "test_name": "Complete Flow Success",
+      "passed": false,
+      "details": "All is_ready flags correct: False",
+      "timestamp": "2025-07-29T17:42:41.615285"
+    },
+    {
+      "test_name": "Conversation Quality",
+      "passed": true,
+      "details": "Average quality score: 1.00",
+      "timestamp": "2025-07-29T17:42:41.615351"
+    }
+  ],
+  "conversation_logs": [
+    {
+      "sender_id": "test_1_scenario_1",
+      "user_message": "Hi there! I'm looking for something to make my hair smell amazing",
+      "agent_response": "Hi! That sounds lovely. Are you interested in a particular type of fragrance\u2014like something floral, woody, or sweet? Also, do you prefer a subtle scent or something more noticeable? Knowing your hair type and whether you're looking for a long-lasting fragrance or a light refresh would help me recommend the perfect product for you.",
+      "product_interested": "AXE Dark Temptation Deodorant",
+      "interested_product_ids": [],
+      "is_ready": false,
+      "timestamp": "2025-07-29T17:30:31.441553"
+    },
+    {
+      "sender_id": "test_1_scenario_2",
+      "user_message": "My skin is really dry lately, especially in winter",
+      "agent_response": "Certainly! For your dry skin concern, I recommend focusing on products that provide deep nourishment and gentle cleansing. Here are some excellent options with their prices:\n\n1. **Dove Beauty Bar Moisturizing Soap** \u2013 \u09f358.00 (on sale from \u09f365.00)  \nThis gentle cleansing bar contains 1/4 moisturizing cream, making it perfect for sensitive, dry skin. It deeply nourishes while cleansing, leaving your skin soft and hydrated. The high rating of 4.60/5.0 from nearly 200 reviews shows its effectiveness and customer satisfaction. Plus, it\u2019s well-stocked, so you can easily get it whenever needed. This product offers great value for deep nourishment at an affordable price.\n\n2. **Himalaya Purifying Neem Face Wash** \u2013 \u09f3135.00  \nThis herbal face wash combines neem and turmeric to remove impurities and prevent pimples, which can be beneficial if dry skin is accompanied by any skin concerns. It\u2019s a natural, ayurvedic solution that gently cleanses without stripping moisture, helping maintain your skin\u2019s hydration. With over 390 reviews and a 4.30/5.0 rating, it\u2019s trusted by many for gentle yet effective cleansing.\n\nIf you\u2019re also concerned about hair dryness, I recommend:\n\n3. **Garnier Fructis Strengthening Shampoo** \u2013 \u09f3295.00",
+      "product_interested": "Multiple products: Dove Beauty Bar Moisturizing Soap, Himalaya Purifying Neem Face Wash, Garnier Fructis Strengthening Shampoo",
+      "interested_product_ids": [
+        "55d26d11-22c2-4632-8d4b-10d8ced93269",
+        "ec00e983-e85f-4202-a732-a3c61955091c",
+        "0de4bc53-c849-45b5-b7f2-58e8e3de8fb3"
+      ],
+      "is_ready": false,
+      "timestamp": "2025-07-29T17:30:55.526455"
+    },
+    {
+      "sender_id": "test_1_scenario_3",
+      "user_message": "What's the weather like today?",
+      "agent_response": "Oh, the weather! It definitely has a way of impacting how we feel and take care of ourselves, doesn't it? Whether it\u2019s feeling dry and needing extra hydration or just wanting to smell fresh, weather can influence our beauty routines. Speaking of feeling good, do you have any particular skincare or personal care needs today? I\u2019d love to help you find something that keeps you feeling your best regardless of the weather!",
+      "product_interested": null,
+      "interested_product_ids": [],
+      "is_ready": false,
+      "timestamp": "2025-07-29T17:31:11.442437"
+    },
+    {
+      "sender_id": "test_1_scenario_4",
+      "user_message": "I need a gift for my girlfriend's birthday",
+      "agent_response": "That's lovely! To help you find the perfect gift, could you tell me a bit about your girlfriend's preferences? For example, does she enjoy floral, woody, or fruity fragrances? Is she more into skincare, hair care, or body care? Also, do you have a particular budget range in mind? This will help me suggest something truly special for her birthday.",
+      "product_interested": "Multiple products: AXE Dark Temptation Deodorant, Bajaj Almond Drops Hair Oil",
+      "interested_product_ids": [],
+      "is_ready": false,
+      "timestamp": "2025-07-29T17:31:27.266299"
+    },
+    {
+      "sender_id": "test_1_scenario_5",
+      "user_message": "Do you have anything for men's grooming?",
+      "agent_response": "Absolutely! We have some excellent options for men's grooming that blend effectiveness with traditional and modern quality.\n\nFirst, the **AXE Dark Temptation Deodorant** costs \u09f3285. This deodorant offers an irresistible chocolate fragrance that lasts for 48 hours, making it perfect for daily use and special occasions. Its dual action technology provides both odor protection and a seductive scent, which is popular among young men here. With a high rating of 4.40 out of 5 from over 300 reviews, it\u2019s a trusted choice for long-lasting freshness and confidence.\n\nNext, for hair nourishment, the **Bajaj Almond Drops Hair Oil** is priced at just \u09f3145. It\u2019s a lightweight, non-sticky oil enriched with vitamin E, ideal for daily hair nourishment without greasiness. Customers love its gentle, sweet almond scent and proven benefits for healthy hair. Its popularity is reflected in a 4.40 rating from more than 500 reviews.\n\nAdditionally, the **Dabur Amla Hair Oil** is available at \u09f3115, now on sale from \u09f3125. Enriched with amla extracts, it helps prevent premature graying and strengthens hair from the roots. With a 4.50 rating from over 600 reviews, it\u2019s a trusted traditional remedy for hair health.\n\nAll these products are well stocked and offer great value\u2014combining traditional ingredients",
+      "product_interested": "Multiple products: AXE Dark Temptation Deodorant, Bajaj Almond Drops Hair Oil, Dabur Amla Hair Oil",
+      "interested_product_ids": [
+        "16699403-4a24-4c8c-83f6-5d1a6b426212",
+        "15a4e12e-fd88-4a9c-864c-ea2c4dbe22b2",
+        "b5d6314d-b67d-4b6e-bd07-daee294f8588"
+      ],
+      "is_ready": false,
+      "timestamp": "2025-07-29T17:31:49.804210"
+    },
+    {
+      "sender_id": "test_2_product_navigation",
+      "user_message": "I'm looking for a good perfume",
+      "agent_response": "Absolutely! If you're looking for a good perfume, I highly recommend the **AXE Dark Temptation Deodorant**. It costs \u09f3285.00 and offers an irresistible chocolate fragrance that lasts for up to 48 hours. This deodorant is a popular choice among young men in Bangladesh because of its seductive scent combined with dual-action technology for effective odor protection and fragrance release throughout the day.\n\nThe value here is not just in the captivating aroma but also in its long-lasting protection, making it a great investment for everyday freshness and confidence. Plus, it\u2019s well stocked with 140 units available, so you can get it conveniently. \n\nWould you like to explore more fragrances or other scent options?",
+      "product_interested": "AXE Dark Temptation Deodorant",
+      "interested_product_ids": [
+        "16699403-4a24-4c8c-83f6-5d1a6b426212"
+      ],
+      "is_ready": false,
+      "timestamp": "2025-07-29T17:32:08.172505"
+    },
+    {
+      "sender_id": "test_2_product_navigation",
+      "user_message": "Tell me about Wild Stone perfume",
+      "agent_response": "Certainly! If you're interested in Wild Stone perfumes, I recommend two excellent options:\n\n1. **Wild Stone Code Platinum Perfume - \u09f3450**  \n   This is a premium, long-lasting perfume with masculine woody notes, perfect for special occasions. Its sophisticated fragrance combines bergamot apple, geranium sage, marine hints, sandalwood, cedarwood, and musk, making it ideal if you're looking for a refined, lasting scent that exudes confidence and elegance. It\u2019s on sale from \u09f3485, offering great value for a high-quality fragrance.\n\n2. **AXE Dark Temptation Deodorant - \u09f3285**  \n   While not a perfume, this deodorant features an irresistible chocolate fragrance with 48-hour protection. It\u2019s a popular choice among young men in Bangladesh and provides a seductive scent along with odor protection. If you prefer a more casual, daily wear fragrance with a sweet, chocolatey aroma, this is a fantastic option.\n\nWould you like more details on either of these products, or do you have a preference for a particular type of scent?",
+      "product_interested": "Multiple products: AXE Dark Temptation Deodorant, Wild Stone Code Platinum Perfume",
+      "interested_product_ids": [
+        "16699403-4a24-4c8c-83f6-5d1a6b426212",
+        "b9f4f5cd-92de-4ab0-8c8e-745682c82b37"
+      ],
+      "is_ready": false,
+      "timestamp": "2025-07-29T17:32:28.119902"
+    },
+    {
+      "sender_id": "test_2_product_navigation",
+      "user_message": "I also need a face wash, something with neem",
+      "agent_response": "That's fantastic! You're interested in the **Himalaya Purifying Neem Face Wash** with neem and turmeric, which is an excellent choice for natural, herbal skincare. \n\nThe face wash is priced at **\u20b9135.00**, and it's highly rated with 398 reviews. It\u2019s perfect for removing impurities and preventing pimples naturally. \n\nWould you like to go ahead and buy this face wash for \u20b9135? Or is there anything else you'd like to add or explore? If you're ready, I can help you place the order easily!",
+      "product_interested": "Multiple products: AXE Dark Temptation Deodorant, Wild Stone Code Platinum Perfume, Himalaya Purifying Neem Face Wash",
+      "interested_product_ids": [
+        "16699403-4a24-4c8c-83f6-5d1a6b426212",
+        "b9f4f5cd-92de-4ab0-8c8e-745682c82b37",
+        "ec00e983-e85f-4202-a732-a3c61955091c"
+      ],
+      "is_ready": false,
+      "timestamp": "2025-07-29T17:32:45.262013"
+    },
+    {
+      "sender_id": "test_3_continuity",
+      "user_message": "I need a good perfume for everyday use",
+      "agent_response": "That sounds like a great choice for daily wear! To help me recommend the perfect perfume for you, could you tell me a bit about your preferences? Are you looking for a fresh, woody, or perhaps a sweet fragrance? Also, do you have any favorite scents or brands you usually enjoy? And are you seeking something long-lasting or more subtle for everyday use?",
+      "product_interested": "Multiple products: AXE Dark Temptation Deodorant, Fogg Scent Xpressio Body Spray, Head & Shoulders Anti-Dandruff Shampoo",
+      "interested_product_ids": [
+        "16699403-4a24-4c8c-83f6-5d1a6b426212",
+        "43b95ad4-0fc0-4c04-ae77-7671696ca66a",
+        "eea137cc-8256-4c8a-bd43-6b4e32f4a727"
+      ],
+      "is_ready": false,
+      "timestamp": "2025-07-29T17:33:03.569180"
+    },
+    {
+      "sender_id": "test_3_continuity",
+      "user_message": "Something that lasts long and smells fresh",
+      "agent_response": "Thank you for sharing your preferences! Based on what you're looking for\u2014a product that lasts long and smells fresh\u2014I recommend the following options:\n\n**1. AXE Dark Temptation Deodorant**  \n- Price: \u09f3285  \n- This deodorant offers an irresistible chocolate fragrance that lasts up to 48 hours, providing long-lasting freshness. Its dual action technology ensures odor protection throughout the day, making it a popular choice among young men.  \n- The scent is seductive with notes of dark chocolate, vanilla, and amber, giving you a confident and fresh feel all day.  \n\n**2. Fogg Scent Xpressio Body Spray**  \n- Price: \u09f3225 (on sale from \u09f3245)  \n- Known for its long-lasting fragrance, this body spray guarantees up to 800 sprays, ensuring extended freshness without the gas propellant. It features a refreshing citrus bergamot and lavender geranium scent that keeps you smelling fresh for hours.  \n- Its pure perfume concentrate makes it a premium choice for those who want a strong, lasting fragrance at an affordable price.  \n\nBoth options are excellent for long-lasting freshness. The Axe deodorant is ideal if you prefer a solid stick with a seductive scent, while the Fogg spray offers a versatile and economical way to stay fresh throughout the day.  \n\nIf budget is a concern, the Fogg spray provides great value with its",
+      "product_interested": "Multiple products: AXE Dark Temptation Deodorant, Fogg Scent Xpressio Body Spray, Head & Shoulders Anti-Dandruff Shampoo, Lifebuoy Total 10 Antibacterial Soap",
+      "interested_product_ids": [
+        "16699403-4a24-4c8c-83f6-5d1a6b426212",
+        "43b95ad4-0fc0-4c04-ae77-7671696ca66a",
+        "eea137cc-8256-4c8a-bd43-6b4e32f4a727",
+        "f393674f-3c1d-4833-affb-2dec5e0e4ac6"
+      ],
+      "is_ready": false,
+      "timestamp": "2025-07-29T17:33:26.177614"
+    },
+    {
+      "sender_id": "test_3_continuity",
+      "user_message": "Wild Stone sounds good, tell me more about it",
+      "agent_response": "Certainly! Wild Stone is a fantastic choice if you're looking for a seductive, long-lasting fragrance. While I don't have the specific Wild Stone product details here, I can tell you that Wild Stone offers a range of premium deodorants and perfumes known for their bold scents and effective protection.\n\nFor example, our **AXE Dark Temptation Deodorant** costs \u09f3450. It features an irresistible chocolate fragrance with dual action technology, providing 48-hour odor protection. It's a popular choice among young men and offers great value with its long-lasting scent and effective odor control.\n\nIf you're interested in something with a fresh, long-lasting fragrance, we also have **Fogg Scent Xpressio Body Spray** at just \u09f3285. It guarantees 800 sprays of pure perfume concentrate, offering a fresh and invigorating scent that lasts all day.\n\nBoth options are excellent for daily use and provide high-quality protection and fragrance at competitive prices. If you're looking for a more traditional or regional scent, I can also recommend local brands like Keya Seth or Tibbet, which offer authentic regional formulations.\n\nWould you like to explore Wild Stone options specifically, or are you interested in other fragrances or grooming products?",
+      "product_interested": "Multiple products: AXE Dark Temptation Deodorant, Fogg Scent Xpressio Body Spray, Head & Shoulders Anti-Dandruff Shampoo, Lifebuoy Total 10 Antibacterial Soap",
+      "interested_product_ids": [
+        "16699403-4a24-4c8c-83f6-5d1a6b426212",
+        "43b95ad4-0fc0-4c04-ae77-7671696ca66a",
+        "eea137cc-8256-4c8a-bd43-6b4e32f4a727",
+        "f393674f-3c1d-4833-affb-2dec5e0e4ac6"
+      ],
+      "is_ready": false,
+      "timestamp": "2025-07-29T17:33:45.577786"
+    },
+    {
+      "sender_id": "test_3_continuity",
+      "user_message": "What's the price?",
+      "agent_response": "Certainly! Here's a clear overview of the products you're interested in:\n\n1. **AXE Dark Temptation Deodorant** \u2013 This deodorant costs \u09f3285. It offers an irresistible chocolate fragrance with 48-hour protection, making it a popular choice among young men who want long-lasting freshness and a seductive scent. The dual action technology ensures odor protection while enhancing your personal grooming routine. It\u2019s a great value for high-quality, long-lasting fragrance.\n\n2. **Fogg Scent Xpressio Body Spray** \u2013 Priced at \u09f3225 (currently on sale from \u09f3245), this body spray provides a long-lasting fresh fragrance with no gas, offering up to 800 sprays. It\u2019s perfect for those looking for a reliable, long-lasting perfume concentrate that keeps you feeling fresh all day at an affordable price.\n\n3. **Head & Shoulders Anti-Dandruff Shampoo** \u2013 This clinically proven shampoo costs \u09f3320. It effectively removes dandruff and prevents its recurrence using zinc pyrithione, ensuring a healthy scalp and flake-free hair. It\u2019s a trusted brand with high ratings, ideal for maintaining scalp health.\n\n4. **Lifebuoy Total 10 Antibacterial Soap** \u2013 At just \u09f335, this soap provides advanced antibacterial protection, removing 99.9% of germs. It\u2019s perfect for daily hygiene and family protection, offering excellent",
+      "product_interested": "Multiple products: AXE Dark Temptation Deodorant, Fogg Scent Xpressio Body Spray, Head & Shoulders Anti-Dandruff Shampoo, Lifebuoy Total 10 Antibacterial Soap",
+      "interested_product_ids": [
+        "16699403-4a24-4c8c-83f6-5d1a6b426212",
+        "43b95ad4-0fc0-4c04-ae77-7671696ca66a",
+        "eea137cc-8256-4c8a-bd43-6b4e32f4a727",
+        "f393674f-3c1d-4833-affb-2dec5e0e4ac6"
+      ],
+      "is_ready": false,
+      "timestamp": "2025-07-29T17:34:06.234876"
+    },
+    {
+      "sender_id": "test_3_continuity",
+      "user_message": "That seems reasonable, I'm interested",
+      "agent_response": "That's fantastic to hear! You're interested in the **AXE Dark Temptation Deodorant**\u2014a great choice with that irresistible chocolate fragrance and 48-hour protection. \n\nThe price is \u09f3285.00, and it's currently well stocked with plenty of units available. \n\nWould you like to proceed with purchasing this deodorant? Shall I help you place an order for this?",
+      "product_interested": "Multiple products: AXE Dark Temptation Deodorant, Fogg Scent Xpressio Body Spray, Head & Shoulders Anti-Dandruff Shampoo, Lifebuoy Total 10 Antibacterial Soap",
+      "interested_product_ids": [
+        "16699403-4a24-4c8c-83f6-5d1a6b426212",
+        "43b95ad4-0fc0-4c04-ae77-7671696ca66a",
+        "eea137cc-8256-4c8a-bd43-6b4e32f4a727",
+        "f393674f-3c1d-4833-affb-2dec5e0e4ac6"
+      ],
+      "is_ready": false,
+      "timestamp": "2025-07-29T17:34:23.540627"
+    },
+    {
+      "sender_id": "test_4_confirmation",
+      "user_message": "I need a perfume and face wash",
+      "agent_response": "Thank you for your interest! Let me guide you through our options for perfumes and face washes.\n\nFor perfumes, we offer a range of premium fragrances, including body sprays and traditional Arabic attars. Our popular perfumes start at \u09f31,200, such as our luxurious woody and floral scents that provide long-lasting aroma and elegance. These are crafted with pure perfume concentrates, ensuring high quality and a captivating presence.\n\nRegarding face washes, we have a variety of herbal and gentle formulations suitable for all skin types. Our face washes are priced from \u09f3450 to \u09f3800, depending on the ingredients and brand. For example, our herbal neem and turmeric face wash costs \u09f3450 and offers natural cleansing with antibacterial properties, perfect for everyday use.\n\nWould you like recommendations based on your preferred scent profile or skin type? I can also help you find options that fit your budget and beauty needs!",
+      "product_interested": "Multiple products: perfume, face wash",
+      "interested_product_ids": [],
+      "is_ready": false,
+      "timestamp": "2025-07-29T17:34:47.705966"
+    },
+    {
+      "sender_id": "test_4_confirmation",
+      "user_message": "Tell me about Wild Stone perfume and Himalaya neem face wash",
+      "agent_response": "Certainly! Here's a quick overview of the products you're interested in:\n\n**Wild Stone Code Platinum Perfume - \u09f3450**  \nThis perfume is perfect for you if you're looking for a sophisticated, long-lasting fragrance with masculine woody notes. Its premium quality and fresh scent featuring bergamot, apple, geranium, sage, marine, sandalwood, cedarwood, and musk make it ideal for special occasions or daily use. With a high rating of 4.50 based on 189 reviews, it's a popular choice among grooming enthusiasts.\n\n**Himalaya Neem Face Wash - (Price not provided in the current options)**  \nWhile I don't have the specific price for the Himalaya Neem Face Wash right now, it's a highly effective herbal cleanser known for its antibacterial properties, making it perfect for maintaining clear, healthy skin, especially if you prefer natural and gentle skincare solutions.\n\nWould you like more details on the Himalaya Neem Face Wash or are you most interested in the Wild Stone perfume?",
+      "product_interested": "Wild Stone Code Platinum Perfume",
+      "interested_product_ids": [
+        "b9f4f5cd-92de-4ab0-8c8e-745682c82b37"
+      ],
+      "is_ready": false,
+      "timestamp": "2025-07-29T17:35:07.535378"
+    },
+    {
+      "sender_id": "test_4_confirmation",
+      "user_message": "How much do they cost?",
+      "agent_response": "The Wild Stone Code Platinum Perfume costs \u09f3450, and it's currently on sale from the original price of \u09f3485. This perfume offers a premium, long-lasting fragrance with masculine woody notes, making it perfect for special occasions. With a high rating of 4.50 out of 5 based on 189 reviews, it\u2019s a popular choice among our customers. Its sophisticated scent featuring bergamot apple, geranium sage, marine notes, sandalwood, cedarwood, and musk makes it a valuable investment for those seeking quality and elegance in their fragrance. Would you like to explore this further or see other options within your preferred budget?",
+      "product_interested": "Wild Stone Code Platinum Perfume",
+      "interested_product_ids": [
+        "b9f4f5cd-92de-4ab0-8c8e-745682c82b37"
+      ],
+      "is_ready": false,
+      "timestamp": "2025-07-29T17:35:23.804262"
+    },
+    {
+      "sender_id": "test_4_confirmation",
+      "user_message": "I think I want to buy them",
+      "agent_response": "That's fantastic to hear! The **Wild Stone Code Platinum Perfume** is indeed a premium, long-lasting fragrance with a sophisticated woody scent, perfect for special occasions. \n\nThe current price is \u09f3450.00, reduced from \u09f3485.00, and we have plenty in stock. \n\nWould you like to proceed with purchasing the Wild Stone Code Platinum Perfume for \u09f3450? Or, if you're interested in the Axe Dark Temptation Deodorant instead, I can help you with that too. \n\nPlease let me know how you'd like to continue!",
+      "product_interested": "Multiple products: Wild Stone Code Platinum Perfume, AXE Dark Temptation Deodorant",
+      "interested_product_ids": [
+        "b9f4f5cd-92de-4ab0-8c8e-745682c82b37",
+        "16699403-4a24-4c8c-83f6-5d1a6b426212"
+      ],
+      "is_ready": false,
+      "timestamp": "2025-07-29T17:35:40.911141"
+    },
+    {
+      "sender_id": "test_4_confirmation",
+      "user_message": "Yes, I want to buy both products",
+      "agent_response": "That's fantastic! I'm so excited you've decided to go ahead with these excellent choices. You're getting the **Wild Stone Code Platinum Perfume**\u2014a premium, long-lasting fragrance with masculine woody notes perfect for special occasions\u2014and the **AXE Dark Temptation Deodorant**, known for its irresistible chocolate scent and 48-hour protection. \n\nThe total price for your order is \u20b9735.00. \n\nNext, I will connect you with our purchase team who will assist you further with the payment process and final confirmation. \n\nThank you so much for choosing us for your personal care and grooming needs. We truly appreciate your trust and confidence in our products. \n\nPlease hold on a moment while I transfer you.",
+      "product_interested": "Multiple products: Wild Stone Code Platinum Perfume, AXE Dark Temptation Deodorant",
+      "interested_product_ids": [
+        "b9f4f5cd-92de-4ab0-8c8e-745682c82b37",
+        "16699403-4a24-4c8c-83f6-5d1a6b426212"
+      ],
+      "is_ready": true,
+      "timestamp": "2025-07-29T17:35:57.735834"
+    },
+    {
+      "sender_id": "test_5_is_ready",
+      "user_message": "I'm looking for perfume",
+      "agent_response": "Hello! If you're interested in perfumes, I recommend our **AXE Dark Temptation Deodorant**. It costs \u09f3285.00 and offers an irresistible chocolate fragrance that lasts for 48 hours, providing long-lasting odor protection. This popular choice among young men in Bangladesh combines a seductive scent with dual-action technology to keep you fresh all day. \n\nWith a high customer rating of 4.40 out of 5 based on 312 reviews, you can trust its quality and effectiveness. Plus, it\u2019s well-stocked with 140 units available, so you can get yours easily.\n\nThis deodorant not only enhances your personal grooming with a luxurious fragrance but also offers excellent value for everyday confidence and freshness. Would you like to know more about this product or explore other fragrance options?",
+      "product_interested": "AXE Dark Temptation Deodorant",
+      "interested_product_ids": [
+        "16699403-4a24-4c8c-83f6-5d1a6b426212"
+      ],
+      "is_ready": false,
+      "timestamp": "2025-07-29T17:36:14.290207"
+    },
+    {
+      "sender_id": "test_5_is_ready",
+      "user_message": "Tell me about Wild Stone",
+      "agent_response": "Certainly! If you're interested in Wild Stone, I recommend checking out the **Wild Stone Code Platinum Perfume**. This is a premium, long-lasting fragrance with masculine woody notes, perfect for special occasions or daily wear if you prefer a sophisticated scent. It costs \u09f3450, and customers love it for its elegance and lasting power \u2014 rated 4.50 out of 5 with many satisfied reviews.\n\nAdditionally, if you're looking for something more casual and energetic, the **AXE Dark Temptation Deodorant** is a popular choice. It features an irresistible chocolate fragrance with 48-hour protection, costing \u09f3285. It's a favorite among young men for its seductive scent and dual-action technology that keeps you fresh all day.\n\nWould you like more details on either of these products or help choosing the best one for your needs?",
+      "product_interested": "Multiple products: AXE Dark Temptation Deodorant, Wild Stone Code Platinum Perfume",
+      "interested_product_ids": [
+        "16699403-4a24-4c8c-83f6-5d1a6b426212",
+        "b9f4f5cd-92de-4ab0-8c8e-745682c82b37"
+      ],
+      "is_ready": false,
+      "timestamp": "2025-07-29T17:36:32.098402"
+    },
+    {
+      "sender_id": "test_5_is_ready",
+      "user_message": "How much does it cost?",
+      "agent_response": "Certainly! The **AXE Dark Temptation Deodorant** costs \u09f3285.00. It offers an irresistible chocolate fragrance with 48-hour odor protection, making it a popular choice among young men in Bangladesh. Its dual action technology ensures you stay fresh and confident all day long, at a very accessible price for high-quality grooming.\n\nWe also have the **Wild Stone Code Platinum Perfume**, which is priced at \u09f3450.00, but currently on sale from its original price of \u09f3485.00. This premium long-lasting perfume features masculine woody notes, perfect for special occasions, and provides a sophisticated scent that makes a strong impression.\n\nBoth products offer excellent value\u2014AXE for everyday freshness and Wild Stone for a more refined, long-lasting fragrance. If you\u2019re looking for something budget-friendly yet effective, the Axe deodorant is an outstanding choice. For a touch of luxury and elegance, the Wild Stone perfume is ideal.\n\nWould you like to explore more options or make a decision today?",
+      "product_interested": "Multiple products: AXE Dark Temptation Deodorant, Wild Stone Code Platinum Perfume",
+      "interested_product_ids": [
+        "16699403-4a24-4c8c-83f6-5d1a6b426212",
+        "b9f4f5cd-92de-4ab0-8c8e-745682c82b37"
+      ],
+      "is_ready": false,
+      "timestamp": "2025-07-29T17:36:49.388631"
+    },
+    {
+      "sender_id": "test_5_is_ready",
+      "user_message": "That sounds good",
+      "agent_response": "I'm glad to hear that! Let me share the details of these fantastic products.\n\nFirst, the **AXE Dark Temptation Deodorant** costs \u09f3285. This deodorant offers an irresistible chocolate fragrance that lasts for 48 hours, making it a popular choice among young men in Bangladesh. Its dual action technology provides excellent odor protection while leaving a seductive scent with notes of dark chocolate, vanilla, and amber. It\u2019s perfect for daily use and keeps you feeling fresh and confident all day long.\n\nSecondly, we have the **Wild Stone Code Platinum Perfume** priced at \u09f3450. This is a premium, long-lasting perfume with masculine woody notes, ideal for special occasions or when you want to make a sophisticated impression. It features a blend of bergamot, apple, geranium, sage, marine accords, and base notes of sandalwood, cedarwood, and musk, offering a refined and enduring fragrance.\n\nBoth products deliver great value\u2014whether you're looking for everyday freshness or a signature scent for special moments. If budget is a consideration, the deodorant is a fantastic everyday option, while the perfume adds a touch of luxury for important occasions. Would you like to explore either of these further or need help choosing the best fit for your needs?",
+      "product_interested": "Multiple products: AXE Dark Temptation Deodorant, Wild Stone Code Platinum Perfume",
+      "interested_product_ids": [
+        "16699403-4a24-4c8c-83f6-5d1a6b426212",
+        "b9f4f5cd-92de-4ab0-8c8e-745682c82b37"
+      ],
+      "is_ready": false,
+      "timestamp": "2025-07-29T17:37:07.847993"
+    },
+    {
+      "sender_id": "test_5_is_ready",
+      "user_message": "I'm interested in this product",
+      "agent_response": "Thank you for your interest! Let me tell you about these two fantastic options:\n\nFirst, we have the **AXE Dark Temptation Deodorant** priced at **\u20b9285**. This deodorant offers an irresistible chocolate fragrance that lasts for up to 48 hours, making you feel fresh and confident all day long. It's a popular choice among young men in Bangladesh, known for its seductive scent and dual-action technology that provides excellent odor protection.\n\nAlternatively, we have the **Wild Stone Code Platinum Perfume** available at a special price of **\u20b9450** (originally \u20b9485). This premium perfume features masculine woody notes, perfect for special occasions or everyday sophistication. It\u2019s long-lasting, with a refined fragrance that includes bergamot, apple, sandalwood, and cedarwood, offering a truly luxurious experience.\n\nBoth products give you excellent value\u2014whether you're looking for a daily deodorant with a captivating scent or a more premium perfume for special moments. The AXE deodorant is a budget-friendly, high-quality choice, while the Wild Stone perfume offers a touch of luxury at a slightly higher investment.\n\nWould you like help deciding based on your preferences or budget?",
+      "product_interested": "Multiple products: AXE Dark Temptation Deodorant, Wild Stone Code Platinum Perfume",
+      "interested_product_ids": [
+        "16699403-4a24-4c8c-83f6-5d1a6b426212",
+        "b9f4f5cd-92de-4ab0-8c8e-745682c82b37"
+      ],
+      "is_ready": false,
+      "timestamp": "2025-07-29T17:37:25.550776"
+    },
+    {
+      "sender_id": "test_5_is_ready",
+      "user_message": "It seems perfect for me",
+      "agent_response": "That's fantastic to hear! The AXE Dark Temptation Deodorant is indeed a popular and irresistible choice, especially with its chocolate fragrance and 48-hour protection. \n\nTo confirm, you're interested in the **AXE Dark Temptation Deodorant** at just **\u20b9285.00**. It\u2019s currently well stocked and ready for you.\n\nWould you like to proceed with purchasing this deodorant? Or, if you'd like, I can also help you with the Wild Stone Code Platinum perfume at \u20b9450.00. \n\nPlease let me know how you'd like to proceed!",
+      "product_interested": "Multiple products: AXE Dark Temptation Deodorant, Wild Stone Code Platinum Perfume",
+      "interested_product_ids": [
+        "16699403-4a24-4c8c-83f6-5d1a6b426212",
+        "b9f4f5cd-92de-4ab0-8c8e-745682c82b37"
+      ],
+      "is_ready": false,
+      "timestamp": "2025-07-29T17:37:41.331244"
+    },
+    {
+      "sender_id": "test_5_is_ready",
+      "user_message": "I like this one",
+      "agent_response": "That's fantastic! You're interested in the **AXE Dark Temptation Deodorant**, a popular choice with that irresistible chocolate fragrance and 48-hour protection. \n\nThe final price for this deodorant is **\u20b9285.00**. \n\nWould you like to proceed with purchasing the **AXE Dark Temptation Deodorant** for \u20b9285? Or shall I help you place an order for this?",
+      "product_interested": "Multiple products: AXE Dark Temptation Deodorant, Wild Stone Code Platinum Perfume",
+      "interested_product_ids": [
+        "16699403-4a24-4c8c-83f6-5d1a6b426212",
+        "b9f4f5cd-92de-4ab0-8c8e-745682c82b37"
+      ],
+      "is_ready": false,
+      "timestamp": "2025-07-29T17:37:56.274811"
+    },
+    {
+      "sender_id": "test_5_is_ready",
+      "user_message": "Yes, I want to buy the Wild Stone perfume",
+      "agent_response": "I'm thrilled to hear that you've decided to go with the Wild Stone Code Platinum Perfume! It's a fantastic choice for a sophisticated, long-lasting fragrance with masculine woody notes\u2014perfect for special occasions. \n\nTo confirm, you'll be purchasing the Wild Stone Code Platinum Perfume at \u20b9450.00, which is currently on a great sale from \u20b9485.00. \n\nI'll now connect you with our purchase team who will assist you with the final steps to complete your order. \n\nThank you so much for choosing us for your beauty and grooming needs. We truly appreciate your trust and look forward to serving you!",
+      "product_interested": "Multiple products: AXE Dark Temptation Deodorant, Wild Stone Code Platinum Perfume",
+      "interested_product_ids": [
+        "16699403-4a24-4c8c-83f6-5d1a6b426212",
+        "b9f4f5cd-92de-4ab0-8c8e-745682c82b37"
+      ],
+      "is_ready": true,
+      "timestamp": "2025-07-29T17:38:14.560148"
+    },
+    {
+      "sender_id": "test_5_is_ready",
+      "user_message": "I'll take it",
+      "agent_response": "I'm thrilled to hear that you've decided to go with the Wild Stone Code Platinum Perfume! It's a fantastic choice\u2014rich, masculine, and perfect for special occasions. The total price for this premium fragrance is \u20b9450.00, which is on a special sale from \u20b9485.00.  \n\nI'll now connect you with our purchase team to complete your order smoothly. They will assist you with the final steps.  \n\nThank you so much for choosing us for your personal care and grooming needs. We truly appreciate your trust and look forward to serving you again. Have a wonderful day!",
+      "product_interested": "Multiple products: AXE Dark Temptation Deodorant, Wild Stone Code Platinum Perfume",
+      "interested_product_ids": [
+        "16699403-4a24-4c8c-83f6-5d1a6b426212",
+        "b9f4f5cd-92de-4ab0-8c8e-745682c82b37"
+      ],
+      "is_ready": true,
+      "timestamp": "2025-07-29T17:38:29.592256"
+    },
+    {
+      "sender_id": "test_5_is_ready",
+      "user_message": "I want to purchase this product",
+      "agent_response": "That's fantastic news! I'm thrilled you've chosen the Wild Stone Code Platinum Perfume\u2014it's a truly sophisticated and long-lasting fragrance perfect for special occasions. \n\nTo confirm, you'll be purchasing the Wild Stone Code Platinum Perfume at the special price of \u20b9450.00. The total is \u20b9450.00. \n\nNext, I will connect you with our dedicated purchase team who will assist you with the final steps and ensure a smooth transaction. \n\nThank you so much for choosing us for your beauty and grooming needs. We're delighted to serve you and look forward to your continued satisfaction!",
+      "product_interested": "Multiple products: AXE Dark Temptation Deodorant, Wild Stone Code Platinum Perfume",
+      "interested_product_ids": [
+        "16699403-4a24-4c8c-83f6-5d1a6b426212",
+        "b9f4f5cd-92de-4ab0-8c8e-745682c82b37"
+      ],
+      "is_ready": true,
+      "timestamp": "2025-07-29T17:38:43.919407"
+    },
+    {
+      "sender_id": "test_6_multiple",
+      "user_message": "I want Wild Stone perfume and Himalaya neem face wash",
+      "agent_response": "Absolutely! The **Wild Stone Code Platinum Perfume** costs \u09f3450.00. This is a premium, long-lasting fragrance featuring masculine woody notes, perfect for special occasions or everyday sophistication. Its sophisticated blend of bergamot, apple, geranium, sage, marine notes, sandalwood, cedarwood, and musk makes it a truly distinguished scent that offers excellent value for its quality and longevity. Plus, it's currently on sale from the original price of \u09f3485.00, so you're getting a great deal.\n\nRegarding the Himalaya Neem Face Wash, we have a highly effective herbal face wash that costs \u09f3250.00. It\u2019s formulated with natural neem and turmeric, ideal for deep cleansing, controlling oil, and keeping your skin healthy and refreshed. This product is trusted for its gentle yet effective herbal ingredients, making it a great choice for daily skincare.\n\nBoth products are well-stocked and popular among our customers, ensuring you\u2019re choosing quality and reliability. Would you like to proceed with these, or need any alternatives or additional information?",
+      "product_interested": "Wild Stone Code Platinum Perfume",
+      "interested_product_ids": [
+        "b9f4f5cd-92de-4ab0-8c8e-745682c82b37"
+      ],
+      "is_ready": false,
+      "timestamp": "2025-07-29T17:39:03.092863"
+    },
+    {
+      "sender_id": "test_6_multiple",
+      "user_message": "I also need a good shampoo for hair fall",
+      "agent_response": "Certainly! For a good shampoo that helps with hair fall, I recommend the **Head & Shoulders Anti-Dandruff Shampoo**. It costs \u09f3320. This shampoo is clinically proven to effectively remove dandruff and prevent its recurrence, which often contributes to hair fall. It's dermatologist recommended and highly rated with 4.60/5.0 based on 267 reviews, so you can trust its quality and effectiveness.\n\nIf you're looking for more options, we also have **Dabur Amla Hair Oil** for \u09f3115, which strengthens hair from the roots and prevents premature graying, and **Bajaj Almond Drops Hair Oil** for \u09f3145, which nourishes hair with vitamin E and is lightweight for daily use. Both oils support hair health and can complement your shampoo routine.\n\nThese products are all well-stocked and offer excellent value\u2014quality ingredients, trusted brands, and proven benefits. Would you like to explore any of these options further or need guidance on which might suit your specific hair type?",
+      "product_interested": "Multiple products: Wild Stone Code Platinum Perfume, Bajaj Almond Drops Hair Oil, Dabur Amla Hair Oil, Fair & Lovely Advanced Multi Vitamin Face Cream, Keya Seth Joba Hair Oil, Head & Shoulders Anti-Dandruff Shampoo",
+      "interested_product_ids": [
+        "b9f4f5cd-92de-4ab0-8c8e-745682c82b37",
+        "15a4e12e-fd88-4a9c-864c-ea2c4dbe22b2",
+        "b5d6314d-b67d-4b6e-bd07-daee294f8588",
+        "38ef231e-fd1b-4266-8e04-245047fe702f",
+        "ea4f53c6-6c24-4869-ac9a-af3510a6f7fb",
+        "eea137cc-8256-4c8a-bd43-6b4e32f4a727"
+      ],
+      "is_ready": false,
+      "timestamp": "2025-07-29T17:39:27.047844"
+    },
+    {
+      "sender_id": "test_7_removal",
+      "user_message": "I want Wild Stone perfume, Himalaya face wash, and Head & Shoulders shampoo",
+      "agent_response": "Absolutely! Let me give you the details on each of these products:\n\nFirst, the **Wild Stone Code Platinum Perfume** costs \u09f3450. This is a premium, long-lasting perfume with masculine woody notes, perfect for special occasions or daily wear if you want to make a sophisticated impression. Its rich fragrance features bergamot apple, geranium sage, marine notes, sandalwood, cedarwood, and musk, offering a well-rounded, masculine aroma that lasts throughout the day. The perfume is highly rated at 4.50 out of 5, based on 189 reviews, which speaks to its popularity and quality. Currently, it\u2019s on sale from the original price of \u09f3485, so you\u2019re saving \u09f335 today. It\u2019s well-stocked with 85 units available, so you can get it quickly.\n\nNext, the **Himalaya Face Wash**\u2014though I don\u2019t have the exact price here, Himalaya products are known for their herbal, gentle, and effective formulations. They are affordable and ideal for daily skincare, especially if you prefer natural ingredients like neem and turmeric. Would you like me to check the current price for you?\n\nFinally, the **Head & Shoulders Shampoo**\u2014again, I can provide the exact price if you'd like. Head & Shoulders is a trusted brand for dandruff control and scalp health, offering formulations that nourish hair and",
+      "product_interested": "Wild Stone Code Platinum Perfume",
+      "interested_product_ids": [
+        "b9f4f5cd-92de-4ab0-8c8e-745682c82b37"
+      ],
+      "is_ready": false,
+      "timestamp": "2025-07-29T17:39:47.539197"
+    },
+    {
+      "sender_id": "test_7_removal",
+      "user_message": "Actually, I don't need the shampoo anymore",
+      "agent_response": "I'm glad you mentioned that! Are you looking to explore other personal care or beauty products instead, like skincare, body care, or perhaps something for grooming? It would be helpful to know what specific needs or preferences you have so I can recommend the best options for you.",
+      "product_interested": "Wild Stone Code Platinum Perfume",
+      "interested_product_ids": [
+        "b9f4f5cd-92de-4ab0-8c8e-745682c82b37"
+      ],
+      "is_ready": false,
+      "timestamp": "2025-07-29T17:40:02.704246"
+    },
+    {
+      "sender_id": "test_7_removal",
+      "user_message": "Can I change the face wash to something for sensitive skin instead?",
+      "agent_response": "That's great to hear you're interested! The Dove Beauty Bar Moisturizing Soap is an excellent choice for sensitive skin\u2014gentle, nourishing, and dermatologist recommended. It\u2019s now available at \u20b958.00, down from \u20b965.00, and we have plenty in stock.\n\nWould you like to proceed with purchasing the Dove Beauty Bar Moisturizing Soap for \u09f358? Or shall I help you place an order for this?",
+      "product_interested": "Multiple products: Wild Stone Code Platinum Perfume, Dove Beauty Bar Moisturizing Soap",
+      "interested_product_ids": [
+        "b9f4f5cd-92de-4ab0-8c8e-745682c82b37",
+        "55d26d11-22c2-4632-8d4b-10d8ced93269"
+      ],
+      "is_ready": false,
+      "timestamp": "2025-07-29T17:40:20.275453"
+    },
+    {
+      "sender_id": "test_8_complete_flow",
+      "user_message": "Hi, I'm looking for beauty products",
+      "agent_response": "Hello! Thank you for reaching out. We have a wide range of beauty products to suit your needs. Let me share some of our popular categories with pricing details:\n\n1. **Premium Perfumes & Fragrances**  \n   - Body sprays with pure perfume concentrates: \u09f3950 each  \n   - Traditional Arabic attars with rose and oud: \u09f31,200 each  \n   - Luxury woody perfumes: \u09f32,000 each  \n   These fragrances are crafted with high-quality ingredients, offering long-lasting scent and elegance that truly elevate your personal aura.\n\n2. **Skincare & Beauty Soaps**  \n   - Hydrating moisturizing soaps with natural ingredients: \u09f3250 each  \n   - Herbal face washes with neem and turmeric: \u09f3300 each  \n   - Fairness creams with multivitamin complexes: \u09f3450  \n   These products provide effective skincare, nourishing your skin with the best of traditional and modern formulations.\n\n3. **Hair Care Products**  \n   - Anti-hair fall shampoos: \u09f3450  \n   - Nourishing hair oils like pure coconut or herbal hibiscus: \u09f3350 per bottle  \n   - Organic bio-certified shampoos: \u09f3550  \n   They help strengthen, nourish, and protect your hair, combining nature and science for visible results.\n\n4. **Personal Care Items**  \n   - Deodorants and body sprays: \u09f3",
+      "product_interested": null,
+      "interested_product_ids": [],
+      "is_ready": false,
+      "timestamp": "2025-07-29T17:40:37.451736"
+    },
+    {
+      "sender_id": "test_8_complete_flow",
+      "user_message": "I need a perfume that lasts all day",
+      "agent_response": "Thank you for sharing your need for a perfume that lasts all day. I recommend considering options that combine long-lasting scent with quality and value.\n\nFirst, **AXE Dark Temptation Deodorant** costs \u09f3285. It offers an irresistible chocolate fragrance that lasts up to 48 hours, making it a popular choice among young men in Bangladesh. Its dual action technology provides odor protection and a seductive scent, ensuring you stay fresh and confident throughout the day. This product is highly rated at 4.40/5.0 with over 300 reviews, so you can trust its effectiveness.\n\nAlternatively, **Fogg Scent Xpressio Body Spray** is priced at \u09f3225 (on sale from \u09f3245). It guarantees 800 sprays with a pure perfume concentrate, providing a long-lasting, fresh citrus bergamot and lavender scent without gas. With a rating of 4.20/5.0 and over 450 reviews, it\u2019s designed for all-day freshness and is an excellent value for its price.\n\nBoth are premium options known for their lasting fragrance and quality. If you want a product that truly stays with you all day, these are your best choices. Would you like to go ahead with one of these, or do you need assistance with other options within your budget?",
+      "product_interested": "Multiple products: AXE Dark Temptation Deodorant, Fogg Scent Xpressio Body Spray, Herbal Essences Bio Coconut Milk Shampoo, Head & Shoulders Anti-Dandruff Shampoo, Lifebuoy Total 10 Antibacterial Soap",
+      "interested_product_ids": [
+        "16699403-4a24-4c8c-83f6-5d1a6b426212",
+        "43b95ad4-0fc0-4c04-ae77-7671696ca66a",
+        "4ba24ba6-92f2-4393-872a-a1b810fad9aa",
+        "eea137cc-8256-4c8a-bd43-6b4e32f4a727",
+        "f393674f-3c1d-4833-affb-2dec5e0e4ac6"
+      ],
+      "is_ready": false,
+      "timestamp": "2025-07-29T17:41:01.382976"
+    },
+    {
+      "sender_id": "test_8_complete_flow",
+      "user_message": "Wild Stone sounds good, what's the price?",
+      "agent_response": "Hello! I'm glad you're interested in Wild Stone. While we don't have Wild Stone perfumes listed right now, I can recommend some excellent options that offer great value and quality.\n\nFor example, our **AXE Dark Temptation Deodorant** costs \u09f3450. It features an irresistible chocolate fragrance with 48-hour protection, making it a popular choice among young men in Bangladesh. It\u2019s priced to reflect its premium scent and long-lasting effect.\n\nAnother fantastic option is the **Fogg Scent Xpressio Body Spray**, available for just \u09f3285. It offers a long-lasting fresh fragrance with a pure perfume concentrate, guaranteeing up to 800 sprays\u2014perfect for daily use and special occasions alike.\n\nIf you're looking for something with nourishing ingredients, our **Herbal Essences Bio Coconut Milk Shampoo** is priced at \u09f3360. It deeply hydrates and nourishes dry, damaged hair with organic coconut milk and jasmine extracts, giving you both quality and value.\n\nAll these products are carefully curated to ensure you get authentic, high-quality personal care at a fair price. If your budget is a concern or you're interested in specific scents or types, I can suggest alternatives tailored to your preferences. Would you like to explore more options or know about any particular feature?",
+      "product_interested": "Multiple products: AXE Dark Temptation Deodorant, Fogg Scent Xpressio Body Spray, Herbal Essences Bio Coconut Milk Shampoo, Head & Shoulders Anti-Dandruff Shampoo, Lifebuoy Total 10 Antibacterial Soap",
+      "interested_product_ids": [
+        "16699403-4a24-4c8c-83f6-5d1a6b426212",
+        "43b95ad4-0fc0-4c04-ae77-7671696ca66a",
+        "4ba24ba6-92f2-4393-872a-a1b810fad9aa",
+        "eea137cc-8256-4c8a-bd43-6b4e32f4a727",
+        "f393674f-3c1d-4833-affb-2dec5e0e4ac6"
+      ],
+      "is_ready": false,
+      "timestamp": "2025-07-29T17:41:20.358434"
+    },
+    {
+      "sender_id": "test_8_complete_flow",
+      "user_message": "I also need a face wash for oily skin",
+      "agent_response": "Thank you for sharing your need for a face wash suitable for oily skin. I recommend the **Himalaya Purifying Neem Face Wash** priced at \u09f3135.00. It\u2019s an herbal face wash with neem and turmeric, known for effectively removing impurities and preventing pimples naturally. Its herbal formulation makes it gentle yet powerful for oily and acne-prone skin, offering excellent value at this price point.\n\nIf you're looking for options with added freshness or a more luxurious feel, the **Fogg Scent Xpressio Body Spray** at \u09f3225.00 offers a long-lasting citrus and lavender fragrance, perfect for a refreshing boost after cleansing.\n\nFor those who prefer a more nourishing and moisturizing cleanse, the **Dove Beauty Bar Moisturizing Soap** at \u09f358.00 provides deep nourishment and is gentle on sensitive skin, ensuring your skin stays hydrated even while controlling oil.\n\nAll these products are well-stocked and come from trusted brands, ensuring quality and effectiveness. If budget is a concern, the Dove soap is very affordable while still delivering great skin benefits. Would you like to explore any of these options further or need a specific recommendation tailored to your skin type?",
+      "product_interested": "Multiple products: AXE Dark Temptation Deodorant, Fogg Scent Xpressio Body Spray, Herbal Essences Bio Coconut Milk Shampoo, Head & Shoulders Anti-Dandruff Shampoo, Lifebuoy Total 10 Antibacterial Soap, Dove Beauty Bar Moisturizing Soap, Himalaya Purifying Neem Face Wash, Pantene Pro-V Silky Smooth Care Shampoo",
+      "interested_product_ids": [
+        "16699403-4a24-4c8c-83f6-5d1a6b426212",
+        "43b95ad4-0fc0-4c04-ae77-7671696ca66a",
+        "4ba24ba6-92f2-4393-872a-a1b810fad9aa",
+        "eea137cc-8256-4c8a-bd43-6b4e32f4a727",
+        "f393674f-3c1d-4833-affb-2dec5e0e4ac6",
+        "55d26d11-22c2-4632-8d4b-10d8ced93269",
+        "ec00e983-e85f-4202-a732-a3c61955091c",
+        "17fd4a77-5a46-4896-8aaa-d158e9203002"
+      ],
+      "is_ready": false,
+      "timestamp": "2025-07-29T17:41:42.834235"
+    },
+    {
+      "sender_id": "test_8_complete_flow",
+      "user_message": "Show me what you have for face wash",
+      "agent_response": "Thank you for your interest in face washes! We have a great selection to suit different needs and preferences. Let me walk you through some options with their prices and what makes each one special:\n\n1. **Himalaya Purifying Neem Face Wash** \u2014 \u09f3135.00  \n   This herbal face wash with neem and turmeric is excellent for natural impurities removal and pimple prevention. It\u2019s a trusted herbal choice that balances effectiveness with gentle care.  \n\n2. **Himalaya Neem Face Wash** costs only \u09f3135.00. It offers great value for those seeking natural ingredients that work to keep your skin clear and healthy.\n\n3. **Dove Beauty Bar Moisturizing Soap** \u2014 \u09f358.00  \n   While technically a soap, this bar provides deep nourishment with 1/4 moisturizing cream, perfect for sensitive skin and daily cleansing. It\u2019s an affordable way to keep your skin soft and hydrated.\n\n4. **Lifebuoy Total 10 Antibacterial Soap** \u2014 \u09f335.00  \n   For those prioritizing germ protection, this soap removes 99.9% of germs and offers 10x better protection. It\u2019s economical and ideal for whole-family hygiene.\n\n5. **Herbal Essences Bio Coconut Milk Shampoo** \u2014 \u09f3360.00  \n   If you're looking for a face wash with nourishing properties for your hair, this",
+      "product_interested": "Multiple products: AXE Dark Temptation Deodorant, Fogg Scent Xpressio Body Spray, Herbal Essences Bio Coconut Milk Shampoo, Head & Shoulders Anti-Dandruff Shampoo, Lifebuoy Total 10 Antibacterial Soap, Dove Beauty Bar Moisturizing Soap, Himalaya Purifying Neem Face Wash, Pantene Pro-V Silky Smooth Care Shampoo",
+      "interested_product_ids": [
+        "16699403-4a24-4c8c-83f6-5d1a6b426212",
+        "43b95ad4-0fc0-4c04-ae77-7671696ca66a",
+        "4ba24ba6-92f2-4393-872a-a1b810fad9aa",
+        "eea137cc-8256-4c8a-bd43-6b4e32f4a727",
+        "f393674f-3c1d-4833-affb-2dec5e0e4ac6",
+        "55d26d11-22c2-4632-8d4b-10d8ced93269",
+        "ec00e983-e85f-4202-a732-a3c61955091c",
+        "17fd4a77-5a46-4896-8aaa-d158e9203002"
+      ],
+      "is_ready": false,
+      "timestamp": "2025-07-29T17:42:04.260549"
+    },
+    {
+      "sender_id": "test_8_complete_flow",
+      "user_message": "Perfect, I want both the perfume and face wash",
+      "agent_response": "That's fantastic! You're interested in both the **AXE Dark Temptation Deodorant** and the **Fogg Scent Xpressio Body Spray**\u2014great choices for long-lasting, irresistible fragrances. \n\nHere's a quick summary:\n- **AXE Dark Temptation Deodorant:** \u09f3285.00\n- **Fogg Scent Xpressio Body Spray:** \u09f3225.00 (on sale from \u09f3245.00)\n\nThe total for both products is **\u09f3510.00**.\n\nWould you like to proceed with purchasing these? If yes, I can help you place the order right now!",
+      "product_interested": "Multiple products: AXE Dark Temptation Deodorant, Fogg Scent Xpressio Body Spray, Herbal Essences Bio Coconut Milk Shampoo, Head & Shoulders Anti-Dandruff Shampoo, Lifebuoy Total 10 Antibacterial Soap, Dove Beauty Bar Moisturizing Soap, Himalaya Purifying Neem Face Wash, Pantene Pro-V Silky Smooth Care Shampoo",
+      "interested_product_ids": [
+        "16699403-4a24-4c8c-83f6-5d1a6b426212",
+        "43b95ad4-0fc0-4c04-ae77-7671696ca66a",
+        "4ba24ba6-92f2-4393-872a-a1b810fad9aa",
+        "eea137cc-8256-4c8a-bd43-6b4e32f4a727",
+        "f393674f-3c1d-4833-affb-2dec5e0e4ac6",
+        "55d26d11-22c2-4632-8d4b-10d8ced93269",
+        "ec00e983-e85f-4202-a732-a3c61955091c",
+        "17fd4a77-5a46-4896-8aaa-d158e9203002"
+      ],
+      "is_ready": false,
+      "timestamp": "2025-07-29T17:42:24.283105"
+    },
+    {
+      "sender_id": "test_8_complete_flow",
+      "user_message": "Yes, confirm my order for both products",
+      "agent_response": "I'm thrilled to see you're interested in these fantastic products! Just to confirm, you're looking to purchase:\n\n- **AXE Dark Temptation Deodorant** for \u20b9285.00  \n- **Fogg Scent Xpressio Body Spray** for \u20b9225.00\n\nThe total for both items would be **\u20b9510.00**.\n\nWould you like to go ahead and buy these? If yes, I can help you place the order right now!",
+      "product_interested": "Multiple products: AXE Dark Temptation Deodorant, Fogg Scent Xpressio Body Spray, Herbal Essences Bio Coconut Milk Shampoo, Head & Shoulders Anti-Dandruff Shampoo, Lifebuoy Total 10 Antibacterial Soap, Dove Beauty Bar Moisturizing Soap, Himalaya Purifying Neem Face Wash, Pantene Pro-V Silky Smooth Care Shampoo",
+      "interested_product_ids": [
+        "16699403-4a24-4c8c-83f6-5d1a6b426212",
+        "43b95ad4-0fc0-4c04-ae77-7671696ca66a",
+        "4ba24ba6-92f2-4393-872a-a1b810fad9aa",
+        "eea137cc-8256-4c8a-bd43-6b4e32f4a727",
+        "f393674f-3c1d-4833-affb-2dec5e0e4ac6",
+        "55d26d11-22c2-4632-8d4b-10d8ced93269",
+        "ec00e983-e85f-4202-a732-a3c61955091c",
+        "17fd4a77-5a46-4896-8aaa-d158e9203002"
+      ],
+      "is_ready": false,
+      "timestamp": "2025-07-29T17:42:40.110108"
+    }
+  ],
+  "timestamp": "20250729_174241"
+}
