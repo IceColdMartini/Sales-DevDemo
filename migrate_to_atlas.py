@@ -24,7 +24,7 @@ def migrate_conversations():
     local_db_name = os.getenv("MONGO_DB_NAME", "conversations_db")
     
     # Atlas MongoDB connection details
-    atlas_uri = os.getenv("MONGODB_ATLAS_URI")
+    atlas_uri = os.getenv("MONGODB_ATLAS_URI", "mongodb+srv://sales_admin:icee@conversation.4cibmsx.mongodb.net/sales_conversations?retryWrites=true&w=majority&appName=Conversation")
     atlas_db_name = os.getenv("MONGODB_ATLAS_DB_NAME", "sales_conversations")
     
     if not atlas_uri:
