@@ -12,9 +12,16 @@ class Settings:
     POSTGRES_HOST: str = os.getenv("POSTGRES_HOST", "localhost")
     POSTGRES_PORT: int = int(os.getenv("POSTGRES_PORT", 5432))
 
-    # MongoDB
+    # MongoDB (supports both local and Atlas)
     MONGO_URI: str = os.getenv("MONGO_URI", "mongodb://localhost:27017/")
     MONGO_DB_NAME: str = os.getenv("MONGO_DB_NAME", "conversations_db")
+    
+    # MongoDB Atlas specific settings
+    MONGODB_ATLAS_URI: str = os.getenv("MONGODB_ATLAS_URI", "")
+    MONGODB_ATLAS_DB_NAME: str = os.getenv("MONGODB_ATLAS_DB_NAME", "sales_conversations")
+    
+    # MongoDB connection preference (atlas or local)
+    USE_MONGODB_ATLAS: bool = os.getenv("USE_MONGODB_ATLAS", "false").lower() == "true"
 
     # Azure OpenAI
     AZURE_OPENAI_API_KEY: str = os.getenv("AZURE_OPENAI_API_KEY")
@@ -39,6 +46,24 @@ class Settings:
         if not self.AZURE_OPENAI_ENDPOINT:
             raise ValueError("AZURE_OPENAI_ENDPOINT is required")
         
+        # Validate MongoDB settings
+        if self.USE_MONGODB_ATLAS and not self.MONGODB_ATLAS_URI:
+            raise ValueError("MONGODB_ATLAS_URI is required when USE_MONGODB_ATLAS is true")
+        
         return True
+
+    @property
+    def effective_mongo_uri(self) -> str:
+        """Get the effective MongoDB URI based on configuration"""
+        if self.USE_MONGODB_ATLAS and self.MONGODB_ATLAS_URI:
+            return self.MONGODB_ATLAS_URI
+        return self.MONGO_URI
+    
+    @property
+    def effective_mongo_db_name(self) -> str:
+        """Get the effective MongoDB database name based on configuration"""
+        if self.USE_MONGODB_ATLAS and self.MONGODB_ATLAS_DB_NAME:
+            return self.MONGODB_ATLAS_DB_NAME
+        return self.MONGO_DB_NAME
 
 settings = Settings()

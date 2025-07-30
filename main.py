@@ -73,18 +73,28 @@ def read_root():
 def health_check():
     """Detailed health check with database connectivity"""
     try:
-        # Check database connections
+        # Check PostgreSQL connection
         postgres_status = "connected" if postgres_handler.conn and not postgres_handler.conn.closed else "disconnected"
-        mongo_status = "connected" if mongo_handler.client else "disconnected"
+        
+        # Check MongoDB connection (with Atlas support)
+        mongo_info = mongo_handler.get_connection_info()
+        mongo_status = mongo_info.get("status", "disconnected")
+        mongo_type = mongo_info.get("connection_type", "unknown")
         
         return {
             "status": "healthy",
             "databases": {
                 "postgresql": postgres_status,
-                "mongodb": mongo_status
+                "mongodb": mongo_status,
+                "mongodb_type": mongo_type,
+                "mongodb_details": mongo_info
             },
             "services": {
                 "ai_service": "available" if settings.AZURE_OPENAI_API_KEY else "not_configured"
+            },
+            "configuration": {
+                "using_atlas": settings.USE_MONGODB_ATLAS,
+                "mongo_db_name": settings.effective_mongo_db_name
             }
         }
     except Exception as e:

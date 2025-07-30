@@ -8,20 +8,95 @@ class MongoHandler:
     def __init__(self):
         self.client = None
         self.db = None
+        self.connection_type = None
 
     def connect(self):
         try:
-            self.client = MongoClient(settings.MONGO_URI)
-            self.db = self.client[settings.MONGO_DB_NAME]
-            print("MongoDB connection established.")
+            # Use the effective MongoDB URI from settings
+            mongo_uri = settings.effective_mongo_uri
+            db_name = settings.effective_mongo_db_name
+            
+            # Determine connection type for logging
+            if settings.USE_MONGODB_ATLAS:
+                self.connection_type = "MongoDB Atlas (Cloud)"
+            else:
+                self.connection_type = "MongoDB Local"
+            
+            print(f"Connecting to {self.connection_type}...")
+            
+            # MongoDB Atlas requires different connection parameters
+            if settings.USE_MONGODB_ATLAS:
+                # Atlas connections should use TLS and have specific timeout settings
+                self.client = MongoClient(
+                    mongo_uri,
+                    tls=True,
+                    tlsAllowInvalidCertificates=False,
+                    serverSelectionTimeoutMS=5000,  # 5 second timeout
+                    connectTimeoutMS=10000,  # 10 second timeout
+                    maxPoolSize=50,  # Connection pool size
+                    retryWrites=True
+                )
+            else:
+                # Local MongoDB connection
+                self.client = MongoClient(mongo_uri)
+            
+            # Test the connection
+            self.client.admin.command('ping')
+            
+            self.db = self.client[db_name]
+            print(f"✅ {self.connection_type} connection established successfully")
+            print(f"   Database: {db_name}")
+            
+            # Create indexes for better performance (especially important for Atlas)
+            self._create_indexes()
+            
         except Exception as e:
-            print(f"Error connecting to MongoDB: {e}")
+            print(f"❌ Error connecting to {self.connection_type}: {e}")
+            print(f"   URI pattern: {mongo_uri[:20]}..." if mongo_uri else "No URI provided")
             raise
+
+    def _create_indexes(self):
+        """Create database indexes for better performance"""
+        try:
+            # Index on sender_id for faster conversation lookups
+            self.db.conversations.create_index("sender_id", unique=True)
+            
+            # Index on updated_at for queries by time
+            self.db.conversations.create_index("updated_at")
+            
+            print("✅ Database indexes created/verified")
+        except Exception as e:
+            print(f"⚠️ Warning: Could not create indexes: {e}")
 
     def disconnect(self):
         if self.client:
             self.client.close()
-        print("MongoDB connection closed.")
+        print(f"✅ {self.connection_type} connection closed.")
+
+    def get_connection_info(self) -> dict:
+        """Get information about the current MongoDB connection"""
+        if not self.client:
+            return {"status": "disconnected"}
+        
+        try:
+            # Test connection
+            self.client.admin.command('ping')
+            
+            server_info = self.client.server_info()
+            
+            return {
+                "status": "connected",
+                "connection_type": self.connection_type,
+                "server_version": server_info.get("version", "unknown"),
+                "database_name": settings.effective_mongo_db_name,
+                "collections": self.db.list_collection_names() if self.db else []
+            }
+        except Exception as e:
+            return {
+                "status": "error", 
+                "error": str(e),
+                "connection_type": self.connection_type
+            }
 
     def get_conversation(self, sender_id: str) -> Optional[Dict]:
         """Get conversation history for a specific sender"""
