@@ -26,6 +26,7 @@ class Settings:
     # Azure OpenAI
     AZURE_OPENAI_API_KEY: str = os.getenv("AZURE_OPENAI_API_KEY")
     AZURE_OPENAI_ENDPOINT: str = os.getenv("AZURE_OPENAI_ENDPOINT")
+    AZURE_OPENAI_DEPLOYMENT: str = os.getenv("AZURE_OPENAI_DEPLOYMENT", "gpt-4")
     OPENAI_API_VERSION: str = os.getenv("OPENAI_API_VERSION", "2024-02-15-preview")
     OPENAI_MODEL: str = os.getenv("OPENAI_MODEL", "gpt-4")
 
@@ -67,3 +68,9 @@ class Settings:
         return self.MONGO_DB_NAME
 
 settings = Settings()
+
+# Export commonly used settings as module-level constants for backward compatibility
+AZURE_OPENAI_API_KEY = settings.AZURE_OPENAI_API_KEY
+AZURE_OPENAI_ENDPOINT = settings.AZURE_OPENAI_ENDPOINT
+AZURE_OPENAI_DEPLOYMENT = settings.AZURE_OPENAI_DEPLOYMENT
+config = settings

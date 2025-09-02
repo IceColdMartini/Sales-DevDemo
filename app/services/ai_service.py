@@ -650,18 +650,29 @@ class AIService:
                     
                     print(f"🔍 BUSINESS RULE CHECK: Prices Shown={prices_shown}, Saw Prices={customer_saw_prices}, Explicit={explicit_purchase}")
                     
-                    # ENHANCED EXPLICIT PURCHASE DETECTION: Only truly explicit confirmations
-                    # "I want to buy" is INTENT, not CONFIRMATION - customer needs to see prices first
+                    # ENHANCED EXPLICIT PURCHASE DETECTION: More inclusive detection
+                    # Include common purchase confirmation phrases
                     explicit_purchase_detected = any(phrase in user_message.lower() for phrase in [
                         "i'll take it", "i'll buy it", "i'll purchase it", "yes, i'll buy", 
                         "yes, i want to buy", "yes, buy", "i'll take the", "i'll take both",
-                        "confirm purchase", "complete order", "let's do it", "proceed with purchase"
+                        "confirm purchase", "complete order", "let's do it", "proceed with purchase",
+                        "yes, i want to purchase it now", "yes, confirm my purchase", "i want to purchase this",
+                        "i want to buy this", "i'll purchase this", "i want to purchase that", 
+                        "i want to buy that", "i'll buy that", "yes, i want to buy it",
+                        "yes, i want to purchase it", "i want to buy it now", "i want to purchase it now",
+                        "yes, i want to buy now", "yes, i want to purchase now", "i'll take it now",
+                        "i'll buy it now", "i'll purchase it now", "confirm my purchase",
+                        "yes, confirm purchase", "yes, i want to buy the", "yes, i want to purchase the"
                     ])
                     
                     # CONTEXT-SPECIFIC PURCHASE CONFIRMATIONS: When referring to specific discussed products
                     context_specific_confirmations = any(phrase in user_message.lower() for phrase in [
                         "i want to purchase this", "i want to buy this", "i'll purchase this",
-                        "i want to purchase that", "i want to buy that", "i'll buy that"
+                        "i want to purchase that", "i want to buy that", "i'll buy that",
+                        "yes, i want to purchase this", "yes, i want to buy this", "yes, i'll purchase this",
+                        "yes, i want to purchase that", "yes, i want to buy that", "yes, i'll buy that",
+                        "i want to purchase it", "i want to buy it", "i'll purchase it", "i'll buy it",
+                        "yes, i want to purchase it", "yes, i want to buy it", "yes, i'll purchase it", "yes, i'll buy it"
                     ])
                     
                     # If context-specific confirmation detected, treat as explicit purchase
@@ -672,7 +683,7 @@ class AIService:
                     # INITIAL PURCHASE INTENT (not confirmation) - should trigger price discussion
                     initial_purchase_intent = any(phrase in user_message.lower() for phrase in [
                         "i want to buy", "i want to purchase", "i want to order", "i need to buy"
-                    ]) and not any(confirm_word in user_message.lower() for confirm_word in ["yes", "i'll", "let's", "this", "that"])
+                    ]) and not any(confirm_word in user_message.lower() for confirm_word in ["yes", "i'll", "let's", "this", "that", "now", "confirm"])
                     
                     # If it's just initial intent, don't mark as ready - they need to see prices first
                     if initial_purchase_intent and not explicit_purchase_detected:
