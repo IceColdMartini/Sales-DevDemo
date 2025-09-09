@@ -89,7 +89,7 @@ class MongoHandler:
                 "connection_type": self.connection_type,
                 "server_version": server_info.get("version", "unknown"),
                 "database_name": settings.effective_mongo_db_name,
-                "collections": self.db.list_collection_names() if self.db else []
+                "collections": self.db.list_collection_names() if self.db is not None else []
             }
         except Exception as e:
             return {
@@ -98,25 +98,59 @@ class MongoHandler:
                 "connection_type": self.connection_type
             }
 
+    def get_database(self):
+        """Get the MongoDB database instance"""
+        if self.db is None:
+            raise Exception("Database not connected. Call connect() first.")
+        return self.db
+
     def get_conversation(self, sender_id: str) -> Optional[Dict]:
         """Get conversation history for a specific sender"""
         try:
+            # Ensure connection is established
+            if self.client is None or self.db is None:
+                self.connect()
             return self.db.conversations.find_one({"sender_id": sender_id})
         except Exception as e:
             print(f"Error getting conversation for {sender_id}: {e}")
             return None
 
-    def save_conversation(self, sender_id: str, conversation: List[Dict]):
-        """Save or update conversation history for a sender"""
+    def save_conversation(self, sender_id: str, conversation_data):
+        """Save or update conversation data for a sender"""
         try:
+            # Ensure connection is established
+            if self.client is None or self.db is None:
+                self.connect()
+            
+            # Handle both list and dict formats for backward compatibility
+            if isinstance(conversation_data, list):
+                # Legacy format: just the conversation messages
+                update_data = {
+                    "conversation": conversation_data,
+                    "updated_at": datetime.utcnow(),
+                    "message_count": len(conversation_data)
+                }
+            elif isinstance(conversation_data, dict):
+                # New format: full conversation data structure
+                update_data = conversation_data.copy()
+                update_data["updated_at"] = datetime.utcnow()
+                
+                # Remove created_at from $set if it exists (should only be in $setOnInsert)
+                if "created_at" in update_data:
+                    del update_data["created_at"]
+                
+                # Ensure conversation field exists and count messages
+                if "conversation" in update_data and isinstance(update_data["conversation"], list):
+                    update_data["message_count"] = len(update_data["conversation"])
+                else:
+                    update_data["message_count"] = 0
+            else:
+                raise ValueError(f"Invalid conversation_data type: {type(conversation_data)}")
+            
             self.db.conversations.update_one(
                 {"sender_id": sender_id},
                 {
-                    "$set": {
-                        "conversation": conversation,
-                        "updated_at": datetime.utcnow(),
-                        "message_count": len(conversation)
-                    },
+                    "$set": update_data,
                     "$setOnInsert": {
                         "created_at": datetime.utcnow()
                     }
@@ -146,6 +180,9 @@ class MongoHandler:
     def delete_conversation(self, sender_id: str):
         """Delete conversation history for a sender"""
         try:
+            # Ensure connection is established
+            if self.client is None or self.db is None:
+                self.connect()
             result = self.db.conversations.delete_one({"sender_id": sender_id})
             return result.deleted_count > 0
         except Exception as e:
@@ -155,6 +192,9 @@ class MongoHandler:
     def get_all_active_conversations(self) -> List[Dict]:
         """Get list of all active conversations"""
         try:
+            # Ensure connection is established
+            if self.client is None or self.db is None:
+                self.connect()
             return list(self.db.conversations.find(
                 {},
                 {"sender_id": 1, "message_count": 1, "updated_at": 1}

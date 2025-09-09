@@ -1,0 +1,1436 @@
+{
+  "test_session": {
+    "session_id": "multi_test_1757248521",
+    "start_time": "2025-09-07T12:35:21.247980+00:00",
+    "test_type": "comprehensive_multi_scenario",
+    "scenarios_tested": 5,
+    "total_conversations": 0,
+    "end_time": "2025-09-07T12:36:53.424987+00:00"
+  },
+  "scenario_results": [
+    {
+      "scenario_name": "Skincare_Enthusiast",
+      "customer_id": "multi_test_1757248521_Skincare_Enthusiast_1757248523",
+      "description": "Detail-oriented customer who researches products thoroughly",
+      "start_time": "2025-09-07T12:35:23.645360+00:00",
+      "conversation_steps": [
+        {
+          "step_number": 1,
+          "customer_input": "Hi! I'm really into skincare and I'm looking to upgrade my routine. I have combination skin that's been acting up lately. Can you help me find some good products?",
+          "response_time": 3.645595073699951,
+          "http_status": 200,
+          "response_data": {
+            "sender": "multi_test_1757248521_Skincare_Enthusiast_1757248523",
+            "product_interested": null,
+            "interested_product_ids": [],
+            "response_text": "Hi! It's wonderful that you're passionate about skincare. For combination skin that's acting up, I recommend a gentle cleanser, a balanced moisturizer, and perhaps a targeted treatment for breakouts. Would you like some specific product suggestions or tips on how to adjust your routine? I'm here to help you find the perfect fit!",
+            "is_ready": false,
+            "conversation_stage": "INITIAL_INTEREST",
+            "confidence": 0.9,
+            "handover": false,
+            "new_system": true,
+            "metadata": {},
+            "processing_timestamp": "2025-09-07T12:35:27.286356"
+          },
+          "ai_response": "Hi! It's wonderful that you're passionate about skincare. For combination skin that's acting up, I recommend a gentle cleanser, a balanced moisturizer, and perhaps a targeted treatment for breakouts. Would you like some specific product suggestions or tips on how to adjust your routine? I'm here to help you find the perfect fit!",
+          "timestamp": "2025-09-07T12:35:27.291172+00:00"
+        },
+        {
+          "step_number": 2,
+          "customer_input": "That sounds interesting! Can you tell me more about the ingredients in these products? I'm particularly concerned about avoiding sulfates and parabens. Do you have any clean beauty options?",
+          "response_time": 3.9716339111328125,
+          "http_status": 200,
+          "response_data": {
+            "sender": "multi_test_1757248521_Skincare_Enthusiast_1757248523",
+            "product_interested": null,
+            "interested_product_ids": [],
+            "response_text": "I'm glad you're interested in clean beauty options! Many of our products are formulated without sulfates and parabens, focusing on gentle, natural ingredients. Would you like some specific product recommendations or tips on how to identify clean beauty products? I'm here to help you find the perfect fit for your skincare needs!",
+            "is_ready": false,
+            "conversation_stage": "PRODUCT_DISCOVERY",
+            "confidence": 1.0,
+            "handover": false,
+            "new_system": true,
+            "metadata": {},
+            "processing_timestamp": "2025-09-07T12:35:31.259379"
+          },
+          "ai_response": "I'm glad you're interested in clean beauty options! Many of our products are formulated without sulfates and parabens, focusing on gentle, natural ingredients. Would you like some specific product recommendations or tips on how to identify clean beauty products? I'm here to help you find the perfect fit for your skincare needs!",
+          "timestamp": "2025-09-07T12:35:31.263251+00:00"
+        },
+        {
+          "step_number": 3,
+          "customer_input": "Perfect! I love that these are clean formulations. What's the price range for these products? And do you offer any bundles or sets?",
+          "response_time": 5.01720404624939,
+          "http_status": 200,
+          "response_data": {
+            "sender": "multi_test_1757248521_Skincare_Enthusiast_1757248523",
+            "product_interested": null,
+            "interested_product_ids": [],
+            "response_text": "I'm glad to hear you're interested! Our products range from $30 to $80, depending on the type and size, and we do offer some beautiful bundles and sets that provide great value. Would you like recommendations based on your skincare needs or specific budget preferences? I'd be happy to help you find the perfect options!",
+            "is_ready": false,
+            "conversation_stage": "PRICE_EVALUATION",
+            "confidence": 0.9,
+            "handover": false,
+            "new_system": true,
+            "metadata": {},
+            "processing_timestamp": "2025-09-07T12:35:36.277755"
+          },
+          "ai_response": "I'm glad to hear you're interested! Our products range from $30 to $80, depending on the type and size, and we do offer some beautiful bundles and sets that provide great value. Would you like recommendations based on your skincare needs or specific budget preferences? I'd be happy to help you find the perfect options!",
+          "timestamp": "2025-09-07T12:35:36.281057+00:00"
+        },
+        {
+          "step_number": 4,
+          "customer_input": "Great pricing! I think I'd like to get the cleanser and the moisturizer. They seem perfect for my skin type.",
+          "response_time": 5.728410005569458,
+          "http_status": 200,
+          "response_data": {
+            "sender": "multi_test_1757248521_Skincare_Enthusiast_1757248523",
+            "product_interested": "Fair & Lovely Advanced Multi Vitamin Face Cream",
+            "interested_product_ids": [
+              "34b038b2-49c0-43fb-90d6-4ad9953f27c6",
+              "ec00e983-e85f-4202-a732-a3c61955091c",
+              "38ef231e-fd1b-4266-8e04-245047fe702f",
+              "38ef231e-fd1b-4266-8e04-245047fe702f",
+              "ec00e983-e85f-4202-a732-a3c61955091c",
+              "34b038b2-49c0-43fb-90d6-4ad9953f27c6"
+            ],
+            "response_text": "That's fantastic! The Fair & Lovely Advanced Multi Vitamin Face Cream and Himalaya Purifying Neem Face Wash are excellent choices for your skin. They offer great benefits\u2014moisturizing and nourishing your skin while keeping it clean and refreshed. Would you like me to help you place the order or answer any questions about these products? I'm here to make your shopping experience smooth and enjoyable!",
+            "is_ready": true,
+            "conversation_stage": "PURCHASE_INTENT",
+            "confidence": 0.95,
+            "handover": false,
+            "new_system": true,
+            "metadata": {},
+            "processing_timestamp": "2025-09-07T12:35:42.006629"
+          },
+          "ai_response": "That's fantastic! The Fair & Lovely Advanced Multi Vitamin Face Cream and Himalaya Purifying Neem Face Wash are excellent choices for your skin. They offer great benefits\u2014moisturizing and nourishing your skin while keeping it clean and refreshed. Would you like me to help you place the order or answer any questions about these products? I'm here to make your shopping experience smooth and enjoyable!",
+          "timestamp": "2025-09-07T12:35:42.009861+00:00"
+        }
+      ],
+      "validation_results": [
+        {
+          "step_number": 1,
+          "validations": {
+            "response_time": {
+              "success": true,
+              "actual": 3.645595073699951,
+              "expected_max": 8.0
+            },
+            "http_status": {
+              "success": true,
+              "actual": 200
+            },
+            "stage_detection": {
+              "success": true,
+              "expected": "INITIAL_INTEREST",
+              "actual": "INITIAL_INTEREST"
+            },
+            "information_extraction": {
+              "success": false,
+              "rate": 0.5,
+              "extracted": "2/4"
+            },
+            "product_accumulation": {
+              "success": false,
+              "actual_count": 0,
+              "expected_min": 1,
+              "product_ids": []
+            },
+            "response_quality": {
+              "success": true,
+              "score": 1.0,
+              "checks": {
+                "has_content": true,
+                "conversational": true,
+                "helpful": true
+              }
+            }
+          },
+          "overall_success": false,
+          "issues": [
+            "Low extraction rate: 50.0%",
+            "Insufficient product accumulation: 0 < 1"
+          ]
+        },
+        {
+          "step_number": 2,
+          "validations": {
+            "response_time": {
+              "success": true,
+              "actual": 3.9716339111328125,
+              "expected_max": 8.0
+            },
+            "http_status": {
+              "success": true,
+              "actual": 200
+            },
+            "stage_detection": {
+              "success": true,
+              "expected": "PRODUCT_DISCOVERY",
+              "actual": "PRODUCT_DISCOVERY"
+            },
+            "information_extraction": {
+              "success": true,
+              "rate": 1.0,
+              "extracted": "4/4"
+            },
+            "product_accumulation": {
+              "success": false,
+              "actual_count": 0,
+              "expected_min": 1,
+              "product_ids": []
+            },
+            "response_quality": {
+              "success": true,
+              "score": 1.0,
+              "checks": {
+                "has_content": true,
+                "conversational": true,
+                "helpful": true
+              }
+            }
+          },
+          "overall_success": false,
+          "issues": [
+            "Insufficient product accumulation: 0 < 1"
+          ]
+        },
+        {
+          "step_number": 3,
+          "validations": {
+            "response_time": {
+              "success": true,
+              "actual": 5.01720404624939,
+              "expected_max": 8.0
+            },
+            "http_status": {
+              "success": true,
+              "actual": 200
+            },
+            "stage_detection": {
+              "success": true,
+              "expected": "PRICE_EVALUATION",
+              "actual": "PRICE_EVALUATION"
+            },
+            "information_extraction": {
+              "success": true,
+              "rate": 0.6666666666666666,
+              "extracted": "2/3"
+            },
+            "product_accumulation": {
+              "success": false,
+              "actual_count": 0,
+              "expected_min": 1,
+              "product_ids": []
+            },
+            "response_quality": {
+              "success": true,
+              "score": 1.0,
+              "checks": {
+                "has_content": true,
+                "conversational": true,
+                "helpful": true
+              }
+            }
+          },
+          "overall_success": false,
+          "issues": [
+            "Insufficient product accumulation: 0 < 1"
+          ]
+        },
+        {
+          "step_number": 4,
+          "validations": {
+            "response_time": {
+              "success": true,
+              "actual": 5.728410005569458,
+              "expected_max": 8.0
+            },
+            "http_status": {
+              "success": true,
+              "actual": 200
+            },
+            "stage_detection": {
+              "success": true,
+              "expected": [
+                "PURCHASE_INTENT",
+                "PURCHASE_CONFIRMATION"
+              ],
+              "actual": "PURCHASE_INTENT"
+            },
+            "information_extraction": {
+              "success": false,
+              "rate": 0.0,
+              "extracted": "0/3"
+            },
+            "product_accumulation": {
+              "success": true,
+              "actual_count": 6,
+              "expected_min": 1,
+              "product_ids": [
+                "34b038b2-49c0-43fb-90d6-4ad9953f27c6",
+                "ec00e983-e85f-4202-a732-a3c61955091c",
+                "38ef231e-fd1b-4266-8e04-245047fe702f",
+                "38ef231e-fd1b-4266-8e04-245047fe702f",
+                "ec00e983-e85f-4202-a732-a3c61955091c",
+                "34b038b2-49c0-43fb-90d6-4ad9953f27c6"
+              ]
+            },
+            "response_quality": {
+              "success": true,
+              "score": 1.0,
+              "checks": {
+                "has_content": true,
+                "conversational": true,
+                "helpful": true
+              }
+            }
+          },
+          "overall_success": false,
+          "issues": [
+            "Low extraction rate: 0.0%"
+          ]
+        }
+      ],
+      "performance_metrics": {
+        "total_time": 18.363187074661255,
+        "average_step_time": 4.590796768665314,
+        "total_steps": 4,
+        "successful_steps": 0,
+        "success_rate": 0.0
+      },
+      "success": false,
+      "end_time": "2025-09-07T12:35:42.010111+00:00"
+    },
+    {
+      "scenario_name": "Quick_Buyer",
+      "customer_id": "multi_test_1757248521_Quick_Buyer_1757248543",
+      "description": "Direct customer who knows what they want and buys quickly",
+      "start_time": "2025-09-07T12:35:43.012287+00:00",
+      "conversation_steps": [
+        {
+          "step_number": 1,
+          "customer_input": "Hi, I need a good shampoo for oily hair. What do you recommend?",
+          "response_time": 3.842029094696045,
+          "http_status": 200,
+          "response_data": {
+            "sender": "multi_test_1757248521_Quick_Buyer_1757248543",
+            "product_interested": "Garnier Fructis Strengthening Shampoo",
+            "interested_product_ids": [
+              "4ba24ba6-92f2-4393-872a-a1b810fad9aa",
+              "0de4bc53-c849-45b5-b7f2-58e8e3de8fb3",
+              "eea137cc-8256-4c8a-bd43-6b4e32f4a727",
+              "17fd4a77-5a46-4896-8aaa-d158e9203002",
+              "33546bae-eaf3-47ce-bfb0-ac4068506d4f",
+              "0de4bc53-c849-45b5-b7f2-58e8e3de8fb3",
+              "eea137cc-8256-4c8a-bd43-6b4e32f4a727",
+              "4ba24ba6-92f2-4393-872a-a1b810fad9aa",
+              "17fd4a77-5a46-4896-8aaa-d158e9203002",
+              "33546bae-eaf3-47ce-bfb0-ac4068506d4f"
+            ],
+            "response_text": "Hi there! I'm glad you're looking for a good shampoo for oily hair. I recommend trying the Herbal Essences Bio Coconut Milk Shampoo, which is great for balancing oil and nourishing your scalp. Would you like more details on this product or other options? Let me know how I can assist you further!",
+            "is_ready": false,
+            "conversation_stage": "INITIAL_INTEREST",
+            "confidence": 0.9,
+            "handover": false,
+            "new_system": true,
+            "metadata": {},
+            "processing_timestamp": "2025-09-07T12:35:46.852773"
+          },
+          "ai_response": "Hi there! I'm glad you're looking for a good shampoo for oily hair. I recommend trying the Herbal Essences Bio Coconut Milk Shampoo, which is great for balancing oil and nourishing your scalp. Would you like more details on this product or other options? Let me know how I can assist you further!",
+          "timestamp": "2025-09-07T12:35:46.854482+00:00"
+        },
+        {
+          "step_number": 2,
+          "customer_input": "How much does it cost? I want something under $50.",
+          "response_time": 5.42067289352417,
+          "http_status": 200,
+          "response_data": {
+            "sender": "multi_test_1757248521_Quick_Buyer_1757248543",
+            "product_interested": null,
+            "interested_product_ids": [
+              "4ba24ba6-92f2-4393-872a-a1b810fad9aa",
+              "0de4bc53-c849-45b5-b7f2-58e8e3de8fb3",
+              "eea137cc-8256-4c8a-bd43-6b4e32f4a727",
+              "17fd4a77-5a46-4896-8aaa-d158e9203002",
+              "33546bae-eaf3-47ce-bfb0-ac4068506d4f",
+              "0de4bc53-c849-45b5-b7f2-58e8e3de8fb3",
+              "eea137cc-8256-4c8a-bd43-6b4e32f4a727",
+              "4ba24ba6-92f2-4393-872a-a1b810fad9aa",
+              "17fd4a77-5a46-4896-8aaa-d158e9203002",
+              "33546bae-eaf3-47ce-bfb0-ac4068506d4f"
+            ],
+            "response_text": "Thanks for asking! There are some great skincare options under $50 that offer excellent quality and results. Are you looking for something specific like a moisturizer, serum, or cleanser? I\u2019d be happy to recommend some tailored to your needs!",
+            "is_ready": false,
+            "conversation_stage": "PRICE_EVALUATION",
+            "confidence": 0.9,
+            "handover": false,
+            "new_system": true,
+            "metadata": {},
+            "processing_timestamp": "2025-09-07T12:35:52.272394"
+          },
+          "ai_response": "Thanks for asking! There are some great skincare options under $50 that offer excellent quality and results. Are you looking for something specific like a moisturizer, serum, or cleanser? I\u2019d be happy to recommend some tailored to your needs!",
+          "timestamp": "2025-09-07T12:35:52.275394+00:00"
+        },
+        {
+          "step_number": 3,
+          "customer_input": "Perfect! I'll take it. How do I buy it?",
+          "response_time": 5.874672889709473,
+          "http_status": 200,
+          "response_data": {
+            "sender": "multi_test_1757248521_Quick_Buyer_1757248543",
+            "product_interested": "Garnier Fructis Strengthening Shampoo",
+            "interested_product_ids": [
+              "4ba24ba6-92f2-4393-872a-a1b810fad9aa",
+              "0de4bc53-c849-45b5-b7f2-58e8e3de8fb3",
+              "eea137cc-8256-4c8a-bd43-6b4e32f4a727",
+              "17fd4a77-5a46-4896-8aaa-d158e9203002",
+              "33546bae-eaf3-47ce-bfb0-ac4068506d4f"
+            ],
+            "response_text": "That's wonderful! To complete your purchase, you can simply proceed to checkout on our website or let me know if you'd like assistance with the process. Would you like me to guide you through the checkout steps or recommend any additional products? I'm here to help make your shopping experience seamless!",
+            "is_ready": true,
+            "conversation_stage": "PURCHASE_CONFIRMATION",
+            "confidence": 0.75,
+            "handover": true,
+            "new_system": true,
+            "metadata": {},
+            "processing_timestamp": "2025-09-07T12:35:58.146976"
+          },
+          "ai_response": "That's wonderful! To complete your purchase, you can simply proceed to checkout on our website or let me know if you'd like assistance with the process. Would you like me to guide you through the checkout steps or recommend any additional products? I'm here to help make your shopping experience seamless!",
+          "timestamp": "2025-09-07T12:35:58.150425+00:00"
+        }
+      ],
+      "validation_results": [
+        {
+          "step_number": 1,
+          "validations": {
+            "response_time": {
+              "success": true,
+              "actual": 3.842029094696045,
+              "expected_max": 8.0
+            },
+            "http_status": {
+              "success": true,
+              "actual": 200
+            },
+            "stage_detection": {
+              "success": true,
+              "expected": "INITIAL_INTEREST",
+              "actual": "INITIAL_INTEREST"
+            },
+            "information_extraction": {
+              "success": true,
+              "rate": 1.0,
+              "extracted": "2/2"
+            },
+            "product_accumulation": {
+              "success": true,
+              "actual_count": 10,
+              "expected_min": 1,
+              "product_ids": [
+                "4ba24ba6-92f2-4393-872a-a1b810fad9aa",
+                "0de4bc53-c849-45b5-b7f2-58e8e3de8fb3",
+                "eea137cc-8256-4c8a-bd43-6b4e32f4a727",
+                "17fd4a77-5a46-4896-8aaa-d158e9203002",
+                "33546bae-eaf3-47ce-bfb0-ac4068506d4f",
+                "0de4bc53-c849-45b5-b7f2-58e8e3de8fb3",
+                "eea137cc-8256-4c8a-bd43-6b4e32f4a727",
+                "4ba24ba6-92f2-4393-872a-a1b810fad9aa",
+                "17fd4a77-5a46-4896-8aaa-d158e9203002",
+                "33546bae-eaf3-47ce-bfb0-ac4068506d4f"
+              ]
+            },
+            "response_quality": {
+              "success": true,
+              "score": 1.0,
+              "checks": {
+                "has_content": true,
+                "conversational": true,
+                "helpful": true
+              }
+            }
+          },
+          "overall_success": true,
+          "issues": []
+        },
+        {
+          "step_number": 2,
+          "validations": {
+            "response_time": {
+              "success": true,
+              "actual": 5.42067289352417,
+              "expected_max": 8.0
+            },
+            "http_status": {
+              "success": true,
+              "actual": 200
+            },
+            "stage_detection": {
+              "success": true,
+              "expected": "PRICE_EVALUATION",
+              "actual": "PRICE_EVALUATION"
+            },
+            "information_extraction": {
+              "success": false,
+              "rate": 0.3333333333333333,
+              "extracted": "1/3"
+            },
+            "product_accumulation": {
+              "success": true,
+              "actual_count": 10,
+              "expected_min": 1,
+              "product_ids": [
+                "4ba24ba6-92f2-4393-872a-a1b810fad9aa",
+                "0de4bc53-c849-45b5-b7f2-58e8e3de8fb3",
+                "eea137cc-8256-4c8a-bd43-6b4e32f4a727",
+                "17fd4a77-5a46-4896-8aaa-d158e9203002",
+                "33546bae-eaf3-47ce-bfb0-ac4068506d4f",
+                "0de4bc53-c849-45b5-b7f2-58e8e3de8fb3",
+                "eea137cc-8256-4c8a-bd43-6b4e32f4a727",
+                "4ba24ba6-92f2-4393-872a-a1b810fad9aa",
+                "17fd4a77-5a46-4896-8aaa-d158e9203002",
+                "33546bae-eaf3-47ce-bfb0-ac4068506d4f"
+              ]
+            },
+            "response_quality": {
+              "success": true,
+              "score": 1.0,
+              "checks": {
+                "has_content": true,
+                "conversational": true,
+                "helpful": true
+              }
+            }
+          },
+          "overall_success": false,
+          "issues": [
+            "Low extraction rate: 33.3%"
+          ]
+        },
+        {
+          "step_number": 3,
+          "validations": {
+            "response_time": {
+              "success": true,
+              "actual": 5.874672889709473,
+              "expected_max": 8.0
+            },
+            "http_status": {
+              "success": true,
+              "actual": 200
+            },
+            "stage_detection": {
+              "success": true,
+              "expected": "PURCHASE_CONFIRMATION",
+              "actual": "PURCHASE_CONFIRMATION"
+            },
+            "information_extraction": {
+              "success": false,
+              "rate": 0.0,
+              "extracted": "0/2"
+            },
+            "product_accumulation": {
+              "success": true,
+              "actual_count": 5,
+              "expected_min": 1,
+              "product_ids": [
+                "4ba24ba6-92f2-4393-872a-a1b810fad9aa",
+                "0de4bc53-c849-45b5-b7f2-58e8e3de8fb3",
+                "eea137cc-8256-4c8a-bd43-6b4e32f4a727",
+                "17fd4a77-5a46-4896-8aaa-d158e9203002",
+                "33546bae-eaf3-47ce-bfb0-ac4068506d4f"
+              ]
+            },
+            "response_quality": {
+              "success": true,
+              "score": 1.0,
+              "checks": {
+                "has_content": true,
+                "conversational": true,
+                "helpful": true
+              }
+            }
+          },
+          "overall_success": false,
+          "issues": [
+            "Low extraction rate: 0.0%"
+          ]
+        }
+      ],
+      "performance_metrics": {
+        "total_time": 15.137553215026855,
+        "average_step_time": 5.045851071675618,
+        "total_steps": 3,
+        "successful_steps": 1,
+        "success_rate": 0.3333333333333333
+      },
+      "success": false,
+      "end_time": "2025-09-07T12:35:58.150656+00:00"
+    },
+    {
+      "scenario_name": "Hesitant_Customer",
+      "customer_id": "multi_test_1757248521_Hesitant_Customer_1757248559",
+      "description": "Uncertain customer who needs guidance and reassurance",
+      "start_time": "2025-09-07T12:35:59.152721+00:00",
+      "conversation_steps": [
+        {
+          "step_number": 1,
+          "customer_input": "I'm not sure what products I need. My skin has been weird lately - sometimes oily, sometimes dry. Can you help?",
+          "response_time": 4.0191967487335205,
+          "http_status": 200,
+          "response_data": {
+            "sender": "multi_test_1757248521_Hesitant_Customer_1757248559",
+            "product_interested": "Herbal Essences Bio Coconut Milk Shampoo",
+            "interested_product_ids": [
+              "34b038b2-49c0-43fb-90d6-4ad9953f27c6",
+              "ec00e983-e85f-4202-a732-a3c61955091c",
+              "4ba24ba6-92f2-4393-872a-a1b810fad9aa",
+              "38ef231e-fd1b-4266-8e04-245047fe702f",
+              "4ba24ba6-92f2-4393-872a-a1b810fad9aa",
+              "38ef231e-fd1b-4266-8e04-245047fe702f",
+              "ec00e983-e85f-4202-a732-a3c61955091c",
+              "34b038b2-49c0-43fb-90d6-4ad9953f27c6"
+            ],
+            "response_text": "It's great that you're reaching out! Since your skin feels both oily and dry at times, a gentle cleanser like Himalaya Purifying Neem Face Wash can help balance your skin, and a versatile moisturizer such as Fair & Lovely Advanced Multi Vitamin Face Cream might be perfect to keep your skin hydrated without feeling greasy. Would you like more details on these products or suggestions tailored to your specific skin concerns?",
+            "is_ready": false,
+            "conversation_stage": "INITIAL_INTEREST",
+            "confidence": 0.9,
+            "handover": false,
+            "new_system": true,
+            "metadata": {},
+            "processing_timestamp": "2025-09-07T12:36:03.169290"
+          },
+          "ai_response": "It's great that you're reaching out! Since your skin feels both oily and dry at times, a gentle cleanser like Himalaya Purifying Neem Face Wash can help balance your skin, and a versatile moisturizer such as Fair & Lovely Advanced Multi Vitamin Face Cream might be perfect to keep your skin hydrated without feeling greasy. Would you like more details on these products or suggestions tailored to your specific skin concerns?",
+          "timestamp": "2025-09-07T12:36:03.172072+00:00"
+        },
+        {
+          "step_number": 2,
+          "customer_input": "I'm worried these might not work for me. What if they make my skin worse? Do you have any gentle options?",
+          "response_time": 4.0160582065582275,
+          "http_status": 200,
+          "response_data": {
+            "sender": "multi_test_1757248521_Hesitant_Customer_1757248559",
+            "product_interested": null,
+            "interested_product_ids": [
+              "34b038b2-49c0-43fb-90d6-4ad9953f27c6",
+              "ec00e983-e85f-4202-a732-a3c61955091c",
+              "4ba24ba6-92f2-4393-872a-a1b810fad9aa",
+              "38ef231e-fd1b-4266-8e04-245047fe702f",
+              "4ba24ba6-92f2-4393-872a-a1b810fad9aa",
+              "38ef231e-fd1b-4266-8e04-245047fe702f",
+              "ec00e983-e85f-4202-a732-a3c61955091c",
+              "34b038b2-49c0-43fb-90d6-4ad9953f27c6"
+            ],
+            "response_text": "I completely understand your concern\u2014it's important to choose gentle products that suit sensitive skin. I recommend looking for options labeled as hypoallergenic or formulated for sensitive skin, which tend to be milder and less likely to cause irritation. Would you like some specific product suggestions or tips on how to test new products safely? I'm here to help you find the best gentle options for your skin!",
+            "is_ready": false,
+            "conversation_stage": "PRODUCT_DISCOVERY",
+            "confidence": 0.8999999999999999,
+            "handover": false,
+            "new_system": true,
+            "metadata": {},
+            "processing_timestamp": "2025-09-07T12:36:07.184499"
+          },
+          "ai_response": "I completely understand your concern\u2014it's important to choose gentle products that suit sensitive skin. I recommend looking for options labeled as hypoallergenic or formulated for sensitive skin, which tend to be milder and less likely to cause irritation. Would you like some specific product suggestions or tips on how to test new products safely? I'm here to help you find the best gentle options for your skin!",
+          "timestamp": "2025-09-07T12:36:07.188422+00:00"
+        },
+        {
+          "step_number": 3,
+          "customer_input": "Okay, those sound safer. But I'm still not sure... Are these really worth the price?",
+          "response_time": 5.583648920059204,
+          "http_status": 200,
+          "response_data": {
+            "sender": "multi_test_1757248521_Hesitant_Customer_1757248559",
+            "product_interested": null,
+            "interested_product_ids": [
+              "34b038b2-49c0-43fb-90d6-4ad9953f27c6",
+              "ec00e983-e85f-4202-a732-a3c61955091c",
+              "4ba24ba6-92f2-4393-872a-a1b810fad9aa",
+              "38ef231e-fd1b-4266-8e04-245047fe702f",
+              "4ba24ba6-92f2-4393-872a-a1b810fad9aa",
+              "38ef231e-fd1b-4266-8e04-245047fe702f",
+              "ec00e983-e85f-4202-a732-a3c61955091c",
+              "34b038b2-49c0-43fb-90d6-4ad9953f27c6"
+            ],
+            "response_text": "I completely understand your concern about the value! Many of our customers find that investing in quality skincare pays off in better results and long-term benefits. Would you like me to recommend some options that fit different budgets while still delivering great results? Let me know what you're looking for, and I\u2019ll be happy to help!",
+            "is_ready": false,
+            "conversation_stage": "PRICE_EVALUATION",
+            "confidence": 0.5,
+            "handover": false,
+            "new_system": true,
+            "metadata": {},
+            "processing_timestamp": "2025-09-07T12:36:12.769383"
+          },
+          "ai_response": "I completely understand your concern about the value! Many of our customers find that investing in quality skincare pays off in better results and long-term benefits. Would you like me to recommend some options that fit different budgets while still delivering great results? Let me know what you're looking for, and I\u2019ll be happy to help!",
+          "timestamp": "2025-09-07T12:36:12.772475+00:00"
+        },
+        {
+          "step_number": 4,
+          "customer_input": "You know what, you've convinced me. I trust your recommendations. Let's do this!",
+          "response_time": 5.603830099105835,
+          "http_status": 200,
+          "response_data": {
+            "sender": "multi_test_1757248521_Hesitant_Customer_1757248559",
+            "product_interested": null,
+            "interested_product_ids": [
+              "34b038b2-49c0-43fb-90d6-4ad9953f27c6",
+              "ec00e983-e85f-4202-a732-a3c61955091c",
+              "4ba24ba6-92f2-4393-872a-a1b810fad9aa",
+              "38ef231e-fd1b-4266-8e04-245047fe702f",
+              "4ba24ba6-92f2-4393-872a-a1b810fad9aa",
+              "38ef231e-fd1b-4266-8e04-245047fe702f",
+              "ec00e983-e85f-4202-a732-a3c61955091c",
+              "34b038b2-49c0-43fb-90d6-4ad9953f27c6"
+            ],
+            "response_text": "I'm thrilled to hear that! To finalize your purchase smoothly, I recommend reviewing your preferred payment method and delivery details. Would you like me to assist you with the checkout process now or answer any last-minute questions? I'm here to make this as easy and enjoyable as possible for you!",
+            "is_ready": true,
+            "conversation_stage": "PURCHASE_CONFIRMATION",
+            "confidence": 0.75,
+            "handover": true,
+            "new_system": true,
+            "metadata": {},
+            "processing_timestamp": "2025-09-07T12:36:18.373677"
+          },
+          "ai_response": "I'm thrilled to hear that! To finalize your purchase smoothly, I recommend reviewing your preferred payment method and delivery details. Would you like me to assist you with the checkout process now or answer any last-minute questions? I'm here to make this as easy and enjoyable as possible for you!",
+          "timestamp": "2025-09-07T12:36:18.376710+00:00"
+        }
+      ],
+      "validation_results": [
+        {
+          "step_number": 1,
+          "validations": {
+            "response_time": {
+              "success": true,
+              "actual": 4.0191967487335205,
+              "expected_max": 8.0
+            },
+            "http_status": {
+              "success": true,
+              "actual": 200
+            },
+            "stage_detection": {
+              "success": true,
+              "expected": "INITIAL_INTEREST",
+              "actual": "INITIAL_INTEREST"
+            },
+            "information_extraction": {
+              "success": true,
+              "rate": 0.75,
+              "extracted": "3/4"
+            },
+            "product_accumulation": {
+              "success": true,
+              "actual_count": 8,
+              "expected_min": 1,
+              "product_ids": [
+                "34b038b2-49c0-43fb-90d6-4ad9953f27c6",
+                "ec00e983-e85f-4202-a732-a3c61955091c",
+                "4ba24ba6-92f2-4393-872a-a1b810fad9aa",
+                "38ef231e-fd1b-4266-8e04-245047fe702f",
+                "4ba24ba6-92f2-4393-872a-a1b810fad9aa",
+                "38ef231e-fd1b-4266-8e04-245047fe702f",
+                "ec00e983-e85f-4202-a732-a3c61955091c",
+                "34b038b2-49c0-43fb-90d6-4ad9953f27c6"
+              ]
+            },
+            "response_quality": {
+              "success": true,
+              "score": 1.0,
+              "checks": {
+                "has_content": true,
+                "conversational": true,
+                "helpful": true
+              }
+            }
+          },
+          "overall_success": true,
+          "issues": []
+        },
+        {
+          "step_number": 2,
+          "validations": {
+            "response_time": {
+              "success": true,
+              "actual": 4.0160582065582275,
+              "expected_max": 8.0
+            },
+            "http_status": {
+              "success": true,
+              "actual": 200
+            },
+            "stage_detection": {
+              "success": true,
+              "expected": "PRODUCT_DISCOVERY",
+              "actual": "PRODUCT_DISCOVERY"
+            },
+            "information_extraction": {
+              "success": false,
+              "rate": 0.3333333333333333,
+              "extracted": "1/3"
+            },
+            "product_accumulation": {
+              "success": true,
+              "actual_count": 8,
+              "expected_min": 1,
+              "product_ids": [
+                "34b038b2-49c0-43fb-90d6-4ad9953f27c6",
+                "ec00e983-e85f-4202-a732-a3c61955091c",
+                "4ba24ba6-92f2-4393-872a-a1b810fad9aa",
+                "38ef231e-fd1b-4266-8e04-245047fe702f",
+                "4ba24ba6-92f2-4393-872a-a1b810fad9aa",
+                "38ef231e-fd1b-4266-8e04-245047fe702f",
+                "ec00e983-e85f-4202-a732-a3c61955091c",
+                "34b038b2-49c0-43fb-90d6-4ad9953f27c6"
+              ]
+            },
+            "response_quality": {
+              "success": true,
+              "score": 1.0,
+              "checks": {
+                "has_content": true,
+                "conversational": true,
+                "helpful": true
+              }
+            }
+          },
+          "overall_success": false,
+          "issues": [
+            "Low extraction rate: 33.3%"
+          ]
+        },
+        {
+          "step_number": 3,
+          "validations": {
+            "response_time": {
+              "success": true,
+              "actual": 5.583648920059204,
+              "expected_max": 8.0
+            },
+            "http_status": {
+              "success": true,
+              "actual": 200
+            },
+            "stage_detection": {
+              "success": true,
+              "expected": "PRICE_EVALUATION",
+              "actual": "PRICE_EVALUATION"
+            },
+            "information_extraction": {
+              "success": false,
+              "rate": 0.0,
+              "extracted": "0/4"
+            },
+            "product_accumulation": {
+              "success": true,
+              "actual_count": 8,
+              "expected_min": 1,
+              "product_ids": [
+                "34b038b2-49c0-43fb-90d6-4ad9953f27c6",
+                "ec00e983-e85f-4202-a732-a3c61955091c",
+                "4ba24ba6-92f2-4393-872a-a1b810fad9aa",
+                "38ef231e-fd1b-4266-8e04-245047fe702f",
+                "4ba24ba6-92f2-4393-872a-a1b810fad9aa",
+                "38ef231e-fd1b-4266-8e04-245047fe702f",
+                "ec00e983-e85f-4202-a732-a3c61955091c",
+                "34b038b2-49c0-43fb-90d6-4ad9953f27c6"
+              ]
+            },
+            "response_quality": {
+              "success": true,
+              "score": 1.0,
+              "checks": {
+                "has_content": true,
+                "conversational": true,
+                "helpful": true
+              }
+            }
+          },
+          "overall_success": false,
+          "issues": [
+            "Low extraction rate: 0.0%"
+          ]
+        },
+        {
+          "step_number": 4,
+          "validations": {
+            "response_time": {
+              "success": true,
+              "actual": 5.603830099105835,
+              "expected_max": 8.0
+            },
+            "http_status": {
+              "success": true,
+              "actual": 200
+            },
+            "stage_detection": {
+              "success": true,
+              "expected": "PURCHASE_CONFIRMATION",
+              "actual": "PURCHASE_CONFIRMATION"
+            },
+            "information_extraction": {
+              "success": false,
+              "rate": 0.0,
+              "extracted": "0/3"
+            },
+            "product_accumulation": {
+              "success": true,
+              "actual_count": 8,
+              "expected_min": 1,
+              "product_ids": [
+                "34b038b2-49c0-43fb-90d6-4ad9953f27c6",
+                "ec00e983-e85f-4202-a732-a3c61955091c",
+                "4ba24ba6-92f2-4393-872a-a1b810fad9aa",
+                "38ef231e-fd1b-4266-8e04-245047fe702f",
+                "4ba24ba6-92f2-4393-872a-a1b810fad9aa",
+                "38ef231e-fd1b-4266-8e04-245047fe702f",
+                "ec00e983-e85f-4202-a732-a3c61955091c",
+                "34b038b2-49c0-43fb-90d6-4ad9953f27c6"
+              ]
+            },
+            "response_quality": {
+              "success": true,
+              "score": 1.0,
+              "checks": {
+                "has_content": true,
+                "conversational": true,
+                "helpful": true
+              }
+            }
+          },
+          "overall_success": false,
+          "issues": [
+            "Low extraction rate: 0.0%"
+          ]
+        }
+      ],
+      "performance_metrics": {
+        "total_time": 19.223047018051147,
+        "average_step_time": 4.805761754512787,
+        "total_steps": 4,
+        "successful_steps": 1,
+        "success_rate": 0.25
+      },
+      "success": false,
+      "end_time": "2025-09-07T12:36:18.376970+00:00"
+    },
+    {
+      "scenario_name": "Gift_Buyer",
+      "customer_id": "multi_test_1757248521_Gift_Buyer_1757248579",
+      "description": "Customer buying products as gifts for others",
+      "start_time": "2025-09-07T12:36:19.379283+00:00",
+      "conversation_steps": [
+        {
+          "step_number": 1,
+          "customer_input": "Hi! I'm looking for a nice gift set for my mom. She's in her 50s and loves skincare. Any suggestions?",
+          "response_time": 3.9716107845306396,
+          "http_status": 200,
+          "response_data": {
+            "sender": "multi_test_1757248521_Gift_Buyer_1757248579",
+            "product_interested": null,
+            "interested_product_ids": [],
+            "response_text": "Hi! That\u2019s such a thoughtful gift idea. For a mom in her 50s who loves skincare, I recommend looking into luxurious sets that include hydrating and anti-aging products, like serums, moisturizers, and gentle cleansers. Would you like some specific product suggestions or help narrowing down the options based on her skin type?",
+            "is_ready": false,
+            "conversation_stage": "INITIAL_INTEREST",
+            "confidence": 0.9,
+            "handover": false,
+            "new_system": true,
+            "metadata": {},
+            "processing_timestamp": "2025-09-07T12:36:23.348558"
+          },
+          "ai_response": "Hi! That\u2019s such a thoughtful gift idea. For a mom in her 50s who loves skincare, I recommend looking into luxurious sets that include hydrating and anti-aging products, like serums, moisturizers, and gentle cleansers. Would you like some specific product suggestions or help narrowing down the options based on her skin type?",
+          "timestamp": "2025-09-07T12:36:23.351182+00:00"
+        },
+        {
+          "step_number": 2,
+          "customer_input": "That sounds perfect for her! She has mature skin and is really interested in anti-aging products. Can you recommend some vitamin C serums or hydrating products?",
+          "response_time": 4.232216119766235,
+          "http_status": 200,
+          "response_data": {
+            "sender": "multi_test_1757248521_Gift_Buyer_1757248579",
+            "product_interested": "Herbal Essences Bio Coconut Milk Shampoo",
+            "interested_product_ids": [
+              "4ba24ba6-92f2-4393-872a-a1b810fad9aa",
+              "4ba24ba6-92f2-4393-872a-a1b810fad9aa"
+            ],
+            "response_text": "I'm glad to hear she's interested in anti-aging and hydrating products! For mature skin, I recommend looking into vitamin C serums like the SkinCeuticals C E Ferulic or the La Roche-Posay Pure Vitamin C10, both excellent for brightening and firming. Would you like more details on these, or perhaps suggestions for hydrating products as well? Let me know how I can assist further!",
+            "is_ready": true,
+            "conversation_stage": "INITIAL_INTEREST",
+            "confidence": 1.0,
+            "handover": false,
+            "new_system": true,
+            "metadata": {},
+            "processing_timestamp": "2025-09-07T12:36:27.580798"
+          },
+          "ai_response": "I'm glad to hear she's interested in anti-aging and hydrating products! For mature skin, I recommend looking into vitamin C serums like the SkinCeuticals C E Ferulic or the La Roche-Posay Pure Vitamin C10, both excellent for brightening and firming. Would you like more details on these, or perhaps suggestions for hydrating products as well? Let me know how I can assist further!",
+          "timestamp": "2025-09-07T12:36:27.583798+00:00"
+        },
+        {
+          "step_number": 3,
+          "customer_input": "Great! What's the total for a nice gift package? I'm thinking around $100-150 range.",
+          "response_time": 5.571732997894287,
+          "http_status": 200,
+          "response_data": {
+            "sender": "multi_test_1757248521_Gift_Buyer_1757248579",
+            "product_interested": null,
+            "interested_product_ids": [
+              "4ba24ba6-92f2-4393-872a-a1b810fad9aa",
+              "4ba24ba6-92f2-4393-872a-a1b810fad9aa"
+            ],
+            "response_text": "That sounds like a lovely gift idea! For a budget of $100-150, I recommend exploring beautifully curated gift sets that include skincare or fragrance products\u2014these often offer great value and a luxurious feel. Would you like me to suggest some specific options or help you narrow down your preferences? I'm here to make this special for you!",
+            "is_ready": false,
+            "conversation_stage": "PRICE_EVALUATION",
+            "confidence": 0.85,
+            "handover": false,
+            "new_system": true,
+            "metadata": {},
+            "processing_timestamp": "2025-09-07T12:36:33.153351"
+          },
+          "ai_response": "That sounds like a lovely gift idea! For a budget of $100-150, I recommend exploring beautifully curated gift sets that include skincare or fragrance products\u2014these often offer great value and a luxurious feel. Would you like me to suggest some specific options or help you narrow down your preferences? I'm here to make this special for you!",
+          "timestamp": "2025-09-07T12:36:33.155841+00:00"
+        },
+        {
+          "step_number": 4,
+          "customer_input": "Perfect! She's going to love this. Please help me complete the order.",
+          "response_time": 3.760706901550293,
+          "http_status": 200,
+          "response_data": {
+            "sender": "multi_test_1757248521_Gift_Buyer_1757248579",
+            "product_interested": null,
+            "interested_product_ids": [
+              "4ba24ba6-92f2-4393-872a-a1b810fad9aa",
+              "4ba24ba6-92f2-4393-872a-a1b810fad9aa"
+            ],
+            "response_text": "I'm so glad she's going to love it! To complete your order smoothly, I can assist you with the final steps. Would you like me to guide you through the checkout process now or provide any additional information? Let me know how I can help!",
+            "is_ready": true,
+            "conversation_stage": "PURCHASE_CONFIRMATION",
+            "confidence": 1.0,
+            "handover": true,
+            "new_system": true,
+            "metadata": {},
+            "processing_timestamp": "2025-09-07T12:36:36.913093"
+          },
+          "ai_response": "I'm so glad she's going to love it! To complete your order smoothly, I can assist you with the final steps. Would you like me to guide you through the checkout process now or provide any additional information? Let me know how I can help!",
+          "timestamp": "2025-09-07T12:36:36.916858+00:00"
+        }
+      ],
+      "validation_results": [
+        {
+          "step_number": 1,
+          "validations": {
+            "response_time": {
+              "success": true,
+              "actual": 3.9716107845306396,
+              "expected_max": 8.0
+            },
+            "http_status": {
+              "success": true,
+              "actual": 200
+            },
+            "stage_detection": {
+              "success": true,
+              "expected": "INITIAL_INTEREST",
+              "actual": "INITIAL_INTEREST"
+            },
+            "information_extraction": {
+              "success": true,
+              "rate": 1.0,
+              "extracted": "4/4"
+            },
+            "product_accumulation": {
+              "success": true,
+              "actual_count": 0,
+              "expected_min": 0,
+              "product_ids": []
+            },
+            "response_quality": {
+              "success": true,
+              "score": 1.0,
+              "checks": {
+                "has_content": true,
+                "conversational": true,
+                "helpful": true
+              }
+            }
+          },
+          "overall_success": true,
+          "issues": []
+        },
+        {
+          "step_number": 2,
+          "validations": {
+            "response_time": {
+              "success": true,
+              "actual": 4.232216119766235,
+              "expected_max": 8.0
+            },
+            "http_status": {
+              "success": true,
+              "actual": 200
+            },
+            "stage_detection": {
+              "success": false,
+              "expected": "PRODUCT_DISCOVERY",
+              "actual": "INITIAL_INTEREST"
+            },
+            "information_extraction": {
+              "success": true,
+              "rate": 1.0,
+              "extracted": "4/4"
+            },
+            "product_accumulation": {
+              "success": true,
+              "actual_count": 2,
+              "expected_min": 1,
+              "product_ids": [
+                "4ba24ba6-92f2-4393-872a-a1b810fad9aa",
+                "4ba24ba6-92f2-4393-872a-a1b810fad9aa"
+              ]
+            },
+            "response_quality": {
+              "success": true,
+              "score": 1.0,
+              "checks": {
+                "has_content": true,
+                "conversational": true,
+                "helpful": true
+              }
+            }
+          },
+          "overall_success": false,
+          "issues": [
+            "Stage mismatch: expected PRODUCT_DISCOVERY, got INITIAL_INTEREST"
+          ]
+        },
+        {
+          "step_number": 3,
+          "validations": {
+            "response_time": {
+              "success": true,
+              "actual": 5.571732997894287,
+              "expected_max": 8.0
+            },
+            "http_status": {
+              "success": true,
+              "actual": 200
+            },
+            "stage_detection": {
+              "success": true,
+              "expected": "PRICE_EVALUATION",
+              "actual": "PRICE_EVALUATION"
+            },
+            "information_extraction": {
+              "success": false,
+              "rate": 0.3333333333333333,
+              "extracted": "1/3"
+            },
+            "product_accumulation": {
+              "success": true,
+              "actual_count": 2,
+              "expected_min": 1,
+              "product_ids": [
+                "4ba24ba6-92f2-4393-872a-a1b810fad9aa",
+                "4ba24ba6-92f2-4393-872a-a1b810fad9aa"
+              ]
+            },
+            "response_quality": {
+              "success": true,
+              "score": 1.0,
+              "checks": {
+                "has_content": true,
+                "conversational": true,
+                "helpful": true
+              }
+            }
+          },
+          "overall_success": false,
+          "issues": [
+            "Low extraction rate: 33.3%"
+          ]
+        },
+        {
+          "step_number": 4,
+          "validations": {
+            "response_time": {
+              "success": true,
+              "actual": 3.760706901550293,
+              "expected_max": 8.0
+            },
+            "http_status": {
+              "success": true,
+              "actual": 200
+            },
+            "stage_detection": {
+              "success": true,
+              "expected": "PURCHASE_CONFIRMATION",
+              "actual": "PURCHASE_CONFIRMATION"
+            },
+            "information_extraction": {
+              "success": true,
+              "rate": 1.0,
+              "extracted": "3/3"
+            },
+            "product_accumulation": {
+              "success": true,
+              "actual_count": 2,
+              "expected_min": 1,
+              "product_ids": [
+                "4ba24ba6-92f2-4393-872a-a1b810fad9aa",
+                "4ba24ba6-92f2-4393-872a-a1b810fad9aa"
+              ]
+            },
+            "response_quality": {
+              "success": true,
+              "score": 1.0,
+              "checks": {
+                "has_content": true,
+                "conversational": true,
+                "helpful": true
+              }
+            }
+          },
+          "overall_success": true,
+          "issues": []
+        }
+      ],
+      "performance_metrics": {
+        "total_time": 17.53653621673584,
+        "average_step_time": 4.38413405418396,
+        "total_steps": 4,
+        "successful_steps": 2,
+        "success_rate": 0.5
+      },
+      "success": false,
+      "end_time": "2025-09-07T12:36:36.917074+00:00"
+    },
+    {
+      "scenario_name": "Budget_Conscious",
+      "customer_id": "multi_test_1757248521_Budget_Conscious_1757248597",
+      "description": "Price-sensitive customer looking for value deals",
+      "start_time": "2025-09-07T12:36:37.918449+00:00",
+      "conversation_steps": [
+        {
+          "step_number": 1,
+          "customer_input": "I need some basic skincare products but I'm on a tight budget. What's the most affordable option you have?",
+          "response_time": 3.8936190605163574,
+          "http_status": 200,
+          "response_data": {
+            "sender": "multi_test_1757248521_Budget_Conscious_1757248597",
+            "product_interested": null,
+            "interested_product_ids": [],
+            "response_text": "I'm glad you're looking for affordable skincare options! For a budget-friendly start, I recommend gentle cleansers and moisturizers that are effective yet affordable, like some drugstore brands. Would you like suggestions tailored to your skin type or specific concerns? I'm here to help you find the perfect fit!",
+            "is_ready": false,
+            "conversation_stage": "INITIAL_INTEREST",
+            "confidence": 0.9,
+            "handover": false,
+            "new_system": true,
+            "metadata": {},
+            "processing_timestamp": "2025-09-07T12:36:41.810222"
+          },
+          "ai_response": "I'm glad you're looking for affordable skincare options! For a budget-friendly start, I recommend gentle cleansers and moisturizers that are effective yet affordable, like some drugstore brands. Would you like suggestions tailored to your skin type or specific concerns? I'm here to help you find the perfect fit!",
+          "timestamp": "2025-09-07T12:36:41.812230+00:00"
+        },
+        {
+          "step_number": 2,
+          "customer_input": "Do you have any sales or discounts running? I really need to keep this under $40 total.",
+          "response_time": 5.306214809417725,
+          "http_status": 200,
+          "response_data": {
+            "sender": "multi_test_1757248521_Budget_Conscious_1757248597",
+            "product_interested": null,
+            "interested_product_ids": [],
+            "response_text": "I completely understand wanting to stay within your budget! Currently, we don't have any ongoing sales, but I can recommend some great affordable options that offer excellent value under $40. Would you like suggestions for specific skincare types or products? I'm here to help you find the perfect fit!",
+            "is_ready": false,
+            "conversation_stage": "PRICE_EVALUATION",
+            "confidence": 0.9,
+            "handover": false,
+            "new_system": true,
+            "metadata": {},
+            "processing_timestamp": "2025-09-07T12:36:47.115147"
+          },
+          "ai_response": "I completely understand wanting to stay within your budget! Currently, we don't have any ongoing sales, but I can recommend some great affordable options that offer excellent value under $40. Would you like suggestions for specific skincare types or products? I'm here to help you find the perfect fit!",
+          "timestamp": "2025-09-07T12:36:47.118672+00:00"
+        },
+        {
+          "step_number": 3,
+          "customer_input": "That works for my budget! I'll take it. Thank you for helping me find something I can afford.",
+          "response_time": 5.303349018096924,
+          "http_status": 200,
+          "response_data": {
+            "sender": "multi_test_1757248521_Budget_Conscious_1757248597",
+            "product_interested": null,
+            "interested_product_ids": [],
+            "response_text": "I'm so glad to hear you're ready to go! To complete your purchase smoothly, I can assist you with the checkout process or connect you to our sales team. Would you like me to guide you through the next steps or provide any additional information? Thank you for trusting me to help you find something perfect for your budget!",
+            "is_ready": true,
+            "conversation_stage": "PURCHASE_CONFIRMATION",
+            "confidence": 0.95,
+            "handover": true,
+            "new_system": true,
+            "metadata": {},
+            "processing_timestamp": "2025-09-07T12:36:52.419223"
+          },
+          "ai_response": "I'm so glad to hear you're ready to go! To complete your purchase smoothly, I can assist you with the checkout process or connect you to our sales team. Would you like me to guide you through the next steps or provide any additional information? Thank you for trusting me to help you find something perfect for your budget!",
+          "timestamp": "2025-09-07T12:36:52.422405+00:00"
+        }
+      ],
+      "validation_results": [
+        {
+          "step_number": 1,
+          "validations": {
+            "response_time": {
+              "success": true,
+              "actual": 3.8936190605163574,
+              "expected_max": 8.0
+            },
+            "http_status": {
+              "success": true,
+              "actual": 200
+            },
+            "stage_detection": {
+              "success": false,
+              "expected": "PRICE_EVALUATION",
+              "actual": "INITIAL_INTEREST"
+            },
+            "information_extraction": {
+              "success": false,
+              "rate": 0.3333333333333333,
+              "extracted": "1/3"
+            },
+            "product_accumulation": {
+              "success": true,
+              "actual_count": 0,
+              "expected_min": 0,
+              "product_ids": []
+            },
+            "response_quality": {
+              "success": true,
+              "score": 1.0,
+              "checks": {
+                "has_content": true,
+                "conversational": true,
+                "helpful": true
+              }
+            }
+          },
+          "overall_success": false,
+          "issues": [
+            "Stage mismatch: expected PRICE_EVALUATION, got INITIAL_INTEREST",
+            "Low extraction rate: 33.3%"
+          ]
+        },
+        {
+          "step_number": 2,
+          "validations": {
+            "response_time": {
+              "success": true,
+              "actual": 5.306214809417725,
+              "expected_max": 8.0
+            },
+            "http_status": {
+              "success": true,
+              "actual": 200
+            },
+            "stage_detection": {
+              "success": true,
+              "expected": "PRICE_EVALUATION",
+              "actual": "PRICE_EVALUATION"
+            },
+            "information_extraction": {
+              "success": true,
+              "rate": 0.6666666666666666,
+              "extracted": "2/3"
+            },
+            "product_accumulation": {
+              "success": false,
+              "actual_count": 0,
+              "expected_min": 1,
+              "product_ids": []
+            },
+            "response_quality": {
+              "success": true,
+              "score": 1.0,
+              "checks": {
+                "has_content": true,
+                "conversational": true,
+                "helpful": true
+              }
+            }
+          },
+          "overall_success": false,
+          "issues": [
+            "Insufficient product accumulation: 0 < 1"
+          ]
+        },
+        {
+          "step_number": 3,
+          "validations": {
+            "response_time": {
+              "success": true,
+              "actual": 5.303349018096924,
+              "expected_max": 8.0
+            },
+            "http_status": {
+              "success": true,
+              "actual": 200
+            },
+            "stage_detection": {
+              "success": true,
+              "expected": "PURCHASE_CONFIRMATION",
+              "actual": "PURCHASE_CONFIRMATION"
+            },
+            "information_extraction": {
+              "success": false,
+              "rate": 0.3333333333333333,
+              "extracted": "1/3"
+            },
+            "product_accumulation": {
+              "success": false,
+              "actual_count": 0,
+              "expected_min": 1,
+              "product_ids": []
+            },
+            "response_quality": {
+              "success": true,
+              "score": 1.0,
+              "checks": {
+                "has_content": true,
+                "conversational": true,
+                "helpful": true
+              }
+            }
+          },
+          "overall_success": false,
+          "issues": [
+            "Low extraction rate: 33.3%",
+            "Insufficient product accumulation: 0 < 1"
+          ]
+        }
+      ],
+      "performance_metrics": {
+        "total_time": 14.503358602523804,
+        "average_step_time": 4.834452867507935,
+        "total_steps": 3,
+        "successful_steps": 0,
+        "success_rate": 0.0
+      },
+      "success": false,
+      "end_time": "2025-09-07T12:36:52.422597+00:00"
+    }
+  ],
+  "performance_analysis": {
+    "total_scenarios": 5,
+    "successful_scenarios": 0,
+    "overall_success_rate": 0.0,
+    "average_response_time": 4.732199303309122,
+    "response_time_consistency": 0.6617170174916582,
+    "quality_consistency": 0.5
+  },
+  "generalization_metrics": {
+    "handles_diverse_customers": false,
+    "consistent_across_scenarios": false,
+    "performance_stable": true,
+    "production_ready": false
+  },
+  "recommendations": [
+    "Overall success rate needs improvement - focus on core conversation logic",
+    "Quality varies across scenarios - improve robustness",
+    "Fails with diverse customer types - enhance conversation handling"
+  ]
+}

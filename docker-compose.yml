@@ -1,22 +1,23 @@
 
 services:
-  postgres:
-    image: postgres:13
-    container_name: sales_postgres
-    environment:
-      POSTGRES_USER: ${POSTGRES_USER:-user}
-      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-password}
-      POSTGRES_DB: ${POSTGRES_DB:-sales_db}
-    ports:
-      - "5432:5432"
-    volumes:
-      - postgres_data:/var/lib/postgresql/data
-      - ./init-db.sql:/docker-entrypoint-initdb.d/init-db.sql
-    healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-user} -d ${POSTGRES_DB:-sales_db}"]
-      interval: 30s
-      timeout: 10s
-      retries: 3
+  # Removed local PostgreSQL - now using Neon cloud database
+  # postgres:
+  #   image: postgres:13
+  #   container_name: sales_postgres
+  #   environment:
+  #     POSTGRES_USER: ${POSTGRES_USER:-user}
+  #     POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-password}
+  #     POSTGRES_DB: ${POSTGRES_DB:-sales_db}
+  #   ports:
+  #     - "5432:5432"
+  #   volumes:
+  #     - postgres_data:/var/lib/postgresql/data
+  #     - ./init-db.sql:/docker-entrypoint-initdb.d/init-db.sql
+  #   healthcheck:
+  #     test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-user} -d ${POSTGRES_DB:-sales_db}"]
+  #     interval: 30s
+  #     timeout: 10s
+  #     retries: 3
 
   mongodb:
     image: mongo:4.4
@@ -39,12 +40,11 @@ services:
     ports:
       - "8000:8000"
     depends_on:
-      postgres:
-        condition: service_healthy
+      # Removed postgres dependency - now using Neon cloud database
       mongodb:
         condition: service_healthy
     environment:
-      - POSTGRES_HOST=postgres
+      # Removed POSTGRES_HOST=postgres - now using Neon from .env
       - MONGO_URI=mongodb://mongodb:27017/
     env_file:
       - .env
@@ -58,5 +58,6 @@ services:
       retries: 3
 
 volumes:
-  postgres_data:
+  # Removed postgres_data - now using Neon cloud database
+  # postgres_data:
   mongodb_data:

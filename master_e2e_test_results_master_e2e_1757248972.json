@@ -1,0 +1,1110 @@
+{
+  "test_session_id": "master_e2e_1757248972",
+  "timestamp": "2025-09-07T13:04:23.001743",
+  "total_duration": 1290.1651320457458,
+  "production_assessment": {
+    "production_ready": false,
+    "overall_score": 0.6,
+    "metrics": {
+      "total_tests": 33,
+      "successful_tests": 23,
+      "overall_success_rate": 0.696969696969697,
+      "avg_response_time": 4.687274341498102,
+      "error_rate": -0.3333333333333333,
+      "memory_usage": 0.602,
+      "cpu_usage": 10.7
+    },
+    "criteria_evaluation": {
+      "success_rate": false,
+      "response_time": false,
+      "error_rate": true,
+      "memory_usage": true,
+      "cpu_usage": true
+    },
+    "production_criteria": {
+      "min_success_rate": 0.95,
+      "max_avg_response_time": 3.0,
+      "max_error_rate": 0.02,
+      "min_conversation_completion": 0.9,
+      "max_memory_usage": 0.8,
+      "max_cpu_usage": 0.7
+    }
+  },
+  "test_summary": {
+    "total_tests": 33,
+    "passed_tests": 23,
+    "failed_tests": 10,
+    "overall_success_rate": 0.696969696969697
+  },
+  "category_results": {
+    "System Health": {
+      "total": 4,
+      "passed": 3,
+      "tests": [
+        "TestResult(test_name='System Health Check', success=True, duration=1.005296230316162, details={}, errors=[], warnings=[], metrics={'cpu_usage': 10.7, 'memory_usage': 0.602, 'health_checks': {'cpu_usage_acceptable': True, 'memory_usage_acceptable': True, 'disk_space_available': True}})",
+        "TestResult(test_name='Memory Usage Test', success=True, duration=148.62358593940735, details={}, errors=[], warnings=[], metrics={'initial_memory_mb': 162.03125, 'final_memory_mb': 162.265625, 'memory_increase_mb': 0.234375, 'acceptable_increase': True})",
+        "TestResult(test_name='System Throughput', success=False, duration=236.44557785987854, details={}, errors=[], warnings=[], metrics={'total_messages': 50, 'concurrent_customers': 5, 'throughput_msg_per_sec': 0.21146515173834549, 'meets_criteria': False})",
+        "TestResult(test_name='System Limits Test', success=True, duration=260.87780714035034, details={}, errors=[], warnings=[], metrics={'max_messages_attempted': 50, 'messages_processed': 50, 'processing_rate': 1.0})"
+      ],
+      "success_rate": 0.75
+    },
+    "Database Integration": {
+      "total": 3,
+      "passed": 2,
+      "tests": [
+        "TestResult(test_name='MongoDB Operations', success=True, duration=1.96993088722229, details={}, errors=[], warnings=[], metrics={'write_time': 1.7426087856292725, 'read_time': 0.11172103881835938, 'delete_time': 0.11422324180603027, 'data_integrity': True})",
+        "TestResult(test_name='PostgreSQL Operations', success=True, duration=1.0977518558502197, details={}, errors=[], warnings=[], metrics={'products_count': 20, 'products_time': 1.0366582870483398, 'query_time': 0.06108903884887695, 'data_available': True})",
+        "TestResult(test_name='Scenario: Database Connection Issues', success=False, duration=4.76837158203125e-06, details={}, errors=[\"cannot access local variable 'expected_stages' where it is not associated with a value\"], warnings=[], metrics={})"
+      ],
+      "success_rate": 0.6666666666666666
+    },
+    "Core Components": {
+      "total": 6,
+      "passed": 5,
+      "tests": [
+        "TestResult(test_name='Conversation Backbone', success=False, duration=4.4868409633636475, details={'response_received': True, 'required_fields_present': True, 'status_available': True, 'clear_successful': False}, errors=[], warnings=[], metrics={})",
+        "TestResult(test_name='Enhanced Sales Analyzer Module', success=True, duration=4.0531158447265625e-06, details={}, errors=[], warnings=[], metrics={})",
+        "TestResult(test_name='Enhanced Product Matcher Module', success=True, duration=9.5367431640625e-07, details={}, errors=[], warnings=[], metrics={})",
+        "TestResult(test_name='Enhanced Response Generator Module', success=True, duration=0.0, details={}, errors=[], warnings=[], metrics={})",
+        "TestResult(test_name='State Manager Module', success=True, duration=9.5367431640625e-07, details={}, errors=[], warnings=[], metrics={})",
+        "TestResult(test_name='Orchestrator Module', success=True, duration=0.0, details={}, errors=[], warnings=[], metrics={})"
+      ],
+      "success_rate": 0.8333333333333334
+    },
+    "Conversation Logic": {
+      "total": 15,
+      "passed": 10,
+      "tests": [
+        "TestResult(test_name='Scenario: Simple Product Inquiry', success=True, duration=14.289110898971558, details={'conversation_steps': 3, 'final_stage': 'PURCHASE_CONFIRMATION', 'final_ready': True, 'expected_stages': ['PURCHASE_INTENT', 'PURCHASE_CONFIRMATION'], 'avg_response_time': 4.762937704722087}, errors=[], warnings=[], metrics={'response_times': [3.7156758308410645, 5.077896356582642, 5.495240926742554], 'conversation_log': [{'message': \"Hi, I'm looking for a moisturizer for dry skin.\", 'response': \"Hi there! It's wonderful that you're looking for a moisturizer for dry skin. I recommend trying the Fair & Lovely Advanced Multi Vitamin Face Cream, which is specially formulated to nourish and hydrate dry skin effectively. Would you like more details about this product or suggestions for other options? I'm here to help you find the perfect fit!\", 'stage': 'INITIAL_INTEREST', 'is_ready': False, 'response_time': 3.7156758308410645}, {'message': 'That sounds good, how much does it cost?', 'response': \"I'm glad you're interested! The Fair & Lovely Advanced Multi Vitamin Face Cream is priced at $195.00. It's a wonderful choice for nourishing your skin with essential vitamins. Would you like more details about this product or help with other options to fit your budget?\", 'stage': 'PRICE_EVALUATION', 'is_ready': False, 'response_time': 5.077896356582642}, {'message': \"Perfect, I'll take it!\", 'response': \"I'm thrilled you're ready to go! The Fair & Lovely Advanced Multi Vitamin Face Cream is a fantastic choice for nourishing your skin. Would you like me to assist you with the purchase process or answer any last-minute questions?\", 'stage': 'PURCHASE_CONFIRMATION', 'is_ready': True, 'response_time': 5.495240926742554}]})",
+        "TestResult(test_name='Scenario: Multi-Product Discovery', success=False, duration=26.790130853652954, details={'conversation_steps': 5, 'final_stage': 'PRICE_EVALUATION', 'final_ready': False, 'expected_stages': ['PURCHASE_INTENT', 'PURCHASE_CONFIRMATION'], 'avg_response_time': 5.357995653152466}, errors=[], warnings=[], metrics={'response_times': [4.159324884414673, 6.110440969467163, 5.852845191955566, 5.345257997512817, 5.322109222412109], 'conversation_log': [{'message': 'I need a complete skincare routine for acne-prone skin.', 'response': \"I'm glad you're looking for a complete skincare routine for acne-prone skin! To get started, I recommend a gentle cleanser like the Himalaya Purifying Neem Face Wash, which helps control oil and prevent breakouts. Would you like more details on this product or suggestions for moisturizers and treatments to complement your routine?\", 'stage': 'INITIAL_INTEREST', 'is_ready': False, 'response_time': 4.159324884414673}, {'message': 'Tell me more about the cleanser and serum ingredients.', 'response': \"I'm glad you're interested in the ingredients! The Himalaya Purifying Neem Face Wash contains natural neem and turmeric, which help purify and soothe the skin, while the Keya Seth Neem Basil Face Wash combines neem and basil for a deep cleanse with a refreshing feel. Would you like more details on how these ingredients benefit your skin type or help with specific concerns? I'm here to help you find the perfect match!\", 'stage': 'PRODUCT_DISCOVERY', 'is_ready': False, 'response_time': 6.110440969467163}, {'message': 'Are these suitable for sensitive skin too?', 'response': 'Great question! Many of our cleansers, like the Himalaya Purifying Neem Face Wash and the Keya Seth Neem Basil Face Wash, are formulated to be gentle and suitable for sensitive skin. Would you like more details on their ingredients or how they compare? I\u2019d be happy to help you find the perfect match for your skin type!', 'stage': 'PRODUCT_DISCOVERY', 'is_ready': False, 'response_time': 5.852845191955566}, {'message': \"What's the total cost for the full routine?\", 'response': \"I'm glad you're interested! The total cost for a full skincare routine can vary depending on the products you choose, but I can help you find options that fit your budget and skincare needs. Would you like a breakdown of different product sets or personalized recommendations? Let me know how I can assist you further!\", 'stage': 'PRICE_EVALUATION', 'is_ready': False, 'response_time': 5.345257997512817}, {'message': \"Great! I'd like to order the complete set.\", 'response': \"That's wonderful! Investing in a complete set can be a fantastic way to streamline your skincare routine and see comprehensive results. To ensure you get the best value, I can help you explore different options within your budget and highlight the benefits of each. Would you like me to recommend some tailored sets or discuss pricing details further?\", 'stage': 'PRICE_EVALUATION', 'is_ready': False, 'response_time': 5.322109222412109}]})",
+        "TestResult(test_name='Scenario: Empty Message Handling', success=True, duration=3.620758056640625, details={'conversation_steps': 3, 'final_stage': 'INITIAL_INTEREST', 'final_ready': False, 'expected_stages': ['INITIAL_INTEREST'], 'avg_response_time': 1.2068803310394287}, errors=[], warnings=[], metrics={'response_times': [0.0032050609588623047, 0.0026178359985351562, 3.6148180961608887], 'conversation_log': [{'message': '', 'response': '', 'stage': '', 'is_ready': False, 'response_time': 0.0032050609588623047}, {'message': '   ', 'response': 'I apologize, but I encountered an issue: Empty message received', 'stage': 'ERROR', 'is_ready': False, 'response_time': 0.0026178359985351562}, {'message': 'hi', 'response': \"Hi there! Welcome to our beauty space. Are you looking for skincare advice, makeup tips, or something specific today? I'd love to help you find the perfect products that suit your needs!\", 'stage': 'INITIAL_INTEREST', 'is_ready': False, 'response_time': 3.6148180961608887}]})",
+        "TestResult(test_name='Scenario: Very Long Message', success=False, duration=0.003957986831665039, details={'conversation_steps': 1, 'final_stage': 'ERROR', 'final_ready': False, 'expected_stages': ['INITIAL_INTEREST'], 'avg_response_time': 0.0038690567016601562}, errors=[], warnings=[], metrics={'response_times': [0.0038690567016601562], 'conversation_log': [{'message': 'I really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really need skincare help with my skin issues.', 'response': 'I apologize, but I encountered an issue: Message too long (max 2000 characters)', 'stage': 'ERROR', 'is_ready': False, 'response_time': 0.0038690567016601562}]})",
+        "TestResult(test_name='Scenario: Non-English Characters', success=True, duration=9.448250770568848, details={'conversation_steps': 2, 'final_stage': 'INITIAL_INTEREST', 'final_ready': False, 'expected_stages': ['INITIAL_INTEREST'], 'avg_response_time': 4.724068999290466}, errors=[], warnings=[], metrics={'response_times': [5.502508163452148, 3.945629835128784], 'conversation_log': [{'message': 'Hola, \u00bftienes productos para piel seca? \ud83c\udf38', 'response': '\u00a1Hola! Qu\u00e9 bueno que preguntes, tengo varias opciones ideales para piel seca, como cremas hidratantes ricas en ingredientes nutritivos y aceites naturales. \u00bfTe gustar\u00eda que te recomiende algunos productos espec\u00edficos o prefieres que te ayude a identificar tus necesidades particulares? \u00a1Estoy aqu\u00ed para ayudarte a encontrar lo perfecto para ti!', 'stage': 'INITIAL_INTEREST', 'is_ready': False, 'response_time': 5.502508163452148}, {'message': 'I need skincare help', 'response': \"I'm so glad you're interested in skincare! To help you find the best products, could you tell me a bit about your skin type and any specific concerns you have? That way, I can recommend options tailored just for you!\", 'stage': 'INITIAL_INTEREST', 'is_ready': False, 'response_time': 3.945629835128784}]})",
+        "TestResult(test_name='Scenario: Special Characters & Symbols', success=True, duration=8.48486590385437, details={'conversation_steps': 2, 'final_stage': 'INITIAL_INTEREST', 'final_ready': False, 'expected_stages': ['INITIAL_INTEREST'], 'avg_response_time': 4.242377400398254}, errors=[], warnings=[], metrics={'response_times': [3.411986827850342, 5.072767972946167], 'conversation_log': [{'message': 'Hello!!! $$$ Looking for products @#$%^&*()', 'response': \"Hello! Thanks so much for reaching out. I'd love to help you find the perfect skincare or beauty products. Could you tell me a bit more about what you're looking for or your specific skincare concerns? That way, I can recommend the best options for you!\", 'stage': 'INITIAL_INTEREST', 'is_ready': False, 'response_time': 3.411986827850342}, {'message': 'I need moisturizer', 'response': \"Great choice! For moisturizers, I recommend the Fair & Lovely Advanced Multi Vitamin Face Cream, which provides nourishing hydration and skin-boosting vitamins. Would you like to know more about its benefits or how it compares to other options? I'm here to help you find the perfect fit!\", 'stage': 'INITIAL_INTEREST', 'is_ready': False, 'response_time': 5.072767972946167}]})",
+        "TestResult(test_name='Scenario: Hesitant Customer Journey', success=True, duration=26.382338762283325, details={'conversation_steps': 5, 'final_stage': 'PURCHASE_CONFIRMATION', 'final_ready': True, 'expected_stages': ['PURCHASE_CONFIRMATION'], 'avg_response_time': 5.2764383316040036}, errors=[], warnings=[], metrics={'response_times': [3.8320419788360596, 5.734586715698242, 5.439109802246094, 5.507578134536743, 5.868875026702881], 'conversation_log': [{'message': \"I'm not sure what I need for my skin...\", 'response': \"I'm glad you reached out! To help you find the perfect skincare, could you tell me a bit about your skin type (oily, dry, sensitive, or combination) and any specific concerns you have? That way, I can recommend the best products tailored just for you!\", 'stage': 'INITIAL_INTEREST', 'is_ready': False, 'response_time': 3.8320419788360596}, {'message': \"I'm worried products might irritate my sensitive skin.\", 'response': 'I completely understand your concern about sensitive skin! The Dove Beauty Bar Moisturizing Soap is a gentle, dermatologist-recommended option that\u2019s specially formulated to be mild and nourishing, making it a great choice for sensitive skin. Would you like more information on how to incorporate it into your skincare routine or other gentle product options?', 'stage': 'INITIAL_INTEREST', 'is_ready': False, 'response_time': 5.734586715698242}, {'message': \"What if they don't work for me?\", 'response': \"I understand your concern! If a product doesn't work for you, it's often due to individual skin differences or specific needs. I recommend starting with a gentle, suitable product for your skin type and giving it some time to see how your skin responds. Would you like some personalized suggestions based on your skin type or concerns? I'm here to help find the perfect fit for you!\", 'stage': 'INITIAL_INTEREST', 'is_ready': False, 'response_time': 5.439109802246094}, {'message': \"Okay, you've convinced me. I trust your recommendation.\", 'response': \"I'm glad you're feeling confident about your choice! The Dove Beauty Bar Moisturizing Soap is a wonderful option, especially if you have sensitive skin\u2014it's gentle and nourishing. Would you like me to help you with the next steps to purchase, or do you have any other questions? I'm here to make the process as smooth as possible for you!\", 'stage': 'PRICE_EVALUATION', 'is_ready': False, 'response_time': 5.507578134536743}, {'message': \"Let's do this! Please help me order.\", 'response': \"I'm so excited to help you complete your order! Based on your enthusiasm, I recommend the Dove Beauty Bar Moisturizing Soap for a gentle, hydrating cleanse, or the Lux Soft Touch Beauty Soap if you prefer something lighter. Would you like me to assist you with the checkout process or answer any last-minute questions? Let's get you all set to enjoy your new skincare favorites!\", 'stage': 'PURCHASE_CONFIRMATION', 'is_ready': True, 'response_time': 5.868875026702881}]})",
+        "TestResult(test_name='Scenario: Price-Conscious Customer', success=False, duration=20.113622903823853, details={'conversation_steps': 4, 'final_stage': 'PRICE_EVALUATION', 'final_ready': False, 'expected_stages': ['PURCHASE_CONFIRMATION'], 'avg_response_time': 5.028374552726746}, errors=[], warnings=[], metrics={'response_times': [3.9692070484161377, 5.4239501953125, 5.227898120880127, 5.492442846298218], 'conversation_log': [{'message': \"I need skincare but I'm on a tight budget.\", 'response': \"I'm glad you're exploring skincare options! There are many affordable products that can work wonderfully without breaking the bank. Would you like some recommendations for budget-friendly skincare lines or tips on what ingredients to look for? I'm here to help you find the perfect fit for your needs!\", 'stage': 'INITIAL_INTEREST', 'is_ready': False, 'response_time': 3.9692070484161377}, {'message': 'Do you have anything under $30?', 'response': \"I understand you're looking for options under $30! While some high-quality skincare products can be a bit above that, I can recommend some great budget-friendly options that offer excellent value. Would you like suggestions for specific skincare concerns or product types? I'd be happy to help find the perfect fit for your needs!\", 'stage': 'PRICE_EVALUATION', 'is_ready': False, 'response_time': 5.4239501953125}, {'message': 'Are there any current sales or discounts?', 'response': \"I'm glad you asked! While we don't have current sales or discounts listed, I can help you find products that offer great value and fit your budget. Would you like recommendations for skincare essentials or perhaps some luxurious treats? Let me know what you're interested in, and I'll assist you further!\", 'stage': 'PRICE_EVALUATION', 'is_ready': False, 'response_time': 5.227898120880127}, {'message': \"That works for my budget! I'll take it.\", 'response': \"That's wonderful to hear! Since you're comfortable with the budget, I can recommend some great value options that still deliver excellent results. Would you like suggestions for specific skincare types or ingredients to help narrow down the best choice for you?\", 'stage': 'PRICE_EVALUATION', 'is_ready': False, 'response_time': 5.492442846298218}]})",
+        "TestResult(test_name='Scenario: Gift Purchase Journey', success=True, duration=21.20888090133667, details={'conversation_steps': 4, 'final_stage': 'PURCHASE_CONFIRMATION', 'final_ready': True, 'expected_stages': ['PURCHASE_CONFIRMATION'], 'avg_response_time': 5.302193760871887}, errors=[], warnings=[], metrics={'response_times': [4.634415149688721, 6.8977038860321045, 6.058518171310425, 3.618137836456299], 'conversation_log': [{'message': \"I'm looking for a nice skincare gift for my mom.\", 'response': 'That\u2019s wonderful! A thoughtful skincare gift can really make your mom\u2019s day special. Are there any particular skincare concerns she has, or does she prefer a certain type of product like creams, serums, or masks? I\u2019d be happy to recommend some lovely options tailored to her preferences!', 'stage': 'INITIAL_INTEREST', 'is_ready': False, 'response_time': 4.634415149688721}, {'message': \"She's in her 50s and loves anti-aging products.\", 'response': \"It's wonderful to hear she's interested in anti-aging products! For her age, I recommend looking for products with ingredients like retinoids, hyaluronic acid, and peptides, which help boost collagen and improve skin elasticity. Would she prefer a serum, moisturizer, or a targeted treatment? I can help suggest the best options based on her skincare routine and preferences.\", 'stage': 'PRODUCT_DISCOVERY', 'is_ready': False, 'response_time': 6.8977038860321045}, {'message': 'What would make a nice gift set around $100?', 'response': 'That\u2019s a wonderful idea! For a thoughtful gift around $100, you might consider a luxurious skincare set, such as a collection of cleansers, moisturizers, and serums that suit the recipient\u2019s skin type. Would you like some specific product suggestions or help narrowing down options based on their preferences? I\u2019d be happy to assist further!', 'stage': 'PRICE_EVALUATION', 'is_ready': False, 'response_time': 6.058518171310425}, {'message': \"Perfect! She'll love this. Please help me complete the order.\", 'response': \"I'm so glad to hear she's going to love it! To complete your order smoothly, I can assist you right here\u2014would you like me to guide you through the checkout process or provide any additional information? Just let me know how I can help make this perfect for her!\", 'stage': 'PURCHASE_CONFIRMATION', 'is_ready': True, 'response_time': 3.618137836456299}]})",
+        "TestResult(test_name='Scenario: Rapid Message Sequence', success=False, duration=25.62773299217224, details={'conversation_steps': 5, 'final_stage': 'PRICE_EVALUATION', 'final_ready': True, 'expected_stages': ['PURCHASE_INTENT', 'PURCHASE_CONFIRMATION'], 'avg_response_time': 5.044855403900146}, errors=[], warnings=[], metrics={'response_times': [3.788985013961792, 5.144052982330322, 5.43049693107605, 5.621101140975952, 5.239640951156616], 'conversation_log': [{'message': 'Hi', 'response': \"Hi there! I'm so glad you reached out. Are you interested in skincare, makeup, or perhaps both? I'd love to learn more about your beauty goals so I can recommend the perfect products for you!\", 'stage': 'INITIAL_INTEREST', 'is_ready': False, 'response_time': 3.788985013961792}, {'message': 'Products?', 'response': \"I'm glad you're interested! Are you looking for skincare, makeup, or perhaps hair products? Let me know what specific concerns or preferences you have, so I can recommend the best options for you!\", 'stage': 'INITIAL_INTEREST', 'is_ready': False, 'response_time': 5.144052982330322}, {'message': 'Price?', 'response': 'Thank you for asking about the price! Our skincare products vary depending on the specific item, but I\u2019d be happy to help you find options that fit your budget and needs. Would you like some recommendations based on your skincare goals or preferences? Let me know how I can assist further!', 'stage': 'PURCHASE_CONFIRMATION', 'is_ready': False, 'response_time': 5.43049693107605}, {'message': 'Buy!', 'response': \"I understand you're eager to make a purchase! To help you get the best value, could you tell me more about your skincare needs and budget? That way, I can recommend options that fit perfectly for you. Are you looking for something specific or open to suggestions?\", 'stage': 'PRICE_EVALUATION', 'is_ready': False, 'response_time': 5.621101140975952}, {'message': 'Now!', 'response': \"That's fantastic! Since you're ready to purchase, I recommend considering our premium skincare sets that offer great value and comprehensive care. Would you like me to help you finalize your order or suggest the best options within your budget? Let me know how you'd like to proceed!\", 'stage': 'PRICE_EVALUATION', 'is_ready': True, 'response_time': 5.239640951156616}]})",
+        "TestResult(test_name='Scenario: Context Switching', success=True, duration=27.97531795501709, details={'conversation_steps': 5, 'final_stage': 'PURCHASE_CONFIRMATION', 'final_ready': True, 'expected_stages': ['PURCHASE_INTENT', 'PURCHASE_CONFIRMATION'], 'avg_response_time': 5.595050811767578}, errors=[], warnings=[], metrics={'response_times': [3.8921048641204834, 7.070059061050415, 5.836700201034546, 5.761125087738037, 5.415264844894409], 'conversation_log': [{'message': 'I need anti-aging products', 'response': \"I'm glad you're interested in anti-aging products! There are many great options that target fine lines, wrinkles, and skin firmness. Could you tell me a bit more about your skin type or specific concerns, so I can recommend the best products for you? Looking forward to helping you find the perfect fit!\", 'stage': 'INITIAL_INTEREST', 'is_ready': False, 'response_time': 3.8921048641204834}, {'message': 'Actually, no, I want acne treatment', 'response': \"Great to hear you're interested in acne treatment options! Both the Himalaya Purifying Neem Face Wash and the Keya Seth Neem Basil Face Wash are excellent choices that target acne-prone skin with natural ingredients. Would you like more details on how these products work or assistance with selecting the best fit for your skin type? I'm here to help!\", 'stage': 'PRICE_EVALUATION', 'is_ready': False, 'response_time': 7.070059061050415}, {'message': 'Wait, maybe just a simple moisturizer?', 'response': 'A simple moisturizer sounds like a great choice! The Fair & Lovely Advanced Multi Vitamin Face Cream is a wonderful option\u2014it\u2019s lightweight, nourishing, and packed with vitamins to keep your skin healthy. Would you like more details about this product or help with other skincare tips? Let me know how I can assist you further!', 'stage': 'PURCHASE_CONFIRMATION', 'is_ready': False, 'response_time': 5.836700201034546}, {'message': \"You know what, let's go with the anti-aging routine\", 'response': \"That's a fantastic choice! The Fair & Lovely Advanced Multi Vitamin Face Cream is a great anti-aging moisturizer that helps brighten and hydrate your skin while reducing the appearance of fine lines. Would you like to know more about how it works or how to incorporate it into your routine? I'm here to help you find the perfect fit for your skincare needs!\", 'stage': 'PRODUCT_DISCOVERY', 'is_ready': False, 'response_time': 5.761125087738037}, {'message': \"Yes, I'll take the complete anti-aging set\", 'response': \"That's wonderful to hear! To ensure a smooth purchase, I can assist you with completing your order or answer any last-minute questions. Would you like me to guide you through the checkout process now? I'm here to help make this as easy and enjoyable as possible!\", 'stage': 'PURCHASE_CONFIRMATION', 'is_ready': True, 'response_time': 5.415264844894409}]})",
+        "TestResult(test_name='Scenario: API Timeout Simulation', success=False, duration=3.761763095855713, details={'conversation_steps': 1, 'final_stage': 'INITIAL_INTEREST', 'final_ready': False, 'expected_stages': [], 'avg_response_time': 3.76167893409729}, errors=[], warnings=[], metrics={'response_times': [3.76167893409729], 'conversation_log': [{'message': 'Hi there, looking for moisturizers', 'response': \"Hi there! I'm excited to help you find the perfect moisturizer. Are you looking for something specific, like hydration, anti-aging, or for a particular skin type? That way, I can recommend the best options for you!\", 'stage': 'INITIAL_INTEREST', 'is_ready': False, 'response_time': 3.76167893409729}]})",
+        "TestResult(test_name='Customer Journey: New Customer Onboarding', success=True, duration=27.496148109436035, details={'total_steps': 5, 'successful_steps': 5, 'completion_rate': 1.0, 'journey_log': [{'step': 1, 'message': \"Hi, I'm completely new to skincare and don't know where to start.\", 'response_received': True, 'stage': 'INITIAL_INTEREST', 'is_ready': False}, {'step': 2, 'message': \"I have sensitive skin and I'm worried about reactions.\", 'response_received': True, 'stage': 'PURCHASE_CONFIRMATION', 'is_ready': False}, {'step': 3, 'message': 'What would you recommend as a gentle starter routine?', 'response_received': True, 'stage': 'PRODUCT_DISCOVERY', 'is_ready': False}, {'step': 4, 'message': \"That sounds perfect. What's included in the starter kit?\", 'response_received': True, 'stage': 'INITIAL_INTEREST', 'is_ready': False}, {'step': 5, 'message': 'Great! I feel confident about trying this. How do I order?', 'response_received': True, 'stage': 'PRODUCT_DISCOVERY', 'is_ready': False}]}, errors=[], warnings=[], metrics={})",
+        "TestResult(test_name='Customer Journey: Returning Customer Expansion', success=True, duration=20.98940896987915, details={'total_steps': 4, 'successful_steps': 4, 'completion_rate': 1.0, 'journey_log': [{'step': 1, 'message': \"I've been using your cleanser and love it! I want to add more products to my routine.\", 'response_received': True, 'stage': 'INITIAL_INTEREST', 'is_ready': False}, {'step': 2, 'message': \"I'm interested in anti-aging products now that I'm in my 30s.\", 'response_received': True, 'stage': 'PRODUCT_DISCOVERY', 'is_ready': False}, {'step': 3, 'message': \"Can you recommend a serum that would work well with what I'm already using?\", 'response_received': True, 'stage': 'PRODUCT_DISCOVERY', 'is_ready': False}, {'step': 4, 'message': \"Perfect! I trust your recommendations. I'll add the serum to my routine.\", 'response_received': True, 'stage': 'PRODUCT_DISCOVERY', 'is_ready': False}]}, errors=[], warnings=[], metrics={})",
+        "TestResult(test_name='Customer Journey: Problem-Solving Journey', success=True, duration=30.1060209274292, details={'total_steps': 5, 'successful_steps': 5, 'completion_rate': 1.0, 'journey_log': [{'step': 1, 'message': \"I've been breaking out more lately and I think it might be my products.\", 'response_received': True, 'stage': 'INITIAL_INTEREST', 'is_ready': False}, {'step': 2, 'message': \"I'm currently using [cleanser] and [moisturizer]. Could one of these be causing issues?\", 'response_received': True, 'stage': 'PRODUCT_DISCOVERY', 'is_ready': False}, {'step': 3, 'message': 'What would you recommend I switch to for acne-prone skin?', 'response_received': True, 'stage': 'PRODUCT_DISCOVERY', 'is_ready': False}, {'step': 4, 'message': \"That makes sense. I'll try the acne-fighting routine you suggested.\", 'response_received': True, 'stage': 'PRODUCT_DISCOVERY', 'is_ready': False}, {'step': 5, 'message': \"Thank you! I'll order the new products and hopefully see improvement soon.\", 'response_received': True, 'stage': 'PURCHASE_INTENT', 'is_ready': True}]}, errors=[], warnings=[], metrics={})"
+      ],
+      "success_rate": 0.6666666666666666
+    },
+    "Performance": {
+      "total": 2,
+      "passed": 1,
+      "tests": [
+        "TestResult(test_name='Response Time Performance', success=False, duration=75.89614486694336, details={}, errors=[], warnings=[], metrics={'average_time': 3.794800841808319, 'median_time': 3.7904551029205322, 'max_time': 4.319080352783203, 'min_time': 3.5388708114624023, 'num_tests': 20, 'meets_criteria': False})",
+        "TestResult(test_name='Concurrent Users Test', success=True, duration=164.1284658908844, details={}, errors=[], warnings=[], metrics={'concurrent_users': 10, 'successful_users': 10, 'success_rate': 1.0, 'avg_response_time': 4.103177887201309, 'meets_criteria': True})"
+      ],
+      "success_rate": 0.5
+    },
+    "Error Handling": {
+      "total": 2,
+      "passed": 1,
+      "tests": [
+        "TestResult(test_name='Malformed Request Handling', success=True, duration=0.01656794548034668, details={}, errors=[], warnings=[], metrics={'total_malformed': 5, 'handled_gracefully': 5, 'error_handling_rate': 1.0})",
+        "TestResult(test_name='Graceful Degradation', success=False, duration=110.24269604682922, details={}, errors=[], warnings=[], metrics={'rapid_messages': 20, 'successful_responses': 20, 'success_rate': 1.0, 'avg_response_time': 5.460475301742553})"
+      ],
+      "success_rate": 0.5
+    },
+    "Integration": {
+      "total": 1,
+      "passed": 1,
+      "tests": [
+        "TestResult(test_name='API Compatibility', success=True, duration=19.07380199432373, details={'response_format_consistent': True, 'required_fields_checked': ['sender', 'response_text', 'conversation_stage', 'is_ready'], 'messages_tested': 4}, errors=[], warnings=[], metrics={})"
+      ],
+      "success_rate": 1.0
+    }
+  },
+  "system_metrics": {
+    "cpu_usage": 10.7,
+    "memory_usage": 0.602,
+    "database_response_times": {
+      "mongodb_write": 1.7426087856292725,
+      "mongodb_read": 0.11172103881835938,
+      "mongodb_delete": 0.11422324180603027,
+      "postgresql_products": 1.0366582870483398,
+      "postgresql_query": 0.06108903884887695
+    },
+    "avg_response_time": 4.687274341498102
+  },
+  "recommendations": [
+    "\ud83d\udea8 CRITICAL: System requires improvements before production deployment",
+    "\u274c Improve test success rate from 69.7% to 95.0%",
+    "\u26a1 Optimize response times from 4.69s to under 3.0s",
+    "\ud83d\udd27 Focus on improving System Health (success rate: 75.0%)",
+    "\ud83d\udd27 Focus on improving Database Integration (success rate: 66.7%)",
+    "\ud83d\udd27 Focus on improving Core Components (success rate: 83.3%)",
+    "\ud83d\udd27 Focus on improving Conversation Logic (success rate: 66.7%)",
+    "\ud83d\udd27 Focus on improving Performance (success rate: 50.0%)",
+    "\ud83d\udd27 Focus on improving Error Handling (success rate: 50.0%)",
+    "\u26a1 Consider implementing response caching or optimizing LLM calls"
+  ],
+  "detailed_results": [
+    {
+      "test_name": "System Health Check",
+      "success": true,
+      "duration": 1.005296230316162,
+      "details": {},
+      "metrics": {
+        "cpu_usage": 10.7,
+        "memory_usage": 0.602,
+        "health_checks": {
+          "cpu_usage_acceptable": true,
+          "memory_usage_acceptable": true,
+          "disk_space_available": true
+        }
+      },
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "test_name": "MongoDB Operations",
+      "success": true,
+      "duration": 1.96993088722229,
+      "details": {},
+      "metrics": {
+        "write_time": 1.7426087856292725,
+        "read_time": 0.11172103881835938,
+        "delete_time": 0.11422324180603027,
+        "data_integrity": true
+      },
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "test_name": "PostgreSQL Operations",
+      "success": true,
+      "duration": 1.0977518558502197,
+      "details": {},
+      "metrics": {
+        "products_count": 20,
+        "products_time": 1.0366582870483398,
+        "query_time": 0.06108903884887695,
+        "data_available": true
+      },
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "test_name": "Conversation Backbone",
+      "success": false,
+      "duration": 4.4868409633636475,
+      "details": {
+        "response_received": true,
+        "required_fields_present": true,
+        "status_available": true,
+        "clear_successful": false
+      },
+      "metrics": {},
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "test_name": "Enhanced Sales Analyzer Module",
+      "success": true,
+      "duration": 4.0531158447265625e-06,
+      "details": {},
+      "metrics": {},
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "test_name": "Enhanced Product Matcher Module",
+      "success": true,
+      "duration": 9.5367431640625e-07,
+      "details": {},
+      "metrics": {},
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "test_name": "Enhanced Response Generator Module",
+      "success": true,
+      "duration": 0.0,
+      "details": {},
+      "metrics": {},
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "test_name": "State Manager Module",
+      "success": true,
+      "duration": 9.5367431640625e-07,
+      "details": {},
+      "metrics": {},
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "test_name": "Orchestrator Module",
+      "success": true,
+      "duration": 0.0,
+      "details": {},
+      "metrics": {},
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "test_name": "Scenario: Simple Product Inquiry",
+      "success": true,
+      "duration": 14.289110898971558,
+      "details": {
+        "conversation_steps": 3,
+        "final_stage": "PURCHASE_CONFIRMATION",
+        "final_ready": true,
+        "expected_stages": [
+          "PURCHASE_INTENT",
+          "PURCHASE_CONFIRMATION"
+        ],
+        "avg_response_time": 4.762937704722087
+      },
+      "metrics": {
+        "response_times": [
+          3.7156758308410645,
+          5.077896356582642,
+          5.495240926742554
+        ],
+        "conversation_log": [
+          {
+            "message": "Hi, I'm looking for a moisturizer for dry skin.",
+            "response": "Hi there! It's wonderful that you're looking for a moisturizer for dry skin. I recommend trying the Fair & Lovely Advanced Multi Vitamin Face Cream, which is specially formulated to nourish and hydrate dry skin effectively. Would you like more details about this product or suggestions for other options? I'm here to help you find the perfect fit!",
+            "stage": "INITIAL_INTEREST",
+            "is_ready": false,
+            "response_time": 3.7156758308410645
+          },
+          {
+            "message": "That sounds good, how much does it cost?",
+            "response": "I'm glad you're interested! The Fair & Lovely Advanced Multi Vitamin Face Cream is priced at $195.00. It's a wonderful choice for nourishing your skin with essential vitamins. Would you like more details about this product or help with other options to fit your budget?",
+            "stage": "PRICE_EVALUATION",
+            "is_ready": false,
+            "response_time": 5.077896356582642
+          },
+          {
+            "message": "Perfect, I'll take it!",
+            "response": "I'm thrilled you're ready to go! The Fair & Lovely Advanced Multi Vitamin Face Cream is a fantastic choice for nourishing your skin. Would you like me to assist you with the purchase process or answer any last-minute questions?",
+            "stage": "PURCHASE_CONFIRMATION",
+            "is_ready": true,
+            "response_time": 5.495240926742554
+          }
+        ]
+      },
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "test_name": "Scenario: Multi-Product Discovery",
+      "success": false,
+      "duration": 26.790130853652954,
+      "details": {
+        "conversation_steps": 5,
+        "final_stage": "PRICE_EVALUATION",
+        "final_ready": false,
+        "expected_stages": [
+          "PURCHASE_INTENT",
+          "PURCHASE_CONFIRMATION"
+        ],
+        "avg_response_time": 5.357995653152466
+      },
+      "metrics": {
+        "response_times": [
+          4.159324884414673,
+          6.110440969467163,
+          5.852845191955566,
+          5.345257997512817,
+          5.322109222412109
+        ],
+        "conversation_log": [
+          {
+            "message": "I need a complete skincare routine for acne-prone skin.",
+            "response": "I'm glad you're looking for a complete skincare routine for acne-prone skin! To get started, I recommend a gentle cleanser like the Himalaya Purifying Neem Face Wash, which helps control oil and prevent breakouts. Would you like more details on this product or suggestions for moisturizers and treatments to complement your routine?",
+            "stage": "INITIAL_INTEREST",
+            "is_ready": false,
+            "response_time": 4.159324884414673
+          },
+          {
+            "message": "Tell me more about the cleanser and serum ingredients.",
+            "response": "I'm glad you're interested in the ingredients! The Himalaya Purifying Neem Face Wash contains natural neem and turmeric, which help purify and soothe the skin, while the Keya Seth Neem Basil Face Wash combines neem and basil for a deep cleanse with a refreshing feel. Would you like more details on how these ingredients benefit your skin type or help with specific concerns? I'm here to help you find the perfect match!",
+            "stage": "PRODUCT_DISCOVERY",
+            "is_ready": false,
+            "response_time": 6.110440969467163
+          },
+          {
+            "message": "Are these suitable for sensitive skin too?",
+            "response": "Great question! Many of our cleansers, like the Himalaya Purifying Neem Face Wash and the Keya Seth Neem Basil Face Wash, are formulated to be gentle and suitable for sensitive skin. Would you like more details on their ingredients or how they compare? I\u2019d be happy to help you find the perfect match for your skin type!",
+            "stage": "PRODUCT_DISCOVERY",
+            "is_ready": false,
+            "response_time": 5.852845191955566
+          },
+          {
+            "message": "What's the total cost for the full routine?",
+            "response": "I'm glad you're interested! The total cost for a full skincare routine can vary depending on the products you choose, but I can help you find options that fit your budget and skincare needs. Would you like a breakdown of different product sets or personalized recommendations? Let me know how I can assist you further!",
+            "stage": "PRICE_EVALUATION",
+            "is_ready": false,
+            "response_time": 5.345257997512817
+          },
+          {
+            "message": "Great! I'd like to order the complete set.",
+            "response": "That's wonderful! Investing in a complete set can be a fantastic way to streamline your skincare routine and see comprehensive results. To ensure you get the best value, I can help you explore different options within your budget and highlight the benefits of each. Would you like me to recommend some tailored sets or discuss pricing details further?",
+            "stage": "PRICE_EVALUATION",
+            "is_ready": false,
+            "response_time": 5.322109222412109
+          }
+        ]
+      },
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "test_name": "Scenario: Empty Message Handling",
+      "success": true,
+      "duration": 3.620758056640625,
+      "details": {
+        "conversation_steps": 3,
+        "final_stage": "INITIAL_INTEREST",
+        "final_ready": false,
+        "expected_stages": [
+          "INITIAL_INTEREST"
+        ],
+        "avg_response_time": 1.2068803310394287
+      },
+      "metrics": {
+        "response_times": [
+          0.0032050609588623047,
+          0.0026178359985351562,
+          3.6148180961608887
+        ],
+        "conversation_log": [
+          {
+            "message": "",
+            "response": "",
+            "stage": "",
+            "is_ready": false,
+            "response_time": 0.0032050609588623047
+          },
+          {
+            "message": "   ",
+            "response": "I apologize, but I encountered an issue: Empty message received",
+            "stage": "ERROR",
+            "is_ready": false,
+            "response_time": 0.0026178359985351562
+          },
+          {
+            "message": "hi",
+            "response": "Hi there! Welcome to our beauty space. Are you looking for skincare advice, makeup tips, or something specific today? I'd love to help you find the perfect products that suit your needs!",
+            "stage": "INITIAL_INTEREST",
+            "is_ready": false,
+            "response_time": 3.6148180961608887
+          }
+        ]
+      },
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "test_name": "Scenario: Very Long Message",
+      "success": false,
+      "duration": 0.003957986831665039,
+      "details": {
+        "conversation_steps": 1,
+        "final_stage": "ERROR",
+        "final_ready": false,
+        "expected_stages": [
+          "INITIAL_INTEREST"
+        ],
+        "avg_response_time": 0.0038690567016601562
+      },
+      "metrics": {
+        "response_times": [
+          0.0038690567016601562
+        ],
+        "conversation_log": [
+          {
+            "message": "I really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really need skincare help with my skin issues.",
+            "response": "I apologize, but I encountered an issue: Message too long (max 2000 characters)",
+            "stage": "ERROR",
+            "is_ready": false,
+            "response_time": 0.0038690567016601562
+          }
+        ]
+      },
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "test_name": "Scenario: Non-English Characters",
+      "success": true,
+      "duration": 9.448250770568848,
+      "details": {
+        "conversation_steps": 2,
+        "final_stage": "INITIAL_INTEREST",
+        "final_ready": false,
+        "expected_stages": [
+          "INITIAL_INTEREST"
+        ],
+        "avg_response_time": 4.724068999290466
+      },
+      "metrics": {
+        "response_times": [
+          5.502508163452148,
+          3.945629835128784
+        ],
+        "conversation_log": [
+          {
+            "message": "Hola, \u00bftienes productos para piel seca? \ud83c\udf38",
+            "response": "\u00a1Hola! Qu\u00e9 bueno que preguntes, tengo varias opciones ideales para piel seca, como cremas hidratantes ricas en ingredientes nutritivos y aceites naturales. \u00bfTe gustar\u00eda que te recomiende algunos productos espec\u00edficos o prefieres que te ayude a identificar tus necesidades particulares? \u00a1Estoy aqu\u00ed para ayudarte a encontrar lo perfecto para ti!",
+            "stage": "INITIAL_INTEREST",
+            "is_ready": false,
+            "response_time": 5.502508163452148
+          },
+          {
+            "message": "I need skincare help",
+            "response": "I'm so glad you're interested in skincare! To help you find the best products, could you tell me a bit about your skin type and any specific concerns you have? That way, I can recommend options tailored just for you!",
+            "stage": "INITIAL_INTEREST",
+            "is_ready": false,
+            "response_time": 3.945629835128784
+          }
+        ]
+      },
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "test_name": "Scenario: Special Characters & Symbols",
+      "success": true,
+      "duration": 8.48486590385437,
+      "details": {
+        "conversation_steps": 2,
+        "final_stage": "INITIAL_INTEREST",
+        "final_ready": false,
+        "expected_stages": [
+          "INITIAL_INTEREST"
+        ],
+        "avg_response_time": 4.242377400398254
+      },
+      "metrics": {
+        "response_times": [
+          3.411986827850342,
+          5.072767972946167
+        ],
+        "conversation_log": [
+          {
+            "message": "Hello!!! $$$ Looking for products @#$%^&*()",
+            "response": "Hello! Thanks so much for reaching out. I'd love to help you find the perfect skincare or beauty products. Could you tell me a bit more about what you're looking for or your specific skincare concerns? That way, I can recommend the best options for you!",
+            "stage": "INITIAL_INTEREST",
+            "is_ready": false,
+            "response_time": 3.411986827850342
+          },
+          {
+            "message": "I need moisturizer",
+            "response": "Great choice! For moisturizers, I recommend the Fair & Lovely Advanced Multi Vitamin Face Cream, which provides nourishing hydration and skin-boosting vitamins. Would you like to know more about its benefits or how it compares to other options? I'm here to help you find the perfect fit!",
+            "stage": "INITIAL_INTEREST",
+            "is_ready": false,
+            "response_time": 5.072767972946167
+          }
+        ]
+      },
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "test_name": "Scenario: Hesitant Customer Journey",
+      "success": true,
+      "duration": 26.382338762283325,
+      "details": {
+        "conversation_steps": 5,
+        "final_stage": "PURCHASE_CONFIRMATION",
+        "final_ready": true,
+        "expected_stages": [
+          "PURCHASE_CONFIRMATION"
+        ],
+        "avg_response_time": 5.2764383316040036
+      },
+      "metrics": {
+        "response_times": [
+          3.8320419788360596,
+          5.734586715698242,
+          5.439109802246094,
+          5.507578134536743,
+          5.868875026702881
+        ],
+        "conversation_log": [
+          {
+            "message": "I'm not sure what I need for my skin...",
+            "response": "I'm glad you reached out! To help you find the perfect skincare, could you tell me a bit about your skin type (oily, dry, sensitive, or combination) and any specific concerns you have? That way, I can recommend the best products tailored just for you!",
+            "stage": "INITIAL_INTEREST",
+            "is_ready": false,
+            "response_time": 3.8320419788360596
+          },
+          {
+            "message": "I'm worried products might irritate my sensitive skin.",
+            "response": "I completely understand your concern about sensitive skin! The Dove Beauty Bar Moisturizing Soap is a gentle, dermatologist-recommended option that\u2019s specially formulated to be mild and nourishing, making it a great choice for sensitive skin. Would you like more information on how to incorporate it into your skincare routine or other gentle product options?",
+            "stage": "INITIAL_INTEREST",
+            "is_ready": false,
+            "response_time": 5.734586715698242
+          },
+          {
+            "message": "What if they don't work for me?",
+            "response": "I understand your concern! If a product doesn't work for you, it's often due to individual skin differences or specific needs. I recommend starting with a gentle, suitable product for your skin type and giving it some time to see how your skin responds. Would you like some personalized suggestions based on your skin type or concerns? I'm here to help find the perfect fit for you!",
+            "stage": "INITIAL_INTEREST",
+            "is_ready": false,
+            "response_time": 5.439109802246094
+          },
+          {
+            "message": "Okay, you've convinced me. I trust your recommendation.",
+            "response": "I'm glad you're feeling confident about your choice! The Dove Beauty Bar Moisturizing Soap is a wonderful option, especially if you have sensitive skin\u2014it's gentle and nourishing. Would you like me to help you with the next steps to purchase, or do you have any other questions? I'm here to make the process as smooth as possible for you!",
+            "stage": "PRICE_EVALUATION",
+            "is_ready": false,
+            "response_time": 5.507578134536743
+          },
+          {
+            "message": "Let's do this! Please help me order.",
+            "response": "I'm so excited to help you complete your order! Based on your enthusiasm, I recommend the Dove Beauty Bar Moisturizing Soap for a gentle, hydrating cleanse, or the Lux Soft Touch Beauty Soap if you prefer something lighter. Would you like me to assist you with the checkout process or answer any last-minute questions? Let's get you all set to enjoy your new skincare favorites!",
+            "stage": "PURCHASE_CONFIRMATION",
+            "is_ready": true,
+            "response_time": 5.868875026702881
+          }
+        ]
+      },
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "test_name": "Scenario: Price-Conscious Customer",
+      "success": false,
+      "duration": 20.113622903823853,
+      "details": {
+        "conversation_steps": 4,
+        "final_stage": "PRICE_EVALUATION",
+        "final_ready": false,
+        "expected_stages": [
+          "PURCHASE_CONFIRMATION"
+        ],
+        "avg_response_time": 5.028374552726746
+      },
+      "metrics": {
+        "response_times": [
+          3.9692070484161377,
+          5.4239501953125,
+          5.227898120880127,
+          5.492442846298218
+        ],
+        "conversation_log": [
+          {
+            "message": "I need skincare but I'm on a tight budget.",
+            "response": "I'm glad you're exploring skincare options! There are many affordable products that can work wonderfully without breaking the bank. Would you like some recommendations for budget-friendly skincare lines or tips on what ingredients to look for? I'm here to help you find the perfect fit for your needs!",
+            "stage": "INITIAL_INTEREST",
+            "is_ready": false,
+            "response_time": 3.9692070484161377
+          },
+          {
+            "message": "Do you have anything under $30?",
+            "response": "I understand you're looking for options under $30! While some high-quality skincare products can be a bit above that, I can recommend some great budget-friendly options that offer excellent value. Would you like suggestions for specific skincare concerns or product types? I'd be happy to help find the perfect fit for your needs!",
+            "stage": "PRICE_EVALUATION",
+            "is_ready": false,
+            "response_time": 5.4239501953125
+          },
+          {
+            "message": "Are there any current sales or discounts?",
+            "response": "I'm glad you asked! While we don't have current sales or discounts listed, I can help you find products that offer great value and fit your budget. Would you like recommendations for skincare essentials or perhaps some luxurious treats? Let me know what you're interested in, and I'll assist you further!",
+            "stage": "PRICE_EVALUATION",
+            "is_ready": false,
+            "response_time": 5.227898120880127
+          },
+          {
+            "message": "That works for my budget! I'll take it.",
+            "response": "That's wonderful to hear! Since you're comfortable with the budget, I can recommend some great value options that still deliver excellent results. Would you like suggestions for specific skincare types or ingredients to help narrow down the best choice for you?",
+            "stage": "PRICE_EVALUATION",
+            "is_ready": false,
+            "response_time": 5.492442846298218
+          }
+        ]
+      },
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "test_name": "Scenario: Gift Purchase Journey",
+      "success": true,
+      "duration": 21.20888090133667,
+      "details": {
+        "conversation_steps": 4,
+        "final_stage": "PURCHASE_CONFIRMATION",
+        "final_ready": true,
+        "expected_stages": [
+          "PURCHASE_CONFIRMATION"
+        ],
+        "avg_response_time": 5.302193760871887
+      },
+      "metrics": {
+        "response_times": [
+          4.634415149688721,
+          6.8977038860321045,
+          6.058518171310425,
+          3.618137836456299
+        ],
+        "conversation_log": [
+          {
+            "message": "I'm looking for a nice skincare gift for my mom.",
+            "response": "That\u2019s wonderful! A thoughtful skincare gift can really make your mom\u2019s day special. Are there any particular skincare concerns she has, or does she prefer a certain type of product like creams, serums, or masks? I\u2019d be happy to recommend some lovely options tailored to her preferences!",
+            "stage": "INITIAL_INTEREST",
+            "is_ready": false,
+            "response_time": 4.634415149688721
+          },
+          {
+            "message": "She's in her 50s and loves anti-aging products.",
+            "response": "It's wonderful to hear she's interested in anti-aging products! For her age, I recommend looking for products with ingredients like retinoids, hyaluronic acid, and peptides, which help boost collagen and improve skin elasticity. Would she prefer a serum, moisturizer, or a targeted treatment? I can help suggest the best options based on her skincare routine and preferences.",
+            "stage": "PRODUCT_DISCOVERY",
+            "is_ready": false,
+            "response_time": 6.8977038860321045
+          },
+          {
+            "message": "What would make a nice gift set around $100?",
+            "response": "That\u2019s a wonderful idea! For a thoughtful gift around $100, you might consider a luxurious skincare set, such as a collection of cleansers, moisturizers, and serums that suit the recipient\u2019s skin type. Would you like some specific product suggestions or help narrowing down options based on their preferences? I\u2019d be happy to assist further!",
+            "stage": "PRICE_EVALUATION",
+            "is_ready": false,
+            "response_time": 6.058518171310425
+          },
+          {
+            "message": "Perfect! She'll love this. Please help me complete the order.",
+            "response": "I'm so glad to hear she's going to love it! To complete your order smoothly, I can assist you right here\u2014would you like me to guide you through the checkout process or provide any additional information? Just let me know how I can help make this perfect for her!",
+            "stage": "PURCHASE_CONFIRMATION",
+            "is_ready": true,
+            "response_time": 3.618137836456299
+          }
+        ]
+      },
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "test_name": "Scenario: Rapid Message Sequence",
+      "success": false,
+      "duration": 25.62773299217224,
+      "details": {
+        "conversation_steps": 5,
+        "final_stage": "PRICE_EVALUATION",
+        "final_ready": true,
+        "expected_stages": [
+          "PURCHASE_INTENT",
+          "PURCHASE_CONFIRMATION"
+        ],
+        "avg_response_time": 5.044855403900146
+      },
+      "metrics": {
+        "response_times": [
+          3.788985013961792,
+          5.144052982330322,
+          5.43049693107605,
+          5.621101140975952,
+          5.239640951156616
+        ],
+        "conversation_log": [
+          {
+            "message": "Hi",
+            "response": "Hi there! I'm so glad you reached out. Are you interested in skincare, makeup, or perhaps both? I'd love to learn more about your beauty goals so I can recommend the perfect products for you!",
+            "stage": "INITIAL_INTEREST",
+            "is_ready": false,
+            "response_time": 3.788985013961792
+          },
+          {
+            "message": "Products?",
+            "response": "I'm glad you're interested! Are you looking for skincare, makeup, or perhaps hair products? Let me know what specific concerns or preferences you have, so I can recommend the best options for you!",
+            "stage": "INITIAL_INTEREST",
+            "is_ready": false,
+            "response_time": 5.144052982330322
+          },
+          {
+            "message": "Price?",
+            "response": "Thank you for asking about the price! Our skincare products vary depending on the specific item, but I\u2019d be happy to help you find options that fit your budget and needs. Would you like some recommendations based on your skincare goals or preferences? Let me know how I can assist further!",
+            "stage": "PURCHASE_CONFIRMATION",
+            "is_ready": false,
+            "response_time": 5.43049693107605
+          },
+          {
+            "message": "Buy!",
+            "response": "I understand you're eager to make a purchase! To help you get the best value, could you tell me more about your skincare needs and budget? That way, I can recommend options that fit perfectly for you. Are you looking for something specific or open to suggestions?",
+            "stage": "PRICE_EVALUATION",
+            "is_ready": false,
+            "response_time": 5.621101140975952
+          },
+          {
+            "message": "Now!",
+            "response": "That's fantastic! Since you're ready to purchase, I recommend considering our premium skincare sets that offer great value and comprehensive care. Would you like me to help you finalize your order or suggest the best options within your budget? Let me know how you'd like to proceed!",
+            "stage": "PRICE_EVALUATION",
+            "is_ready": true,
+            "response_time": 5.239640951156616
+          }
+        ]
+      },
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "test_name": "Scenario: Context Switching",
+      "success": true,
+      "duration": 27.97531795501709,
+      "details": {
+        "conversation_steps": 5,
+        "final_stage": "PURCHASE_CONFIRMATION",
+        "final_ready": true,
+        "expected_stages": [
+          "PURCHASE_INTENT",
+          "PURCHASE_CONFIRMATION"
+        ],
+        "avg_response_time": 5.595050811767578
+      },
+      "metrics": {
+        "response_times": [
+          3.8921048641204834,
+          7.070059061050415,
+          5.836700201034546,
+          5.761125087738037,
+          5.415264844894409
+        ],
+        "conversation_log": [
+          {
+            "message": "I need anti-aging products",
+            "response": "I'm glad you're interested in anti-aging products! There are many great options that target fine lines, wrinkles, and skin firmness. Could you tell me a bit more about your skin type or specific concerns, so I can recommend the best products for you? Looking forward to helping you find the perfect fit!",
+            "stage": "INITIAL_INTEREST",
+            "is_ready": false,
+            "response_time": 3.8921048641204834
+          },
+          {
+            "message": "Actually, no, I want acne treatment",
+            "response": "Great to hear you're interested in acne treatment options! Both the Himalaya Purifying Neem Face Wash and the Keya Seth Neem Basil Face Wash are excellent choices that target acne-prone skin with natural ingredients. Would you like more details on how these products work or assistance with selecting the best fit for your skin type? I'm here to help!",
+            "stage": "PRICE_EVALUATION",
+            "is_ready": false,
+            "response_time": 7.070059061050415
+          },
+          {
+            "message": "Wait, maybe just a simple moisturizer?",
+            "response": "A simple moisturizer sounds like a great choice! The Fair & Lovely Advanced Multi Vitamin Face Cream is a wonderful option\u2014it\u2019s lightweight, nourishing, and packed with vitamins to keep your skin healthy. Would you like more details about this product or help with other skincare tips? Let me know how I can assist you further!",
+            "stage": "PURCHASE_CONFIRMATION",
+            "is_ready": false,
+            "response_time": 5.836700201034546
+          },
+          {
+            "message": "You know what, let's go with the anti-aging routine",
+            "response": "That's a fantastic choice! The Fair & Lovely Advanced Multi Vitamin Face Cream is a great anti-aging moisturizer that helps brighten and hydrate your skin while reducing the appearance of fine lines. Would you like to know more about how it works or how to incorporate it into your routine? I'm here to help you find the perfect fit for your skincare needs!",
+            "stage": "PRODUCT_DISCOVERY",
+            "is_ready": false,
+            "response_time": 5.761125087738037
+          },
+          {
+            "message": "Yes, I'll take the complete anti-aging set",
+            "response": "That's wonderful to hear! To ensure a smooth purchase, I can assist you with completing your order or answer any last-minute questions. Would you like me to guide you through the checkout process now? I'm here to help make this as easy and enjoyable as possible!",
+            "stage": "PURCHASE_CONFIRMATION",
+            "is_ready": true,
+            "response_time": 5.415264844894409
+          }
+        ]
+      },
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "test_name": "Scenario: Database Connection Issues",
+      "success": false,
+      "duration": 4.76837158203125e-06,
+      "details": {},
+      "metrics": {},
+      "errors": [
+        "cannot access local variable 'expected_stages' where it is not associated with a value"
+      ],
+      "warnings": []
+    },
+    {
+      "test_name": "Scenario: API Timeout Simulation",
+      "success": false,
+      "duration": 3.761763095855713,
+      "details": {
+        "conversation_steps": 1,
+        "final_stage": "INITIAL_INTEREST",
+        "final_ready": false,
+        "expected_stages": [],
+        "avg_response_time": 3.76167893409729
+      },
+      "metrics": {
+        "response_times": [
+          3.76167893409729
+        ],
+        "conversation_log": [
+          {
+            "message": "Hi there, looking for moisturizers",
+            "response": "Hi there! I'm excited to help you find the perfect moisturizer. Are you looking for something specific, like hydration, anti-aging, or for a particular skin type? That way, I can recommend the best options for you!",
+            "stage": "INITIAL_INTEREST",
+            "is_ready": false,
+            "response_time": 3.76167893409729
+          }
+        ]
+      },
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "test_name": "Response Time Performance",
+      "success": false,
+      "duration": 75.89614486694336,
+      "details": {},
+      "metrics": {
+        "average_time": 3.794800841808319,
+        "median_time": 3.7904551029205322,
+        "max_time": 4.319080352783203,
+        "min_time": 3.5388708114624023,
+        "num_tests": 20,
+        "meets_criteria": false
+      },
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "test_name": "Memory Usage Test",
+      "success": true,
+      "duration": 148.62358593940735,
+      "details": {},
+      "metrics": {
+        "initial_memory_mb": 162.03125,
+        "final_memory_mb": 162.265625,
+        "memory_increase_mb": 0.234375,
+        "acceptable_increase": true
+      },
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "test_name": "System Throughput",
+      "success": false,
+      "duration": 236.44557785987854,
+      "details": {},
+      "metrics": {
+        "total_messages": 50,
+        "concurrent_customers": 5,
+        "throughput_msg_per_sec": 0.21146515173834549,
+        "meets_criteria": false
+      },
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "test_name": "Concurrent Users Test",
+      "success": true,
+      "duration": 164.1284658908844,
+      "details": {},
+      "metrics": {
+        "concurrent_users": 10,
+        "successful_users": 10,
+        "success_rate": 1.0,
+        "avg_response_time": 4.103177887201309,
+        "meets_criteria": true
+      },
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "test_name": "Malformed Request Handling",
+      "success": true,
+      "duration": 0.01656794548034668,
+      "details": {},
+      "metrics": {
+        "total_malformed": 5,
+        "handled_gracefully": 5,
+        "error_handling_rate": 1.0
+      },
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "test_name": "System Limits Test",
+      "success": true,
+      "duration": 260.87780714035034,
+      "details": {},
+      "metrics": {
+        "max_messages_attempted": 50,
+        "messages_processed": 50,
+        "processing_rate": 1.0
+      },
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "test_name": "Graceful Degradation",
+      "success": false,
+      "duration": 110.24269604682922,
+      "details": {},
+      "metrics": {
+        "rapid_messages": 20,
+        "successful_responses": 20,
+        "success_rate": 1.0,
+        "avg_response_time": 5.460475301742553
+      },
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "test_name": "Customer Journey: New Customer Onboarding",
+      "success": true,
+      "duration": 27.496148109436035,
+      "details": {
+        "total_steps": 5,
+        "successful_steps": 5,
+        "completion_rate": 1.0,
+        "journey_log": [
+          {
+            "step": 1,
+            "message": "Hi, I'm completely new to skincare and don't know where to start.",
+            "response_received": true,
+            "stage": "INITIAL_INTEREST",
+            "is_ready": false
+          },
+          {
+            "step": 2,
+            "message": "I have sensitive skin and I'm worried about reactions.",
+            "response_received": true,
+            "stage": "PURCHASE_CONFIRMATION",
+            "is_ready": false
+          },
+          {
+            "step": 3,
+            "message": "What would you recommend as a gentle starter routine?",
+            "response_received": true,
+            "stage": "PRODUCT_DISCOVERY",
+            "is_ready": false
+          },
+          {
+            "step": 4,
+            "message": "That sounds perfect. What's included in the starter kit?",
+            "response_received": true,
+            "stage": "INITIAL_INTEREST",
+            "is_ready": false
+          },
+          {
+            "step": 5,
+            "message": "Great! I feel confident about trying this. How do I order?",
+            "response_received": true,
+            "stage": "PRODUCT_DISCOVERY",
+            "is_ready": false
+          }
+        ]
+      },
+      "metrics": {},
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "test_name": "Customer Journey: Returning Customer Expansion",
+      "success": true,
+      "duration": 20.98940896987915,
+      "details": {
+        "total_steps": 4,
+        "successful_steps": 4,
+        "completion_rate": 1.0,
+        "journey_log": [
+          {
+            "step": 1,
+            "message": "I've been using your cleanser and love it! I want to add more products to my routine.",
+            "response_received": true,
+            "stage": "INITIAL_INTEREST",
+            "is_ready": false
+          },
+          {
+            "step": 2,
+            "message": "I'm interested in anti-aging products now that I'm in my 30s.",
+            "response_received": true,
+            "stage": "PRODUCT_DISCOVERY",
+            "is_ready": false
+          },
+          {
+            "step": 3,
+            "message": "Can you recommend a serum that would work well with what I'm already using?",
+            "response_received": true,
+            "stage": "PRODUCT_DISCOVERY",
+            "is_ready": false
+          },
+          {
+            "step": 4,
+            "message": "Perfect! I trust your recommendations. I'll add the serum to my routine.",
+            "response_received": true,
+            "stage": "PRODUCT_DISCOVERY",
+            "is_ready": false
+          }
+        ]
+      },
+      "metrics": {},
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "test_name": "Customer Journey: Problem-Solving Journey",
+      "success": true,
+      "duration": 30.1060209274292,
+      "details": {
+        "total_steps": 5,
+        "successful_steps": 5,
+        "completion_rate": 1.0,
+        "journey_log": [
+          {
+            "step": 1,
+            "message": "I've been breaking out more lately and I think it might be my products.",
+            "response_received": true,
+            "stage": "INITIAL_INTEREST",
+            "is_ready": false
+          },
+          {
+            "step": 2,
+            "message": "I'm currently using [cleanser] and [moisturizer]. Could one of these be causing issues?",
+            "response_received": true,
+            "stage": "PRODUCT_DISCOVERY",
+            "is_ready": false
+          },
+          {
+            "step": 3,
+            "message": "What would you recommend I switch to for acne-prone skin?",
+            "response_received": true,
+            "stage": "PRODUCT_DISCOVERY",
+            "is_ready": false
+          },
+          {
+            "step": 4,
+            "message": "That makes sense. I'll try the acne-fighting routine you suggested.",
+            "response_received": true,
+            "stage": "PRODUCT_DISCOVERY",
+            "is_ready": false
+          },
+          {
+            "step": 5,
+            "message": "Thank you! I'll order the new products and hopefully see improvement soon.",
+            "response_received": true,
+            "stage": "PURCHASE_INTENT",
+            "is_ready": true
+          }
+        ]
+      },
+      "metrics": {},
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "test_name": "API Compatibility",
+      "success": true,
+      "duration": 19.07380199432373,
+      "details": {
+        "response_format_consistent": true,
+        "required_fields_checked": [
+          "sender",
+          "response_text",
+          "conversation_stage",
+          "is_ready"
+        ],
+        "messages_tested": 4
+      },
+      "metrics": {},
+      "errors": [],
+      "warnings": []
+    }
+  ]
+}

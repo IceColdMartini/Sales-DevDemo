@@ -1,0 +1,841 @@
+{
+  "test_metadata": {
+    "timestamp": "2025-09-07T16:55:58.646049",
+    "test_type": "enhanced_multi_scenario",
+    "total_scenarios": 5,
+    "total_iterations": 15,
+    "focus_areas": [
+      "stage_detection",
+      "purchase_readiness",
+      "response_quality"
+    ]
+  },
+  "scenario_summaries": [
+    {
+      "scenario_name": "Stage_Detection_Precision",
+      "customer_type": "Stage_Progression_Tester",
+      "focus_areas": [
+        "stage_detection",
+        "purchase_readiness"
+      ],
+      "success_rate": 0.0,
+      "iterations_run": 3,
+      "successful_iterations": 0,
+      "avg_response_time": 0.003415664037068685,
+      "avg_validation_score": 0,
+      "meets_threshold": false,
+      "common_failures": [],
+      "performance_consistency": 0.9999992315077123
+    },
+    {
+      "scenario_name": "Quick_Buyer_Enhanced",
+      "customer_type": "Decisive_Quick_Buyer",
+      "focus_areas": [
+        "quick_purchase_flow",
+        "stage_detection",
+        "product_matching"
+      ],
+      "success_rate": 0.0,
+      "iterations_run": 3,
+      "successful_iterations": 0,
+      "avg_response_time": 0.004251215193006728,
+      "avg_validation_score": 0,
+      "meets_threshold": false,
+      "common_failures": [],
+      "performance_consistency": 0.9999997365410492
+    },
+    {
+      "scenario_name": "Hesitant_Customer_Enhanced",
+      "customer_type": "Cautious_Decision_Maker",
+      "focus_areas": [
+        "concern_addressing",
+        "trust_building",
+        "gentle_progression"
+      ],
+      "success_rate": 0.0,
+      "iterations_run": 3,
+      "successful_iterations": 0,
+      "avg_response_time": 0.0036602020263671875,
+      "avg_validation_score": 0,
+      "meets_threshold": false,
+      "common_failures": [],
+      "performance_consistency": 0.9999985129499673
+    },
+    {
+      "scenario_name": "Information_Extraction_Test",
+      "customer_type": "Detail_Oriented_Researcher",
+      "focus_areas": [
+        "information_extraction",
+        "brand_matching",
+        "technical_details"
+      ],
+      "success_rate": 0.0,
+      "iterations_run": 3,
+      "successful_iterations": 0,
+      "avg_response_time": 0.003716150919596354,
+      "avg_validation_score": 0,
+      "meets_threshold": false,
+      "common_failures": [],
+      "performance_consistency": 0.9999991218903125
+    },
+    {
+      "scenario_name": "Purchase_Completion_Flow",
+      "customer_type": "Ready_to_Buy_Customer",
+      "focus_areas": [
+        "purchase_completion",
+        "handover_logic"
+      ],
+      "success_rate": 0.0,
+      "iterations_run": 3,
+      "successful_iterations": 0,
+      "avg_response_time": 0.003974066840277778,
+      "avg_validation_score": 0,
+      "meets_threshold": false,
+      "common_failures": [],
+      "performance_consistency": 0.9999992588228852
+    }
+  ],
+  "comprehensive_analysis": {
+    "overall_success_rate": 0.0,
+    "scenarios_meeting_threshold": 0,
+    "total_scenarios": 5,
+    "avg_response_time": 0.003803459803263347,
+    "avg_validation_score": 0.0,
+    "improvement_areas": [
+      "Stage Detection Logic",
+      "Purchase Readiness Detection"
+    ],
+    "recommendation": [
+      "Optimize quick purchase flow with faster stage transitions",
+      "Enhance trust-building and concern-addressing responses",
+      "Consider additional training data for edge cases"
+    ],
+    "test_summary": {
+      "enhanced_testing": true,
+      "targeted_failure_points": true,
+      "production_ready": false
+    }
+  },
+  "detailed_results": [
+    {
+      "scenario_name": "Stage_Detection_Precision",
+      "iteration": 0,
+      "conversation_id": "Stage_Detection_Precision_0_1757242513",
+      "results": [
+        {
+          "step": 0,
+          "message": "Hi, I'm looking for skincare products",
+          "response": null,
+          "response_time": 0.003924131393432617,
+          "validation": {
+            "passed": false,
+            "error": "HTTP 422"
+          }
+        },
+        {
+          "step": 1,
+          "message": "Tell me about anti-aging serums with retinol",
+          "response": null,
+          "response_time": 0.0016291141510009766,
+          "validation": {
+            "passed": false,
+            "error": "HTTP 422"
+          }
+        },
+        {
+          "step": 2,
+          "message": "What's the price of the retinol serum?",
+          "response": null,
+          "response_time": 0.0033500194549560547,
+          "validation": {
+            "passed": false,
+            "error": "HTTP 422"
+          }
+        },
+        {
+          "step": 3,
+          "message": "I'd like to get the retinol serum, it sounds perfect",
+          "response": null,
+          "response_time": 0.003604888916015625,
+          "validation": {
+            "passed": false,
+            "error": "HTTP 422"
+          }
+        },
+        {
+          "step": 4,
+          "message": "Yes, I'll take it. How do I complete my purchase?",
+          "response": null,
+          "response_time": 0.0038459300994873047,
+          "validation": {
+            "passed": false,
+            "error": "HTTP 422"
+          }
+        }
+      ],
+      "overall_success": false
+    },
+    {
+      "scenario_name": "Stage_Detection_Precision",
+      "iteration": 1,
+      "conversation_id": "Stage_Detection_Precision_1_1757242516",
+      "results": [
+        {
+          "step": 0,
+          "message": "Hi, I'm looking for skincare products",
+          "response": null,
+          "response_time": 0.0034520626068115234,
+          "validation": {
+            "passed": false,
+            "error": "HTTP 422"
+          }
+        },
+        {
+          "step": 1,
+          "message": "Tell me about anti-aging serums with retinol",
+          "response": null,
+          "response_time": 0.004152059555053711,
+          "validation": {
+            "passed": false,
+            "error": "HTTP 422"
+          }
+        },
+        {
+          "step": 2,
+          "message": "What's the price of the retinol serum?",
+          "response": null,
+          "response_time": 0.002344846725463867,
+          "validation": {
+            "passed": false,
+            "error": "HTTP 422"
+          }
+        },
+        {
+          "step": 3,
+          "message": "I'd like to get the retinol serum, it sounds perfect",
+          "response": null,
+          "response_time": 0.003964900970458984,
+          "validation": {
+            "passed": false,
+            "error": "HTTP 422"
+          }
+        },
+        {
+          "step": 4,
+          "message": "Yes, I'll take it. How do I complete my purchase?",
+          "response": null,
+          "response_time": 0.004868030548095703,
+          "validation": {
+            "passed": false,
+            "error": "HTTP 422"
+          }
+        }
+      ],
+      "overall_success": false
+    },
+    {
+      "scenario_name": "Stage_Detection_Precision",
+      "iteration": 2,
+      "conversation_id": "Stage_Detection_Precision_2_1757242520",
+      "results": [
+        {
+          "step": 0,
+          "message": "Hi, I'm looking for skincare products",
+          "response": null,
+          "response_time": 0.002256155014038086,
+          "validation": {
+            "passed": false,
+            "error": "HTTP 422"
+          }
+        },
+        {
+          "step": 1,
+          "message": "Tell me about anti-aging serums with retinol",
+          "response": null,
+          "response_time": 0.004525899887084961,
+          "validation": {
+            "passed": false,
+            "error": "HTTP 422"
+          }
+        },
+        {
+          "step": 2,
+          "message": "What's the price of the retinol serum?",
+          "response": null,
+          "response_time": 0.0029060840606689453,
+          "validation": {
+            "passed": false,
+            "error": "HTTP 422"
+          }
+        },
+        {
+          "step": 3,
+          "message": "I'd like to get the retinol serum, it sounds perfect",
+          "response": null,
+          "response_time": 0.002562999725341797,
+          "validation": {
+            "passed": false,
+            "error": "HTTP 422"
+          }
+        },
+        {
+          "step": 4,
+          "message": "Yes, I'll take it. How do I complete my purchase?",
+          "response": null,
+          "response_time": 0.003847837448120117,
+          "validation": {
+            "passed": false,
+            "error": "HTTP 422"
+          }
+        }
+      ],
+      "overall_success": false
+    },
+    {
+      "scenario_name": "Quick_Buyer_Enhanced",
+      "iteration": 0,
+      "conversation_id": "Quick_Buyer_Enhanced_0_1757242523",
+      "results": [
+        {
+          "step": 0,
+          "message": "I need a good moisturizer for dry skin, something under $30",
+          "response": null,
+          "response_time": 0.005221128463745117,
+          "validation": {
+            "passed": false,
+            "error": "HTTP 422"
+          }
+        },
+        {
+          "step": 1,
+          "message": "That looks perfect. I'll take the CeraVe moisturizer",
+          "response": null,
+          "response_time": 0.004187822341918945,
+          "validation": {
+            "passed": false,
+            "error": "HTTP 422"
+          }
+        },
+        {
+          "step": 2,
+          "message": "Yes, I want to buy it now. How do I purchase?",
+          "response": null,
+          "response_time": 0.00499415397644043,
+          "validation": {
+            "passed": false,
+            "error": "HTTP 422"
+          }
+        }
+      ],
+      "overall_success": false
+    },
+    {
+      "scenario_name": "Quick_Buyer_Enhanced",
+      "iteration": 1,
+      "conversation_id": "Quick_Buyer_Enhanced_1_1757242526",
+      "results": [
+        {
+          "step": 0,
+          "message": "I need a good moisturizer for dry skin, something under $30",
+          "response": null,
+          "response_time": 0.0038928985595703125,
+          "validation": {
+            "passed": false,
+            "error": "HTTP 422"
+          }
+        },
+        {
+          "step": 1,
+          "message": "That looks perfect. I'll take the CeraVe moisturizer",
+          "response": null,
+          "response_time": 0.004430055618286133,
+          "validation": {
+            "passed": false,
+            "error": "HTTP 422"
+          }
+        },
+        {
+          "step": 2,
+          "message": "Yes, I want to buy it now. How do I purchase?",
+          "response": null,
+          "response_time": 0.004011869430541992,
+          "validation": {
+            "passed": false,
+            "error": "HTTP 422"
+          }
+        }
+      ],
+      "overall_success": false
+    },
+    {
+      "scenario_name": "Quick_Buyer_Enhanced",
+      "iteration": 2,
+      "conversation_id": "Quick_Buyer_Enhanced_2_1757242528",
+      "results": [
+        {
+          "step": 0,
+          "message": "I need a good moisturizer for dry skin, something under $30",
+          "response": null,
+          "response_time": 0.0035669803619384766,
+          "validation": {
+            "passed": false,
+            "error": "HTTP 422"
+          }
+        },
+        {
+          "step": 1,
+          "message": "That looks perfect. I'll take the CeraVe moisturizer",
+          "response": null,
+          "response_time": 0.004118204116821289,
+          "validation": {
+            "passed": false,
+            "error": "HTTP 422"
+          }
+        },
+        {
+          "step": 2,
+          "message": "Yes, I want to buy it now. How do I purchase?",
+          "response": null,
+          "response_time": 0.0038378238677978516,
+          "validation": {
+            "passed": false,
+            "error": "HTTP 422"
+          }
+        }
+      ],
+      "overall_success": false
+    },
+    {
+      "scenario_name": "Hesitant_Customer_Enhanced",
+      "iteration": 0,
+      "conversation_id": "Hesitant_Customer_Enhanced_0_1757242531",
+      "results": [
+        {
+          "step": 0,
+          "message": "I'm looking for acne products but I'm worried about irritation",
+          "response": null,
+          "response_time": 0.003907918930053711,
+          "validation": {
+            "passed": false,
+            "error": "HTTP 422"
+          }
+        },
+        {
+          "step": 1,
+          "message": "What ingredients should I avoid? I have sensitive skin",
+          "response": null,
+          "response_time": 0.005268096923828125,
+          "validation": {
+            "passed": false,
+            "error": "HTTP 422"
+          }
+        },
+        {
+          "step": 2,
+          "message": "Are there any gentle options that actually work?",
+          "response": null,
+          "response_time": 0.002077817916870117,
+          "validation": {
+            "passed": false,
+            "error": "HTTP 422"
+          }
+        },
+        {
+          "step": 3,
+          "message": "The CeraVe cleanser sounds good, but I'm still not sure",
+          "response": null,
+          "response_time": 0.004117012023925781,
+          "validation": {
+            "passed": false,
+            "error": "HTTP 422"
+          }
+        },
+        {
+          "step": 4,
+          "message": "Okay, I trust your recommendation. I'll try the cleanser",
+          "response": null,
+          "response_time": 0.0011789798736572266,
+          "validation": {
+            "passed": false,
+            "error": "HTTP 422"
+          }
+        }
+      ],
+      "overall_success": false
+    },
+    {
+      "scenario_name": "Hesitant_Customer_Enhanced",
+      "iteration": 1,
+      "conversation_id": "Hesitant_Customer_Enhanced_1_1757242534",
+      "results": [
+        {
+          "step": 0,
+          "message": "I'm looking for acne products but I'm worried about irritation",
+          "response": null,
+          "response_time": 0.004251956939697266,
+          "validation": {
+            "passed": false,
+            "error": "HTTP 422"
+          }
+        },
+        {
+          "step": 1,
+          "message": "What ingredients should I avoid? I have sensitive skin",
+          "response": null,
+          "response_time": 0.0041332244873046875,
+          "validation": {
+            "passed": false,
+            "error": "HTTP 422"
+          }
+        },
+        {
+          "step": 2,
+          "message": "Are there any gentle options that actually work?",
+          "response": null,
+          "response_time": 0.004584074020385742,
+          "validation": {
+            "passed": false,
+            "error": "HTTP 422"
+          }
+        },
+        {
+          "step": 3,
+          "message": "The CeraVe cleanser sounds good, but I'm still not sure",
+          "response": null,
+          "response_time": 0.0034286975860595703,
+          "validation": {
+            "passed": false,
+            "error": "HTTP 422"
+          }
+        },
+        {
+          "step": 4,
+          "message": "Okay, I trust your recommendation. I'll try the cleanser",
+          "response": null,
+          "response_time": 0.0030689239501953125,
+          "validation": {
+            "passed": false,
+            "error": "HTTP 422"
+          }
+        }
+      ],
+      "overall_success": false
+    },
+    {
+      "scenario_name": "Hesitant_Customer_Enhanced",
+      "iteration": 2,
+      "conversation_id": "Hesitant_Customer_Enhanced_2_1757242538",
+      "results": [
+        {
+          "step": 0,
+          "message": "I'm looking for acne products but I'm worried about irritation",
+          "response": null,
+          "response_time": 0.0014090538024902344,
+          "validation": {
+            "passed": false,
+            "error": "HTTP 422"
+          }
+        },
+        {
+          "step": 1,
+          "message": "What ingredients should I avoid? I have sensitive skin",
+          "response": null,
+          "response_time": 0.0055429935455322266,
+          "validation": {
+            "passed": false,
+            "error": "HTTP 422"
+          }
+        },
+        {
+          "step": 2,
+          "message": "Are there any gentle options that actually work?",
+          "response": null,
+          "response_time": 0.004121065139770508,
+          "validation": {
+            "passed": false,
+            "error": "HTTP 422"
+          }
+        },
+        {
+          "step": 3,
+          "message": "The CeraVe cleanser sounds good, but I'm still not sure",
+          "response": null,
+          "response_time": 0.003826141357421875,
+          "validation": {
+            "passed": false,
+            "error": "HTTP 422"
+          }
+        },
+        {
+          "step": 4,
+          "message": "Okay, I trust your recommendation. I'll try the cleanser",
+          "response": null,
+          "response_time": 0.00398707389831543,
+          "validation": {
+            "passed": false,
+            "error": "HTTP 422"
+          }
+        }
+      ],
+      "overall_success": false
+    },
+    {
+      "scenario_name": "Information_Extraction_Test",
+      "iteration": 0,
+      "conversation_id": "Information_Extraction_Test_0_1757242542",
+      "results": [
+        {
+          "step": 0,
+          "message": "I want sulfate-free cleansers for combination skin with salicylic acid",
+          "response": null,
+          "response_time": 0.003441333770751953,
+          "validation": {
+            "passed": false,
+            "error": "HTTP 422"
+          }
+        },
+        {
+          "step": 1,
+          "message": "Tell me about the ingredients and pH levels",
+          "response": null,
+          "response_time": 0.0033228397369384766,
+          "validation": {
+            "passed": false,
+            "error": "HTTP 422"
+          }
+        },
+        {
+          "step": 2,
+          "message": "Do you have anything from Neutrogena or CeraVe brands?",
+          "response": null,
+          "response_time": 0.004418134689331055,
+          "validation": {
+            "passed": false,
+            "error": "HTTP 422"
+          }
+        },
+        {
+          "step": 3,
+          "message": "The Neutrogena cleanser seems perfect for my needs",
+          "response": null,
+          "response_time": 0.0016169548034667969,
+          "validation": {
+            "passed": false,
+            "error": "HTTP 422"
+          }
+        }
+      ],
+      "overall_success": false
+    },
+    {
+      "scenario_name": "Information_Extraction_Test",
+      "iteration": 1,
+      "conversation_id": "Information_Extraction_Test_1_1757242545",
+      "results": [
+        {
+          "step": 0,
+          "message": "I want sulfate-free cleansers for combination skin with salicylic acid",
+          "response": null,
+          "response_time": 0.003750324249267578,
+          "validation": {
+            "passed": false,
+            "error": "HTTP 422"
+          }
+        },
+        {
+          "step": 1,
+          "message": "Tell me about the ingredients and pH levels",
+          "response": null,
+          "response_time": 0.004216194152832031,
+          "validation": {
+            "passed": false,
+            "error": "HTTP 422"
+          }
+        },
+        {
+          "step": 2,
+          "message": "Do you have anything from Neutrogena or CeraVe brands?",
+          "response": null,
+          "response_time": 0.005053043365478516,
+          "validation": {
+            "passed": false,
+            "error": "HTTP 422"
+          }
+        },
+        {
+          "step": 3,
+          "message": "The Neutrogena cleanser seems perfect for my needs",
+          "response": null,
+          "response_time": 0.0043828487396240234,
+          "validation": {
+            "passed": false,
+            "error": "HTTP 422"
+          }
+        }
+      ],
+      "overall_success": false
+    },
+    {
+      "scenario_name": "Information_Extraction_Test",
+      "iteration": 2,
+      "conversation_id": "Information_Extraction_Test_2_1757242548",
+      "results": [
+        {
+          "step": 0,
+          "message": "I want sulfate-free cleansers for combination skin with salicylic acid",
+          "response": null,
+          "response_time": 0.004445075988769531,
+          "validation": {
+            "passed": false,
+            "error": "HTTP 422"
+          }
+        },
+        {
+          "step": 1,
+          "message": "Tell me about the ingredients and pH levels",
+          "response": null,
+          "response_time": 0.00222015380859375,
+          "validation": {
+            "passed": false,
+            "error": "HTTP 422"
+          }
+        },
+        {
+          "step": 2,
+          "message": "Do you have anything from Neutrogena or CeraVe brands?",
+          "response": null,
+          "response_time": 0.0036268234252929688,
+          "validation": {
+            "passed": false,
+            "error": "HTTP 422"
+          }
+        },
+        {
+          "step": 3,
+          "message": "The Neutrogena cleanser seems perfect for my needs",
+          "response": null,
+          "response_time": 0.00410008430480957,
+          "validation": {
+            "passed": false,
+            "error": "HTTP 422"
+          }
+        }
+      ],
+      "overall_success": false
+    },
+    {
+      "scenario_name": "Purchase_Completion_Flow",
+      "iteration": 0,
+      "conversation_id": "Purchase_Completion_Flow_0_1757242551",
+      "results": [
+        {
+          "step": 0,
+          "message": "I've been using CeraVe products and love them",
+          "response": null,
+          "response_time": 0.004110813140869141,
+          "validation": {
+            "passed": false,
+            "error": "HTTP 422"
+          }
+        },
+        {
+          "step": 1,
+          "message": "I want to order the CeraVe Hydrating Cleanser",
+          "response": null,
+          "response_time": 0.0036780834197998047,
+          "validation": {
+            "passed": false,
+            "error": "HTTP 422"
+          }
+        },
+        {
+          "step": 2,
+          "message": "Yes, I'm ready to buy it now. Let's complete the purchase",
+          "response": null,
+          "response_time": 0.004702329635620117,
+          "validation": {
+            "passed": false,
+            "error": "HTTP 422"
+          }
+        }
+      ],
+      "overall_success": false
+    },
+    {
+      "scenario_name": "Purchase_Completion_Flow",
+      "iteration": 1,
+      "conversation_id": "Purchase_Completion_Flow_1_1757242553",
+      "results": [
+        {
+          "step": 0,
+          "message": "I've been using CeraVe products and love them",
+          "response": null,
+          "response_time": 0.002621889114379883,
+          "validation": {
+            "passed": false,
+            "error": "HTTP 422"
+          }
+        },
+        {
+          "step": 1,
+          "message": "I want to order the CeraVe Hydrating Cleanser",
+          "response": null,
+          "response_time": 0.005666017532348633,
+          "validation": {
+            "passed": false,
+            "error": "HTTP 422"
+          }
+        },
+        {
+          "step": 2,
+          "message": "Yes, I'm ready to buy it now. Let's complete the purchase",
+          "response": null,
+          "response_time": 0.0031430721282958984,
+          "validation": {
+            "passed": false,
+            "error": "HTTP 422"
+          }
+        }
+      ],
+      "overall_success": false
+    },
+    {
+      "scenario_name": "Purchase_Completion_Flow",
+      "iteration": 2,
+      "conversation_id": "Purchase_Completion_Flow_2_1757242556",
+      "results": [
+        {
+          "step": 0,
+          "message": "I've been using CeraVe products and love them",
+          "response": null,
+          "response_time": 0.0034220218658447266,
+          "validation": {
+            "passed": false,
+            "error": "HTTP 422"
+          }
+        },
+        {
+          "step": 1,
+          "message": "I want to order the CeraVe Hydrating Cleanser",
+          "response": null,
+          "response_time": 0.0038683414459228516,
+          "validation": {
+            "passed": false,
+            "error": "HTTP 422"
+          }
+        },
+        {
+          "step": 2,
+          "message": "Yes, I'm ready to buy it now. Let's complete the purchase",
+          "response": null,
+          "response_time": 0.004554033279418945,
+          "validation": {
+            "passed": false,
+            "error": "HTTP 422"
+          }
+        }
+      ],
+      "overall_success": false
+    }
+  ]
+}

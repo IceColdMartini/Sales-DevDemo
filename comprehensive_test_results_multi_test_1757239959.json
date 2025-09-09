@@ -1,0 +1,1294 @@
+{
+  "test_session": {
+    "session_id": "multi_test_1757239959",
+    "start_time": "2025-09-07T10:12:39.428243+00:00",
+    "test_type": "comprehensive_multi_scenario",
+    "scenarios_tested": 5,
+    "total_conversations": 0,
+    "end_time": "2025-09-07T10:15:56.638422+00:00"
+  },
+  "scenario_results": [
+    {
+      "scenario_name": "Skincare_Enthusiast",
+      "customer_id": "multi_test_1757239959_Skincare_Enthusiast_1757239961",
+      "description": "Detail-oriented customer who researches products thoroughly",
+      "start_time": "2025-09-07T10:12:41.729099+00:00",
+      "conversation_steps": [
+        {
+          "step_number": 1,
+          "customer_input": "Hi! I'm really into skincare and I'm looking to upgrade my routine. I have combination skin that's been acting up lately. Can you help me find some good products?",
+          "response_time": 5.983625411987305,
+          "http_status": 200,
+          "response_data": {
+            "sender": "multi_test_1757239959_Skincare_Enthusiast_1757239961",
+            "product_interested": "Keya Seth Neem Basil Face Wash",
+            "interested_product_ids": [
+              "34b038b2-49c0-43fb-90d6-4ad9953f27c6",
+              "34b038b2-49c0-43fb-90d6-4ad9953f27c6"
+            ],
+            "response_text": "Hi! It\u2019s great to hear that you\u2019re passionate about skincare\u2014upgrading your routine is always exciting. Since you mentioned having combination skin that\u2019s acting up lately, I\u2019d recommend focusing on gentle, balancing products that help control oil while keeping your skin hydrated.\n\nFrom our collection, the Keya Seth Neem Basil Face Wash could be a fantastic start. It\u2019s designed to cleanse deeply without stripping your skin, thanks to its natural ingredients like neem and basil, which are known for their soothing and purifying properties. It\u2019s especially good for skin that\u2019s prone to breakouts or imbalance.\n\nTo complement this, you might want to consider adding a lightweight moisturizer suited for combination skin, and perhaps a gentle toner to help refine pores and restore pH balance. I\u2019d be happy to suggest some options from trusted international brands or local favorites if you\u2019re interested.\n\nWould you like some tips on a complete routine or specific product recommendations? Also, if you tell me more about your current skincare products or concerns, I can personalize my suggestions even better. I\u2019m excited to help you find the perfect products to keep your skin happy and healthy!",
+            "is_ready": false,
+            "conversation_stage": "INITIAL_INTEREST",
+            "confidence": 0.95,
+            "handover": false,
+            "new_system": true,
+            "metadata": {},
+            "processing_timestamp": "2025-09-07T10:12:47.708718"
+          },
+          "ai_response": "Hi! It\u2019s great to hear that you\u2019re passionate about skincare\u2014upgrading your routine is always exciting. Since you mentioned having combination skin that\u2019s acting up lately, I\u2019d recommend focusing on gentle, balancing products that help control oil while keeping your skin hydrated.\n\nFrom our collection, the Keya Seth Neem Basil Face Wash could be a fantastic start. It\u2019s designed to cleanse deeply without stripping your skin, thanks to its natural ingredients like neem and basil, which are known for their soothing and purifying properties. It\u2019s especially good for skin that\u2019s prone to breakouts or imbalance.\n\nTo complement this, you might want to consider adding a lightweight moisturizer suited for combination skin, and perhaps a gentle toner to help refine pores and restore pH balance. I\u2019d be happy to suggest some options from trusted international brands or local favorites if you\u2019re interested.\n\nWould you like some tips on a complete routine or specific product recommendations? Also, if you tell me more about your current skincare products or concerns, I can personalize my suggestions even better. I\u2019m excited to help you find the perfect products to keep your skin happy and healthy!",
+          "timestamp": "2025-09-07T10:12:47.712949+00:00"
+        },
+        {
+          "step_number": 2,
+          "customer_input": "That sounds interesting! Can you tell me more about the ingredients in these products? I'm particularly concerned about avoiding sulfates and parabens. Do you have any clean beauty options?",
+          "response_time": 7.1668689250946045,
+          "http_status": 200,
+          "response_data": {
+            "sender": "multi_test_1757239959_Skincare_Enthusiast_1757239961",
+            "product_interested": null,
+            "interested_product_ids": [
+              "34b038b2-49c0-43fb-90d6-4ad9953f27c6",
+              "34b038b2-49c0-43fb-90d6-4ad9953f27c6"
+            ],
+            "response_text": "Hi! I love that you're interested in clean, ingredient-conscious products\u2014that's such a smart move for healthy skin. Since you're concerned about sulfates and parabens, I can definitely recommend some gentle, natural options that align with your preferences.\n\nFor your skincare routine, the Keya Seth Neem Basil Face Wash is a great choice, and it\u2019s formulated without harsh chemicals, focusing on natural ingredients. If you're looking for a sulfate-free and paraben-free cleanser, I\u2019d suggest exploring some international brands like Dove\u2019s Sensitive Skin range or Head & Shoulders\u2019 natural variants\u2014they prioritize gentle, safe ingredients and are widely trusted. \n\nAdditionally, for moisturizers, you might want to try products labeled as \"clean beauty\" or \"free from sulfates and parabens.\" Many local brands like Tibbet offer natural skincare options that are free from these chemicals, using ingredients like aloe vera, neem, or herbal extracts. \n\nWould you like me to recommend specific products from our collection that are certified clean or free from these ingredients? I can also guide you on how to read labels to identify safe options. Just let me know your preferences, and I\u2019ll help you craft a skincare routine that\u2019s both effective and gentle!",
+            "is_ready": false,
+            "conversation_stage": "PRODUCT_DISCOVERY",
+            "confidence": 0.95,
+            "handover": false,
+            "new_system": true,
+            "metadata": {},
+            "processing_timestamp": "2025-09-07T10:12:54.877154"
+          },
+          "ai_response": "Hi! I love that you're interested in clean, ingredient-conscious products\u2014that's such a smart move for healthy skin. Since you're concerned about sulfates and parabens, I can definitely recommend some gentle, natural options that align with your preferences.\n\nFor your skincare routine, the Keya Seth Neem Basil Face Wash is a great choice, and it\u2019s formulated without harsh chemicals, focusing on natural ingredients. If you're looking for a sulfate-free and paraben-free cleanser, I\u2019d suggest exploring some international brands like Dove\u2019s Sensitive Skin range or Head & Shoulders\u2019 natural variants\u2014they prioritize gentle, safe ingredients and are widely trusted. \n\nAdditionally, for moisturizers, you might want to try products labeled as \"clean beauty\" or \"free from sulfates and parabens.\" Many local brands like Tibbet offer natural skincare options that are free from these chemicals, using ingredients like aloe vera, neem, or herbal extracts. \n\nWould you like me to recommend specific products from our collection that are certified clean or free from these ingredients? I can also guide you on how to read labels to identify safe options. Just let me know your preferences, and I\u2019ll help you craft a skincare routine that\u2019s both effective and gentle!",
+          "timestamp": "2025-09-07T10:12:54.880282+00:00"
+        },
+        {
+          "step_number": 3,
+          "customer_input": "Perfect! I love that these are clean formulations. What's the price range for these products? And do you offer any bundles or sets?",
+          "response_time": 7.269421100616455,
+          "http_status": 200,
+          "response_data": {
+            "sender": "multi_test_1757239959_Skincare_Enthusiast_1757239961",
+            "product_interested": null,
+            "interested_product_ids": [
+              "34b038b2-49c0-43fb-90d6-4ad9953f27c6",
+              "34b038b2-49c0-43fb-90d6-4ad9953f27c6"
+            ],
+            "response_text": "Hi! I\u2019m thrilled to hear you\u2019re interested in clean, chemical-free products\u2014that\u2019s such a positive step for your skincare routine. Regarding pricing, our clean formulations generally range from affordable to premium, depending on the brand and product type. For example, local brands like Tibbet offer natural skincare options starting around \u20b9300-\u20b9600, while international brands like Dove or Head & Shoulders have gentle, sulfate-free variants that typically fall between \u20b9150-\u20b9400.\n\nAs for bundles or sets, we do offer curated skincare sets that can give you a great value and help you build a balanced routine. These often include cleansers, moisturizers, and toners, designed to work together seamlessly. I can recommend some specific sets based on your preferences if you'd like!\n\nWould you prefer to focus on a complete skincare set or pick individual products? Also, if you tell me your budget, I can narrow down the options to suit your needs perfectly. I\u2019m here to help you find the best clean, effective products that fit your routine and your wallet. Just let me know what works best for you!",
+            "is_ready": false,
+            "conversation_stage": "PRICE_EVALUATION",
+            "confidence": 0.9,
+            "handover": false,
+            "new_system": true,
+            "metadata": {},
+            "processing_timestamp": "2025-09-07T10:13:02.146598"
+          },
+          "ai_response": "Hi! I\u2019m thrilled to hear you\u2019re interested in clean, chemical-free products\u2014that\u2019s such a positive step for your skincare routine. Regarding pricing, our clean formulations generally range from affordable to premium, depending on the brand and product type. For example, local brands like Tibbet offer natural skincare options starting around \u20b9300-\u20b9600, while international brands like Dove or Head & Shoulders have gentle, sulfate-free variants that typically fall between \u20b9150-\u20b9400.\n\nAs for bundles or sets, we do offer curated skincare sets that can give you a great value and help you build a balanced routine. These often include cleansers, moisturizers, and toners, designed to work together seamlessly. I can recommend some specific sets based on your preferences if you'd like!\n\nWould you prefer to focus on a complete skincare set or pick individual products? Also, if you tell me your budget, I can narrow down the options to suit your needs perfectly. I\u2019m here to help you find the best clean, effective products that fit your routine and your wallet. Just let me know what works best for you!",
+          "timestamp": "2025-09-07T10:13:02.150040+00:00"
+        },
+        {
+          "step_number": 4,
+          "customer_input": "Great pricing! I think I'd like to get the cleanser and the moisturizer. They seem perfect for my skin type.",
+          "response_time": 7.782966136932373,
+          "http_status": 200,
+          "response_data": {
+            "sender": "multi_test_1757239959_Skincare_Enthusiast_1757239961",
+            "product_interested": "Keya Seth Neem Basil Face Wash",
+            "interested_product_ids": [
+              "34b038b2-49c0-43fb-90d6-4ad9953f27c6",
+              "ec00e983-e85f-4202-a732-a3c61955091c",
+              "55d26d11-22c2-4632-8d4b-10d8ced93269",
+              "ea4f53c6-6c24-4869-ac9a-af3510a6f7fb",
+              "38ef231e-fd1b-4266-8e04-245047fe702f",
+              "0d4bc440-ff0a-4d4e-a5e8-cf83578af78a",
+              "ec00e983-e85f-4202-a732-a3c61955091c",
+              "ea4f53c6-6c24-4869-ac9a-af3510a6f7fb",
+              "0d4bc440-ff0a-4d4e-a5e8-cf83578af78a",
+              "38ef231e-fd1b-4266-8e04-245047fe702f",
+              "55d26d11-22c2-4632-8d4b-10d8ced93269"
+            ],
+            "response_text": "Hi! I'm so glad to hear you're interested in the cleanser and moisturizer\u2014that's a great combo for balancing your skin. Since you want clean, gentle options, I recommend the Keya Seth Neem Basil Face Wash, which is formulated without sulfates or parabens and is perfect for combination skin that needs a gentle yet effective cleanse. It\u2019s priced at \u20b9180, making it both quality and affordable.\n\nFor the moisturizer, I suggest looking for something lightweight and hydrating, ideally also free from harsh chemicals. While I don\u2019t see a specific moisturizer listed here, I can recommend some excellent clean options from our collection or brands like Tibbet, which focus on natural ingredients and gentle formulations.\n\nTo make your shopping easier, I can prepare a bundle of these two products at a special price or suggest some ready-made sets that include both. This way, you get a coordinated routine and added value.\n\nWould you like me to send you a link to purchase the Keya Seth Neem Basil Face Wash along with some moisturizer options? Or if you have a preferred budget, I can help narrow down the best choices for you. I\u2019m excited to help you upgrade your routine with products that are both effective and kind to your skin!",
+            "is_ready": true,
+            "conversation_stage": "PURCHASE_CONFIRMATION",
+            "confidence": 0.95,
+            "handover": true,
+            "new_system": true,
+            "metadata": {},
+            "processing_timestamp": "2025-09-07T10:13:09.930010"
+          },
+          "ai_response": "Hi! I'm so glad to hear you're interested in the cleanser and moisturizer\u2014that's a great combo for balancing your skin. Since you want clean, gentle options, I recommend the Keya Seth Neem Basil Face Wash, which is formulated without sulfates or parabens and is perfect for combination skin that needs a gentle yet effective cleanse. It\u2019s priced at \u20b9180, making it both quality and affordable.\n\nFor the moisturizer, I suggest looking for something lightweight and hydrating, ideally also free from harsh chemicals. While I don\u2019t see a specific moisturizer listed here, I can recommend some excellent clean options from our collection or brands like Tibbet, which focus on natural ingredients and gentle formulations.\n\nTo make your shopping easier, I can prepare a bundle of these two products at a special price or suggest some ready-made sets that include both. This way, you get a coordinated routine and added value.\n\nWould you like me to send you a link to purchase the Keya Seth Neem Basil Face Wash along with some moisturizer options? Or if you have a preferred budget, I can help narrow down the best choices for you. I\u2019m excited to help you upgrade your routine with products that are both effective and kind to your skin!",
+          "timestamp": "2025-09-07T10:13:09.933452+00:00"
+        }
+      ],
+      "validation_results": [
+        {
+          "step_number": 1,
+          "validations": {
+            "response_time": {
+              "success": true,
+              "actual": 5.983625411987305,
+              "expected_max": 8.0
+            },
+            "http_status": {
+              "success": true,
+              "actual": 200
+            },
+            "stage_detection": {
+              "success": true,
+              "expected": "INITIAL_INTEREST",
+              "actual": "INITIAL_INTEREST"
+            },
+            "information_extraction": {
+              "success": true,
+              "rate": 1.0,
+              "extracted": "3/3"
+            },
+            "response_quality": {
+              "success": true,
+              "score": 1.0,
+              "checks": {
+                "has_content": true,
+                "conversational": true,
+                "helpful": true
+              }
+            }
+          },
+          "overall_success": true,
+          "issues": []
+        },
+        {
+          "step_number": 2,
+          "validations": {
+            "response_time": {
+              "success": true,
+              "actual": 7.1668689250946045,
+              "expected_max": 8.0
+            },
+            "http_status": {
+              "success": true,
+              "actual": 200
+            },
+            "stage_detection": {
+              "success": true,
+              "expected": "PRODUCT_DISCOVERY",
+              "actual": "PRODUCT_DISCOVERY"
+            },
+            "information_extraction": {
+              "success": true,
+              "rate": 1.0,
+              "extracted": "4/4"
+            },
+            "response_quality": {
+              "success": true,
+              "score": 1.0,
+              "checks": {
+                "has_content": true,
+                "conversational": true,
+                "helpful": true
+              }
+            }
+          },
+          "overall_success": true,
+          "issues": []
+        },
+        {
+          "step_number": 3,
+          "validations": {
+            "response_time": {
+              "success": true,
+              "actual": 7.269421100616455,
+              "expected_max": 8.0
+            },
+            "http_status": {
+              "success": true,
+              "actual": 200
+            },
+            "stage_detection": {
+              "success": true,
+              "expected": "PRICE_EVALUATION",
+              "actual": "PRICE_EVALUATION"
+            },
+            "information_extraction": {
+              "success": true,
+              "rate": 0.6666666666666666,
+              "extracted": "2/3"
+            },
+            "response_quality": {
+              "success": true,
+              "score": 1.0,
+              "checks": {
+                "has_content": true,
+                "conversational": true,
+                "helpful": true
+              }
+            }
+          },
+          "overall_success": true,
+          "issues": []
+        },
+        {
+          "step_number": 4,
+          "validations": {
+            "response_time": {
+              "success": true,
+              "actual": 7.782966136932373,
+              "expected_max": 8.0
+            },
+            "http_status": {
+              "success": true,
+              "actual": 200
+            },
+            "stage_detection": {
+              "success": true,
+              "expected": [
+                "PURCHASE_INTENT",
+                "PURCHASE_CONFIRMATION"
+              ],
+              "actual": "PURCHASE_CONFIRMATION"
+            },
+            "information_extraction": {
+              "success": true,
+              "rate": 1.0,
+              "extracted": "3/3"
+            },
+            "response_quality": {
+              "success": true,
+              "score": 1.0,
+              "checks": {
+                "has_content": true,
+                "conversational": true,
+                "helpful": true
+              }
+            }
+          },
+          "overall_success": true,
+          "issues": []
+        }
+      ],
+      "performance_metrics": {
+        "total_time": 28.203279972076416,
+        "average_step_time": 7.050819993019104,
+        "total_steps": 4,
+        "successful_steps": 4,
+        "success_rate": 1.0
+      },
+      "success": true,
+      "end_time": "2025-09-07T10:13:09.933692+00:00"
+    },
+    {
+      "scenario_name": "Quick_Buyer",
+      "customer_id": "multi_test_1757239959_Quick_Buyer_1757239990",
+      "description": "Direct customer who knows what they want and buys quickly",
+      "start_time": "2025-09-07T10:13:10.936019+00:00",
+      "conversation_steps": [
+        {
+          "step_number": 1,
+          "customer_input": "Hi, I need a good shampoo for oily hair. What do you recommend?",
+          "response_time": 6.918020009994507,
+          "http_status": 200,
+          "response_data": {
+            "sender": "multi_test_1757239959_Quick_Buyer_1757239990",
+            "product_interested": "Head & Shoulders Anti-Dandruff Shampoo",
+            "interested_product_ids": [
+              "33546bae-eaf3-47ce-bfb0-ac4068506d4f",
+              "0de4bc53-c849-45b5-b7f2-58e8e3de8fb3",
+              "17fd4a77-5a46-4896-8aaa-d158e9203002",
+              "eea137cc-8256-4c8a-bd43-6b4e32f4a727",
+              "4ba24ba6-92f2-4393-872a-a1b810fad9aa",
+              "eea137cc-8256-4c8a-bd43-6b4e32f4a727",
+              "33546bae-eaf3-47ce-bfb0-ac4068506d4f",
+              "17fd4a77-5a46-4896-8aaa-d158e9203002",
+              "4ba24ba6-92f2-4393-872a-a1b810fad9aa",
+              "0de4bc53-c849-45b5-b7f2-58e8e3de8fb3"
+            ],
+            "response_text": "Hi! I\u2019m excited to help you find the perfect shampoo for oily hair. Since oily scalp can make hair look greasy quickly, you want something that cleanses effectively without stripping too much moisture. \n\nFrom our collection, I\u2019d recommend checking out the Head & Shoulders Anti-Dandruff Shampoo. It\u2019s great for oily scalps because it helps control excess oil and dandruff, leaving your hair feeling fresh and clean. Plus, it\u2019s a trusted international brand known for gentle yet effective cleansing. Another good option is Sunsilk Hair Fall Solution Shampoo, which is designed to strengthen hair and manage oiliness, giving you a balanced scalp. If you prefer a more premium option, Pantene Pro-V Silky Smooth Care Shampoo is also suitable\u2014it\u2019s gentle but effective at maintaining scalp health and controlling oil.\n\nWould you like me to help you decide based on your hair type or any specific concerns? Or perhaps I can suggest some styling tips to keep your hair looking fresh longer? Feel free to share more about your hair, and I\u2019ll be happy to assist further!",
+            "is_ready": false,
+            "conversation_stage": "INITIAL_INTEREST",
+            "confidence": 1.0,
+            "handover": false,
+            "new_system": true,
+            "metadata": {},
+            "processing_timestamp": "2025-09-07T10:13:17.850934"
+          },
+          "ai_response": "Hi! I\u2019m excited to help you find the perfect shampoo for oily hair. Since oily scalp can make hair look greasy quickly, you want something that cleanses effectively without stripping too much moisture. \n\nFrom our collection, I\u2019d recommend checking out the Head & Shoulders Anti-Dandruff Shampoo. It\u2019s great for oily scalps because it helps control excess oil and dandruff, leaving your hair feeling fresh and clean. Plus, it\u2019s a trusted international brand known for gentle yet effective cleansing. Another good option is Sunsilk Hair Fall Solution Shampoo, which is designed to strengthen hair and manage oiliness, giving you a balanced scalp. If you prefer a more premium option, Pantene Pro-V Silky Smooth Care Shampoo is also suitable\u2014it\u2019s gentle but effective at maintaining scalp health and controlling oil.\n\nWould you like me to help you decide based on your hair type or any specific concerns? Or perhaps I can suggest some styling tips to keep your hair looking fresh longer? Feel free to share more about your hair, and I\u2019ll be happy to assist further!",
+          "timestamp": "2025-09-07T10:13:17.854356+00:00"
+        },
+        {
+          "step_number": 2,
+          "customer_input": "How much does it cost? I want something under $50.",
+          "response_time": 7.22113299369812,
+          "http_status": 200,
+          "response_data": {
+            "sender": "multi_test_1757239959_Quick_Buyer_1757239990",
+            "product_interested": null,
+            "interested_product_ids": [
+              "33546bae-eaf3-47ce-bfb0-ac4068506d4f",
+              "0de4bc53-c849-45b5-b7f2-58e8e3de8fb3",
+              "17fd4a77-5a46-4896-8aaa-d158e9203002",
+              "eea137cc-8256-4c8a-bd43-6b4e32f4a727",
+              "4ba24ba6-92f2-4393-872a-a1b810fad9aa",
+              "eea137cc-8256-4c8a-bd43-6b4e32f4a727",
+              "33546bae-eaf3-47ce-bfb0-ac4068506d4f",
+              "17fd4a77-5a46-4896-8aaa-d158e9203002",
+              "4ba24ba6-92f2-4393-872a-a1b810fad9aa",
+              "0de4bc53-c849-45b5-b7f2-58e8e3de8fb3"
+            ],
+            "response_text": "Hi again! I\u2019m glad you\u2019re interested in finding a great shampoo within your budget. Since you\u2019re looking for something under $50, you have plenty of excellent options that are both effective and affordable. \n\nFor a trusted international brand, the Head & Shoulders Anti-Dandruff Shampoo is usually priced well within that range and is fantastic for oily scalps\u2014helping to control excess oil and dandruff while keeping your hair fresh. Another popular choice is Dove Hair Therapy Shampoo, which is gentle yet effective at cleansing oily roots without over-drying. If you\u2019re open to local brands, Keya Seth offers some natural and affordable shampoos that are also good for oily hair types.\n\nWould you prefer a specific brand or are you open to trying different options? I can help you narrow down the best choice based on your preferences. Also, if you\u2019re interested, I can suggest some tips on how to maximize the freshness and longevity of your hair between washes. Just let me know what sounds good, and I\u2019ll be happy to assist further!",
+            "is_ready": false,
+            "conversation_stage": "PRICE_EVALUATION",
+            "confidence": 0.9,
+            "handover": false,
+            "new_system": true,
+            "metadata": {},
+            "processing_timestamp": "2025-09-07T10:13:25.072601"
+          },
+          "ai_response": "Hi again! I\u2019m glad you\u2019re interested in finding a great shampoo within your budget. Since you\u2019re looking for something under $50, you have plenty of excellent options that are both effective and affordable. \n\nFor a trusted international brand, the Head & Shoulders Anti-Dandruff Shampoo is usually priced well within that range and is fantastic for oily scalps\u2014helping to control excess oil and dandruff while keeping your hair fresh. Another popular choice is Dove Hair Therapy Shampoo, which is gentle yet effective at cleansing oily roots without over-drying. If you\u2019re open to local brands, Keya Seth offers some natural and affordable shampoos that are also good for oily hair types.\n\nWould you prefer a specific brand or are you open to trying different options? I can help you narrow down the best choice based on your preferences. Also, if you\u2019re interested, I can suggest some tips on how to maximize the freshness and longevity of your hair between washes. Just let me know what sounds good, and I\u2019ll be happy to assist further!",
+          "timestamp": "2025-09-07T10:13:25.075859+00:00"
+        },
+        {
+          "step_number": 3,
+          "customer_input": "Perfect! I'll take it. How do I buy it?",
+          "response_time": 7.376305103302002,
+          "http_status": 200,
+          "response_data": {
+            "sender": "multi_test_1757239959_Quick_Buyer_1757239990",
+            "product_interested": "Head & Shoulders Anti-Dandruff Shampoo",
+            "interested_product_ids": [
+              "78cda270-cd24-45c8-b8d0-6e09ab3b54e9",
+              "33546bae-eaf3-47ce-bfb0-ac4068506d4f",
+              "0de4bc53-c849-45b5-b7f2-58e8e3de8fb3",
+              "34b038b2-49c0-43fb-90d6-4ad9953f27c6",
+              "17fd4a77-5a46-4896-8aaa-d158e9203002",
+              "eea137cc-8256-4c8a-bd43-6b4e32f4a727",
+              "4ba24ba6-92f2-4393-872a-a1b810fad9aa",
+              "34b038b2-49c0-43fb-90d6-4ad9953f27c6",
+              "78cda270-cd24-45c8-b8d0-6e09ab3b54e9"
+            ],
+            "response_text": "That's fantastic! I'm excited to help you complete your purchase. Since you've decided on the Head & Shoulders Anti-Dandruff Shampoo, here's how you can easily buy it:\n\n1. **Visit our website or app**: Head over to our platform where the product is listed.\n2. **Select the product**: Click on the Head & Shoulders Anti-Dandruff Shampoo to view more details.\n3. **Add to cart**: Simply tap the \"Add to Cart\" button.\n4. **Proceed to checkout**: When you're ready, go to your cart and click \"Checkout.\"\n5. **Enter your details**: Fill in your shipping address and payment information.\n6. **Confirm your order**: Review everything and confirm your purchase.\n\nIf you'd like, I can also assist you with a direct link to the product page or guide you through the checkout process step-by-step. Plus, don\u2019t forget to check for any ongoing offers or discounts that might make your shopping even more rewarding!\n\nI'm here to make this as smooth as possible, so just let me know if you need any help along the way. Looking forward to getting that fresh, clean hair feeling to you soon!",
+            "is_ready": true,
+            "conversation_stage": "PURCHASE_CONFIRMATION",
+            "confidence": 0.95,
+            "handover": true,
+            "new_system": true,
+            "metadata": {},
+            "processing_timestamp": "2025-09-07T10:13:32.449222"
+          },
+          "ai_response": "That's fantastic! I'm excited to help you complete your purchase. Since you've decided on the Head & Shoulders Anti-Dandruff Shampoo, here's how you can easily buy it:\n\n1. **Visit our website or app**: Head over to our platform where the product is listed.\n2. **Select the product**: Click on the Head & Shoulders Anti-Dandruff Shampoo to view more details.\n3. **Add to cart**: Simply tap the \"Add to Cart\" button.\n4. **Proceed to checkout**: When you're ready, go to your cart and click \"Checkout.\"\n5. **Enter your details**: Fill in your shipping address and payment information.\n6. **Confirm your order**: Review everything and confirm your purchase.\n\nIf you'd like, I can also assist you with a direct link to the product page or guide you through the checkout process step-by-step. Plus, don\u2019t forget to check for any ongoing offers or discounts that might make your shopping even more rewarding!\n\nI'm here to make this as smooth as possible, so just let me know if you need any help along the way. Looking forward to getting that fresh, clean hair feeling to you soon!",
+          "timestamp": "2025-09-07T10:13:32.452666+00:00"
+        }
+      ],
+      "validation_results": [
+        {
+          "step_number": 1,
+          "validations": {
+            "response_time": {
+              "success": true,
+              "actual": 6.918020009994507,
+              "expected_max": 8.0
+            },
+            "http_status": {
+              "success": true,
+              "actual": 200
+            },
+            "stage_detection": {
+              "success": true,
+              "expected": "INITIAL_INTEREST",
+              "actual": "INITIAL_INTEREST"
+            },
+            "information_extraction": {
+              "success": true,
+              "rate": 1.0,
+              "extracted": "2/2"
+            },
+            "response_quality": {
+              "success": true,
+              "score": 1.0,
+              "checks": {
+                "has_content": true,
+                "conversational": true,
+                "helpful": true
+              }
+            }
+          },
+          "overall_success": true,
+          "issues": []
+        },
+        {
+          "step_number": 2,
+          "validations": {
+            "response_time": {
+              "success": true,
+              "actual": 7.22113299369812,
+              "expected_max": 8.0
+            },
+            "http_status": {
+              "success": true,
+              "actual": 200
+            },
+            "stage_detection": {
+              "success": true,
+              "expected": "PRICE_EVALUATION",
+              "actual": "PRICE_EVALUATION"
+            },
+            "information_extraction": {
+              "success": false,
+              "rate": 0.3333333333333333,
+              "extracted": "1/3"
+            },
+            "response_quality": {
+              "success": true,
+              "score": 1.0,
+              "checks": {
+                "has_content": true,
+                "conversational": true,
+                "helpful": true
+              }
+            }
+          },
+          "overall_success": false,
+          "issues": [
+            "Low extraction rate: 33.3%"
+          ]
+        },
+        {
+          "step_number": 3,
+          "validations": {
+            "response_time": {
+              "success": true,
+              "actual": 7.376305103302002,
+              "expected_max": 8.0
+            },
+            "http_status": {
+              "success": true,
+              "actual": 200
+            },
+            "stage_detection": {
+              "success": true,
+              "expected": "PURCHASE_CONFIRMATION",
+              "actual": "PURCHASE_CONFIRMATION"
+            },
+            "information_extraction": {
+              "success": false,
+              "rate": 0.5,
+              "extracted": "1/2"
+            },
+            "response_quality": {
+              "success": true,
+              "score": 1.0,
+              "checks": {
+                "has_content": true,
+                "conversational": true,
+                "helpful": true
+              }
+            }
+          },
+          "overall_success": false,
+          "issues": [
+            "Low extraction rate: 50.0%"
+          ]
+        }
+      ],
+      "performance_metrics": {
+        "total_time": 21.515731811523438,
+        "average_step_time": 7.1719106038411455,
+        "total_steps": 3,
+        "successful_steps": 1,
+        "success_rate": 0.3333333333333333
+      },
+      "success": false,
+      "end_time": "2025-09-07T10:13:32.453006+00:00"
+    },
+    {
+      "scenario_name": "Hesitant_Customer",
+      "customer_id": "multi_test_1757239959_Hesitant_Customer_1757240013",
+      "description": "Uncertain customer who needs guidance and reassurance",
+      "start_time": "2025-09-07T10:13:33.454768+00:00",
+      "conversation_steps": [
+        {
+          "step_number": 1,
+          "customer_input": "I'm not sure what products I need. My skin has been weird lately - sometimes oily, sometimes dry. Can you help?",
+          "response_time": 6.9873127937316895,
+          "http_status": 200,
+          "response_data": {
+            "sender": "multi_test_1757239959_Hesitant_Customer_1757240013",
+            "product_interested": "Keya Seth Neem Basil Face Wash",
+            "interested_product_ids": [
+              "34b038b2-49c0-43fb-90d6-4ad9953f27c6",
+              "34b038b2-49c0-43fb-90d6-4ad9953f27c6"
+            ],
+            "response_text": "Hi there! Thanks for reaching out \u2014 I love helping with skincare questions. It sounds like your skin's been acting a bit unpredictable, switching between oily and dry, which can be tricky to manage. The good news is, with the right products, you can bring more balance and comfort to your skin.\n\nSince your skin varies, I recommend starting with gentle, versatile cleansers that can adapt to your skin\u2019s needs. For example, our Keya Seth Neem Basil Face Wash is a great option\u2014it\u2019s formulated to cleanse without stripping moisture, helping to control oil while nourishing dry patches. It\u2019s suitable for mixed skin types and can be a good daily pick.\n\nBeyond cleansing, you might want to consider using a lightweight moisturizer that balances oil production and hydration, like a gel-based moisturizer. Also, incorporating a toner with ingredients like witch hazel or rose water can help regulate oil and soothe dry areas.\n\nTo personalize your routine further, I\u2019d suggest observing how your skin reacts to different products and adjusting accordingly. If you'd like, I can recommend some additional products or routines tailored to your skin's changing needs.\n\nWould you like me to help you put together a simple skincare routine or suggest some specific products? I\u2019m here to make this easier and help you feel confident in your skin again!",
+            "is_ready": false,
+            "conversation_stage": "INITIAL_INTEREST",
+            "confidence": 0.95,
+            "handover": false,
+            "new_system": true,
+            "metadata": {},
+            "processing_timestamp": "2025-09-07T10:13:40.438734"
+          },
+          "ai_response": "Hi there! Thanks for reaching out \u2014 I love helping with skincare questions. It sounds like your skin's been acting a bit unpredictable, switching between oily and dry, which can be tricky to manage. The good news is, with the right products, you can bring more balance and comfort to your skin.\n\nSince your skin varies, I recommend starting with gentle, versatile cleansers that can adapt to your skin\u2019s needs. For example, our Keya Seth Neem Basil Face Wash is a great option\u2014it\u2019s formulated to cleanse without stripping moisture, helping to control oil while nourishing dry patches. It\u2019s suitable for mixed skin types and can be a good daily pick.\n\nBeyond cleansing, you might want to consider using a lightweight moisturizer that balances oil production and hydration, like a gel-based moisturizer. Also, incorporating a toner with ingredients like witch hazel or rose water can help regulate oil and soothe dry areas.\n\nTo personalize your routine further, I\u2019d suggest observing how your skin reacts to different products and adjusting accordingly. If you'd like, I can recommend some additional products or routines tailored to your skin's changing needs.\n\nWould you like me to help you put together a simple skincare routine or suggest some specific products? I\u2019m here to make this easier and help you feel confident in your skin again!",
+          "timestamp": "2025-09-07T10:13:40.442224+00:00"
+        },
+        {
+          "step_number": 2,
+          "customer_input": "I'm worried these might not work for me. What if they make my skin worse? Do you have any gentle options?",
+          "response_time": 7.434077978134155,
+          "http_status": 200,
+          "response_data": {
+            "sender": "multi_test_1757239959_Hesitant_Customer_1757240013",
+            "product_interested": "Keya Seth Neem Basil Face Wash",
+            "interested_product_ids": [
+              "ec00e983-e85f-4202-a732-a3c61955091c",
+              "34b038b2-49c0-43fb-90d6-4ad9953f27c6",
+              "38ef231e-fd1b-4266-8e04-245047fe702f",
+              "55d26d11-22c2-4632-8d4b-10d8ced93269",
+              "ec00e983-e85f-4202-a732-a3c61955091c",
+              "55d26d11-22c2-4632-8d4b-10d8ced93269",
+              "38ef231e-fd1b-4266-8e04-245047fe702f"
+            ],
+            "response_text": "Hi! I totally understand your concern\u2014trying new skincare products can feel a bit nerve-wracking, especially when you're worried about reactions. The good news is, there are gentle options designed specifically for sensitive or unpredictable skin.\n\nSince you're looking for something mild and safe, I recommend starting with the Keya Seth Neem Basil Face Wash. It's formulated to cleanse without stripping moisture and is gentle enough for sensitive or reactive skin. Plus, it contains natural ingredients like neem and basil, which are known for their soothing and balancing properties. It\u2019s a great choice if you want to avoid harsh chemicals or strong formulations that might irritate your skin further.\n\nIf you prefer an even milder option, the Himalaya Purifying Neem Face Wash is another gentle choice\u2014it's well-loved for its natural ingredients and calming effect. And for cleansing, you might want to pair it with a gentle, fragrance-free moisturizer like the Dove Beauty Bar Moisturizing Soap, which is mild and hydrating.\n\nThe key is to patch-test new products first\u2014apply a small amount on your jawline or behind your ear for a few days to see how your skin reacts. If you'd like, I can help you put together a simple routine with these gentle products or suggest other options tailored to your skin's needs. Just let me know\u2014I'm here to help you find what works best for your skin!",
+            "is_ready": false,
+            "conversation_stage": "PRODUCT_DISCOVERY",
+            "confidence": 0.9,
+            "handover": false,
+            "new_system": true,
+            "metadata": {},
+            "processing_timestamp": "2025-09-07T10:13:47.873153"
+          },
+          "ai_response": "Hi! I totally understand your concern\u2014trying new skincare products can feel a bit nerve-wracking, especially when you're worried about reactions. The good news is, there are gentle options designed specifically for sensitive or unpredictable skin.\n\nSince you're looking for something mild and safe, I recommend starting with the Keya Seth Neem Basil Face Wash. It's formulated to cleanse without stripping moisture and is gentle enough for sensitive or reactive skin. Plus, it contains natural ingredients like neem and basil, which are known for their soothing and balancing properties. It\u2019s a great choice if you want to avoid harsh chemicals or strong formulations that might irritate your skin further.\n\nIf you prefer an even milder option, the Himalaya Purifying Neem Face Wash is another gentle choice\u2014it's well-loved for its natural ingredients and calming effect. And for cleansing, you might want to pair it with a gentle, fragrance-free moisturizer like the Dove Beauty Bar Moisturizing Soap, which is mild and hydrating.\n\nThe key is to patch-test new products first\u2014apply a small amount on your jawline or behind your ear for a few days to see how your skin reacts. If you'd like, I can help you put together a simple routine with these gentle products or suggest other options tailored to your skin's needs. Just let me know\u2014I'm here to help you find what works best for your skin!",
+          "timestamp": "2025-09-07T10:13:47.876917+00:00"
+        },
+        {
+          "step_number": 3,
+          "customer_input": "Okay, those sound safer. But I'm still not sure... Are these really worth the price?",
+          "response_time": 63.17346215248108,
+          "http_status": 200,
+          "response_data": {
+            "sender": "multi_test_1757239959_Hesitant_Customer_1757240013",
+            "product_interested": "Keya Seth Neem Basil Face Wash",
+            "interested_product_ids": [
+              "34b038b2-49c0-43fb-90d6-4ad9953f27c6",
+              "ec00e983-e85f-4202-a732-a3c61955091c",
+              "55d26d11-22c2-4632-8d4b-10d8ced93269",
+              "38ef231e-fd1b-4266-8e04-245047fe702f",
+              "0d4bc440-ff0a-4d4e-a5e8-cf83578af78a",
+              "0d4bc440-ff0a-4d4e-a5e8-cf83578af78a"
+            ],
+            "response_text": "Hi! I totally get where you're coming from\u2014investing in skincare can feel like a big step, especially when you're unsure if it\u2019s worth it. The good news is, choosing the right products is about quality and suitability, not just price. \n\nFor your needs, I recommend starting with the Keya Seth Neem Basil Face Wash. It\u2019s formulated with natural ingredients known for their gentle, balancing properties, making it a safe choice for sensitive or unpredictable skin. At $180, it\u2019s a bit of an investment, but it\u2019s designed to be effective without harsh chemicals, which can help prevent further irritation. Plus, a little goes a long way, so it should last you quite a while.\n\nAlternatively, if you're looking for something more budget-friendly, the Himalaya Purifying Neem Face Wash at $135 is also a gentle, trusted option that many customers find effective and soothing. Pairing it with a simple, fragrance-free moisturizer like the Dove Beauty Bar Moisturizing Soap at $65 can give you a complete, gentle routine without breaking the bank.\n\nUltimately, skincare is about finding what works best for your skin and your comfort. If you'd like, I can help you put together a routine that balances quality and value, or suggest trial-sized options so you can test before committing. Let me know how you'd like to proceed\u2014I'm here to help you make the best choice for your skin!",
+            "is_ready": false,
+            "conversation_stage": "PRICE_EVALUATION",
+            "confidence": 0.9,
+            "handover": false,
+            "new_system": true,
+            "metadata": {},
+            "processing_timestamp": "2025-09-07T10:14:51.047323"
+          },
+          "ai_response": "Hi! I totally get where you're coming from\u2014investing in skincare can feel like a big step, especially when you're unsure if it\u2019s worth it. The good news is, choosing the right products is about quality and suitability, not just price. \n\nFor your needs, I recommend starting with the Keya Seth Neem Basil Face Wash. It\u2019s formulated with natural ingredients known for their gentle, balancing properties, making it a safe choice for sensitive or unpredictable skin. At $180, it\u2019s a bit of an investment, but it\u2019s designed to be effective without harsh chemicals, which can help prevent further irritation. Plus, a little goes a long way, so it should last you quite a while.\n\nAlternatively, if you're looking for something more budget-friendly, the Himalaya Purifying Neem Face Wash at $135 is also a gentle, trusted option that many customers find effective and soothing. Pairing it with a simple, fragrance-free moisturizer like the Dove Beauty Bar Moisturizing Soap at $65 can give you a complete, gentle routine without breaking the bank.\n\nUltimately, skincare is about finding what works best for your skin and your comfort. If you'd like, I can help you put together a routine that balances quality and value, or suggest trial-sized options so you can test before committing. Let me know how you'd like to proceed\u2014I'm here to help you make the best choice for your skin!",
+          "timestamp": "2025-09-07T10:14:51.050734+00:00"
+        },
+        {
+          "step_number": 4,
+          "customer_input": "You know what, you've convinced me. I trust your recommendations. Let's do this!",
+          "response_time": 7.548984050750732,
+          "http_status": 200,
+          "response_data": {
+            "sender": "multi_test_1757239959_Hesitant_Customer_1757240013",
+            "product_interested": "Dove Beauty Bar Moisturizing Soap",
+            "interested_product_ids": [
+              "34b038b2-49c0-43fb-90d6-4ad9953f27c6",
+              "ec00e983-e85f-4202-a732-a3c61955091c",
+              "55d26d11-22c2-4632-8d4b-10d8ced93269",
+              "38ef231e-fd1b-4266-8e04-245047fe702f",
+              "0d4bc440-ff0a-4d4e-a5e8-cf83578af78a"
+            ],
+            "response_text": "That's fantastic to hear! I'm really glad you're feeling confident about moving forward. Based on our chat, I recommend starting with the Keya Seth Neem Basil Face Wash at $180\u2014it's gentle, natural, and designed to help balance your skin without causing irritation. Pairing it with the Dove Beauty Bar Moisturizing Soap at $65 will give you a mild, hydrating cleanse that suits sensitive or reactive skin.\n\nHere's what I suggest next: go ahead and add these to your cart, and if you'd like, I can help you with a simple routine to get started. Remember, patch-testing new products is always a good idea\u2014apply a small amount on your jawline for a couple of days to ensure your skin reacts well.\n\nOnce you place your order, you'll be on your way to a gentle, effective skincare routine that\u2019s tailored to your needs. If you have any questions during your routine or want tips on how to use these products best, I\u2019m here for you. Just let me know when you're ready, and I can assist with the checkout process or any other questions. Excited to help you start this new skincare journey!",
+            "is_ready": true,
+            "conversation_stage": "PURCHASE_CONFIRMATION",
+            "confidence": 0.95,
+            "handover": true,
+            "new_system": true,
+            "metadata": {},
+            "processing_timestamp": "2025-09-07T10:14:58.596629"
+          },
+          "ai_response": "That's fantastic to hear! I'm really glad you're feeling confident about moving forward. Based on our chat, I recommend starting with the Keya Seth Neem Basil Face Wash at $180\u2014it's gentle, natural, and designed to help balance your skin without causing irritation. Pairing it with the Dove Beauty Bar Moisturizing Soap at $65 will give you a mild, hydrating cleanse that suits sensitive or reactive skin.\n\nHere's what I suggest next: go ahead and add these to your cart, and if you'd like, I can help you with a simple routine to get started. Remember, patch-testing new products is always a good idea\u2014apply a small amount on your jawline for a couple of days to ensure your skin reacts well.\n\nOnce you place your order, you'll be on your way to a gentle, effective skincare routine that\u2019s tailored to your needs. If you have any questions during your routine or want tips on how to use these products best, I\u2019m here for you. Just let me know when you're ready, and I can assist with the checkout process or any other questions. Excited to help you start this new skincare journey!",
+          "timestamp": "2025-09-07T10:14:58.600108+00:00"
+        }
+      ],
+      "validation_results": [
+        {
+          "step_number": 1,
+          "validations": {
+            "response_time": {
+              "success": true,
+              "actual": 6.9873127937316895,
+              "expected_max": 8.0
+            },
+            "http_status": {
+              "success": true,
+              "actual": 200
+            },
+            "stage_detection": {
+              "success": true,
+              "expected": "INITIAL_INTEREST",
+              "actual": "INITIAL_INTEREST"
+            },
+            "information_extraction": {
+              "success": true,
+              "rate": 0.75,
+              "extracted": "3/4"
+            },
+            "response_quality": {
+              "success": true,
+              "score": 1.0,
+              "checks": {
+                "has_content": true,
+                "conversational": true,
+                "helpful": true
+              }
+            }
+          },
+          "overall_success": true,
+          "issues": []
+        },
+        {
+          "step_number": 2,
+          "validations": {
+            "response_time": {
+              "success": true,
+              "actual": 7.434077978134155,
+              "expected_max": 8.0
+            },
+            "http_status": {
+              "success": true,
+              "actual": 200
+            },
+            "stage_detection": {
+              "success": true,
+              "expected": "PRODUCT_DISCOVERY",
+              "actual": "PRODUCT_DISCOVERY"
+            },
+            "information_extraction": {
+              "success": true,
+              "rate": 0.6666666666666666,
+              "extracted": "2/3"
+            },
+            "response_quality": {
+              "success": true,
+              "score": 1.0,
+              "checks": {
+                "has_content": true,
+                "conversational": true,
+                "helpful": true
+              }
+            }
+          },
+          "overall_success": true,
+          "issues": []
+        },
+        {
+          "step_number": 3,
+          "validations": {
+            "response_time": {
+              "success": false,
+              "actual": 63.17346215248108,
+              "expected_max": 8.0
+            },
+            "http_status": {
+              "success": true,
+              "actual": 200
+            },
+            "stage_detection": {
+              "success": true,
+              "expected": "PRICE_EVALUATION",
+              "actual": "PRICE_EVALUATION"
+            },
+            "information_extraction": {
+              "success": false,
+              "rate": 0.5,
+              "extracted": "2/4"
+            },
+            "response_quality": {
+              "success": true,
+              "score": 1.0,
+              "checks": {
+                "has_content": true,
+                "conversational": true,
+                "helpful": true
+              }
+            }
+          },
+          "overall_success": false,
+          "issues": [
+            "Response too slow: 63.17s",
+            "Low extraction rate: 50.0%"
+          ]
+        },
+        {
+          "step_number": 4,
+          "validations": {
+            "response_time": {
+              "success": true,
+              "actual": 7.548984050750732,
+              "expected_max": 8.0
+            },
+            "http_status": {
+              "success": true,
+              "actual": 200
+            },
+            "stage_detection": {
+              "success": true,
+              "expected": "PURCHASE_CONFIRMATION",
+              "actual": "PURCHASE_CONFIRMATION"
+            },
+            "information_extraction": {
+              "success": false,
+              "rate": 0.0,
+              "extracted": "0/3"
+            },
+            "response_quality": {
+              "success": true,
+              "score": 1.0,
+              "checks": {
+                "has_content": true,
+                "conversational": true,
+                "helpful": true
+              }
+            }
+          },
+          "overall_success": false,
+          "issues": [
+            "Low extraction rate: 0.0%"
+          ]
+        }
+      ],
+      "performance_metrics": {
+        "total_time": 85.14416694641113,
+        "average_step_time": 21.286041736602783,
+        "total_steps": 4,
+        "successful_steps": 2,
+        "success_rate": 0.5
+      },
+      "success": false,
+      "end_time": "2025-09-07T10:14:58.600405+00:00"
+    },
+    {
+      "scenario_name": "Gift_Buyer",
+      "customer_id": "multi_test_1757239959_Gift_Buyer_1757240099",
+      "description": "Customer buying products as gifts for someone else",
+      "start_time": "2025-09-07T10:14:59.602573+00:00",
+      "conversation_steps": [
+        {
+          "step_number": 1,
+          "customer_input": "Hi! I'm looking for a nice gift set for my mom. She's in her 50s and loves skincare. Any suggestions?",
+          "response_time": 8.66164493560791,
+          "http_status": 200,
+          "response_data": {
+            "sender": "multi_test_1757239959_Gift_Buyer_1757240099",
+            "product_interested": null,
+            "interested_product_ids": [],
+            "response_text": "Hi! That\u2019s such a thoughtful gift idea\u2014your mom is lucky! Since she loves skincare and is in her 50s, I\u2019d recommend looking for sets that focus on hydration, anti-aging, and skin nourishment, which are often appreciated at this stage. \n\nWe have some wonderful options from international brands like Dove and Head & Shoulders, which offer luxurious skincare gift sets featuring moisturizers and cleansers. For a more premium feel, our Pantene and Lux gift sets include nourishing products that help maintain healthy, glowing skin. Additionally, we carry local brands like Keya Seth and Tibbet, which offer natural and herbal skincare sets perfect for a personalized touch.\n\nWould you like me to suggest specific products or sets? For example, a hydrating skincare set with a moisturizer, serum, and gentle cleanser could be ideal. If you tell me a bit about her skin type or preferences\u2014like if she prefers natural ingredients or specific scents\u2014I can help narrow down the best options.\n\nFeel free to browse our curated gift sets on the platform, or I can recommend some top picks right now. I\u2019d love to help you find the perfect gift that will make her feel pampered and loved!",
+            "is_ready": false,
+            "conversation_stage": "INITIAL_INTEREST",
+            "confidence": 1.0,
+            "handover": false,
+            "new_system": true,
+            "metadata": {},
+            "processing_timestamp": "2025-09-07T10:15:08.261864"
+          },
+          "ai_response": "Hi! That\u2019s such a thoughtful gift idea\u2014your mom is lucky! Since she loves skincare and is in her 50s, I\u2019d recommend looking for sets that focus on hydration, anti-aging, and skin nourishment, which are often appreciated at this stage. \n\nWe have some wonderful options from international brands like Dove and Head & Shoulders, which offer luxurious skincare gift sets featuring moisturizers and cleansers. For a more premium feel, our Pantene and Lux gift sets include nourishing products that help maintain healthy, glowing skin. Additionally, we carry local brands like Keya Seth and Tibbet, which offer natural and herbal skincare sets perfect for a personalized touch.\n\nWould you like me to suggest specific products or sets? For example, a hydrating skincare set with a moisturizer, serum, and gentle cleanser could be ideal. If you tell me a bit about her skin type or preferences\u2014like if she prefers natural ingredients or specific scents\u2014I can help narrow down the best options.\n\nFeel free to browse our curated gift sets on the platform, or I can recommend some top picks right now. I\u2019d love to help you find the perfect gift that will make her feel pampered and loved!",
+          "timestamp": "2025-09-07T10:15:08.264564+00:00"
+        },
+        {
+          "step_number": 2,
+          "customer_input": "That sounds perfect for her! She has mature skin and likes anti-aging products. What would you recommend from those?",
+          "response_time": 7.52528190612793,
+          "http_status": 200,
+          "response_data": {
+            "sender": "multi_test_1757239959_Gift_Buyer_1757240099",
+            "product_interested": "Keya Seth Neem Basil Face Wash",
+            "interested_product_ids": [
+              "34b038b2-49c0-43fb-90d6-4ad9953f27c6",
+              "17fd4a77-5a46-4896-8aaa-d158e9203002",
+              "ec00e983-e85f-4202-a732-a3c61955091c",
+              "55d26d11-22c2-4632-8d4b-10d8ced93269",
+              "4ba24ba6-92f2-4393-872a-a1b810fad9aa",
+              "38ef231e-fd1b-4266-8e04-245047fe702f",
+              "0d4bc440-ff0a-4d4e-a5e8-cf83578af78a",
+              "34b038b2-49c0-43fb-90d6-4ad9953f27c6",
+              "0d4bc440-ff0a-4d4e-a5e8-cf83578af78a",
+              "ec00e983-e85f-4202-a732-a3c61955091c",
+              "4ba24ba6-92f2-4393-872a-a1b810fad9aa",
+              "38ef231e-fd1b-4266-8e04-245047fe702f",
+              "55d26d11-22c2-4632-8d4b-10d8ced93269",
+              "17fd4a77-5a46-4896-8aaa-d158e9203002"
+            ],
+            "response_text": "That\u2019s wonderful to hear! Since your mom has mature skin and loves anti-aging products, I\u2019d recommend focusing on gentle yet effective skincare sets that help boost skin elasticity, hydration, and reduce signs of aging. \n\nFrom our selection, the **Keya Seth Neem Basil Face Wash** is a great natural option\u2014it's gentle, nourishing, and suitable for mature skin that needs a balanced cleanse. Although it\u2019s not specifically labeled as anti-aging, natural ingredients like neem and basil help keep the skin healthy and refreshed. It\u2019s priced at $180.00 and can be part of a thoughtful skincare routine.\n\nFor a more targeted anti-aging experience, I\u2019d suggest pairing it with a nourishing moisturizer or serum, perhaps from our premium brands like Lux or Himalaya, which offer products designed to improve skin elasticity and hydration. While I don\u2019t see a dedicated anti-aging set in the current options, I can help you put together a personalized gift set with these products.\n\nWould you like me to recommend specific moisturizers or serums to complement the face wash? Or, if you prefer, I can help you explore other options that are more tailored to anti-aging skincare. I\u2019m here to make this gift truly special for your mom!",
+            "is_ready": false,
+            "conversation_stage": "PRODUCT_DISCOVERY",
+            "confidence": 0.9,
+            "handover": false,
+            "new_system": true,
+            "metadata": {},
+            "processing_timestamp": "2025-09-07T10:15:15.787991"
+          },
+          "ai_response": "That\u2019s wonderful to hear! Since your mom has mature skin and loves anti-aging products, I\u2019d recommend focusing on gentle yet effective skincare sets that help boost skin elasticity, hydration, and reduce signs of aging. \n\nFrom our selection, the **Keya Seth Neem Basil Face Wash** is a great natural option\u2014it's gentle, nourishing, and suitable for mature skin that needs a balanced cleanse. Although it\u2019s not specifically labeled as anti-aging, natural ingredients like neem and basil help keep the skin healthy and refreshed. It\u2019s priced at $180.00 and can be part of a thoughtful skincare routine.\n\nFor a more targeted anti-aging experience, I\u2019d suggest pairing it with a nourishing moisturizer or serum, perhaps from our premium brands like Lux or Himalaya, which offer products designed to improve skin elasticity and hydration. While I don\u2019t see a dedicated anti-aging set in the current options, I can help you put together a personalized gift set with these products.\n\nWould you like me to recommend specific moisturizers or serums to complement the face wash? Or, if you prefer, I can help you explore other options that are more tailored to anti-aging skincare. I\u2019m here to make this gift truly special for your mom!",
+          "timestamp": "2025-09-07T10:15:15.790222+00:00"
+        },
+        {
+          "step_number": 3,
+          "customer_input": "Great! What's the total for a nice gift package? I want to spend around $100-150.",
+          "response_time": 8.6086106300354,
+          "http_status": 200,
+          "response_data": {
+            "sender": "multi_test_1757239959_Gift_Buyer_1757240099",
+            "product_interested": "Keya Seth Neem Basil Face Wash",
+            "interested_product_ids": [
+              "34b038b2-49c0-43fb-90d6-4ad9953f27c6",
+              "17fd4a77-5a46-4896-8aaa-d158e9203002",
+              "ec00e983-e85f-4202-a732-a3c61955091c",
+              "55d26d11-22c2-4632-8d4b-10d8ced93269",
+              "ea4f53c6-6c24-4869-ac9a-af3510a6f7fb",
+              "4ba24ba6-92f2-4393-872a-a1b810fad9aa",
+              "38ef231e-fd1b-4266-8e04-245047fe702f",
+              "0d4bc440-ff0a-4d4e-a5e8-cf83578af78a",
+              "ea4f53c6-6c24-4869-ac9a-af3510a6f7fb"
+            ],
+            "response_text": "That's a great budget to create a lovely gift set for your mom! Since she's into anti-aging skincare and prefers natural options, I recommend a combination that balances effectiveness with a touch of luxury. \n\nGiven the products available, the Himalaya Purifying Neem Face Wash at $135 is an excellent choice\u2014it's gentle, natural, and suitable for mature skin. To complete the gift, you could add a nourishing moisturizer or serum from our premium brands like Lux or even local favorites like Keya Seth, which offer natural and herbal skincare options. For example, a hydrating or anti-aging serum priced around $50-$70 would fit nicely within your budget, bringing the total to around $150.\n\nHere's a simple idea: you could pair the Himalaya face wash with a luxurious moisturizer or serum, creating a personalized skincare set that feels both thoughtful and effective. If you'd like, I can recommend specific products from our collection that match her skin type and preferences.\n\nWould you like me to help you select a moisturizer or serum to go with the face wash? Or if you'd prefer, I can prepare a curated gift package for you to review. I'm excited to help you put together something special that she'll truly love!",
+            "is_ready": false,
+            "conversation_stage": "PRICE_EVALUATION",
+            "confidence": 0.9,
+            "handover": false,
+            "new_system": true,
+            "metadata": {},
+            "processing_timestamp": "2025-09-07T10:15:24.396193"
+          },
+          "ai_response": "That's a great budget to create a lovely gift set for your mom! Since she's into anti-aging skincare and prefers natural options, I recommend a combination that balances effectiveness with a touch of luxury. \n\nGiven the products available, the Himalaya Purifying Neem Face Wash at $135 is an excellent choice\u2014it's gentle, natural, and suitable for mature skin. To complete the gift, you could add a nourishing moisturizer or serum from our premium brands like Lux or even local favorites like Keya Seth, which offer natural and herbal skincare options. For example, a hydrating or anti-aging serum priced around $50-$70 would fit nicely within your budget, bringing the total to around $150.\n\nHere's a simple idea: you could pair the Himalaya face wash with a luxurious moisturizer or serum, creating a personalized skincare set that feels both thoughtful and effective. If you'd like, I can recommend specific products from our collection that match her skin type and preferences.\n\nWould you like me to help you select a moisturizer or serum to go with the face wash? Or if you'd prefer, I can prepare a curated gift package for you to review. I'm excited to help you put together something special that she'll truly love!",
+          "timestamp": "2025-09-07T10:15:24.399099+00:00"
+        },
+        {
+          "step_number": 4,
+          "customer_input": "Perfect! She's going to love this. Please help me complete the order.",
+          "response_time": 7.782729864120483,
+          "http_status": 200,
+          "response_data": {
+            "sender": "multi_test_1757239959_Gift_Buyer_1757240099",
+            "product_interested": "Keya Seth Neem Basil Face Wash",
+            "interested_product_ids": [
+              "34b038b2-49c0-43fb-90d6-4ad9953f27c6",
+              "17fd4a77-5a46-4896-8aaa-d158e9203002",
+              "c84f8cfa-17bc-42ee-b268-1213ad1c84a8",
+              "ec00e983-e85f-4202-a732-a3c61955091c",
+              "55d26d11-22c2-4632-8d4b-10d8ced93269",
+              "ea4f53c6-6c24-4869-ac9a-af3510a6f7fb",
+              "4ba24ba6-92f2-4393-872a-a1b810fad9aa",
+              "38ef231e-fd1b-4266-8e04-245047fe702f",
+              "0d4bc440-ff0a-4d4e-a5e8-cf83578af78a",
+              "c84f8cfa-17bc-42ee-b268-1213ad1c84a8"
+            ],
+            "response_text": "That's fantastic to hear! I'm excited to help you finalize this special gift for your mom. Since you've chosen the Himalaya Purifying Neem Face Wash at $135, which is a wonderful natural option for mature, anti-aging skincare, we can build a complete set around it within your budget.\n\nTo make it even more special, I recommend adding a nourishing serum or moisturizer. For example, our Lux Soft Touch Beauty Soap at $45 can be a lovely complementary product, offering gentle cleansing and hydration. Alternatively, if you'd like to stick with a more targeted anti-aging routine, I can suggest a serum from our premium brands, typically priced around $50-$70, which would perfectly round out your gift set.\n\nHere's a simple idea: the Himalaya face wash paired with a luxurious moisturizer or serum will create a thoughtful, effective skincare package that shows you care. I can assist you in selecting the exact products to include, or if you'd prefer, I can prepare a curated gift set for you to review and purchase easily.\n\nOnce you're ready, I can help you place the order directly or guide you through the checkout process. Just let me know how you'd like to proceed\u2014I'm here to make this as smooth and delightful as possible for you!",
+            "is_ready": true,
+            "conversation_stage": "PURCHASE_CONFIRMATION",
+            "confidence": 0.95,
+            "handover": true,
+            "new_system": true,
+            "metadata": {},
+            "processing_timestamp": "2025-09-07T10:15:32.178726"
+          },
+          "ai_response": "That's fantastic to hear! I'm excited to help you finalize this special gift for your mom. Since you've chosen the Himalaya Purifying Neem Face Wash at $135, which is a wonderful natural option for mature, anti-aging skincare, we can build a complete set around it within your budget.\n\nTo make it even more special, I recommend adding a nourishing serum or moisturizer. For example, our Lux Soft Touch Beauty Soap at $45 can be a lovely complementary product, offering gentle cleansing and hydration. Alternatively, if you'd like to stick with a more targeted anti-aging routine, I can suggest a serum from our premium brands, typically priced around $50-$70, which would perfectly round out your gift set.\n\nHere's a simple idea: the Himalaya face wash paired with a luxurious moisturizer or serum will create a thoughtful, effective skincare package that shows you care. I can assist you in selecting the exact products to include, or if you'd prefer, I can prepare a curated gift set for you to review and purchase easily.\n\nOnce you're ready, I can help you place the order directly or guide you through the checkout process. Just let me know how you'd like to proceed\u2014I'm here to make this as smooth and delightful as possible for you!",
+          "timestamp": "2025-09-07T10:15:32.182140+00:00"
+        }
+      ],
+      "validation_results": [
+        {
+          "step_number": 1,
+          "validations": {
+            "response_time": {
+              "success": false,
+              "actual": 8.66164493560791,
+              "expected_max": 8.0
+            },
+            "http_status": {
+              "success": true,
+              "actual": 200
+            },
+            "stage_detection": {
+              "success": true,
+              "expected": "INITIAL_INTEREST",
+              "actual": "INITIAL_INTEREST"
+            },
+            "information_extraction": {
+              "success": true,
+              "rate": 1.0,
+              "extracted": "4/4"
+            },
+            "response_quality": {
+              "success": true,
+              "score": 1.0,
+              "checks": {
+                "has_content": true,
+                "conversational": true,
+                "helpful": true
+              }
+            }
+          },
+          "overall_success": false,
+          "issues": [
+            "Response too slow: 8.66s"
+          ]
+        },
+        {
+          "step_number": 2,
+          "validations": {
+            "response_time": {
+              "success": true,
+              "actual": 7.52528190612793,
+              "expected_max": 8.0
+            },
+            "http_status": {
+              "success": true,
+              "actual": 200
+            },
+            "stage_detection": {
+              "success": true,
+              "expected": "PRODUCT_DISCOVERY",
+              "actual": "PRODUCT_DISCOVERY"
+            },
+            "information_extraction": {
+              "success": true,
+              "rate": 1.0,
+              "extracted": "3/3"
+            },
+            "response_quality": {
+              "success": true,
+              "score": 1.0,
+              "checks": {
+                "has_content": true,
+                "conversational": true,
+                "helpful": true
+              }
+            }
+          },
+          "overall_success": true,
+          "issues": []
+        },
+        {
+          "step_number": 3,
+          "validations": {
+            "response_time": {
+              "success": false,
+              "actual": 8.6086106300354,
+              "expected_max": 8.0
+            },
+            "http_status": {
+              "success": true,
+              "actual": 200
+            },
+            "stage_detection": {
+              "success": true,
+              "expected": "PRICE_EVALUATION",
+              "actual": "PRICE_EVALUATION"
+            },
+            "information_extraction": {
+              "success": true,
+              "rate": 0.6666666666666666,
+              "extracted": "2/3"
+            },
+            "response_quality": {
+              "success": true,
+              "score": 1.0,
+              "checks": {
+                "has_content": true,
+                "conversational": true,
+                "helpful": true
+              }
+            }
+          },
+          "overall_success": false,
+          "issues": [
+            "Response too slow: 8.61s"
+          ]
+        },
+        {
+          "step_number": 4,
+          "validations": {
+            "response_time": {
+              "success": true,
+              "actual": 7.782729864120483,
+              "expected_max": 8.0
+            },
+            "http_status": {
+              "success": true,
+              "actual": 200
+            },
+            "stage_detection": {
+              "success": true,
+              "expected": "PURCHASE_CONFIRMATION",
+              "actual": "PURCHASE_CONFIRMATION"
+            },
+            "information_extraction": {
+              "success": true,
+              "rate": 0.6666666666666666,
+              "extracted": "2/3"
+            },
+            "response_quality": {
+              "success": true,
+              "score": 1.0,
+              "checks": {
+                "has_content": true,
+                "conversational": true,
+                "helpful": true
+              }
+            }
+          },
+          "overall_success": true,
+          "issues": []
+        }
+      ],
+      "performance_metrics": {
+        "total_time": 32.578572511672974,
+        "average_step_time": 8.144643127918243,
+        "total_steps": 4,
+        "successful_steps": 2,
+        "success_rate": 0.5
+      },
+      "success": false,
+      "end_time": "2025-09-07T10:15:32.182436+00:00"
+    },
+    {
+      "scenario_name": "Budget_Conscious",
+      "customer_id": "multi_test_1757239959_Budget_Conscious_1757240133",
+      "description": "Price-sensitive customer looking for value deals",
+      "start_time": "2025-09-07T10:15:33.184823+00:00",
+      "conversation_steps": [
+        {
+          "step_number": 1,
+          "customer_input": "I need some basic skincare products but I'm on a tight budget. What's the most affordable option you have?",
+          "response_time": 7.804724931716919,
+          "http_status": 200,
+          "response_data": {
+            "sender": "multi_test_1757239959_Budget_Conscious_1757240133",
+            "product_interested": null,
+            "interested_product_ids": [],
+            "response_text": "Hi there! I\u2019m excited to help you find some great skincare options that fit your budget. Since you're looking for affordable yet effective products, I\u2019d recommend starting with some trusted basics like a gentle cleanser and a moisturizer. \n\nWe have some fantastic options from brands like Dove and Head & Shoulders that are known for quality at budget-friendly prices. For example, Dove\u2019s gentle skin cleansing bars or their daily moisturizing creams are both affordable and widely loved. If you\u2019re interested in local options, Keya Seth offers natural and effective skincare products that are often very budget-conscious.\n\nTo make it easier, I can suggest specific products based on your skin type or concerns\u2014whether it\u2019s oily, dry, or sensitive skin. Just let me know a bit more about your skin, and I\u2019ll tailor my recommendations! \n\nYou can also check out our ongoing deals and combo packs, which often give you more value for less. Feel free to browse our affordable skincare section on the platform, or I can help you pick the best options right here.\n\nI\u2019m here to make sure you get the best bang for your buck while keeping your skin happy and healthy. Let me know what you\u2019re looking for, and I\u2019ll assist you further!",
+            "is_ready": false,
+            "conversation_stage": "PRICE_EVALUATION",
+            "confidence": 0.9,
+            "handover": false,
+            "new_system": true,
+            "metadata": {},
+            "processing_timestamp": "2025-09-07T10:15:40.986721"
+          },
+          "ai_response": "Hi there! I\u2019m excited to help you find some great skincare options that fit your budget. Since you're looking for affordable yet effective products, I\u2019d recommend starting with some trusted basics like a gentle cleanser and a moisturizer. \n\nWe have some fantastic options from brands like Dove and Head & Shoulders that are known for quality at budget-friendly prices. For example, Dove\u2019s gentle skin cleansing bars or their daily moisturizing creams are both affordable and widely loved. If you\u2019re interested in local options, Keya Seth offers natural and effective skincare products that are often very budget-conscious.\n\nTo make it easier, I can suggest specific products based on your skin type or concerns\u2014whether it\u2019s oily, dry, or sensitive skin. Just let me know a bit more about your skin, and I\u2019ll tailor my recommendations! \n\nYou can also check out our ongoing deals and combo packs, which often give you more value for less. Feel free to browse our affordable skincare section on the platform, or I can help you pick the best options right here.\n\nI\u2019m here to make sure you get the best bang for your buck while keeping your skin happy and healthy. Let me know what you\u2019re looking for, and I\u2019ll assist you further!",
+          "timestamp": "2025-09-07T10:15:40.989869+00:00"
+        },
+        {
+          "step_number": 2,
+          "customer_input": "Do you have any sales or discounts running? I really need to keep this under $40 total.",
+          "response_time": 7.419463872909546,
+          "http_status": 200,
+          "response_data": {
+            "sender": "multi_test_1757239959_Budget_Conscious_1757240133",
+            "product_interested": "Dove Beauty Bar Moisturizing Soap",
+            "interested_product_ids": [
+              "190d0a92-0aba-41ce-87db-96287bede2fe",
+              "78cda270-cd24-45c8-b8d0-6e09ab3b54e9",
+              "34b038b2-49c0-43fb-90d6-4ad9953f27c6",
+              "55d26d11-22c2-4632-8d4b-10d8ced93269",
+              "eea137cc-8256-4c8a-bd43-6b4e32f4a727",
+              "ea4f53c6-6c24-4869-ac9a-af3510a6f7fb",
+              "38ef231e-fd1b-4266-8e04-245047fe702f",
+              "55d26d11-22c2-4632-8d4b-10d8ced93269",
+              "34b038b2-49c0-43fb-90d6-4ad9953f27c6",
+              "ea4f53c6-6c24-4869-ac9a-af3510a6f7fb",
+              "eea137cc-8256-4c8a-bd43-6b4e32f4a727",
+              "38ef231e-fd1b-4266-8e04-245047fe702f",
+              "78cda270-cd24-45c8-b8d0-6e09ab3b54e9",
+              "190d0a92-0aba-41ce-87db-96287bede2fe"
+            ],
+            "response_text": "Hi! I\u2019m really glad you\u2019re looking for affordable skincare options\u2014I love helping customers find great products that fit their budget. Since you mentioned keeping everything under $40, let\u2019s see what we can do.\n\nLooking at our current deals, the Dove Beauty Bar Moisturizing Soap is priced at $65, which is a bit above your budget. However, we do have some budget-friendly options from local brands like Keya Seth. For example, their Neem Basil Face Wash is priced at $180, which is also above your target, but sometimes we have discounts or smaller-sized packs that could fit your budget better.\n\nTo stay within $40, I recommend checking out our ongoing promotions or combo packs, which often include smaller sizes of popular products at a lower price. Additionally, I can suggest some smaller or travel-sized skincare essentials that are more affordable and still effective.\n\nWould you like me to look for specific types of products\u2014like a gentle cleanser or moisturizer\u2014that are within your budget? Or I can guide you to our current deals section where you might find some hidden gems. I\u2019m here to help you get the best value, so just let me know what you prefer, and I\u2019ll do my best to find options that suit your needs!",
+            "is_ready": false,
+            "conversation_stage": "PRICE_EVALUATION",
+            "confidence": 0.9,
+            "handover": false,
+            "new_system": true,
+            "metadata": {},
+            "processing_timestamp": "2025-09-07T10:15:48.406898"
+          },
+          "ai_response": "Hi! I\u2019m really glad you\u2019re looking for affordable skincare options\u2014I love helping customers find great products that fit their budget. Since you mentioned keeping everything under $40, let\u2019s see what we can do.\n\nLooking at our current deals, the Dove Beauty Bar Moisturizing Soap is priced at $65, which is a bit above your budget. However, we do have some budget-friendly options from local brands like Keya Seth. For example, their Neem Basil Face Wash is priced at $180, which is also above your target, but sometimes we have discounts or smaller-sized packs that could fit your budget better.\n\nTo stay within $40, I recommend checking out our ongoing promotions or combo packs, which often include smaller sizes of popular products at a lower price. Additionally, I can suggest some smaller or travel-sized skincare essentials that are more affordable and still effective.\n\nWould you like me to look for specific types of products\u2014like a gentle cleanser or moisturizer\u2014that are within your budget? Or I can guide you to our current deals section where you might find some hidden gems. I\u2019m here to help you get the best value, so just let me know what you prefer, and I\u2019ll do my best to find options that suit your needs!",
+          "timestamp": "2025-09-07T10:15:48.409835+00:00"
+        },
+        {
+          "step_number": 3,
+          "customer_input": "That works for my budget! I'll take it. Thank you for helping me find something I can afford.",
+          "response_time": 7.226498126983643,
+          "http_status": 200,
+          "response_data": {
+            "sender": "multi_test_1757239959_Budget_Conscious_1757240133",
+            "product_interested": "Keya Seth Neem Basil Face Wash",
+            "interested_product_ids": [
+              "190d0a92-0aba-41ce-87db-96287bede2fe",
+              "78cda270-cd24-45c8-b8d0-6e09ab3b54e9",
+              "34b038b2-49c0-43fb-90d6-4ad9953f27c6",
+              "c84f8cfa-17bc-42ee-b268-1213ad1c84a8",
+              "ec00e983-e85f-4202-a732-a3c61955091c",
+              "eea137cc-8256-4c8a-bd43-6b4e32f4a727",
+              "55d26d11-22c2-4632-8d4b-10d8ced93269",
+              "ea4f53c6-6c24-4869-ac9a-af3510a6f7fb",
+              "38ef231e-fd1b-4266-8e04-245047fe702f",
+              "ec00e983-e85f-4202-a732-a3c61955091c",
+              "c84f8cfa-17bc-42ee-b268-1213ad1c84a8"
+            ],
+            "response_text": "I'm so glad to hear that you've found something within your budget! The Keya Seth Neem Basil Face Wash at just $180 is a great choice\u2014it's natural, gentle, and effective for everyday use. Plus, supporting local brands like Keya Seth is always a wonderful way to get quality products at affordable prices.\n\nSince you're happy with your selection, I recommend adding a moisturizer to complete your skincare routine. If you're interested, we have the Keya Seth Joba Hair Oil, which is also budget-friendly and nourishing, or perhaps a simple, lightweight moisturizer from Dove that fits your budget.\n\nTo make your shopping even easier, I suggest checking out our current deals or combo packs\u2014sometimes they include smaller sizes of skincare essentials at a lower price, helping you maximize value while staying within your budget.\n\nIf you'd like, I can help you find specific products or suggest some popular options that fit under $40 total, ensuring you get the best bang for your buck. Just let me know what you're looking for, and I'll guide you through it!\n\nThanks again for trusting us with your skincare needs. I'm excited to help you maintain healthy, glowing skin without overspending!",
+            "is_ready": true,
+            "conversation_stage": "PURCHASE_CONFIRMATION",
+            "confidence": 0.95,
+            "handover": true,
+            "new_system": true,
+            "metadata": {},
+            "processing_timestamp": "2025-09-07T10:15:55.633420"
+          },
+          "ai_response": "I'm so glad to hear that you've found something within your budget! The Keya Seth Neem Basil Face Wash at just $180 is a great choice\u2014it's natural, gentle, and effective for everyday use. Plus, supporting local brands like Keya Seth is always a wonderful way to get quality products at affordable prices.\n\nSince you're happy with your selection, I recommend adding a moisturizer to complete your skincare routine. If you're interested, we have the Keya Seth Joba Hair Oil, which is also budget-friendly and nourishing, or perhaps a simple, lightweight moisturizer from Dove that fits your budget.\n\nTo make your shopping even easier, I suggest checking out our current deals or combo packs\u2014sometimes they include smaller sizes of skincare essentials at a lower price, helping you maximize value while staying within your budget.\n\nIf you'd like, I can help you find specific products or suggest some popular options that fit under $40 total, ensuring you get the best bang for your buck. Just let me know what you're looking for, and I'll guide you through it!\n\nThanks again for trusting us with your skincare needs. I'm excited to help you maintain healthy, glowing skin without overspending!",
+          "timestamp": "2025-09-07T10:15:55.636733+00:00"
+        }
+      ],
+      "validation_results": [
+        {
+          "step_number": 1,
+          "validations": {
+            "response_time": {
+              "success": true,
+              "actual": 7.804724931716919,
+              "expected_max": 8.0
+            },
+            "http_status": {
+              "success": true,
+              "actual": 200
+            },
+            "stage_detection": {
+              "success": false,
+              "expected": "INITIAL_INTEREST",
+              "actual": "PRICE_EVALUATION"
+            },
+            "information_extraction": {
+              "success": true,
+              "rate": 0.6666666666666666,
+              "extracted": "2/3"
+            },
+            "response_quality": {
+              "success": true,
+              "score": 1.0,
+              "checks": {
+                "has_content": true,
+                "conversational": true,
+                "helpful": true
+              }
+            }
+          },
+          "overall_success": false,
+          "issues": [
+            "Stage mismatch: expected INITIAL_INTEREST, got PRICE_EVALUATION"
+          ]
+        },
+        {
+          "step_number": 2,
+          "validations": {
+            "response_time": {
+              "success": true,
+              "actual": 7.419463872909546,
+              "expected_max": 8.0
+            },
+            "http_status": {
+              "success": true,
+              "actual": 200
+            },
+            "stage_detection": {
+              "success": true,
+              "expected": "PRICE_EVALUATION",
+              "actual": "PRICE_EVALUATION"
+            },
+            "information_extraction": {
+              "success": true,
+              "rate": 0.6666666666666666,
+              "extracted": "2/3"
+            },
+            "response_quality": {
+              "success": true,
+              "score": 1.0,
+              "checks": {
+                "has_content": true,
+                "conversational": true,
+                "helpful": true
+              }
+            }
+          },
+          "overall_success": true,
+          "issues": []
+        },
+        {
+          "step_number": 3,
+          "validations": {
+            "response_time": {
+              "success": true,
+              "actual": 7.226498126983643,
+              "expected_max": 8.0
+            },
+            "http_status": {
+              "success": true,
+              "actual": 200
+            },
+            "stage_detection": {
+              "success": true,
+              "expected": "PURCHASE_CONFIRMATION",
+              "actual": "PURCHASE_CONFIRMATION"
+            },
+            "information_extraction": {
+              "success": true,
+              "rate": 0.6666666666666666,
+              "extracted": "2/3"
+            },
+            "response_quality": {
+              "success": true,
+              "score": 1.0,
+              "checks": {
+                "has_content": true,
+                "conversational": true,
+                "helpful": true
+              }
+            }
+          },
+          "overall_success": true,
+          "issues": []
+        }
+      ],
+      "performance_metrics": {
+        "total_time": 22.450960874557495,
+        "average_step_time": 7.483653624852498,
+        "total_steps": 3,
+        "successful_steps": 2,
+        "success_rate": 0.6666666666666666
+      },
+      "success": false,
+      "end_time": "2025-09-07T10:15:55.636983+00:00"
+    }
+  ],
+  "performance_analysis": {
+    "total_scenarios": 5,
+    "successful_scenarios": 1,
+    "overall_success_rate": 0.2,
+    "average_response_time": 10.227413817246754,
+    "response_time_consistency": 14.23522174358368,
+    "quality_consistency": 0.6666666666666667
+  },
+  "generalization_metrics": {
+    "handles_diverse_customers": false,
+    "consistent_across_scenarios": false,
+    "performance_stable": false,
+    "production_ready": false
+  },
+  "recommendations": [
+    "Overall success rate needs improvement - focus on core conversation logic",
+    "Response times too slow - implement caching and optimize AI calls",
+    "Response times inconsistent - add performance monitoring",
+    "Quality varies across scenarios - improve robustness",
+    "Fails with diverse customer types - enhance conversation handling"
+  ]
+}

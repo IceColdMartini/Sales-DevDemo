@@ -16,12 +16,15 @@ class PostgresHandler:
                 user=settings.POSTGRES_USER,
                 password=settings.POSTGRES_PASSWORD,
                 host=settings.POSTGRES_HOST,
-                port=settings.POSTGRES_PORT
+                port=settings.POSTGRES_PORT,
+                sslmode='require'  # Required for Neon PostgreSQL
             )
             self.cursor = self.conn.cursor(cursor_factory=RealDictCursor)
-            print("PostgreSQL database connection established.")
+            print("✅ Connected to Neon PostgreSQL database successfully!")
+            print(f"   Host: {settings.POSTGRES_HOST}")
+            print(f"   Database: {settings.POSTGRES_DB}")
         except Exception as e:
-            print(f"Error connecting to PostgreSQL: {e}")
+            print(f"❌ Error connecting to Neon PostgreSQL: {e}")
             raise
 
     def disconnect(self):

@@ -29,14 +29,6 @@ class EnhancedWorkingConversationService:
     def _initialize_services(self):
         """Initialize all required services with fallback handling"""
         try:
-            # Import and initialize working LangChain service
-            from app.services.working_langchain_service import langchain_conversation_service
-            self.langchain_service = langchain_conversation_service
-            self.logger.info("✅ Working LangChain service connected")
-        except ImportError as e:
-            self.logger.error(f"❌ Failed to import working LangChain service: {e}")
-
-        try:
             # Import existing AI service
             from app.services.ai_service import ai_service
             self.ai_service = ai_service
@@ -63,23 +55,70 @@ class EnhancedWorkingConversationService:
             Dict containing response, products, stage analysis, and metadata
         """
         try:
-            # Step 1: Extract keywords using LangChain
+            # Step 0: Validate and sanitize input
+            if not user_message or not user_message.strip():
+                return {
+                    "sender": sender_id,
+                    "response_text": "I didn't receive your message clearly. Could you please try again?",
+                    "response": "I didn't receive your message clearly. Could you please try again?",  # For test compatibility
+                    "is_ready": False,
+                    "products": [],
+                    "keywords": [],
+                    "sales_stage": "INITIAL_INTEREST",
+                    "confidence": 0.5,
+                    "enhanced": True,
+                    "langchain_powered": False
+                }
+            
+            # Handle extremely long messages
+            MAX_MESSAGE_LENGTH = 2000
+            if len(user_message) > MAX_MESSAGE_LENGTH:
+                self.logger.warning(f"⚠️ Long message detected ({len(user_message)} chars), truncating")
+                user_message = user_message[:MAX_MESSAGE_LENGTH] + "..."
+            
+            # Step 1: Get existing conversation state
+            conversation_state = self.get_conversation_memory(sender_id)
+            previous_products = conversation_state.get("products", [])
+            previous_stage = conversation_state.get("stage", "INITIAL_INTEREST")
+            
+            # Get conversation history from memory
+            memory = conversation_state.get("memory")
+            chat_history = ""
+            if memory and hasattr(memory, 'chat_memory'):
+                try:
+                    messages = memory.chat_memory.messages
+                    # Convert messages to string format for analysis
+                    history_parts = []
+                    for msg in messages[-10:]:  # Last 10 messages for context
+                        if hasattr(msg, 'type'):
+                            if msg.type == 'human':
+                                history_parts.append(f"Customer: {msg.content}")
+                            elif msg.type == 'ai':
+                                history_parts.append(f"Assistant: {msg.content}")
+                    chat_history = "\n".join(history_parts)
+                except Exception as e:
+                    self.logger.error(f"❌ Failed to retrieve chat history: {e}")
+                    chat_history = conversation_history
+            
+            self.logger.info(f"📚 Retrieved conversation state: {len(previous_products)} products, stage: {previous_stage}")
+            
+            # Step 2: Extract keywords using LangChain
             keyword_extraction = None
             if self.langchain_service:
                 keyword_extraction = self.langchain_service.extract_keywords_with_langchain(user_message)
                 self.logger.info(f"📝 Keywords extracted: {keyword_extraction.keywords}")
             
-            # Step 2: Get products from database
+            # Step 3: Get products from database
             products = []
-            if self.conversation_service:
-                try:
-                    products = await self.conversation_service.get_all_products()
-                    self.logger.info(f"🛍️ Retrieved {len(products)} products from database")
-                except Exception as e:
-                    self.logger.error(f"❌ Failed to get products: {e}")
-                    products = []
+            try:
+                from app.db.postgres_handler import postgres_handler
+                products = postgres_handler.get_all_products()
+                self.logger.info(f"🛍️ Retrieved {len(products)} products from database")
+            except Exception as e:
+                self.logger.error(f"❌ Failed to get products: {e}")
+                products = []
 
-            # Step 3: Find matching products
+            # Step 4: Find matching products (combine with previous products)
             matching_products = []
             if self.langchain_service and keyword_extraction and products:
                 try:
@@ -87,38 +126,48 @@ class EnhancedWorkingConversationService:
                         keyword_extraction.keywords, products
                     )
                     matching_products = [match[0] for match in matches[:5]]  # Top 5 products
-                    self.logger.info(f"🎯 Found {len(matching_products)} matching products")
+                    
+                    # Include previously discussed products if relevant
+                    for prev_product in previous_products:
+                        if prev_product not in matching_products:
+                            matching_products.append(prev_product)
+                    
+                    self.logger.info(f"🎯 Found {len(matching_products)} matching products (including {len(previous_products)} previous)")
                 except Exception as e:
                     self.logger.error(f"❌ Product matching failed: {e}")
+                    matching_products = previous_products  # Fallback to previous products
 
-            # Step 4: Analyze sales stage
+            # Step 5: Analyze sales stage with conversation context
             sales_analysis = None
             if self.langchain_service:
                 try:
                     # Prepare product info for analysis
                     product_info = self._format_product_info(matching_products)
                     
+                    # Use conversation history for better analysis
+                    full_history = chat_history if chat_history else conversation_history
+                    
                     sales_analysis = await self.langchain_service.analyze_sales_stage_with_langchain(
-                        conversation_history, user_message, product_info
+                        full_history, user_message, product_info
                     )
-                    self.logger.info(f"📊 Sales stage: {sales_analysis.current_stage}")
+                    self.logger.info(f"📊 Sales stage: {sales_analysis.current_stage} (previous: {previous_stage})")
                 except Exception as e:
                     self.logger.error(f"❌ Sales analysis failed: {e}")
 
-            # Step 5: Generate response
+            # Step 6: Generate response with conversation context
             response_data = None
             if self.langchain_service and sales_analysis:
                 try:
                     product_info = self._format_product_info(matching_products)
                     
                     response_data = await self.langchain_service.generate_response_with_langchain(
-                        conversation_history, user_message, sales_analysis, product_info, sender_id
+                        chat_history, user_message, sales_analysis, product_info, sender_id
                     )
                     self.logger.info("💬 Response generated successfully")
                 except Exception as e:
                     self.logger.error(f"❌ Response generation failed: {e}")
 
-            # Step 6: Update conversation state
+            # Step 7: Update conversation state
             if self.langchain_service and matching_products and sales_analysis:
                 try:
                     self.langchain_service.update_conversation_state(
@@ -128,7 +177,7 @@ class EnhancedWorkingConversationService:
                 except Exception as e:
                     self.logger.error(f"❌ State update failed: {e}")
 
-            # Step 7: Save conversation to MongoDB
+            # Step 8: Save conversation to MongoDB
             if self.conversation_service and response_data:
                 try:
                     # Create a Message object and save the conversation
@@ -139,7 +188,7 @@ class EnhancedWorkingConversationService:
                 except Exception as e:
                     self.logger.error(f"❌ Failed to save conversation: {e}")
 
-            # Step 8: Prepare final response
+            # Step 9: Prepare final response
             if response_data and sales_analysis:
                 # Extract product IDs from matching products
                 interested_product_ids = [p.get('id') for p in matching_products if p.get('id')]
@@ -162,7 +211,9 @@ class EnhancedWorkingConversationService:
                     "product_interested": product_interested,
                     "interested_product_ids": interested_product_ids,
                     "response_text": response_data.response_text,
+                    "response": response_data.response_text,  # For test compatibility
                     "is_ready": sales_analysis.is_ready_to_buy,
+                    "is_ready_to_buy": sales_analysis.is_ready_to_buy,  # For test compatibility
                     "products": matching_products,
                     "keywords": keyword_extraction.keywords if keyword_extraction else [],
                     "sales_stage": sales_analysis.current_stage,
@@ -170,7 +221,8 @@ class EnhancedWorkingConversationService:
                     "next_action": sales_analysis.next_action,
                     "urgency_level": response_data.urgency_level,
                     "enhanced": True,
-                    "langchain_powered": True
+                    "langchain_powered": True,
+                    "conversation_context_used": True
                 }
             else:
                 # Fallback to basic conversation service
@@ -213,11 +265,17 @@ class EnhancedWorkingConversationService:
                     "fallback_used": True
                 })
                 
+                # Ensure both response keys for test compatibility
+                if "response" in result and "response_text" not in result:
+                    result["response_text"] = result["response"]
+                
                 return result
             else:
                 # Ultimate fallback
+                response_text = "Thank you for your message! I'd be happy to help you find the perfect beauty and personal care products. How can I assist you today?"
                 return {
-                    "response": "Thank you for your message! I'd be happy to help you find the perfect beauty and personal care products. How can I assist you today?",
+                    "response": response_text,
+                    "response_text": response_text,  # For test compatibility
                     "products": [],
                     "keywords": [],
                     "sales_stage": "INITIAL_INTEREST",

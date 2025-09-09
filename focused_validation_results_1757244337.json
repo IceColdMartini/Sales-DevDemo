@@ -1,0 +1,361 @@
+{
+  "test_metadata": {
+    "timestamp": "2025-09-07T17:25:37.040993",
+    "test_type": "focused_enhancement_validation",
+    "total_scenarios": 3,
+    "overall_success_rate": 0.8
+  },
+  "results": [
+    {
+      "scenario_name": "Stage Detection Accuracy",
+      "interactions": [
+        {
+          "message": "Hi, I'm looking for skincare products",
+          "response": {
+            "sender": "test_1757244281",
+            "product_interested": null,
+            "interested_product_ids": [],
+            "response_text": "Hi there! I'm so glad you're interested in skincare. To help me recommend the best products for you, could you tell me a bit about your skin type or any specific concerns you have? Are you looking for products to address dryness, oiliness, aging, or something else?",
+            "is_ready": false,
+            "conversation_stage": "INITIAL_INTEREST",
+            "confidence": 0.9,
+            "handover": false,
+            "new_system": true,
+            "metadata": {},
+            "processing_timestamp": "2025-09-07T11:24:46.863030"
+          },
+          "validation": {
+            "passed": true,
+            "details": [
+              "response_text: Hi there! I'm so glad you're interested in skincare. To help me recommend the best products for you, could you tell me a bit about your skin type or any specific concerns you have? Are you looking for products to address dryness, oiliness, aging, or something else?",
+              "conversation_stage: INITIAL_INTEREST",
+              "is_ready: False",
+              "confidence: 0.9",
+              "\u2705 Stage match: INITIAL_INTEREST",
+              "Response time: 5.04s"
+            ],
+            "issues": []
+          },
+          "response_time": 5.039623260498047
+        },
+        {
+          "message": "Tell me about anti-aging serums",
+          "response": {
+            "sender": "test_1757244281",
+            "product_interested": "Herbal Essences Bio Coconut Milk Shampoo",
+            "interested_product_ids": [
+              "4ba24ba6-92f2-4393-872a-a1b810fad9aa",
+              "4ba24ba6-92f2-4393-872a-a1b810fad9aa"
+            ],
+            "response_text": "I'm glad you're interested in anti-aging serums! These products are designed to help reduce the appearance of fine lines and wrinkles, boost collagen production, and improve skin elasticity. Would you like some specific recommendations or tips on how to choose the best one for your skin type?",
+            "is_ready": false,
+            "conversation_stage": "PRODUCT_DISCOVERY",
+            "confidence": 0.9,
+            "handover": false,
+            "new_system": true,
+            "metadata": {},
+            "processing_timestamp": "2025-09-07T11:24:52.661319"
+          },
+          "validation": {
+            "passed": true,
+            "details": [
+              "response_text: I'm glad you're interested in anti-aging serums! These products are designed to help reduce the appearance of fine lines and wrinkles, boost collagen production, and improve skin elasticity. Would you like some specific recommendations or tips on how to choose the best one for your skin type?",
+              "conversation_stage: PRODUCT_DISCOVERY",
+              "is_ready: False",
+              "confidence: 0.9",
+              "\u2705 Stage match: PRODUCT_DISCOVERY",
+              "Response time: 5.29s"
+            ],
+            "issues": []
+          },
+          "response_time": 5.2948830127716064
+        },
+        {
+          "message": "What's the price range?",
+          "response": {
+            "sender": "test_1757244281",
+            "product_interested": "Herbal Essences Bio Coconut Milk Shampoo",
+            "interested_product_ids": [
+              "4ba24ba6-92f2-4393-872a-a1b810fad9aa"
+            ],
+            "response_text": "Great question! The price range for skincare products can vary quite a bit depending on the brand and ingredients, but I recommend checking out some options in the mid to higher-end range for quality results. For example, our Herbal Essences Bio Coconut Milk Shampoo is priced at $385.00 and offers nourishing ingredients that many customers love. Would you like some help narrowing down products within your budget or specific skincare needs?",
+            "is_ready": false,
+            "conversation_stage": "PRICE_EVALUATION",
+            "confidence": 0.85,
+            "handover": false,
+            "new_system": true,
+            "metadata": {},
+            "processing_timestamp": "2025-09-07T11:24:58.703883"
+          },
+          "validation": {
+            "passed": true,
+            "details": [
+              "response_text: Great question! The price range for skincare products can vary quite a bit depending on the brand and ingredients, but I recommend checking out some options in the mid to higher-end range for quality results. For example, our Herbal Essences Bio Coconut Milk Shampoo is priced at $385.00 and offers nourishing ingredients that many customers love. Would you like some help narrowing down products within your budget or specific skincare needs?",
+              "conversation_stage: PRICE_EVALUATION",
+              "is_ready: False",
+              "confidence: 0.85",
+              "\u2705 Stage match: PRICE_EVALUATION",
+              "Response time: 5.54s"
+            ],
+            "issues": []
+          },
+          "response_time": 5.537491798400879
+        },
+        {
+          "message": "I'd like to get the serum",
+          "response": {
+            "sender": "test_1757244281",
+            "product_interested": "Herbal Essences Bio Coconut Milk Shampoo",
+            "interested_product_ids": [
+              "4ba24ba6-92f2-4393-872a-a1b810fad9aa"
+            ],
+            "response_text": "I'm glad you're interested in the serum! The Herbal Essences Bio Coconut Milk Shampoo is a wonderful option at $385.00, offering nourishing ingredients that can enhance your skincare routine. Would you like more details on this product or assistance with choosing the best serum for your skin type?",
+            "is_ready": false,
+            "conversation_stage": "PRICE_EVALUATION",
+            "confidence": 0.9,
+            "handover": false,
+            "new_system": true,
+            "metadata": {},
+            "processing_timestamp": "2025-09-07T11:25:04.785964"
+          },
+          "validation": {
+            "passed": false,
+            "details": [
+              "response_text: I'm glad you're interested in the serum! The Herbal Essences Bio Coconut Milk Shampoo is a wonderful option at $385.00, offering nourishing ingredients that can enhance your skincare routine. Would you like more details on this product or assistance with choosing the best serum for your skin type?",
+              "conversation_stage: PRICE_EVALUATION",
+              "is_ready: False",
+              "confidence: 0.9",
+              "Response time: 5.58s"
+            ],
+            "issues": [
+              "Stage mismatch: expected PURCHASE_INTENT, got PRICE_EVALUATION"
+            ]
+          },
+          "response_time": 5.577085971832275
+        },
+        {
+          "message": "Yes, I'll take it",
+          "response": {
+            "sender": "test_1757244281",
+            "product_interested": "Herbal Essences Bio Coconut Milk Shampoo",
+            "interested_product_ids": [
+              "4ba24ba6-92f2-4393-872a-a1b810fad9aa"
+            ],
+            "response_text": "I'm thrilled you've decided to go ahead! To complete your purchase, I can assist you with the next steps. Would you like me to guide you through the checkout process or connect you with our sales team for any further questions? The Herbal Essences Bio Coconut Milk Shampoo is a fantastic choice\u2014enjoy your new beauty find!",
+            "is_ready": true,
+            "conversation_stage": "PURCHASE_CONFIRMATION",
+            "confidence": 0.95,
+            "handover": true,
+            "new_system": true,
+            "metadata": {},
+            "processing_timestamp": "2025-09-07T11:25:10.947023"
+          },
+          "validation": {
+            "passed": true,
+            "details": [
+              "response_text: I'm thrilled you've decided to go ahead! To complete your purchase, I can assist you with the next steps. Would you like me to guide you through the checkout process or connect you with our sales team for any further questions? The Herbal Essences Bio Coconut Milk Shampoo is a fantastic choice\u2014enjoy your new beauty find!",
+              "conversation_stage: PURCHASE_CONFIRMATION",
+              "is_ready: True",
+              "confidence: 0.95",
+              "\u2705 Stage match: PURCHASE_CONFIRMATION",
+              "Response time: 5.66s"
+            ],
+            "issues": []
+          },
+          "response_time": 5.657604932785034
+        }
+      ],
+      "success_rate": 0.8,
+      "total_interactions": 5,
+      "successful_interactions": 4
+    },
+    {
+      "scenario_name": "Quick Purchase Flow",
+      "interactions": [
+        {
+          "message": "I need a moisturizer under $30",
+          "response": {
+            "sender": "test_1757244311",
+            "product_interested": "Fair & Lovely Advanced Multi Vitamin Face Cream",
+            "interested_product_ids": [
+              "38ef231e-fd1b-4266-8e04-245047fe702f",
+              "38ef231e-fd1b-4266-8e04-245047fe702f"
+            ],
+            "response_text": "Thanks for reaching out! While most moisturizers under $30 are great for basic hydration, I recommend exploring options that offer good quality and value. Are you looking for something specific, like oily or dry skin, or any particular ingredients? That way, I can help you find the perfect match!",
+            "is_ready": false,
+            "conversation_stage": "INITIAL_INTEREST",
+            "confidence": 0.9,
+            "handover": false,
+            "new_system": true,
+            "metadata": {},
+            "processing_timestamp": "2025-09-07T11:25:15.178039"
+          },
+          "validation": {
+            "passed": true,
+            "details": [
+              "response_text: Thanks for reaching out! While most moisturizers under $30 are great for basic hydration, I recommend exploring options that offer good quality and value. Are you looking for something specific, like oily or dry skin, or any particular ingredients? That way, I can help you find the perfect match!",
+              "conversation_stage: INITIAL_INTEREST",
+              "is_ready: False",
+              "confidence: 0.9",
+              "\u2705 Stage match: INITIAL_INTEREST",
+              "Response time: 3.73s"
+            ],
+            "issues": []
+          },
+          "response_time": 3.7263388633728027
+        },
+        {
+          "message": "That looks perfect, I'll take it",
+          "response": {
+            "sender": "test_1757244311",
+            "product_interested": "Fair & Lovely Advanced Multi Vitamin Face Cream",
+            "interested_product_ids": [
+              "38ef231e-fd1b-4266-8e04-245047fe702f"
+            ],
+            "response_text": "I'm thrilled you've decided! The Fair & Lovely Advanced Multi Vitamin Face Cream is a fantastic choice for nourishing your skin. Would you like me to assist you with the purchase process or answer any last-minute questions? Let me know how I can help make your skincare routine even better!",
+            "is_ready": true,
+            "conversation_stage": "PURCHASE_CONFIRMATION",
+            "confidence": 0.95,
+            "handover": true,
+            "new_system": true,
+            "metadata": {},
+            "processing_timestamp": "2025-09-07T11:25:21.369858"
+          },
+          "validation": {
+            "passed": true,
+            "details": [
+              "response_text: I'm thrilled you've decided! The Fair & Lovely Advanced Multi Vitamin Face Cream is a fantastic choice for nourishing your skin. Would you like me to assist you with the purchase process or answer any last-minute questions? Let me know how I can help make your skincare routine even better!",
+              "conversation_stage: PURCHASE_CONFIRMATION",
+              "is_ready: True",
+              "confidence: 0.95",
+              "\u2705 Stage match: PURCHASE_CONFIRMATION",
+              "Response time: 5.69s"
+            ],
+            "issues": []
+          },
+          "response_time": 5.689028263092041
+        },
+        {
+          "message": "How do I buy this?",
+          "response": {
+            "sender": "test_1757244311",
+            "product_interested": "Fair & Lovely Advanced Multi Vitamin Face Cream",
+            "interested_product_ids": [
+              "38ef231e-fd1b-4266-8e04-245047fe702f"
+            ],
+            "response_text": "I'm so excited you're ready to purchase! To complete your order, I can assist you with the checkout process or provide a link to purchase the Fair & Lovely Advanced Multi Vitamin Face Cream directly. Would you like me to guide you through the next steps or send you the purchase link? Let me know how I can best help you!",
+            "is_ready": true,
+            "conversation_stage": "PURCHASE_CONFIRMATION",
+            "confidence": 0.8,
+            "handover": true,
+            "new_system": true,
+            "metadata": {},
+            "processing_timestamp": "2025-09-07T11:25:25.637577"
+          },
+          "validation": {
+            "passed": true,
+            "details": [
+              "response_text: I'm so excited you're ready to purchase! To complete your order, I can assist you with the checkout process or provide a link to purchase the Fair & Lovely Advanced Multi Vitamin Face Cream directly. Would you like me to guide you through the next steps or send you the purchase link? Let me know how I can best help you!",
+              "conversation_stage: PURCHASE_CONFIRMATION",
+              "is_ready: True",
+              "confidence: 0.8",
+              "\u2705 Stage match: PURCHASE_CONFIRMATION",
+              "Response time: 3.76s"
+            ],
+            "issues": []
+          },
+          "response_time": 3.7639122009277344
+        }
+      ],
+      "success_rate": 1.0,
+      "total_interactions": 3,
+      "successful_interactions": 3
+    },
+    {
+      "scenario_name": "Product Information Extraction",
+      "interactions": [
+        {
+          "message": "I want sulfate-free cleansers with salicylic acid",
+          "response": {
+            "sender": "test_1757244326",
+            "product_interested": "Himalaya Purifying Neem Face Wash",
+            "interested_product_ids": [
+              "ec00e983-e85f-4202-a732-a3c61955091c",
+              "34b038b2-49c0-43fb-90d6-4ad9953f27c6",
+              "ec00e983-e85f-4202-a732-a3c61955091c",
+              "34b038b2-49c0-43fb-90d6-4ad9953f27c6"
+            ],
+            "response_text": "I'm glad you're interested in sulfate-free cleansers with salicylic acid! For a gentle yet effective option, I recommend the Himalaya Purifying Neem Face Wash, which is great for clarifying skin without harsh ingredients. Would you like to know more about this product or explore other options? I'm here to help find the perfect fit for your skincare needs!",
+            "is_ready": false,
+            "conversation_stage": "INITIAL_INTEREST",
+            "confidence": 0.9,
+            "handover": false,
+            "new_system": true,
+            "metadata": {},
+            "processing_timestamp": "2025-09-07T11:25:30.485036"
+          },
+          "validation": {
+            "passed": true,
+            "details": [
+              "response_text: I'm glad you're interested in sulfate-free cleansers with salicylic acid! For a gentle yet effective option, I recommend the Himalaya Purifying Neem Face Wash, which is great for clarifying skin without harsh ingredients. Would you like to know more about this product or explore other options? I'm here to help find the perfect fit for your skincare needs!",
+              "conversation_stage: INITIAL_INTEREST",
+              "is_ready: False",
+              "confidence: 0.9",
+              "\u2705 Stage match: INITIAL_INTEREST",
+              "Response time: 4.34s"
+            ],
+            "issues": []
+          },
+          "response_time": 4.343650817871094
+        },
+        {
+          "message": "Do you have CeraVe or Neutrogena brands?",
+          "response": {
+            "sender": "test_1757244326",
+            "product_interested": null,
+            "interested_product_ids": [
+              "ec00e983-e85f-4202-a732-a3c61955091c",
+              "34b038b2-49c0-43fb-90d6-4ad9953f27c6",
+              "ec00e983-e85f-4202-a732-a3c61955091c",
+              "34b038b2-49c0-43fb-90d6-4ad9953f27c6"
+            ],
+            "response_text": "Yes, we do carry both CeraVe and Neutrogena! They are great brands known for their effective and gentle skincare options. Are you looking for a specific type of product from these brands, like a moisturizer or cleanser? I'd be happy to help you find the perfect fit for your skin needs!",
+            "is_ready": false,
+            "conversation_stage": "PRICE_EVALUATION",
+            "confidence": 0.85,
+            "handover": false,
+            "new_system": true,
+            "metadata": {},
+            "processing_timestamp": "2025-09-07T11:25:36.535397"
+          },
+          "validation": {
+            "passed": false,
+            "details": [
+              "response_text: Yes, we do carry both CeraVe and Neutrogena! They are great brands known for their effective and gentle skincare options. Are you looking for a specific type of product from these brands, like a moisturizer or cleanser? I'd be happy to help you find the perfect fit for your skin needs!",
+              "conversation_stage: PRICE_EVALUATION",
+              "is_ready: False",
+              "confidence: 0.85",
+              "Response time: 5.55s"
+            ],
+            "issues": [
+              "Stage mismatch: expected PRODUCT_DISCOVERY, got PRICE_EVALUATION"
+            ]
+          },
+          "response_time": 5.547780990600586
+        }
+      ],
+      "success_rate": 0.5,
+      "total_interactions": 2,
+      "successful_interactions": 1
+    }
+  ],
+  "performance_metrics": {
+    "avg_response_time": 5.01774001121521,
+    "stage_distribution": {
+      "INITIAL_INTEREST": 3,
+      "PRODUCT_DISCOVERY": 1,
+      "PRICE_EVALUATION": 3,
+      "PURCHASE_CONFIRMATION": 3
+    }
+  }
+}
